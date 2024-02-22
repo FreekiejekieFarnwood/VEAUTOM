@@ -10,7 +10,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//hoi]]></ST>
+      <ST><![CDATA[//Thijs is gejoined]]></ST>
     </Implementation>
     <LineIds Name="EM_Can_Supply">
       <LineId Id="9" Count="0" />
