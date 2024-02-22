@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedType>
+      <Type guid="4e7bd71b-11e9-4713-b0c8-82e81fef7f43">FB_EM_CAN_SUPPLY_1</Type>
+      <From>FB_EM_Can_Supply_1</From>
+      <To>FB_EM_Filling</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="ec4128e6-71a8-434b-9d29-7ec7bb52bf03">STEM_CAN_SUPPLY_1</Type>
+      <From>stEM_Can_Supply_1</From>
+      <To>stEM_Filling</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="62a7f4bd-ed35-48b9-b903-638cd7db9501">FB_EM_CAN_SUPPLY_2</Type>
+      <From>FB_EM_Can_Supply_2</From>
+      <To>FB_EM_Check_Weigher</To>
+    </RenamedType>
+  </Renames>
+</Refactors>

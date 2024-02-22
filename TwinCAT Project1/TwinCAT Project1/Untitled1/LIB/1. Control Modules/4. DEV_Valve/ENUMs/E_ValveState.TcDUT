@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="E_ValveState" Id="{4356a479-5621-4726-9188-ac6cd4a86ef4}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_ValveState :
+(
+	Unknown := 0,
+	Open := 1,
+	Closed := 2,
+	Opening := 3,
+	Closing := 4,
+	Error := -1
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

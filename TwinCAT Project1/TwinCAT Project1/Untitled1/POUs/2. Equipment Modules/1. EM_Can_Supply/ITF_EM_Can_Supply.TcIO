@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_EM_Can_Supply" Id="{9d641b33-4995-46d9-8141-81fb86fa69d0}">
+    <Declaration><![CDATA[INTERFACE ITF_EM_Can_Supply
+]]></Declaration>
+  </Itf>
+</TcPlcObject>

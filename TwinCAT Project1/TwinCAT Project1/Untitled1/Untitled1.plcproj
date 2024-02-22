@@ -18,7 +18,70 @@
     <LibraryReferences>{546ab183-a04e-418f-8830-25755d309879}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="LIB\1. Control Modules\1. DEV_Base\FB_DeviceBase.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\1. DEV_Base\stDevBase.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\2. DEV_AnaIn\FB_DEV_AnaIn.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\2. DEV_AnaIn\ITF_DEV_AnaIn.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\3. DEV_DigIn\FB_DEV_DigIn.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\3. DEV_DigIn\ITF_DigIn.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\DEV_Valve.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\ENUMs\E_ValveState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\ITF_Valve.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\STRUCTs\stDevValve.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\5. DEV_ControlValve\DEV_CtrlValve.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\5. DEV_ControlValve\ENUMs\E_CtrlValveState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\5. DEV_ControlValve\ITF_ControlValve.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\6. DEV_Motor\ENUMs\E_MotorState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\6. DEV_Motor\ITF_Motor.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\ENUMs\E_OperationMode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\FB_Devices.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\EM_Can_Supply.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\ITF_EM_Can_Supply.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\EM_Filling.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\ITF_EM_Filling.TcIO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
@@ -27,11 +90,48 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
+    <Folder Include="DUTs\3. Units" />
+    <Folder Include="DUTs\2. Equipment Modules" />
+    <Folder Include="DUTs\4. Management" />
     <Folder Include="GVLs" />
+    <Folder Include="LIB" />
+    <Folder Include="LIB\1. Control Modules" />
+    <Folder Include="LIB\1. Control Modules\1. DEV_Base" />
+    <Folder Include="LIB\1. Control Modules\2. DEV_AnaIn" />
+    <Folder Include="LIB\1. Control Modules\3. DEV_DigIn" />
+    <Folder Include="LIB\1. Control Modules\4. DEV_Valve" />
+    <Folder Include="LIB\1. Control Modules\4. DEV_Valve\ENUMs" />
+    <Folder Include="LIB\1. Control Modules\4. DEV_Valve\STRUCTs" />
+    <Folder Include="LIB\1. Control Modules\5. DEV_ControlValve" />
+    <Folder Include="LIB\1. Control Modules\5. DEV_ControlValve\ENUMs" />
+    <Folder Include="LIB\1. Control Modules\5. DEV_ControlValve\STRUCTs" />
+    <Folder Include="LIB\1. Control Modules\6. DEV_Motor" />
+    <Folder Include="LIB\1. Control Modules\6. DEV_Motor\ENUMs" />
+    <Folder Include="LIB\1. Control Modules\6. DEV_Motor\STRUCTs" />
+    <Folder Include="LIB\1. Control Modules\7. DEV_ControlMotor" />
+    <Folder Include="LIB\1. Control Modules\ENUMs" />
+    <Folder Include="LIB\2. Equipment Modules" />
+    <Folder Include="LIB\3. Units" />
+    <Folder Include="LIB\4. Management layer" />
+    <Folder Include="LIB\4. Management layer\FB_Alarmhandler" />
+    <Folder Include="POUs\2. Equipment Modules" />
+    <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_Filling" />
+    <Folder Include="POUs\2. Equipment Modules\3. EM_Check_Weigher" />
+    <Folder Include="POUs\2. Equipment Modules\4. EM_Labeller" />
+    <Folder Include="POUs\2. Equipment Modules\5. EM_Turning" />
+    <Folder Include="POUs\2. Equipment Modules\6. EM_Stamp" />
+    <Folder Include="POUs\2. Equipment Modules\7. EM_Seal_Shrink" />
+    <Folder Include="POUs\3. Units" />
+    <Folder Include="POUs\4. Management" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderReference Include="CmpBitmapPool">
+      <DefaultResolution>CmpBitmapPool, * (System)</DefaultResolution>
+      <Namespace>CmpBitmapPool</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_Standard</Namespace>
@@ -48,8 +148,8 @@
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-  <Data>
-    <o xml:space="preserve" t="OptionKey">
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
@@ -70,13 +170,13 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-  </Data>
-  <TypeList>
-    <Type n="Hashtable">System.Collections.Hashtable</Type>
-    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-    <Type n="String">System.String</Type>
-  </TypeList>
-</XmlArchive>
+        </Data>
+        <TypeList>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

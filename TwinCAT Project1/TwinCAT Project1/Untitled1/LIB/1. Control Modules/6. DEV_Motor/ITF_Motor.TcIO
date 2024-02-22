@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_Motor" Id="{3ebbc2de-2f91-422c-9f2b-e124dcdfdf8d}">
+    <Declaration><![CDATA[INTERFACE ITF_Motor
+]]></Declaration>
+    <Folder Name="Methods" Id="{7728581a-1af2-46e8-9f81-d590e7be16b7}" />
+    <Folder Name="Properties" Id="{c191d611-2cd5-41a4-8937-e1cbb16c33e1}" />
+    <Property Name="ActualState" Id="{3728de25-419f-4561-84a4-299f7125d1f0}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY ActualState : E_MotorState]]></Declaration>
+      <Get Name="Get" Id="{48f527d1-15f4-41bf-bc18-3426d9694da2}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="EmergencyState" Id="{c8077ea2-fefc-42a8-a7b2-7dbf1938e8ca}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY EmergencyState : BOOL]]></Declaration>
+      <Get Name="Get" Id="{1b86aa6e-be04-417e-b54e-68cc4889e3d8}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="OperatingState" Id="{aed9f4c9-f4a7-4ee2-a293-fc8ec9afe4b6}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY OperatingState : BOOL]]></Declaration>
+      <Get Name="Get" Id="{203528fb-609f-4bb3-8db0-6e0b3bb0fc87}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="Reset" Id="{232d125d-1262-4d71-ae18-8aac79f417d2}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="SetMode" Id="{c91803d4-d6c1-4e21-a15f-76b127c2410d}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD SetMode : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Start" Id="{b8f3983c-57ef-4987-bc39-364ec207c8ab}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{2e941153-e04b-47f2-9048-b318da60b935}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>
