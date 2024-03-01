@@ -10,10 +10,12 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//Thijs is gejoined]]></ST>
+      <ST><![CDATA[//Thijs is gejoined
+//Thijs is opnieuw gejoined]]></ST>
     </Implementation>
     <LineIds Name="EM_Can_Supply">
       <LineId Id="9" Count="0" />
+      <LineId Id="17" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
