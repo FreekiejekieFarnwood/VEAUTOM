@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="EM_Seal_Shrink" Id="{5aae22ce-6da8-45b3-8569-19b73574cdf0}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK EM_Seal_Shrink IMPLEMENTS  ITF_EM_Seal_Shrink
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="EM_Seal_Shrink">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -69,6 +69,9 @@
     <Compile Include="LIB\1. Control Modules\FB_Devices.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LIB\fb_base.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -82,6 +85,42 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\ITF_EM_Filling.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\3. EM_Check_Weigher\EM_Check_Weigher.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\3. EM_Check_Weigher\ITF_EM_Check_Weigher.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Labeller\EM_Labeller.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Labeller\ITF_EM_Labeller.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\5. EM_Turning\EM_Turning.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\5. EM_Turning\ITF_EM_Turning.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\6. EM_Stamp\EM_Stamp.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\6. EM_Stamp\ITF_EM_Stamp.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\7. EM_Seal_Shrink\EM_Seal_Shrink.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\7. EM_Seal_Shrink\ITF_EM_Seal_Shrink.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\Unit_Blikkenvullijn\ITF_Blikkenvullijn.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\Unit_Blikkenvullijn\UNIT_Blikkenvullijn.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
@@ -123,6 +162,7 @@
     <Folder Include="POUs\2. Equipment Modules\6. EM_Stamp" />
     <Folder Include="POUs\2. Equipment Modules\7. EM_Seal_Shrink" />
     <Folder Include="POUs\3. Units" />
+    <Folder Include="POUs\3. Units\Unit_Blikkenvullijn" />
     <Folder Include="POUs\4. Management" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />

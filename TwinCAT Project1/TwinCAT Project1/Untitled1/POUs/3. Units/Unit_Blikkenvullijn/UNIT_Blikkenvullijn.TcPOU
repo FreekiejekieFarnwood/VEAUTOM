@@ -1,9 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="MAIN" Id="{8118f260-c6ec-41e8-9a07-ee81d80bcf5e}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM MAIN
+  <POU Name="UNIT_Blikkenvullijn" Id="{2692377b-29af-456d-aace-ede4a94c185d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK UNIT_Blikkenvullijn IMPLEMENTS  ITF_Blikkenvullijn
 VAR
-	Unit : UNIT_Blikkenvullijn;
+	EM_Can_Supply 		: EM_Can_Supply;
+	EM_Filling			: EM_Filling;
+	EM_Check_Weigher	: EM_Check_Weigher;
+	EM_Labeller			: EM_Labeller;
+	EM_Turning			: EM_Turning;
+	EM_Stamp			: EM_Stamp;
+	EM_Seal_Shrink		: EM_Seal_Shrink;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -21,21 +27,24 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                            \______/                                                            \______/ 
 *)
 
-//*****************************UNIT*****************************//
-Unit();
+//*****************************EM*****************************//
+EM_Can_Supply();
+EM_Filling();
+EM_Check_Weigher();
+EM_Labeller();
+EM_Turning();
+EM_Stamp();
+EM_Seal_Shrink();
 
-//******************************CM******************************//]]></ST>
+]]></ST>
     </Implementation>
-    <LineIds Name="MAIN">
-      <LineId Id="21" Count="0" />
-      <LineId Id="31" Count="0" />
-      <LineId Id="22" Count="8" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="2" Count="0" />
-      <LineId Id="33" Count="0" />
+    <LineIds Name="UNIT_Blikkenvullijn">
+      <LineId Id="33" Count="13" />
       <LineId Id="32" Count="0" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="35" Count="1" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="24" Count="5" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="30" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

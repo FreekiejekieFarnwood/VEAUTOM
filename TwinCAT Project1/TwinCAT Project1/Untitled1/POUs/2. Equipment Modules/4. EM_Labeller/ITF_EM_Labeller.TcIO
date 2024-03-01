@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_EM_Labeller" Id="{69d47b9b-4851-45f7-bf20-2adb7572f65a}">
+    <Declaration><![CDATA[INTERFACE ITF_EM_Labeller
+]]></Declaration>
+  </Itf>
+</TcPlcObject>
