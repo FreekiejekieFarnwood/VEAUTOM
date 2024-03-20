@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="DEV_CtrlValve" Id="{043053a6-7b48-43c8-bd59-f40d6b2e6cf6}" SpecialFunc="None">
+  <POU Name="DEV_CtrlValve" Id="{67f00510-5ec6-402d-bfae-2a9531d817c8}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK DEV_CtrlValve EXTENDS FB_DeviceBase IMPLEMENTS ITF_ControlValve
 VAR_INPUT
 END_VAR
@@ -12,11 +12,11 @@ END_VAR
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
-    <Property Name="EmergencyStatus" Id="{ba56147c-1df4-438b-9e8d-d96413157271}">
+    <Property Name="EmergencyStatus" Id="{fc6a8e00-1087-4c10-9a16-0c0379954313}">
       <Declaration><![CDATA[{warning 'add property implementation'}
 PROPERTY EmergencyStatus : BOOL
 ]]></Declaration>
-      <Get Name="Get" Id="{f44389a1-1a16-4e18-8a07-eb319156b66d}">
+      <Get Name="Get" Id="{4512adbe-bc25-4f48-9bb2-9457eead2eb9}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
@@ -25,11 +25,11 @@ END_VAR
         </Implementation>
       </Get>
     </Property>
-    <Property Name="OperatingMode" Id="{6155f774-466a-4b06-a07e-b1c3d9d1a1fb}">
+    <Property Name="OperatingMode" Id="{6be7feb2-23e6-4e87-92c0-17d3e176acb2}">
       <Declaration><![CDATA[{warning 'add property implementation'}
 PROPERTY OperatingMode : BOOL
 ]]></Declaration>
-      <Get Name="Get" Id="{1493a446-54ee-44f5-b87b-4cbe3887338d}">
+      <Get Name="Get" Id="{5779ce03-c990-4872-bc9c-3e491918717a}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
@@ -38,11 +38,11 @@ END_VAR
         </Implementation>
       </Get>
     </Property>
-    <Property Name="OutputValue" Id="{202d5ed9-938b-4e67-b830-87ca62464f61}">
+    <Property Name="OutputValue" Id="{2683151c-7a22-4591-811a-19638f3397b4}">
       <Declaration><![CDATA[{warning 'add property implementation'}
 PROPERTY OutputValue : REAL
 ]]></Declaration>
-      <Get Name="Get" Id="{db298ae9-eede-4b2e-b448-1a16b6fa8931}">
+      <Get Name="Get" Id="{b0268694-59ca-4eea-a68e-8bbd28a0dd88}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
@@ -51,7 +51,7 @@ END_VAR
         </Implementation>
       </Get>
     </Property>
-    <Method Name="Reset" Id="{ae730ef3-0d50-4721-b1b3-6c7c7496d3da}">
+    <Method Name="Reset" Id="{ef8a2d00-8ec6-49fc-be2e-a0abf07481b5}">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Reset : BOOL
 ]]></Declaration>
@@ -59,7 +59,7 @@ METHOD Reset : BOOL
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Method>
-    <Method Name="SetMode" Id="{d4299c39-f6d2-4b87-8a2c-608b0523b815}">
+    <Method Name="SetMode" Id="{ac5e996b-bd02-4600-b0e8-0414acb660a5}">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD SetMode : BOOL
 ]]></Declaration>
@@ -67,7 +67,7 @@ METHOD SetMode : BOOL
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Method>
-    <Method Name="SetValue" Id="{74c20a76-b9ce-41ee-b396-fd85e0af7c41}">
+    <Method Name="SetValue" Id="{c1d352d1-82de-4da4-bbf6-2a5bd1ffc569}">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD SetValue : BOOL
 ]]></Declaration>

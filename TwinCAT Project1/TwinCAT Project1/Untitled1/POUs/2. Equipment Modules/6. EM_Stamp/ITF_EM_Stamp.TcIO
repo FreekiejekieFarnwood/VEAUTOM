@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <Itf Name="ITF_EM_Stamp" Id="{5ab7c542-ca28-4697-b0c1-c688e7c1fa7c}">
-    <Declaration><![CDATA[INTERFACE ITF_EM_Stamp
-]]></Declaration>
-  </Itf>
-</TcPlcObject>

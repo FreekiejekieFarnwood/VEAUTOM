@@ -1,47 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <Itf Name="ITF_Valve" Id="{c744035f-2c51-4bdb-88a4-7552e9ac9bce}">
+  <Itf Name="ITF_Valve" Id="{23478fd0-4917-4f3c-bacd-f8f2c3e8833e}">
     <Declaration><![CDATA[INTERFACE ITF_Valve
 ]]></Declaration>
-    <Folder Name="Methods" Id="{61f7a042-47a1-49da-8f90-2c14478c60aa}" />
-    <Folder Name="Properties" Id="{9cf12b69-f3a2-497a-b05e-ecb61d524d6e}" />
-    <Property Name="ActualState" Id="{204f2cc8-4c69-4e30-87c9-e3fdf4fe536f}" FolderPath="Properties\">
+    <Folder Name="Methods" Id="{baddf355-ae32-47ad-aef2-70ca23b070fe}" />
+    <Folder Name="Properties" Id="{6d9d25d0-e5b0-4a9d-901c-e738470977aa}" />
+    <Property Name="ActualState" Id="{4048e3cf-1901-4fb0-b3e3-cadad5461c50}" FolderPath="Properties\">
       <Declaration><![CDATA[PROPERTY ActualState : E_ValveState]]></Declaration>
-      <Get Name="Get" Id="{5a9d4bb0-5b8a-4b6f-a637-c2ab7b88691e}">
+      <Get Name="Get" Id="{76a718e2-a1cd-4ce2-a1ef-9dca22eb67a3}">
         <Declaration><![CDATA[]]></Declaration>
       </Get>
     </Property>
-    <Method Name="Close" Id="{f1c3fa30-b7e5-4be8-96d0-573de2e18aa0}" FolderPath="Methods\">
+    <Method Name="Close" Id="{52142592-4b90-4cfe-8148-6fb6e4af0466}" FolderPath="Methods\">
       <Declaration><![CDATA[METHOD Close : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
-    <Property Name="EmergencyStatus" Id="{681a3fef-e473-4228-94c1-c44557a57acf}" FolderPath="Properties\">
+    <Property Name="EmergencyStatus" Id="{c4fefea5-9dd9-44f2-9f49-b820e3cf5062}" FolderPath="Properties\">
       <Declaration><![CDATA[PROPERTY EmergencyStatus : BOOL]]></Declaration>
-      <Get Name="Get" Id="{5bdaa746-0d92-4b6f-9679-c38ff6077c5e}">
+      <Get Name="Get" Id="{a6311909-e883-4491-b0c2-e6635f50e2c0}">
         <Declaration><![CDATA[]]></Declaration>
       </Get>
     </Property>
-    <Method Name="Open" Id="{ce313ade-4348-4ef8-b523-57efa6a8aca3}" FolderPath="Methods\">
+    <Method Name="Open" Id="{ca3aff26-be70-4831-a91e-e48cf7ecea28}" FolderPath="Methods\">
       <Declaration><![CDATA[METHOD Open : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
-    <Property Name="OperatingMode" Id="{9c2e61be-56b1-4b64-94ec-bfda1e373435}" FolderPath="Properties\">
+    <Property Name="OperatingMode" Id="{aec482d6-a14b-4c1d-9656-4ab670725f10}" FolderPath="Properties\">
       <Declaration><![CDATA[PROPERTY OperatingMode : BOOL]]></Declaration>
-      <Get Name="Get" Id="{f55a2f43-158f-4ad3-b71d-dd29e7fca544}">
+      <Get Name="Get" Id="{e75f3792-5240-4fed-b756-fb81f3f8e57b}">
         <Declaration><![CDATA[]]></Declaration>
       </Get>
     </Property>
-    <Method Name="Reset" Id="{c9502f4c-1403-479f-9fde-e2cfffa5e9b5}" FolderPath="Methods\">
+    <Method Name="Reset" Id="{07d4e633-d21f-47cd-b574-f7ddd71de663}" FolderPath="Methods\">
       <Declaration><![CDATA[METHOD Reset : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
-    <Method Name="SetMode" Id="{9691e880-ae49-4b2a-8a43-0ed6b7f450ff}" FolderPath="Methods\">
+    <Method Name="SetMode" Id="{c3f27805-b695-4c09-ab53-43ef7802b59d}" FolderPath="Methods\">
       <Declaration><![CDATA[METHOD SetMode : BOOL
 VAR_INPUT
 END_VAR

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="EM_OutfeedA2" Id="{785d883d-6312-4cfe-a0c5-3baf48e7776b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK EM_OutfeedA2 EXTENDS FB_Transport
+FUNCTION_BLOCK EM_OutfeedA2 EXTENDS FB_Mechanische_Stop
+
+VAR
+	fb_mem : Str_FB_Transport;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="EM_OutfeedA2">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

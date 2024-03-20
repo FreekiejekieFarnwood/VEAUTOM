@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <DUT Name="E_CtrlValveState" Id="{1e88cc3a-1a57-4da3-9fa7-3c17ac3a7cc1}">
+  <DUT Name="E_CtrlValveState" Id="{3f49d063-8531-44fe-a097-76b3d7356d5a}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 {attribute 'strict'}
 TYPE E_CtrlValveState :

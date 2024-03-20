@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_Machine" Id="{6efefc07-2f07-4b70-82c4-7b6443b3ea65}">
+    <Declaration><![CDATA[INTERFACE ITF_Machine EXTENDS ITF_PackML]]></Declaration>
+  </Itf>
+</TcPlcObject>

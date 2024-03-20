@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <DUT Name="E_MotorState" Id="{3fc7284d-a57e-4d47-8dd7-3b40354e9313}">
+  <DUT Name="E_MotorState" Id="{afc44607-2e2c-4f37-b0fe-c76ea867068b}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 {attribute 'strict'}
 TYPE E_MotorState :

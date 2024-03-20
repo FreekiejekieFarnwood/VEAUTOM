@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <DUT Name="E_OperationMode" Id="{9072f6c2-33c2-41fc-becf-a8224c394230}">
+  <DUT Name="E_Can_Supply" Id="{af5490b1-04dd-43b4-b9e7-2ad3b212618a}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 {attribute 'strict'}
-TYPE E_OperationMode :
+TYPE E_Can_Supply :
 (
-	Off := 0,
-	Manual := 1,
-	Automatic := 2
+	State := 0
 );
 END_TYPE
 ]]></Declaration>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="FB_Devices" Id="{1bdcdbd4-de89-4154-9c84-fd8a5c88ccdb}" SpecialFunc="None">
+  <POU Name="FB_Devices" Id="{5a1a6b57-ea7a-4b81-b40d-043e4cf8b574}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Devices
 VAR
 	devValveV2012 : DEV_Valve := (TagName := 'V2012', Description := 'Standard Valve', TagID := 1);

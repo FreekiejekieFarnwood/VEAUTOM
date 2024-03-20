@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_DevicesV2_1" Id="{69905c0e-cc4e-44a2-80eb-37d65dd983b7}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_DevicesV2_1 
+
+VAR
+	Waterpeilen : FB_Waterpeilen;
+	DummyDebiet : FB_DummyDebiet;
+		
+	Regelschuiven : FB_Regelschuiven;
+	V2012 : FB_RegelschuifA;
+	V2021 : FB_RegelschuifB;
+	
+	Regeling : FB_Regeling_regelschuiven(Klep1 := V2012, Klep2 := V2021);
+	Regeling_Debiet : FB_Regeling_Debiet(Debiet := DummyDebiet.Dummy_Value);
+	Regeling_Polderpeil : FB_Regeling_Polderpeil(Waterpeilen := Waterpeilen.Peilverschil);
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//INITIEREN
+
+//Kleppen
+Regelschuiven();
+V2012();
+V2021();
+
+//Object dat het waterpeil berekend
+Waterpeilen();
+
+//Object wat een gewenst debiet kan simuleren
+DummyDebiet();
+
+//Object dat de kleppen regelt
+Regeling();
+Regeling_Debiet();
+Regeling_Polderpeil();
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_DevicesV2_1">
+      <LineId Id="9" Count="0" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="135" Count="0" />
+      <LineId Id="130" Count="1" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="104" Count="0" />
+      <LineId Id="100" Count="0" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="105" Count="0" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="133" Count="0" />
+      <LineId Id="110" Count="1" />
+      <LineId Id="28" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
