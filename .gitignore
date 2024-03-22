@@ -7,7 +7,7 @@
 *.userosscache
 *.sln.docstates
 *.Project1.project.~u
-*Project1/TwinCAT Project1.tsproj.bak
+*.Project1/TwinCAT Project1.tsproj.bak
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -71,6 +71,7 @@ artifacts/
 *.pidb
 *.svclog
 *.scc
+*.~u
 
 # Chutzpah Test files
 _Chutzpah*
