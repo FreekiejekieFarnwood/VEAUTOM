@@ -18,70 +18,13 @@
     <LibraryReferences>{546ab183-a04e-418f-8830-25755d309879}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="LIB\1. Control Modules\2. DEV_AnaIn\FB_DEV_AnaIn.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\2. DEV_AnaIn\ITF_DEV_AnaIn.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\3. DEV_DigIn\FB_DEV_DigIn.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\3. DEV_DigIn\ITF_DigIn.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\DEV_Valve.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\ENUMs\E_ValveState.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\ITF_Valve.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\STRUCTs\stDevValve.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\5. DEV_ControlValve\DEV_CtrlValve.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\5. DEV_ControlValve\ENUMs\E_CtrlValveState.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\5. DEV_ControlValve\ITF_ControlValve.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\6. DEV_Motor\ENUMs\E_MotorState.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\6. DEV_Motor\ITF_Motor.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\ENUMs\E_OperationMode.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\FB_Devices.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\FB_DevicesV2_1.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\2. Equipment Modules\1 . EM_Machine_PackML\EM_Machine_PackML.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\2. Equipment Modules\1 . EM_Machine_PackML\ITF_Machine.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\fb_base.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\FB_Can_Supply.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\E_Can_Supply.TcDUT">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\E_State_Can_Supply.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\ITF_Can_Supply.TcIO">
@@ -115,29 +58,6 @@
     <Folder Include="DUTs\2. Equipment Modules" />
     <Folder Include="DUTs\4. Management" />
     <Folder Include="GVLs" />
-    <Folder Include="LIB">
-      <ExcludeFromBuild>true</ExcludeFromBuild>
-    </Folder>
-    <Folder Include="LIB\1. Control Modules" />
-    <Folder Include="LIB\1. Control Modules\2. DEV_AnaIn" />
-    <Folder Include="LIB\1. Control Modules\3. DEV_DigIn" />
-    <Folder Include="LIB\1. Control Modules\4. DEV_Valve" />
-    <Folder Include="LIB\1. Control Modules\4. DEV_Valve\ENUMs" />
-    <Folder Include="LIB\1. Control Modules\4. DEV_Valve\STRUCTs" />
-    <Folder Include="LIB\1. Control Modules\5. DEV_ControlValve" />
-    <Folder Include="LIB\1. Control Modules\5. DEV_ControlValve\ENUMs" />
-    <Folder Include="LIB\1. Control Modules\5. DEV_ControlValve\STRUCTs" />
-    <Folder Include="LIB\1. Control Modules\6. DEV_Motor" />
-    <Folder Include="LIB\1. Control Modules\6. DEV_Motor\ENUMs" />
-    <Folder Include="LIB\1. Control Modules\6. DEV_Motor\STRUCTs" />
-    <Folder Include="LIB\1. Control Modules\7. DEV_ControlMotor" />
-    <Folder Include="LIB\1. Control Modules\ENUMs" />
-    <Folder Include="LIB\2. Equipment Modules" />
-    <Folder Include="LIB\2. Equipment Modules\1 . EM_Machine_PackML" />
-    <Folder Include="LIB\3. Units" />
-    <Folder Include="LIB\4. Management layer" />
-    <Folder Include="LIB\4. Management layer\FB_Alarmhandler" />
-    <Folder Include="LIB\FunctionBlocks" />
     <Folder Include="POUs\2. Equipment Modules" />
     <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply" />
     <Folder Include="POUs\2. Equipment Modules\2. EM_OutfeedA" />
