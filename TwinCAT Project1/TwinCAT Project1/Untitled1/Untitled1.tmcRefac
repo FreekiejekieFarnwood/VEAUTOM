@@ -2,19 +2,19 @@
 <Refactors>
   <Renames>
     <RenamedType>
-      <Type guid="4e7bd71b-11e9-4713-b0c8-82e81fef7f43">FB_EM_CAN_SUPPLY_1</Type>
-      <From>FB_EM_Can_Supply_1</From>
-      <To>FB_EM_Filling</To>
+      <Type guid="7d4cdf28-8942-4185-a3d0-da5253260d95">EM_CAN_SUPPLY</Type>
+      <From>EM_Can_Supply</From>
+      <To>FB_Can_Supply</To>
     </RenamedType>
     <RenamedType>
-      <Type guid="ec4128e6-71a8-434b-9d29-7ec7bb52bf03">STEM_CAN_SUPPLY_1</Type>
-      <From>stEM_Can_Supply_1</From>
-      <To>stEM_Filling</To>
+      <Type guid="2864aa0f-79f4-4c15-96e2-8d7a37ae349b">POU</Type>
+      <From>POU</From>
+      <To>EM_OutfeedA</To>
     </RenamedType>
     <RenamedType>
-      <Type guid="62a7f4bd-ed35-48b9-b903-638cd7db9501">FB_EM_CAN_SUPPLY_2</Type>
-      <From>FB_EM_Can_Supply_2</From>
-      <To>FB_EM_Check_Weigher</To>
+      <Type guid="af5490b1-04dd-43b4-b9e7-2ad3b212618a">E_CAN_SUPPLY</Type>
+      <From>E_Can_Supply</From>
+      <To>E_State_Can_Supply</To>
     </RenamedType>
   </Renames>
 </Refactors>

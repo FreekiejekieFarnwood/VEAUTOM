@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <Itf Name="ITF_DEV_AnaIn" Id="{de2eb338-209c-4dd0-bbf6-2a45293efce7}">
-    <Declaration><![CDATA[INTERFACE ITF_DEV_AnaIn
-]]></Declaration>
-  </Itf>
-</TcPlcObject>

@@ -1,10 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="MAIN" Id="{8118f260-c6ec-41e8-9a07-ee81d80bcf5e}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM MAIN
+  <POU Name="UNIT_Blikkenvullijn" Id="{2692377b-29af-456d-aace-ede4a94c185d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK UNIT_Blikkenvullijn IMPLEMENTS  ITF_Blikkenvullijn
 VAR
-	Unit : UNIT_Blikkenvullijn;
-	Devices : FB_DevicesV2;
+	EM_Can_Supply 		: FB_Can_Supply;
+	EM_Filling			: FB_Machine_PackML;
+	EM_Check_Weigher	: FB_Machine_PackML;
+	EM_Labeller			: FB_Machine_PackML;
+	EM_Turning			: FB_Machine_PackML;
+	EM_Stamp			: FB_Machine_PackML;
+	EM_Seal_Shrink		: FB_Machine_PackML;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -22,23 +27,54 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                            \______/                                                            \______/ 
 *)
 
-//*****************************UNIT*****************************//
-Unit();
+//**************************INITIATE**************************//
+//*****************************EM*****************************//
+//*************************BlackBoxes*************************//
+EM_Filling();
+EM_Check_Weigher();
+EM_Labeller();
+EM_Turning();
+EM_Stamp();
+EM_Seal_Shrink();
+//*************************Custommade*************************//
+EM_Can_Supply();
 
-//******************************CM******************************//
-Devices();]]></ST>
+]]></ST>
     </Implementation>
-    <LineIds Name="MAIN">
-      <LineId Id="21" Count="0" />
-      <LineId Id="31" Count="0" />
-      <LineId Id="22" Count="8" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="2" Count="0" />
-      <LineId Id="33" Count="0" />
+    <Method Name="FB_init" Id="{e016cb9e-71c8-4e78-924d-1e46be021f7d}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//*****************************INITIATE*****************************//
+EM_Can_Supply.FB_init(0,0);
+EM_Filling.FB_init(0,0);
+EM_Check_Weigher.FB_init(0,0);
+EM_Labeller.FB_init(0,0);
+EM_Turning.FB_init(0,0);
+EM_Stamp.FB_init(0,0);
+EM_Seal_Shrink.FB_init(0,0);]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="UNIT_Blikkenvullijn">
+      <LineId Id="33" Count="12" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="46" Count="0" />
       <LineId Id="32" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="24" Count="5" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="30" Count="0" />
+    </LineIds>
+    <LineIds Name="UNIT_Blikkenvullijn.FB_init">
+      <LineId Id="14" Count="0" />
+      <LineId Id="8" Count="5" />
       <LineId Id="7" Count="0" />
-      <LineId Id="35" Count="1" />
-      <LineId Id="42" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

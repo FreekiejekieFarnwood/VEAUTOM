@@ -18,70 +18,34 @@
     <LibraryReferences>{546ab183-a04e-418f-8830-25755d309879}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="LIB\1. Control Modules\1. DEV_Base\FB_DeviceBase.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\1. DEV_Base\stDevBase.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\2. DEV_AnaIn\FB_DEV_AnaIn.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\2. DEV_AnaIn\ITF_DEV_AnaIn.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\3. DEV_DigIn\FB_DEV_DigIn.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\3. DEV_DigIn\ITF_DigIn.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\DEV_Valve.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\ENUMs\E_ValveState.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\ITF_Valve.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\STRUCTs\stDevValve.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\5. DEV_ControlValve\DEV_CtrlValve.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\5. DEV_ControlValve\ENUMs\E_CtrlValveState.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\5. DEV_ControlValve\ITF_ControlValve.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\6. DEV_Motor\ENUMs\E_MotorState.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\6. DEV_Motor\ITF_Motor.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\ENUMs\E_OperationMode.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LIB\1. Control Modules\FB_Devices.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\EM_Can_Supply.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\FB_Can_Supply.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\ITF_EM_Can_Supply.TcIO">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\E_State_Can_Supply.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\EM_Filling.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\ITF_Can_Supply.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\ITF_EM_Filling.TcIO">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Str_fb_mem.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\2. EM_OutfeedA\EM_OutfeedA.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\3. EM_OutfeedA2\EM_OutfeedA2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\Unit_Blikkenvullijn\ITF_Blikkenvullijn.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\Unit_Blikkenvullijn\UNIT_Blikkenvullijn.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FB_DevicesV2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
@@ -94,36 +58,18 @@
     <Folder Include="DUTs\2. Equipment Modules" />
     <Folder Include="DUTs\4. Management" />
     <Folder Include="GVLs" />
-    <Folder Include="LIB" />
-    <Folder Include="LIB\1. Control Modules" />
-    <Folder Include="LIB\1. Control Modules\1. DEV_Base" />
-    <Folder Include="LIB\1. Control Modules\2. DEV_AnaIn" />
-    <Folder Include="LIB\1. Control Modules\3. DEV_DigIn" />
-    <Folder Include="LIB\1. Control Modules\4. DEV_Valve" />
-    <Folder Include="LIB\1. Control Modules\4. DEV_Valve\ENUMs" />
-    <Folder Include="LIB\1. Control Modules\4. DEV_Valve\STRUCTs" />
-    <Folder Include="LIB\1. Control Modules\5. DEV_ControlValve" />
-    <Folder Include="LIB\1. Control Modules\5. DEV_ControlValve\ENUMs" />
-    <Folder Include="LIB\1. Control Modules\5. DEV_ControlValve\STRUCTs" />
-    <Folder Include="LIB\1. Control Modules\6. DEV_Motor" />
-    <Folder Include="LIB\1. Control Modules\6. DEV_Motor\ENUMs" />
-    <Folder Include="LIB\1. Control Modules\6. DEV_Motor\STRUCTs" />
-    <Folder Include="LIB\1. Control Modules\7. DEV_ControlMotor" />
-    <Folder Include="LIB\1. Control Modules\ENUMs" />
-    <Folder Include="LIB\2. Equipment Modules" />
-    <Folder Include="LIB\3. Units" />
-    <Folder Include="LIB\4. Management layer" />
-    <Folder Include="LIB\4. Management layer\FB_Alarmhandler" />
     <Folder Include="POUs\2. Equipment Modules" />
     <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply" />
-    <Folder Include="POUs\2. Equipment Modules\2. EM_Filling" />
-    <Folder Include="POUs\2. Equipment Modules\3. EM_Check_Weigher" />
-    <Folder Include="POUs\2. Equipment Modules\4. EM_Labeller" />
-    <Folder Include="POUs\2. Equipment Modules\5. EM_Turning" />
-    <Folder Include="POUs\2. Equipment Modules\6. EM_Stamp" />
-    <Folder Include="POUs\2. Equipment Modules\7. EM_Seal_Shrink" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_OutfeedA" />
+    <Folder Include="POUs\2. Equipment Modules\3. EM_OutfeedA2" />
+    <Folder Include="POUs\2. Equipment Modules\4. EM_Transport_Checkweigher_BottomSeal" />
+    <Folder Include="POUs\2. Equipment Modules\5. EM_Transport_BottomSeal_Labeller" />
+    <Folder Include="POUs\2. Equipment Modules\6. EM_Transport_TurningDevice_StampUnit" />
+    <Folder Include="POUs\2. Equipment Modules\7. EM_Transport_StampUnit_SealShrink" />
     <Folder Include="POUs\3. Units" />
+    <Folder Include="POUs\3. Units\Unit_Blikkenvullijn" />
     <Folder Include="POUs\4. Management" />
+    <Folder Include="POUs\0. Functionblocks" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
@@ -144,6 +90,20 @@
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="TwinCAT_LIB">
+      <DefaultResolution>TwinCAT_LIB, * (Farnwood Engineering)</DefaultResolution>
+      <Namespace>TwinCAT_LIB</Namespace>
+    </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Untitled1.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderResolution Include="TwinCAT_LIB">
+      <Resolution>TwinCAT_LIB, * (Farnwood Engineering)</Resolution>
+    </PlaceholderResolution>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
