@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_EM_OutfeedFillers" Id="{4e609302-0b5a-4196-a90a-6d8647ced641}">
+    <Declaration><![CDATA[INTERFACE ITF_EM_OutfeedFillers
+]]></Declaration>
+  </Itf>
+</TcPlcObject>

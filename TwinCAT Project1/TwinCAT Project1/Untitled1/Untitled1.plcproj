@@ -18,6 +18,10 @@
     <LibraryReferences>{546ab183-a04e-418f-8830-25755d309879}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GVLs\GVL_UNIT_Blikkenvullijn.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -33,19 +37,61 @@
     <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Str_fb_mem.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\2. EM_OutfeedA\EM_OutfeedA.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\2. EM_TransportFillers\EM_TransportFillers.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\3. EM_OutfeedA2\EM_OutfeedA2.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\2. EM_TransportFillers\ITF_EM_TransportFillers.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\3. Units\Unit_Blikkenvullijn\ITF_Blikkenvullijn.TcIO">
+    <Compile Include="POUs\2. Equipment Modules\3. EM_OutfeedFillers\EM_OutfeedFillers.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\3. Units\Unit_Blikkenvullijn\UNIT_Blikkenvullijn.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\3. EM_OutfeedFillers\ITF_EM_OutfeedFillers.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_DevicesV2.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Infeed_Checkweigher\EM_Infeed_Checkweigher.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Infeed_Checkweigher\ITF_EM_Infeed_Checkweigher.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\5. EM_Transport_Checkweigher_BottomSeal\EM_Transport_Checkweigher_BottomSeal.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\5. EM_Transport_Checkweigher_BottomSeal\ITF_EM_Transport_Checkweigher_BottomSeal.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\6. EM_Transport_BottomSeal_Labeller\EM_Transport_BottomSeal_Labeller.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\6. EM_Transport_BottomSeal_Labeller\ITF_EM_Transport_BottomSeal_Labeller.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\7. EM_Transport_TurningDevice_StampUnit\EM_Transport_TurningDevice_StampUnit.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\7. EM_Transport_TurningDevice_StampUnit\ITF_EM_Transport_TurningDevice_StampUnit.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\8. EM_Transport_StampUnit_SealShrink\EM_Transport_StampUnit_SealShrink.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\8. EM_Transport_StampUnit_SealShrink\ITF_EM_Transport_StampUnit_SealShrink.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\ITF_Blikkenvullijn.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\UNIT_Blikkenvullijn.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\4. Management\1. AlarmHandler\AlarmHandler.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\4. Management\2. ModeSelect\ModeSelect.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FB_Devices.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
@@ -58,18 +104,23 @@
     <Folder Include="DUTs\2. Equipment Modules" />
     <Folder Include="DUTs\4. Management" />
     <Folder Include="GVLs" />
+    <Folder Include="POUs\1. Control Modules\1. CM_Motor" />
+    <Folder Include="POUs\1. Control Modules\2. CM_Sensor" />
     <Folder Include="POUs\2. Equipment Modules" />
     <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply" />
-    <Folder Include="POUs\2. Equipment Modules\2. EM_OutfeedA" />
-    <Folder Include="POUs\2. Equipment Modules\3. EM_OutfeedA2" />
-    <Folder Include="POUs\2. Equipment Modules\4. EM_Transport_Checkweigher_BottomSeal" />
-    <Folder Include="POUs\2. Equipment Modules\5. EM_Transport_BottomSeal_Labeller" />
-    <Folder Include="POUs\2. Equipment Modules\6. EM_Transport_TurningDevice_StampUnit" />
-    <Folder Include="POUs\2. Equipment Modules\7. EM_Transport_StampUnit_SealShrink" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_TransportFillers" />
+    <Folder Include="POUs\2. Equipment Modules\3. EM_OutfeedFillers" />
+    <Folder Include="POUs\2. Equipment Modules\5. EM_Transport_Checkweigher_BottomSeal" />
+    <Folder Include="POUs\2. Equipment Modules\6. EM_Transport_BottomSeal_Labeller" />
+    <Folder Include="POUs\2. Equipment Modules\7. EM_Transport_TurningDevice_StampUnit" />
+    <Folder Include="POUs\2. Equipment Modules\8. EM_Transport_StampUnit_SealShrink" />
+    <Folder Include="POUs\2. Equipment Modules\4. EM_Infeed_Checkweigher" />
     <Folder Include="POUs\3. Units" />
-    <Folder Include="POUs\3. Units\Unit_Blikkenvullijn" />
+    <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn" />
     <Folder Include="POUs\4. Management" />
-    <Folder Include="POUs\0. Functionblocks" />
+    <Folder Include="POUs\1. Control Modules" />
+    <Folder Include="POUs\4. Management\1. AlarmHandler" />
+    <Folder Include="POUs\4. Management\2. ModeSelect" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
@@ -101,6 +152,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderResolution Include="CmpBitmapPool">
+      <Resolution>CmpBitmapPool, * (System)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Standard">
+      <Resolution>Tc2_Standard, * (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_Standard">
+      <Resolution>Tc2_Standard, * (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_System">
+      <Resolution>Tc2_System, * (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc3_Module">
+      <Resolution>Tc3_Module, * (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
     <PlaceholderResolution Include="TwinCAT_LIB">
       <Resolution>TwinCAT_LIB, * (Farnwood Engineering)</Resolution>
     </PlaceholderResolution>

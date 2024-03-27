@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_EM_Transport_BottomSeal_Labeller" Id="{088d762d-0def-4c2e-946f-ca0e442b9987}">
+    <Declaration><![CDATA[INTERFACE ITF_EM_Transport_BottomSeal_Labeller
+]]></Declaration>
+  </Itf>
+</TcPlcObject>

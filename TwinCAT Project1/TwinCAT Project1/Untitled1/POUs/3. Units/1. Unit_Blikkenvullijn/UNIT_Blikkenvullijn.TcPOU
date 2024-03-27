@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="UNIT_Blikkenvullijn" Id="{2692377b-29af-456d-aace-ede4a94c185d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK UNIT_Blikkenvullijn IMPLEMENTS  ITF_Blikkenvullijn
+FUNCTION_BLOCK UNIT_Blikkenvullijn EXTENDS FB_Machine_PackML;
+VAR
+	//Custom logic
+	EM_Can_Supply 							: FB_Can_Supply;
+	
+	//PackML machine's
+	EM_Filling								: FB_Machine_PackML;
+	EM_Check_Weigher						: FB_Machine_PackML;
+	EM_Labeller								: FB_Machine_PackML;
+	EM_Turning								: FB_Machine_PackML;
+	EM_Stamp								: FB_Machine_PackML;
+	EM_Seal_Shrink							: FB_Machine_PackML;
+	
+	//Transport logic
+	EM_TransportFillers 					: EM_TransportFillers;
+	EM_OutfeedFillers						: EM_OutfeedFillers;
+	EM_Infeed_Checkweigher					: EM_Infeed_Checkweigher;
+	EM_Transport_Checkweigher_BottomSeal	: EM_Transport_Checkweigher_BottomSeal;
+	EM_Transport_BottomSeal_Labeller		: EM_Transport_BottomSeal_Labeller;
+	EM_Transport_TurningDevice_StampUnit	: EM_Transport_TurningDevice_StampUnit;
+	EM_Transport_StampUnit_SealShrink		: EM_Transport_StampUnit_SealShrink;
+	
+	//Management Logic
+	AlarmHandler 							: AlarmHandler;
+	ModeSelect								: ModeSelect;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+$$$$$$$$\                                                                   $$\       $$$$$$$$\                     $$\                                         $$\                     
+$$  _____|                                                                  $$ |      $$  _____|                    \__|                                        \__|                    
+$$ |   $$$$$$\   $$$$$$\  $$$$$$$\  $$\  $$\  $$\  $$$$$$\   $$$$$$\   $$$$$$$ |      $$ |      $$$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\  
+$$$$$\ \____$$\ $$  __$$\ $$  __$$\ $$ | $$ | $$ |$$  __$$\ $$  __$$\ $$  __$$ |      $$$$$\    $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ 
+$$  __|$$$$$$$ |$$ |  \__|$$ |  $$ |$$ | $$ | $$ |$$ /  $$ |$$ /  $$ |$$ /  $$ |      $$  __|   $$ |  $$ |$$ /  $$ |$$ |$$ |  $$ |$$$$$$$$ |$$$$$$$$ |$$ |  \__|$$ |$$ |  $$ |$$ /  $$ |
+$$ |  $$  __$$ |$$ |      $$ |  $$ |$$ | $$ | $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |      $$ |      $$ |  $$ |$$ |  $$ |$$ |$$ |  $$ |$$   ____|$$   ____|$$ |      $$ |$$ |  $$ |$$ |  $$ |
+$$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |      $$$$$$$$\ $$ |  $$ |\$$$$$$$ |$$ |$$ |  $$ |\$$$$$$$\ \$$$$$$$\ $$ |      $$ |$$ |  $$ |\$$$$$$$ |
+\__|   \_______|\__|      \__|  \__| \_____\____/  \______/  \______/  \_______|      \________|\__|  \__| \____$$ |\__|\__|  \__| \_______| \_______|\__|      \__|\__|  \__| \____$$ |
+                                                                                                          $$\   $$ |                                                          $$\   $$ |
+                                                                                                          \$$$$$$  |                                                          \$$$$$$  |
+                                                                                                           \______/                                                            \______/ 
+*)
+
+//**************************INITIATE**************************//
+//*****************************EM*****************************//
+//*************************BlackBoxes*************************//
+EM_Filling();
+EM_Check_Weigher();
+EM_Labeller();
+EM_Turning();
+EM_Stamp();
+EM_Seal_Shrink();
+//*************************Custommade*************************//
+EM_Can_Supply();
+
+(* 
+CASE fb_mem.State OF
+	E_State_PackML.IDLE 			: 
+	E_State_PackML.STARTING 		:
+	E_State_PackML.EXECUTE 			: 
+	E_State_PackML.COMPLETE 		:
+	E_State_PackML.RESETTING 		:
+	E_State_PackML.HOLDING 			:
+	E_State_PackML.HELD 			:
+	E_State_PackML.UNHOLDING 		:
+	E_State_PackML.SUSPENDING 		:
+	E_State_PackML.SUSPENDED 		:
+	E_State_PackML.UNSUSPENDING 	:
+	E_State_PackML.ABORTED			:
+	E_State_PackML.ABORTING			:
+	E_State_PackML.CLEARING 		:
+	E_State_PackML.STOPPING 		:
+	E_State_PackML.STOPPED 			: 
+END_CASE
+*)
+
+//IF EM_Filling.State := E_State_PackML.IDLE THEN
+//	EM_Filling.Start := TRUE;
+//END_IF
+]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{e016cb9e-71c8-4e78-924d-1e46be021f7d}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//*****************************INITIATE*****************************//
+EM_Can_Supply.FB_init(0,0);
+EM_Filling.FB_init(0,0);
+EM_Check_Weigher.FB_init(0,0);
+EM_Labeller.FB_init(0,0);
+EM_Turning.FB_init(0,0);
+EM_Stamp.FB_init(0,0);
+EM_Seal_Shrink.FB_init(0,0);]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="UNIT_Blikkenvullijn">
+      <LineId Id="33" Count="12" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="24" Count="5" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="110" Count="0" />
+      <LineId Id="128" Count="0" />
+      <LineId Id="111" Count="15" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="106" Count="3" />
+      <LineId Id="89" Count="0" />
+      <LineId Id="30" Count="0" />
+    </LineIds>
+    <LineIds Name="UNIT_Blikkenvullijn.FB_init">
+      <LineId Id="14" Count="0" />
+      <LineId Id="8" Count="5" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

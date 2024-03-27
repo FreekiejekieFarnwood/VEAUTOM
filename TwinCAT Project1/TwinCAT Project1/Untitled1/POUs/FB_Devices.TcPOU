@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="FB_DevicesV2" Id="{274ae7ad-92b9-47e2-b334-e236e1093c9f}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_DevicesV2 
+  <POU Name="FB_Devices" Id="{274ae7ad-92b9-47e2-b334-e236e1093c9f}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Devices 
 
 VAR
 
@@ -22,7 +22,7 @@ END_VAR
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="FB_DevicesV2">
+    <LineIds Name="FB_Devices">
       <LineId Id="9" Count="0" />
       <LineId Id="64" Count="0" />
       <LineId Id="63" Count="0" />

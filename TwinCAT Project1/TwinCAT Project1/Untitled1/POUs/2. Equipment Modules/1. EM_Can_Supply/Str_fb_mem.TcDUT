@@ -3,7 +3,9 @@
   <DUT Name="Str_fb_mem" Id="{91f2edbf-eab2-4cf1-90d4-b3264c4a9188}">
     <Declaration><![CDATA[TYPE Str_fb_mem :
 STRUCT
+	PackML : FB_Machine_PackML;
 	State : E_State_PackML;
+	
 END_STRUCT
 END_TYPE
 ]]></Declaration>
