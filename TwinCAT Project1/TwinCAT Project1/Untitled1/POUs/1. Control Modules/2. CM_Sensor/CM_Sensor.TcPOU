@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="CM_Sensor" Id="{9f7d1448-5df0-4be7-9ae0-ab06f7022e29}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK CM_Sensor IMPLEMENTS  ITF_Sensor
+VAR
+	fb_mem : STRUCT_CM_Sensor;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Methods" Id="{d42d196e-9c2d-46ef-bb14-1c1bc71db29a}" />
+    <Folder Name="Properties" Id="{35572eb7-597e-443a-a59b-85d81a2710b8}" />
+    <Property Name="Auto" Id="{fe30e2d9-a541-4c1a-9d51-232d2f8d1608}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Auto : BOOl]]></Declaration>
+      <Get Name="Get" Id="{26730b16-8f84-44b1-bfc9-49c9e6525e8e}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IF fb_mem.Auto THEN
+	Auto := TRUE;
+ELSIF fb_mem.Manueel THEN
+	Auto := FALSE;
+END_IF]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{7a2aa3d0-08ee-43bf-9080-aa8f53789611}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IF Auto AND NOT Manueel THEN
+	fb_mem.Auto := TRUE;
+	fb_mem.Manueel := FALSE;
+ELSIF Manueel THEN
+	fb_mem.Manueel := TRUE;
+	fb_mem.Auto := FALSE;
+END_IF]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="FB_init" Id="{5e5c01af-ec17-48b5-a03d-93d259206610}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.Output := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Manueel" Id="{e8acbcdd-5600-4902-845c-c064adb43a10}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Manueel : BOOl]]></Declaration>
+      <Get Name="Get" Id="{65cbc6e7-537c-411a-aafb-2af3c7c38677}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IF fb_mem.Manueel THEN
+	Manueel := TRUE;
+ELSIF fb_mem.Auto THEN
+	Manueel := FALSE;
+END_IF]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{538b4d96-d5a8-4b52-88a1-43432404385c}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[IF Manueel AND NOT Auto THEN
+	fb_mem.Manueel := TRUE;
+	fb_mem.Auto := FALSE;
+ELSIF Auto THEN
+	fb_mem.Auto := TRUE;
+	fb_mem.Manueel := FALSE;
+END_IF]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="Output" Id="{7dcfaf3d-ebc2-4f7e-bc6f-c9179f9ed3fc}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Output : BOOl]]></Declaration>
+      <Get Name="Get" Id="{cc618e26-fe8e-4fe5-99d0-aa4f0666f865}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Output := fb_mem.Output;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{582e1c4e-b2b9-45ae-8a2c-1b695346d955}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fb_mem.Output := Output;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="Tag" Id="{3a3e3dc0-b3ea-4d3c-93da-c8be1f8cfc53}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Tag : STRING]]></Declaration>
+      <Get Name="Get" Id="{8411c00c-d289-43d5-af20-e728117abe8d}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Tag := fb_mem.Tag;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <LineIds Name="CM_Sensor">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Sensor.Auto.Get">
+      <LineId Id="8" Count="3" />
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Sensor.Auto.Set">
+      <LineId Id="5" Count="1" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="8" Count="1" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Sensor.FB_init">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Sensor.Manueel.Get">
+      <LineId Id="5" Count="3" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Sensor.Manueel.Set">
+      <LineId Id="5" Count="1" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="7" Count="1" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Sensor.Output.Get">
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Sensor.Output.Set">
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Sensor.Tag.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

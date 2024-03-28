@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="STRUCT_CM_Motor" Id="{0f1700a8-bf08-46e6-9ab5-faa4f2e6ccda}">
+    <Declaration><![CDATA[TYPE STRUCT_CM_Motor :
+STRUCT
+	Start		: BOOL;
+	Stop		: BOOL;
+	Toerental	: INT;
+	
+	Auto		: BOOL;
+	Error_State	: E_Motor_Error_State;
+	Manueel		: BOOL;
+	Richting_L	: BOOL;
+	Richting_R	: BOOL;
+	State		: E_Motor_State;
+	Tag			: STRING;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

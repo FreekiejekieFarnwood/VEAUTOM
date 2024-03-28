@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_Motor" Id="{36413dff-fe1f-4a97-b6fb-35e3caec504e}">
+    <Declaration><![CDATA[INTERFACE ITF_Motor
+]]></Declaration>
+    <Folder Name="Methods" Id="{1ac60305-2c93-4934-b952-c27602bf4a47}" />
+    <Folder Name="Properties" Id="{1b7a3071-70bf-4024-9d42-bea994ab511d}" />
+    <Property Name="Auto" Id="{8de80923-ee65-4cee-8d92-262ec33b2fad}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Auto : BOOL]]></Declaration>
+      <Get Name="Get" Id="{2c623cc8-5d57-409f-8c21-d66a4a93fe4d}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{a26d9252-e16a-47f4-8fbb-53aafe514a43}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Error_State" Id="{8a001584-c8e5-4b1b-834a-18bf92f94213}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Error_State  : E_Motor_Error_State]]></Declaration>
+      <Get Name="Get" Id="{3b12318f-9e8c-43d0-90f8-6f20232e7d70}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="Manueel" Id="{5dce9019-908c-491d-bdd1-70537fc2280f}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Manueel : BOOL]]></Declaration>
+      <Get Name="Get" Id="{3d3693bc-17ca-4202-8921-0f22528ff8c2}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{ba7a255e-95d4-439f-b0d4-4ec8398e06ab}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Richting_L" Id="{8c613c9c-b125-4828-ab5c-2360bb5c18bd}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Richting_L : BOOL]]></Declaration>
+      <Get Name="Get" Id="{9b0e76e2-0486-4496-baa8-6a6b3ddad9f5}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{1abe6788-8472-460f-adbe-7fa7afd2c111}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Richting_R" Id="{ecc0bd60-674d-4832-9c16-9bec9570e76a}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Richting_R : BOOL]]></Declaration>
+      <Get Name="Get" Id="{7e77c2ab-a48f-4b0d-bf4a-37187b3ee6b3}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{0b51b9bc-ba5f-4779-904e-a11acec7c2d6}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Method Name="Start" Id="{d1806eda-84b4-4cb0-a555-024138864050}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="State" Id="{2d539c7f-dbb0-4a87-9ec8-6cda3ddcee50}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY State : E_Motor_State]]></Declaration>
+      <Get Name="Get" Id="{d91897f5-ec5a-4ce7-a42e-2c7dd36a3264}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="Stop" Id="{60b742f1-61ee-49f1-b197-8684c3e3ec36}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="Tag" Id="{b745b374-4ee0-411d-8c03-d776d48ceec9}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Tag : STRING]]></Declaration>
+      <Get Name="Get" Id="{c98591f9-1f59-4548-9bb8-71f3af7a7240}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="Toerental" Id="{66e6e725-d0dd-4c8a-b9a3-7c0217ea1f84}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Toerental : INT
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

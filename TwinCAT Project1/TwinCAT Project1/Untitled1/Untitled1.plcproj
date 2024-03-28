@@ -25,6 +25,30 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\CM_Motor.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\E_Motor_Error_State.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\E_Motor_State.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\ITF_Motor.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\STRUCT_CM_Motor.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\2. CM_Sensor\CM_Sensor.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\2. CM_Sensor\ITF_Sensor.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\2. CM_Sensor\STRUCT_CM_Sensor.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\FB_Can_Supply.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -82,6 +106,9 @@
     <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\ITF_Blikkenvullijn.TcIO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\STRUCT_UNIT_Blikkenvullijn.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\UNIT_Blikkenvullijn.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -89,9 +116,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\4. Management\2. ModeSelect\ModeSelect.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\FB_Devices.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">

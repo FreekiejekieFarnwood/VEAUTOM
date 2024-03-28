@@ -2,18 +2,19 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="UNIT_Blikkenvullijn" Id="{2692377b-29af-456d-aace-ede4a94c185d}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK UNIT_Blikkenvullijn IMPLEMENTS  ITF_Blikkenvullijn
-FUNCTION_BLOCK UNIT_Blikkenvullijn EXTENDS FB_Machine_PackML;
 VAR
 	//Custom logic
 	EM_Can_Supply 							: FB_Can_Supply;
+	CM_TurningDevice						: CM_Motor;
+	CM_Outfeed_ProductionLineSensor			: CM_Sensor;
 	
 	//PackML machine's
 	EM_Filling								: FB_Machine_PackML;
-	EM_Check_Weigher						: FB_Machine_PackML;
+	EM_CheckWeigher						: FB_Machine_PackML;
 	EM_Labeller								: FB_Machine_PackML;
 	EM_Turning								: FB_Machine_PackML;
-	EM_Stamp								: FB_Machine_PackML;
-	EM_Seal_Shrink							: FB_Machine_PackML;
+	EM_StampUnit							: FB_Machine_PackML;
+	EM_SealShrink							: FB_Machine_PackML;
 	
 	//Transport logic
 	EM_TransportFillers 					: EM_TransportFillers;
@@ -44,25 +45,35 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                            \______/                                                            \______/ 
 *)
 
-//**************************INITIATE**************************//
-//*****************************EM*****************************//
-//*************************BlackBoxes*************************//
-EM_Filling();
-EM_Check_Weigher();
-EM_Labeller();
-EM_Turning();
-EM_Stamp();
-EM_Seal_Shrink();
-//*************************Custommade*************************//
-EM_Can_Supply();
 
-(* 
-CASE fb_mem.State OF
+
+CASE PackML.PackML OF
 	E_State_PackML.IDLE 			: 
 	E_State_PackML.STARTING 		:
 	E_State_PackML.EXECUTE 			: 
 	E_State_PackML.COMPLETE 		:
 	E_State_PackML.RESETTING 		:
+			EM_Filling.FB_init(0,0);
+			EM_CheckWeigher.FB_init(0,0);
+			EM_Labeller.FB_init(0,0);
+			EM_Turning.FB_init(0,0);
+			EM_StampUnit.FB_init(0,0);
+			EM_SealShrink.FB_init(0,0);
+			(*
+			EM_TransportFillers.FB_init(0,0);
+			EM_OutfeedFillers.FB_init(0,0);
+			EM_Infeed_Checkweigher.FB_init(0,0);
+			EM_Transport_Checkweigher_BottomSeal.FB_init(0,0);
+			EM_Transport_BottomSeal_Labeller.FB_init(0,0);
+			EM_Transport_TurningDevice_StampUnit.FB_init(0,0);
+			EM_Transport_StampUnit_SealShrink.FB_init(0,0);
+			
+			AlarmHandler.FB_init(0,0);
+			ModeSelect.FB_init(0,0);
+			*)
+			
+			PackML.Resetting_SC := TRUE;
+			
 	E_State_PackML.HOLDING 			:
 	E_State_PackML.HELD 			:
 	E_State_PackML.UNHOLDING 		:
@@ -73,13 +84,19 @@ CASE fb_mem.State OF
 	E_State_PackML.ABORTING			:
 	E_State_PackML.CLEARING 		:
 	E_State_PackML.STOPPING 		:
-	E_State_PackML.STOPPED 			: 
+	E_State_PackML.STOPPED 			:
+		IF 		(EM_Filling.State 		= E_State_PackML.IDLE) AND
+				(EM_CheckWeigher.State 	= E_State_PackML.IDLE) AND
+				(EM_Labeller.State 		= E_State_PackML.IDLE) AND
+				(EM_Turning.State 		= E_State_PackML.IDLE) AND
+				(EM_StampUnit.State		= E_State_PackML.IDLE) AND
+				(EM_SealShrink.State 	= E_State_PackML.IDLE) THEN
+			PackML.Reset := TRUE;
+		END_IF 
 END_CASE
-*)
 
-//IF EM_Filling.State := E_State_PackML.IDLE THEN
-//	EM_Filling.Start := TRUE;
-//END_IF
+
+// SET ALL VARIABLES FALSE
 ]]></ST>
     </Implementation>
     <Method Name="FB_init" Id="{e016cb9e-71c8-4e78-924d-1e46be021f7d}">
@@ -90,37 +107,58 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[//*****************************INITIATE*****************************//
+        <ST><![CDATA[//**************************INITIATE**************************//
+//Custom logic
 EM_Can_Supply.FB_init(0,0);
+CM_TurningDevice.FB_init(0,0);
+CM_Outfeed_ProductionLineSensor.FB_init(0,0);
+	
+//PackML machine's
 EM_Filling.FB_init(0,0);
-EM_Check_Weigher.FB_init(0,0);
+EM_CheckWeigher.FB_init(0,0);
 EM_Labeller.FB_init(0,0);
 EM_Turning.FB_init(0,0);
-EM_Stamp.FB_init(0,0);
-EM_Seal_Shrink.FB_init(0,0);]]></ST>
+EM_StampUnit.FB_init(0,0);
+EM_SealShrink.FB_init(0,0);
+	
+//Transport logic
+EM_TransportFillers.FB_init(0,0);
+EM_OutfeedFillers.FB_init(0,0);
+EM_Infeed_Checkweigher.FB_init(0,0);
+EM_Transport_Checkweigher_BottomSeal.FB_init(0,0);
+EM_Transport_BottomSeal_Labeller.FB_init(0,0);
+EM_Transport_TurningDevice_StampUnit.FB_init(0,0);
+EM_Transport_StampUnit_SealShrink.FB_init(0,0);]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="UNIT_Blikkenvullijn">
       <LineId Id="33" Count="12" />
       <LineId Id="71" Count="0" />
-      <LineId Id="46" Count="0" />
-      <LineId Id="32" Count="0" />
-      <LineId Id="70" Count="0" />
-      <LineId Id="24" Count="5" />
-      <LineId Id="57" Count="0" />
       <LineId Id="31" Count="0" />
-      <LineId Id="93" Count="0" />
       <LineId Id="110" Count="0" />
       <LineId Id="128" Count="0" />
-      <LineId Id="111" Count="15" />
+      <LineId Id="111" Count="3" />
+      <LineId Id="158" Count="0" />
+      <LineId Id="192" Count="0" />
+      <LineId Id="185" Count="4" />
+      <LineId Id="191" Count="0" />
+      <LineId Id="190" Count="0" />
+      <LineId Id="193" Count="5" />
+      <LineId Id="200" Count="0" />
+      <LineId Id="199" Count="0" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="184" Count="0" />
+      <LineId Id="202" Count="2" />
+      <LineId Id="116" Count="9" />
+      <LineId Id="167" Count="7" />
+      <LineId Id="126" Count="0" />
       <LineId Id="94" Count="0" />
-      <LineId Id="106" Count="3" />
+      <LineId Id="106" Count="1" />
       <LineId Id="89" Count="0" />
       <LineId Id="30" Count="0" />
     </LineIds>
     <LineIds Name="UNIT_Blikkenvullijn.FB_init">
-      <LineId Id="14" Count="0" />
-      <LineId Id="8" Count="5" />
+      <LineId Id="20" Count="20" />
       <LineId Id="7" Count="0" />
     </LineIds>
   </POU>

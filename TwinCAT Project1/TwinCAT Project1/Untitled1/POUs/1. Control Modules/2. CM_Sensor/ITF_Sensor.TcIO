@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_Sensor" Id="{db1a8264-b3d0-45c3-9ce2-b7f2df39aa07}">
+    <Declaration><![CDATA[INTERFACE ITF_Sensor
+]]></Declaration>
+    <Folder Name="Methods" Id="{e35b4249-f9ac-4fd5-b964-2f35bc00a9de}" />
+    <Folder Name="Properties" Id="{fe19bcaa-7183-47cb-93ea-8a89cef2e557}" />
+    <Property Name="Auto" Id="{4a2a1c0a-af4f-49df-81ae-7cf78121e8c0}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Auto : BOOl]]></Declaration>
+      <Get Name="Get" Id="{d354d24c-0202-4146-88ae-764d9b1ae065}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{002c49b9-ee23-4a58-b144-5864a040af65}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Manueel" Id="{fbc20c0b-8fb2-42e4-9b17-8eafbc067822}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Manueel : BOOl]]></Declaration>
+      <Get Name="Get" Id="{e7e5e1e2-8828-4c05-a17e-af7a4f09a3ba}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{4ba640a7-00c3-4f8c-b025-fc0bb7a63a04}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Output" Id="{4e59ea52-41cc-4268-b20f-1287ab1791fb}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Output : BOOl]]></Declaration>
+      <Get Name="Get" Id="{43f2d305-389b-4c35-8c69-c720a0228958}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{da15f3a2-e5f1-4192-9a37-fdba323008e3}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Tag" Id="{4c9432f5-cb1c-4ea5-b88c-3fb3200055d7}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Tag : STRING]]></Declaration>
+      <Get Name="Get" Id="{f88f5f36-0dda-4cf5-9acb-974b8d01ed31}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>
