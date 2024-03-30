@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="ModeSelect" Id="{5ed98344-65a1-4237-8e95-92b76448fb41}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK ModeSelect
-VAR_INPUT
-END_VAR
-VAR_OUTPUT
-END_VAR
+    <Declaration><![CDATA[FUNCTION_BLOCK ModeSelect IMPLEMENTS ITF_ModeSelect
 VAR
+	fb_mem : STRUCT_ModeSelect;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -22,11 +19,77 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                           $$\   $$ |                                                          $$\   $$ |
                                                                                                           \$$$$$$  |                                                          \$$$$$$  |
                                                                                                            \______/                                                            \______/ 
-*)]]></ST>
+*)
+
+]]></ST>
     </Implementation>
+    <Method Name="Auto" Id="{d3d5499c-2109-42c6-be18-56c702aa1a2f}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Auto : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF NOT fb_mem.Manueel THEN
+	fb_mem.Auto 	:= TRUE;
+	fb_mem.Manueel 	:= FALSE;
+END_IF
+
+RETURN(fb_mem.Auto);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Manueel" Id="{007bec01-c966-4e5f-bc86-f259586d9482}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Manueel : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.Manueel := TRUE;
+
+RETURN(fb_mem.Manueel);]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Tag" Id="{c0961889-91d3-4152-90f8-549846efc6f0}">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY Tag : STRING
+]]></Declaration>
+      <Get Name="Get" Id="{e9d2bcc8-6429-4fbe-be25-dcdce6450c27}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Tag := fb_mem.Tag;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{5bc8c772-bae3-40ba-8cda-c81304843143}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fb_mem.Tag := Tag;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
     <LineIds Name="ModeSelect">
       <LineId Id="10" Count="11" />
       <LineId Id="9" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="30" Count="0" />
+    </LineIds>
+    <LineIds Name="ModeSelect.Auto">
+      <LineId Id="4" Count="1" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="8" Count="0" />
+    </LineIds>
+    <LineIds Name="ModeSelect.Manueel">
+      <LineId Id="4" Count="0" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="ModeSelect.Tag.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="ModeSelect.Tag.Set">
+      <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

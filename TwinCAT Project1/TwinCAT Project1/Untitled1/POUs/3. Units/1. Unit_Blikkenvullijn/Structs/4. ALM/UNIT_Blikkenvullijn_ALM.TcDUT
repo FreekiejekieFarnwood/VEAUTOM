@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <DUT Name="STRUCT_UNIT_Blikkenvullijn" Id="{fa8b5bd6-942c-475c-a055-ed21770deb09}">
-    <Declaration><![CDATA[TYPE STRUCT_UNIT_Blikkenvullijn :
+  <DUT Name="UNIT_Blikkenvullijn_ALM" Id="{f2f3e866-5f53-4efe-b863-4a2d2c192c38}">
+    <Declaration><![CDATA[TYPE UNIT_Blikkenvullijn_ALM :
 STRUCT
-	
 END_STRUCT
 END_TYPE
 ]]></Declaration>

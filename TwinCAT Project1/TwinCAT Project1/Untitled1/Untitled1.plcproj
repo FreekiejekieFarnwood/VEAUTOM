@@ -106,7 +106,28 @@
     <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\ITF_Blikkenvullijn.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\STRUCT_UNIT_Blikkenvullijn.TcDUT">
+    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\4. ALM\UNIT_Blikkenvullijn_ALM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\1. CS\UNIT_Blikkenvullijn_CS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\2. HMI\UNIT_Blikkenvullijn_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\6. PAR\UNIT_Blikkenvullijn_PAR.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\7. SIM\UNIT_Blikkenvullijn_SIM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\STRUCT_UNIT_Blikkenvullijn.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\3. STS\UNIT_Blikkenvullijn_STS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\5. WRN\UNIT_Blikkenvullijn_WRN.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\UNIT_Blikkenvullijn.TcPOU">
@@ -115,7 +136,13 @@
     <Compile Include="POUs\4. Management\1. AlarmHandler\AlarmHandler.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\4. Management\2. ModeSelect\ITF_ModeSelect.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\4. Management\2. ModeSelect\ModeSelect.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\4. Management\2. ModeSelect\STRUCT_ModeSelect.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
@@ -141,6 +168,14 @@
     <Folder Include="POUs\2. Equipment Modules\4. EM_Infeed_Checkweigher" />
     <Folder Include="POUs\3. Units" />
     <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn" />
+    <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs" />
+    <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\1. CS" />
+    <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\2. HMI" />
+    <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\4. ALM" />
+    <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\7. SIM" />
+    <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\5. WRN" />
+    <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\6. PAR" />
+    <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\3. STS" />
     <Folder Include="POUs\4. Management" />
     <Folder Include="POUs\1. Control Modules" />
     <Folder Include="POUs\4. Management\1. AlarmHandler" />

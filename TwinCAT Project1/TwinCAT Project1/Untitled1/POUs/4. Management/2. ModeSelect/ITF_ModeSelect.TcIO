@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_ModeSelect" Id="{5dd0468a-7c21-4cef-93fc-b1ef566f22f4}">
+    <Declaration><![CDATA[INTERFACE ITF_ModeSelect
+]]></Declaration>
+    <Method Name="Auto" Id="{55f8bca9-7ee1-42da-9663-7262f9bacfb6}">
+      <Declaration><![CDATA[METHOD Auto : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Manueel" Id="{1e10c448-a79f-4d3b-b375-c228fb88c451}">
+      <Declaration><![CDATA[METHOD Manueel : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="Tag" Id="{37ca4bcd-f513-441a-98f5-6f99f2f01c86}">
+      <Declaration><![CDATA[PROPERTY Tag : STRING]]></Declaration>
+      <Get Name="Get" Id="{39affc28-fad0-49ad-816d-a453f8856c39}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{9b8ae721-8fff-4f94-8097-8e1abce5b8f9}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

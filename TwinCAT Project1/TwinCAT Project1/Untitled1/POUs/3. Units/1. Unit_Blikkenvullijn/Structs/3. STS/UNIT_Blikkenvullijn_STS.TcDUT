@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="UNIT_Blikkenvullijn_STS" Id="{d10a0d64-2944-4e08-9475-9637c81b822a}">
+    <Declaration><![CDATA[TYPE UNIT_Blikkenvullijn_STS :
+STRUCT
+	State : E_State_PackML;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

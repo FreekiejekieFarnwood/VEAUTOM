@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="UNIT_Blikkenvullijn_CS" Id="{d25e1419-97e9-4215-bbea-9a8444d72a9e}">
+    <Declaration><![CDATA[TYPE UNIT_Blikkenvullijn_CS :
+STRUCT
+	Start		: BOOL;
+	Stop		: BOOL;
+	Reset		: BOOL;
+	Abort		: BOOL;
+	Clear		: BOOL;
+	UnSuspend	: BOOL;
+	Suspend		: BOOL;
+	UnHold		: BOOL;
+	Hold		: BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedType>
+      <Type guid="f2f3e866-5f53-4efe-b863-4a2d2c192c38">UNIT_BLIKKENLIJNALM</Type>
+      <From>UNIT_BlikkenlijnALM</From>
+      <To>UNIT_Blikkenvullijn_ALM</To>
+    </RenamedType>
+  </Renames>
+</Refactors>

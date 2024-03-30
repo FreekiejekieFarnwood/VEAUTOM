@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="UNIT_Blikkenvullijn_HMI" Id="{110a8e28-9959-4b8b-b355-c4e9c478fae8}">
+    <Declaration><![CDATA[TYPE UNIT_Blikkenvullijn_HMI :
+STRUCT
+	Start		: BOOL;
+	Stop		: BOOL;
+	Reset		: BOOL;
+	Abort		: BOOL;
+	Clear		: BOOL;
+	UnSuspend	: BOOL;
+	Suspend		: BOOL;
+	UnHold		: BOOL;
+	Hold		: BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -229,6 +229,14 @@ METHOD Unsuspending_SC : BOOL
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Method>
+    <Method Name="ZeroAllVar" Id="{f2032694-e612-411b-a380-5f4a137e6087}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD ZeroAllVar : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
     <LineIds Name="FB_Can_Supply">
       <LineId Id="92" Count="11" />
       <LineId Id="91" Count="0" />
@@ -316,6 +324,9 @@ METHOD Unsuspending_SC : BOOL
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="FB_Can_Supply.Unsuspending_SC">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Can_Supply.ZeroAllVar">
       <LineId Id="4" Count="0" />
     </LineIds>
   </POU>

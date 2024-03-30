@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="STRUCT_UNIT_Blikkenvullijn" Id="{fa8b5bd6-942c-475c-a055-ed21770deb09}">
+    <Declaration><![CDATA[TYPE STRUCT_UNIT_Blikkenvullijn :
+STRUCT
+	CS	: UNIT_Blikkenvullijn_CS;
+	HMI	: UNIT_Blikkenvullijn_HMI;
+	STS	: UNIT_Blikkenvullijn_STS;
+	ALM	: UNIT_Blikkenvullijn_ALM;
+	WRN	: UNIT_Blikkenvullijn_WRN;
+	PAR	: UNIT_Blikkenvullijn_PAR;
+	SIM	: UNIT_Blikkenvullijn_SIM;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
