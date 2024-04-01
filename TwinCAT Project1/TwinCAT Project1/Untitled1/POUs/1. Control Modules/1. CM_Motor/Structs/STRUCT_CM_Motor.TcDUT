@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="STRUCT_CM_Motor" Id="{da976e32-8b86-492c-9084-df13b160fb93}">
+    <Declaration><![CDATA[TYPE STRUCT_CM_Motor :
+STRUCT
+	CS	: CM_Motor_CS;
+	HMI	: CM_Motor_HMI;
+	STS	: CM_Motor_STS;
+	ALM	: CM_Motor_ALM;
+	WRN	: CM_Motor_WRN;
+	PAR	: CM_Motor_PAR;
+	SIM	: CM_Motor_SIM;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

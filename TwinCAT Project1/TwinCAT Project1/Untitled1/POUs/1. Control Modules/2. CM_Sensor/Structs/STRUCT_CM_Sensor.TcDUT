@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="STRUCT_CM_Sensor" Id="{17d49dd9-cf02-49bb-b322-780bdef11ef1}">
+    <Declaration><![CDATA[TYPE STRUCT_CM_Sensor :
+STRUCT
+	CS	: CM_Sensor_CS;
+	HMI	: CM_Sensor_HMI;
+	STS	: CM_Sensor_STS;
+	ALM	: CM_Sensor_ALM;
+	WRN	: CM_Sensor_WRN;
+	PAR	: CM_Sensor_PAR;
+	SIM	: CM_Sensor_SIM;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

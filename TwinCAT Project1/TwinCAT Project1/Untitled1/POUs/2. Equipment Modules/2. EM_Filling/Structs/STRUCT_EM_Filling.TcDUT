@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="STRUCT_EM_Filling" Id="{539f8946-d519-4ed7-a452-b7bc139384ad}">
+    <Declaration><![CDATA[TYPE STRUCT_EM_Filling :
+STRUCT
+	CS	: EM_Filling_CS;
+	HMI	: EM_Filling_HMI;
+	STS	: EM_Filling_STS;
+	ALM	: EM_Filling_ALM;
+	WRN	: EM_Filling_WRN;
+	PAR	: EM_Filling_PAR;
+	SIM	: EM_Filling_SIM;	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

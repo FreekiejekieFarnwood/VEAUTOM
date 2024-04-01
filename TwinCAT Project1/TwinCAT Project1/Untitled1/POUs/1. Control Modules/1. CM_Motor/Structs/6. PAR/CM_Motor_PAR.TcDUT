@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="CM_Motor_PAR" Id="{0afadc2d-57c8-463b-8cb2-9f4ed909f046}">
+    <Declaration><![CDATA[TYPE CM_Motor_PAR :
+STRUCT
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="EM_Filling_STS" Id="{fbbad69b-3109-44ca-9b88-6349b1dc0f12}">
+    <Declaration><![CDATA[TYPE EM_Filling_STS :
+STRUCT
+	Tag				: STRING;
+	State 			: E_Motor_State;
+	Error_State 	: E_Motor_Error_State;
+	Richting_L		: BOOL;
+	Richting_R		: BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

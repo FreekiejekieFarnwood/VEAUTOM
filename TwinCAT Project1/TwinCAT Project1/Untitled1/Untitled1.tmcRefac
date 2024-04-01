@@ -6,5 +6,195 @@
       <From>UNIT_BlikkenlijnALM</From>
       <To>UNIT_Blikkenvullijn_ALM</To>
     </RenamedType>
+    <RenamedType>
+      <Type guid="0fafe257-89d4-4eea-80ec-6b12c3f31edd">UNIT_BLIKKENVULLIJN_CS_1</Type>
+      <From>UNIT_Blikkenvullijn_CS_1</From>
+      <To>CM_Motor_CS</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="cb87481b-20a4-44fd-8d06-ce7d47e19c4c">UNIT_BLIKKENVULLIJN_HMI_1</Type>
+      <From>UNIT_Blikkenvullijn_HMI_1</From>
+      <To>CM_Motor_HMI</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="0bd1d58b-b0a0-4efa-af17-cce37cdc57e0">UNIT_BLIKKENVULLIJN_STS_1</Type>
+      <From>UNIT_Blikkenvullijn_STS_1</From>
+      <To>CM_Motor_STS</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="fa094ceb-4699-47cf-928f-7b6208f2d3de">UNIT_BLIKKENVULLIJN_ALM_1</Type>
+      <From>UNIT_Blikkenvullijn_ALM_1</From>
+      <To>CM_Motor_ALM</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="f9234ab1-e257-4aa6-9cd2-088701cbe60c">UNIT_BLIKKENVULLIJN_WRN_1</Type>
+      <From>UNIT_Blikkenvullijn_WRN_1</From>
+      <To>CM_Motor_WRN</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="0afadc2d-57c8-463b-8cb2-9f4ed909f046">UNIT_BLIKKENVULLIJN_PAR_1</Type>
+      <From>UNIT_Blikkenvullijn_PAR_1</From>
+      <To>CM_Motor_PAR</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="2d7575c0-ee7b-4702-adc0-a721667edef6">UNIT_BLIKKENVULLIJN_SIM_1</Type>
+      <From>UNIT_Blikkenvullijn_SIM_1</From>
+      <To>CM_Motor_SIM</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="da976e32-8b86-492c-9084-df13b160fb93">STRUCT_UNIT_BLIKKENVULLIJN_1</Type>
+      <From>STRUCT_UNIT_Blikkenvullijn_1</From>
+      <To>STRUCT_CM_Motor</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="1d0887d0-2d70-4da0-8ef5-c7ef4e836e17">CM_MOTOR_CS_1</Type>
+      <From>CM_Motor_CS_1</From>
+      <To>CM_Sensor_CS</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="95301212-0090-4532-920b-8e3d16d33827">CM_MOTOR_HMI_1</Type>
+      <From>CM_Motor_HMI_1</From>
+      <To>CM_Sensor_HMI</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="a3a52ed6-76eb-4eda-86b6-3df088bed856">CM_MOTOR_STS_1</Type>
+      <From>CM_Motor_STS_1</From>
+      <To>CM_Sensor_STS</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="348f415d-68a6-42ea-a3cc-7dcfe7b2e044">CM_MOTOR_ALM_1</Type>
+      <From>CM_Motor_ALM_1</From>
+      <To>CM_Sensor_ALM</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="a8252369-732c-4714-89e4-4e7fc7eb704e">CM_MOTOR_WRN_1</Type>
+      <From>CM_Motor_WRN_1</From>
+      <To>CM_Sensor_WRN</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="912aa722-8625-49fb-8edb-fe88e61cb0b9">CM_MOTOR_PAR_1</Type>
+      <From>CM_Motor_PAR_1</From>
+      <To>CM_Sensor_PAR</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="cc3a7771-d953-438d-8db9-4c980008a031">CM_MOTOR_SIM_1</Type>
+      <From>CM_Motor_SIM_1</From>
+      <To>CM_Sensor_SIM</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="17d49dd9-cf02-49bb-b322-780bdef11ef1">STRUCT_CM_MOTOR_1</Type>
+      <From>STRUCT_CM_Motor_1</From>
+      <To>STRUCT_CM_Sensor</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="fc948e1b-015e-400b-aa14-081da1818c38">ITF_EM_TRANSPORTCANSUPPLY1_1</Type>
+      <From>ITF_EM_TransportCanSupply1_1</From>
+      <To>ITF_EM_TransportCanSupply2</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="cf24752a-d580-46f3-9edc-ddbce48739ee">CM_MOTOR_CS_1</Type>
+      <From>CM_Motor_CS_1</From>
+      <To>EM_TransportCanSupply2_CS</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="572241d4-bf75-48a3-a29d-022bbc2bc940">CM_MOTOR_HMI_1</Type>
+      <From>CM_Motor_HMI_1</From>
+      <To>EM_TransportCanSupply2_HMI</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="eb6f311b-be4c-4817-8fae-40d122a7d7cf">CM_MOTOR_STS_1</Type>
+      <From>CM_Motor_STS_1</From>
+      <To>EM_TransportCanSupply2_STS</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="b57ec392-0272-42f3-85e4-e9c43acaeca7">CM_MOTOR_ALM_1</Type>
+      <From>CM_Motor_ALM_1</From>
+      <To>EM_TransportCanSupply2_ALM</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="1f502c4b-2dc3-4b76-8c07-e83953e20a29">CM_MOTOR_WRN_1</Type>
+      <From>CM_Motor_WRN_1</From>
+      <To>EM_TransportCanSupply2_WRN</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="6c27e812-3b4f-4f00-96b2-ee83f9fc2841">CM_MOTOR_PAR_1</Type>
+      <From>CM_Motor_PAR_1</From>
+      <To>EM_TransportCanSupply2_PAR</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="7454fec1-4913-41ed-8bde-f006e90fbf4f">CM_MOTOR_SIM_1</Type>
+      <From>CM_Motor_SIM_1</From>
+      <To>EM_TransportCanSupply2_SIM</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="91f2edbf-eab2-4cf1-90d4-b3264c4a9188">STR_FB_MEM</Type>
+      <From>Str_fb_mem</From>
+      <To>STRUCT_EM_Transport_CanSupply2</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="b0828150-22c5-45c8-9e2c-aea04fc32620">ITF_BLIKKENVULLIJN</Type>
+      <From>ITF_Blikkenvullijn</From>
+      <To>ITF_UNIT_Blikkenvullijn</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="7d4cdf28-8942-4185-a3d0-da5253260d95">FB_CAN_SUPPLY</Type>
+      <From>FB_Can_Supply</From>
+      <To>EM_Can_Supply</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="63cfb44f-1e31-4835-90ef-3c0ccf050bf2">E_STATE_CAN_SUPPLY_1</Type>
+      <From>E_State_Can_Supply_1</From>
+      <To>E_State_Filling</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="446d6ac9-e6e8-42b3-bef7-8374a8b6cba3">EM_TRANSPORTCANSUPPLY2_CS_1</Type>
+      <From>EM_TransportCanSupply2_CS_1</From>
+      <To>EM_Filling_CS</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="61fd04d5-eccf-4b2e-98b4-ca35c6dc47ed">EM_TRANSPORTCANSUPPLY2_HMI_1</Type>
+      <From>EM_TransportCanSupply2_HMI_1</From>
+      <To>EM_Filling_HMI</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="fbbad69b-3109-44ca-9b88-6349b1dc0f12">EM_TRANSPORTCANSUPPLY2_STS_1</Type>
+      <From>EM_TransportCanSupply2_STS_1</From>
+      <To>EM_Filling_STS</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="75059ec5-2f05-4250-99bf-22e96cb74a8e">EM_TRANSPORTCANSUPPLY2_ALM_1</Type>
+      <From>EM_TransportCanSupply2_ALM_1</From>
+      <To>EM_Filling_ALM</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="a5d381dc-ec30-4b00-8d77-e59a9725f9ba">EM_TRANSPORTCANSUPPLY2_WRN_1</Type>
+      <From>EM_TransportCanSupply2_WRN_1</From>
+      <To>EM_Filling_WRN</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="ec435113-93bf-4903-b883-47ed0f5d7039">EM_TRANSPORTCANSUPPLY2_PAR_1</Type>
+      <From>EM_TransportCanSupply2_PAR_1</From>
+      <To>EM_Filling_PAR</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="d7c2c626-e667-4025-83b5-4b1db3971ad2">EM_TRANSPORTCANSUPPLY2_SIM_1</Type>
+      <From>EM_TransportCanSupply2_SIM_1</From>
+      <To>EM_Filling_SIM</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="539f8946-d519-4ed7-a452-b7bc139384ad">STRUCT_EM_TRANSPORT_CANSUPPLY2_1</Type>
+      <From>STRUCT_EM_Transport_CanSupply2_1</From>
+      <To>STRUCT_EM_Filling</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="63eb49f5-59e7-4030-85dd-f42cd0c3af32">EM_CAN_SUPPLY_1</Type>
+      <From>EM_Can_Supply_1</From>
+      <To>EM_Filling</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="7e40b0bf-3742-48dd-addd-ee44a551658b">ITF_CAN_SUPPLY_1</Type>
+      <From>ITF_Can_Supply_1</From>
+      <To>ITF_Filling</To>
+    </RenamedType>
   </Renames>
 </Refactors>

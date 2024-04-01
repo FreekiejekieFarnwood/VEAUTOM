@@ -7,34 +7,71 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[(*
+$$$$$$$$\                                                                   $$\       $$$$$$$$\                     $$\                                         $$\                     
+$$  _____|                                                                  $$ |      $$  _____|                    \__|                                        \__|                    
+$$ |   $$$$$$\   $$$$$$\  $$$$$$$\  $$\  $$\  $$\  $$$$$$\   $$$$$$\   $$$$$$$ |      $$ |      $$$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\  
+$$$$$\ \____$$\ $$  __$$\ $$  __$$\ $$ | $$ | $$ |$$  __$$\ $$  __$$\ $$  __$$ |      $$$$$\    $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ 
+$$  __|$$$$$$$ |$$ |  \__|$$ |  $$ |$$ | $$ | $$ |$$ /  $$ |$$ /  $$ |$$ /  $$ |      $$  __|   $$ |  $$ |$$ /  $$ |$$ |$$ |  $$ |$$$$$$$$ |$$$$$$$$ |$$ |  \__|$$ |$$ |  $$ |$$ /  $$ |
+$$ |  $$  __$$ |$$ |      $$ |  $$ |$$ | $$ | $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |      $$ |      $$ |  $$ |$$ |  $$ |$$ |$$ |  $$ |$$   ____|$$   ____|$$ |      $$ |$$ |  $$ |$$ |  $$ |
+$$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |      $$$$$$$$\ $$ |  $$ |\$$$$$$$ |$$ |$$ |  $$ |\$$$$$$$\ \$$$$$$$\ $$ |      $$ |$$ |  $$ |\$$$$$$$ |
+\__|   \_______|\__|      \__|  \__| \_____\____/  \______/  \______/  \_______|      \________|\__|  \__| \____$$ |\__|\__|  \__| \_______| \_______|\__|      \__|\__|  \__| \____$$ |
+                                                                                                          $$\   $$ |                                                          $$\   $$ |
+                                                                                                          \$$$$$$  |                                                          \$$$$$$  |
+                                                                                                           \______/                                                            \______/ 
+*)
+
+
+
+
+//Zero all CS signals
+fb_mem.CS.Auto			:= FALSE;
+fb_mem.CS.Manueel 		:= FALSE;
+fb_mem.CS.Abort			:= FALSE;
+fb_mem.CS.Reset			:= FALSE;
+fb_mem.CS.Richting_L	:= FALSE;
+fb_mem.CS.Richting_R	:= FALSE;
+fb_mem.CS.Start			:= FALSE;
+fb_mem.CS.Stop			:= FALSE;
+fb_mem.CS.Toerental		:= 0;
+
+//Zero all HMI signals
+fb_mem.HMI.Auto			:= FALSE;
+fb_mem.HMI.Manueel 		:= FALSE;
+fb_mem.HMI.Abort		:= FALSE;
+fb_mem.HMI.Reset		:= FALSE;
+fb_mem.HMI.Richting_L	:= FALSE;
+fb_mem.HMI.Richting_R	:= FALSE;
+fb_mem.HMI.Start		:= FALSE;
+fb_mem.HMI.Stop			:= FALSE;
+fb_mem.HMI.Toerental	:= 0;]]></ST>
     </Implementation>
     <Folder Name="Methods" Id="{e48a4f7d-e56b-428a-aa1b-5b87c7c2d9fa}" />
     <Folder Name="Properties" Id="{bc8caceb-6cf9-4970-a7a5-33f216f9ab87}" />
-    <Property Name="Auto" Id="{3538156d-bda4-4508-9dd0-014e2047f573}" FolderPath="Properties\">
+    <Method Name="Abort" Id="{bce41efd-d6b0-4d62-89f5-e33ac87557da}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Abort : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Auto" Id="{11ef47cb-7d87-440a-a57d-2cabaca58e35}" FolderPath="Properties\">
       <Declaration><![CDATA[PROPERTY Auto : BOOl]]></Declaration>
-      <Get Name="Get" Id="{e7441740-7579-446c-8843-04e02540b8c3}">
+      <Get Name="Get" Id="{6a6dad5a-3122-4156-a7f6-902e7509088d}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[IF fb_mem.Auto THEN
-	Auto := TRUE;
-ELSIF fb_mem.Manueel THEN
-	Auto := FALSE;
-END_IF]]></ST>
+          <ST><![CDATA[AUTO := fb_mem.STS.Auto;]]></ST>
         </Implementation>
       </Get>
-      <Set Name="Set" Id="{3572e8b5-bd9a-4a55-878a-95ad18481218}">
+      <Set Name="Set" Id="{816dc6e2-11f2-441f-a7bc-68dcbe2dd7e0}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[IF Auto AND NOT Manueel THEN
-	fb_mem.Auto := TRUE;
-ELSIF Manueel THEN
-	fb_mem.Manueel := TRUE;
-END_IF]]></ST>
+          <ST><![CDATA[fb_mem.CS.Auto := AUTO;]]></ST>
         </Implementation>
       </Set>
     </Property>
@@ -47,7 +84,7 @@ PROPERTY Error_State : E_Motor_Error_State
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[Error_State := fb_mem.Error_State;]]></ST>
+          <ST><![CDATA[Error_State := fb_mem.STS.Error_State;]]></ST>
         </Implementation>
       </Get>
     </Property>
@@ -62,35 +99,33 @@ END_VAR
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Method>
-    <Property Name="Manueel" Id="{8532878e-aaa6-471e-b1d3-a351d4382e0d}" FolderPath="Properties\">
+    <Property Name="Manueel" Id="{7c431163-01ea-4de3-ba47-a54ca14c245f}" FolderPath="Properties\">
       <Declaration><![CDATA[PROPERTY Manueel : BOOl]]></Declaration>
-      <Get Name="Get" Id="{69e45d02-1163-46bf-8759-21f262f12f66}">
+      <Get Name="Get" Id="{76c0c133-7dce-466d-af0b-b4f6f0a95c4b}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[IF fb_mem.Manueel THEN
-	Manueel := TRUE;
-ELSIF fb_mem.Auto THEN
-	Manueel := FALSE;
-END_IF]]></ST>
+          <ST><![CDATA[Manueel := fb_mem.STS.Manueel;]]></ST>
         </Implementation>
       </Get>
-      <Set Name="Set" Id="{7461de9d-3f91-4704-8aa0-63529689bf25}">
+      <Set Name="Set" Id="{f1098c66-0c9f-45a5-9d18-b0c13f2df4b6}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[IF Manueel AND NOT Auto THEN
-	fb_mem.Manueel := TRUE;
-	fb_mem.Manueel := FALSE;
-ELSIF Auto THEN
-	fb_mem.Auto := TRUE;
-	fb_mem.Auto := FALSE;
-END_IF]]></ST>
+          <ST><![CDATA[fb_mem.CS.Manueel :=  Manueel;]]></ST>
         </Implementation>
       </Set>
     </Property>
+    <Method Name="Reset" Id="{9ebe56cb-ee7c-443c-9b93-4574a33eba76}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Reset : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
     <Property Name="Richting_L" Id="{acd82104-10c0-4d3d-b202-3582cda0f6aa}" FolderPath="Properties\">
       <Declaration><![CDATA[{warning 'add property implementation'}
 PROPERTY Richting_L : BOOL
@@ -100,7 +135,7 @@ PROPERTY Richting_L : BOOL
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[Richting_L := fb_mem.Richting_L;]]></ST>
+          <ST><![CDATA[Richting_L := fb_mem.STS.Richting_L;]]></ST>
         </Implementation>
       </Get>
       <Set Name="Set" Id="{971f8c41-0eec-4c04-8969-13b6e9bb900e}">
@@ -108,13 +143,7 @@ END_VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[IF Richting_L AND NOT Richting_R THEN
-	fb_mem.Richting_L := TRUE;
-	fb_mem.Richting_R := FALSE;
-ELSIF Richting_R THEN
-	fb_mem.Richting_R := TRUE;
-	fb_mem.Richting_L := FALSE;
-END_IF]]></ST>
+          <ST><![CDATA[fb_mem.CS.Richting_L := Richting_L;]]></ST>
         </Implementation>
       </Set>
     </Property>
@@ -127,7 +156,7 @@ PROPERTY Richting_R : BOOL
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[Richting_L := fb_mem.Richting_L;]]></ST>
+          <ST><![CDATA[Richting_R := fb_mem.STS.Richting_R;]]></ST>
         </Implementation>
       </Get>
       <Set Name="Set" Id="{c093fe9c-b698-4b4c-be3d-d0eea63cb1c9}">
@@ -135,7 +164,7 @@ END_VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[fb_mem.Richting_L := Richting_L;]]></ST>
+          <ST><![CDATA[fb_mem.CS.Richting_R := Richting_R;]]></ST>
         </Implementation>
       </Set>
     </Property>
@@ -188,15 +217,24 @@ METHOD Toerental : INT
       </Implementation>
     </Method>
     <LineIds Name="CM_Motor">
+      <LineId Id="14" Count="11" />
       <LineId Id="9" Count="0" />
+      <LineId Id="27" Count="7" />
+      <LineId Id="39" Count="2" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="43" Count="1" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="45" Count="7" />
+      <LineId Id="26" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Abort">
+      <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Auto.Get">
-      <LineId Id="8" Count="3" />
       <LineId Id="6" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Auto.Set">
-      <LineId Id="5" Count="1" />
-      <LineId Id="8" Count="1" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Error_State.Get">
@@ -206,24 +244,18 @@ METHOD Toerental : INT
       <LineId Id="7" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Manueel.Get">
-      <LineId Id="5" Count="3" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Manueel.Set">
-      <LineId Id="5" Count="1" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="7" Count="1" />
-      <LineId Id="10" Count="0" />
       <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Reset">
+      <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Richting_L.Get">
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Richting_L.Set">
-      <LineId Id="5" Count="1" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="7" Count="1" />
-      <LineId Id="10" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Richting_R.Get">

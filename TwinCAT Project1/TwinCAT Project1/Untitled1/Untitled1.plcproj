@@ -28,16 +28,37 @@
     <Compile Include="POUs\1. Control Modules\1. CM_Motor\CM_Motor.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\1. Control Modules\1. CM_Motor\E_Motor_Error_State.TcDUT">
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\Enums\E_Motor_Error_State.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\1. Control Modules\1. CM_Motor\E_Motor_State.TcDUT">
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\Enums\E_Motor_State.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\1. Control Modules\1. CM_Motor\ITF_Motor.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\1. Control Modules\1. CM_Motor\STRUCT_CM_Motor.TcDUT">
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\Structs\1. CS\CM_Motor_CS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\Structs\2. HMI\CM_Motor_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\Structs\3. STS\CM_Motor_STS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\Structs\4. ALM\CM_Motor_ALM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\Structs\5. WRN\CM_Motor_WRN.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\Structs\6. PAR\CM_Motor_PAR.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\Structs\7. SIM\CM_Motor_SIM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\1. CM_Motor\Structs\STRUCT_CM_Motor.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\1. Control Modules\2. CM_Sensor\CM_Sensor.TcPOU">
@@ -46,64 +67,97 @@
     <Compile Include="POUs\1. Control Modules\2. CM_Sensor\ITF_Sensor.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\1. Control Modules\2. CM_Sensor\STRUCT_CM_Sensor.TcDUT">
+    <Compile Include="POUs\1. Control Modules\2. CM_Sensor\Structs\1. CS\CM_Sensor_CS.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\FB_Can_Supply.TcPOU">
+    <Compile Include="POUs\1. Control Modules\2. CM_Sensor\Structs\2. HMI\CM_Sensor_HMI.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\E_State_Can_Supply.TcDUT">
+    <Compile Include="POUs\1. Control Modules\2. CM_Sensor\Structs\3. STS\CM_Sensor_STS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\2. CM_Sensor\Structs\4. ALM\CM_Sensor_ALM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\2. CM_Sensor\Structs\5. WRN\CM_Sensor_WRN.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\2. CM_Sensor\Structs\6. PAR\CM_Sensor_PAR.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\2. CM_Sensor\Structs\7. SIM\CM_Sensor_SIM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\2. CM_Sensor\Structs\STRUCT_CM_Sensor.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Enums\E_State_Can_Supply.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\EM_Can_Supply.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\ITF_Can_Supply.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Str_fb_mem.TcDUT">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\1. CS\EM_TransportCanSupply2_CS.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\2. EM_TransportFillers\EM_TransportFillers.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\2. HMI\EM_TransportCanSupply2_HMI.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\2. EM_TransportFillers\ITF_EM_TransportFillers.TcIO">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\3. STS\EM_TransportCanSupply2_STS.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\3. EM_OutfeedFillers\EM_OutfeedFillers.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\4. ALM\EM_TransportCanSupply2_ALM.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\3. EM_OutfeedFillers\ITF_EM_OutfeedFillers.TcIO">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\5. WRN\EM_TransportCanSupply2_WRN.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\4. EM_Infeed_Checkweigher\EM_Infeed_Checkweigher.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\6. PAR\EM_TransportCanSupply2_PAR.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\4. EM_Infeed_Checkweigher\ITF_EM_Infeed_Checkweigher.TcIO">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\7. SIM\EM_TransportCanSupply2_SIM.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\5. EM_Transport_Checkweigher_BottomSeal\EM_Transport_Checkweigher_BottomSeal.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\STRUCT_EM_Transport_CanSupply2.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\5. EM_Transport_Checkweigher_BottomSeal\ITF_EM_Transport_Checkweigher_BottomSeal.TcIO">
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\EM_Filling.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\6. EM_Transport_BottomSeal_Labeller\EM_Transport_BottomSeal_Labeller.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\Enums\E_State_Filling.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\6. EM_Transport_BottomSeal_Labeller\ITF_EM_Transport_BottomSeal_Labeller.TcIO">
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\ITF_Filling.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\7. EM_Transport_TurningDevice_StampUnit\EM_Transport_TurningDevice_StampUnit.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\1. CS\EM_Filling_CS.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\7. EM_Transport_TurningDevice_StampUnit\ITF_EM_Transport_TurningDevice_StampUnit.TcIO">
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\2. HMI\EM_Filling_HMI.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\8. EM_Transport_StampUnit_SealShrink\EM_Transport_StampUnit_SealShrink.TcPOU">
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\3. STS\EM_Filling_STS.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\8. EM_Transport_StampUnit_SealShrink\ITF_EM_Transport_StampUnit_SealShrink.TcIO">
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\4. ALM\EM_Filling_ALM.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\ITF_Blikkenvullijn.TcIO">
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\5. WRN\EM_Filling_WRN.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\6. PAR\EM_Filling_PAR.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\7. SIM\EM_Filling_SIM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\STRUCT_EM_Filling.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\ITF_UNIT_Blikkenvullijn.TcIO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs\4. ALM\UNIT_Blikkenvullijn_ALM.TcDUT">
@@ -156,16 +210,48 @@
     <Folder Include="DUTs\4. Management" />
     <Folder Include="GVLs" />
     <Folder Include="POUs\1. Control Modules\1. CM_Motor" />
+    <Folder Include="POUs\1. Control Modules\1. CM_Motor\Enums" />
+    <Folder Include="POUs\1. Control Modules\1. CM_Motor\Structs" />
+    <Folder Include="POUs\1. Control Modules\1. CM_Motor\Structs\1. CS" />
+    <Folder Include="POUs\1. Control Modules\1. CM_Motor\Structs\2. HMI" />
+    <Folder Include="POUs\1. Control Modules\1. CM_Motor\Structs\3. STS" />
+    <Folder Include="POUs\1. Control Modules\1. CM_Motor\Structs\4. ALM" />
+    <Folder Include="POUs\1. Control Modules\1. CM_Motor\Structs\5. WRN" />
+    <Folder Include="POUs\1. Control Modules\1. CM_Motor\Structs\6. PAR" />
+    <Folder Include="POUs\1. Control Modules\1. CM_Motor\Structs\7. SIM" />
     <Folder Include="POUs\1. Control Modules\2. CM_Sensor" />
+    <Folder Include="POUs\1. Control Modules\2. CM_Sensor\Enums" />
+    <Folder Include="POUs\1. Control Modules\2. CM_Sensor\Structs" />
+    <Folder Include="POUs\1. Control Modules\2. CM_Sensor\Structs\1. CS" />
+    <Folder Include="POUs\1. Control Modules\2. CM_Sensor\Structs\2. HMI" />
+    <Folder Include="POUs\1. Control Modules\2. CM_Sensor\Structs\3. STS" />
+    <Folder Include="POUs\1. Control Modules\2. CM_Sensor\Structs\4. ALM" />
+    <Folder Include="POUs\1. Control Modules\2. CM_Sensor\Structs\5. WRN" />
+    <Folder Include="POUs\1. Control Modules\2. CM_Sensor\Structs\6. PAR" />
+    <Folder Include="POUs\1. Control Modules\2. CM_Sensor\Structs\7. SIM" />
+    <Folder Include="POUs\1. Control Modules\3. CM_OutfeedProductionSensor" />
     <Folder Include="POUs\2. Equipment Modules" />
     <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply" />
-    <Folder Include="POUs\2. Equipment Modules\2. EM_TransportFillers" />
-    <Folder Include="POUs\2. Equipment Modules\3. EM_OutfeedFillers" />
-    <Folder Include="POUs\2. Equipment Modules\5. EM_Transport_Checkweigher_BottomSeal" />
-    <Folder Include="POUs\2. Equipment Modules\6. EM_Transport_BottomSeal_Labeller" />
-    <Folder Include="POUs\2. Equipment Modules\7. EM_Transport_TurningDevice_StampUnit" />
-    <Folder Include="POUs\2. Equipment Modules\8. EM_Transport_StampUnit_SealShrink" />
-    <Folder Include="POUs\2. Equipment Modules\4. EM_Infeed_Checkweigher" />
+    <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Enums" />
+    <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs" />
+    <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\1. CS" />
+    <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\2. HMI" />
+    <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\3. STS" />
+    <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\4. ALM" />
+    <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\5. WRN" />
+    <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\6. PAR" />
+    <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\7. SIM" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_Filling" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_Filling\Enums" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_Filling\Structs" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\1. CS" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\2. HMI" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\3. STS" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\4. ALM" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\5. WRN" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\6. PAR" />
+    <Folder Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\7. SIM" />
+    <Folder Include="POUs\2. Equipment Modules\3. EM_TurningDevice" />
     <Folder Include="POUs\3. Units" />
     <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn" />
     <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs" />

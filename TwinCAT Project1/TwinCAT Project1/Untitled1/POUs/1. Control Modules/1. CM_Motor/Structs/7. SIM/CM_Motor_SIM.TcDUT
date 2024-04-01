@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="CM_Motor_SIM" Id="{2d7575c0-ee7b-4702-adc0-a721667edef6}">
+    <Declaration><![CDATA[TYPE CM_Motor_SIM :
+STRUCT
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

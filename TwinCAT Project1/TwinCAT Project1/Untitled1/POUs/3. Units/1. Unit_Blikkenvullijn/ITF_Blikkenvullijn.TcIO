@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <Itf Name="ITF_Blikkenvullijn" Id="{b0828150-22c5-45c8-9e2c-aea04fc32620}">
-    <Declaration><![CDATA[INTERFACE ITF_Blikkenvullijn
-]]></Declaration>
-  </Itf>
-</TcPlcObject>

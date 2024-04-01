@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="E_State_Filling" Id="{63cfb44f-1e31-4835-90ef-3c0ccf050bf2}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_State_Filling :
+(
+	State := 0
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

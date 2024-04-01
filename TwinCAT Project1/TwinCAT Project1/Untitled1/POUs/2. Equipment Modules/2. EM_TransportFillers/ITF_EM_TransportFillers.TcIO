@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <Itf Name="ITF_EM_TransportFillers" Id="{16ce2f23-17e6-47b1-9960-7e0627c991fe}">
-    <Declaration><![CDATA[INTERFACE ITF_EM_TransportFillers
-]]></Declaration>
-  </Itf>
-</TcPlcObject>

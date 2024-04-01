@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="EM_TransportCanSupply2_STS" Id="{eb6f311b-be4c-4817-8fae-40d122a7d7cf}">
+    <Declaration><![CDATA[TYPE EM_TransportCanSupply2_STS :
+STRUCT
+	Tag				: STRING;
+	State 			: E_Motor_State;
+	Error_State 	: E_Motor_Error_State;
+	Richting_L		: BOOL;
+	Richting_R		: BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

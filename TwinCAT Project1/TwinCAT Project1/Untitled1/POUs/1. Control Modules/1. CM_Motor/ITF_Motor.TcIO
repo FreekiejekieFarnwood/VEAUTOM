@@ -5,6 +5,12 @@
 ]]></Declaration>
     <Folder Name="Methods" Id="{1ac60305-2c93-4934-b952-c27602bf4a47}" />
     <Folder Name="Properties" Id="{1b7a3071-70bf-4024-9d42-bea994ab511d}" />
+    <Method Name="Abort" Id="{397a2f80-6722-4900-83c9-291a17d0b4a5}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Abort : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
     <Property Name="Auto" Id="{8de80923-ee65-4cee-8d92-262ec33b2fad}" FolderPath="Properties\">
       <Declaration><![CDATA[PROPERTY Auto : BOOL]]></Declaration>
       <Get Name="Get" Id="{2c623cc8-5d57-409f-8c21-d66a4a93fe4d}">
@@ -29,6 +35,12 @@
         <Declaration><![CDATA[]]></Declaration>
       </Set>
     </Property>
+    <Method Name="Reset" Id="{3fc69597-b5f7-46da-9859-8c04b46536e1}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
     <Property Name="Richting_L" Id="{8c613c9c-b125-4828-ab5c-2360bb5c18bd}" FolderPath="Properties\">
       <Declaration><![CDATA[PROPERTY Richting_L : BOOL]]></Declaration>
       <Get Name="Get" Id="{9b0e76e2-0486-4496-baa8-6a6b3ddad9f5}">

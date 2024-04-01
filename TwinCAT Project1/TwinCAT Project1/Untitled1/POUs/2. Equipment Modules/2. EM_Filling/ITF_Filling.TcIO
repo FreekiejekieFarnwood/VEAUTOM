@@ -1,41 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <Itf Name="ITF_Can_Supply" Id="{be7d18ee-7936-4035-920e-6c9d83390de9}">
-    <Declaration><![CDATA[INTERFACE ITF_Can_Supply EXTENDS ITF_PackML
+  <Itf Name="ITF_Filling" Id="{7e40b0bf-3742-48dd-addd-ee44a551658b}">
+    <Declaration><![CDATA[INTERFACE ITF_Filling EXTENDS ITF_PackML
 ]]></Declaration>
-    <Folder Name="Methods" Id="{9825e394-832a-471d-bf1c-71980f25670b}" />
-    <Folder Name="Properties" Id="{61811a0d-6ae7-4dd3-838e-6564c22290dc}" />
-    <Method Name="Abort" Id="{f3036df1-a8b7-4e01-8435-d3694475b554}" FolderPath="Methods\">
+    <Folder Name="Methods" Id="{e981911d-c1d3-44f5-8ea0-c2bd3fd16631}" />
+    <Folder Name="Properties" Id="{d561a764-7773-4a8b-9f9c-0ac876449c5b}" />
+    <Method Name="Abort" Id="{1f6b5d22-314b-4c0c-a2e7-30bfd4aa7404}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Abort : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Aborting_SC" Id="{dede9959-06e9-4ae6-92d5-f759fa6a0711}" FolderPath="Methods\">
+    <Method Name="Aborting_SC" Id="{8c463640-8115-4d8e-9408-6fc78f5520d0}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Aborting_SC : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Clear" Id="{7a38a923-482d-4861-9315-89cfe0c296de}" FolderPath="Methods\">
+    <Method Name="Clear" Id="{8a7402f5-48f6-4e75-ba75-dc97c97d40cc}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Clear : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Clearing_SC" Id="{786080b1-c259-417f-9800-c12d15c0e8a8}" FolderPath="Methods\">
+    <Method Name="Clearing_SC" Id="{df617eb0-962f-455f-9c96-fb98a9fe9116}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Clearing_SC : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Completing_SC" Id="{dfeeae52-456c-46cc-8732-d2f7c6f2a4ec}" FolderPath="Methods\">
+    <Method Name="Completing_SC" Id="{9dd3a585-26b4-4efe-8747-14396bcb1686}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Completing_SC : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Execute_SC" Id="{465dfd5c-7180-47db-aa8a-ac01e08d744e}" FolderPath="Methods\">
+    <Method Name="Execute_SC" Id="{03c351fa-8ab7-4fb1-bfdb-913b7fc7e092}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Execute_SC : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="FB_init" Id="{c740385f-9f70-4a43-b200-37cf9abee838}">
+    <Method Name="FB_init" Id="{ed06c622-049c-4c15-942b-3b75d6a15d92}">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD FB_init : BOOL
 VAR_INPUT
@@ -45,85 +45,85 @@ END_VAR
 
 ]]></Declaration>
     </Method>
-    <Method Name="Hold" Id="{ea24847d-59eb-43cc-bec6-43dcf6f55682}" FolderPath="Methods\">
+    <Method Name="Hold" Id="{c21bde3d-4449-41fb-af5d-0eb6bebc6196}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Hold : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Holding_SC" Id="{75d0e30c-416f-41a6-8be3-d368589ec93c}" FolderPath="Methods\">
+    <Method Name="Holding_SC" Id="{2cbef641-74be-4713-9c47-c54d7a035e31}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Holding_SC : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Reset" Id="{c4a0a244-05b7-40f7-a199-9634c2056ae8}" FolderPath="Methods\">
+    <Method Name="Reset" Id="{669af71a-4b39-452d-a1e3-dda0848266be}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Reset : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Resetting_SC" Id="{bb872d1a-3ff5-47ed-a2db-7e35acf1ac95}" FolderPath="Methods\">
+    <Method Name="Resetting_SC" Id="{758ae6d7-563c-4958-bbe8-d3000b484e9d}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Resetting_SC : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Start" Id="{9183cd8f-42e2-4ba8-8515-790ac74e3089}" FolderPath="Methods\">
+    <Method Name="Start" Id="{9421bbf9-6722-490a-9a62-564d02602ec5}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Start : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Starting_SC" Id="{2a34f45f-8f3c-4075-ae9f-b84fdc2c2dd4}" FolderPath="Methods\">
+    <Method Name="Starting_SC" Id="{a1038286-50ba-404c-8bc3-ef9042dd9ee5}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Starting_SC : BOOL
 ]]></Declaration>
     </Method>
-    <Property Name="State" Id="{4a8a11d1-a82f-4c23-914e-479f7db93af8}" FolderPath="Properties\">
+    <Property Name="State" Id="{d1d03dbc-0b58-45dc-8b40-a3eaa82c3c54}" FolderPath="Properties\">
       <Declaration><![CDATA[{warning 'add property implementation'}
 PROPERTY State : TwinCAT_LIB.E_State_PackML
 ]]></Declaration>
-      <Get Name="Get" Id="{b6e868ca-878f-4b3a-a1c8-39f62a723a8d}">
+      <Get Name="Get" Id="{f7bf1912-d71a-4621-a347-bbab4a4e9a84}">
         <Declaration><![CDATA[]]></Declaration>
       </Get>
     </Property>
-    <Method Name="Stop" Id="{7895009c-a899-431c-804d-815ba92f02e4}" FolderPath="Methods\">
+    <Method Name="Stop" Id="{8e0f6f3c-cbd2-4d6e-b40c-f84432238690}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Stop : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Stopping_SC" Id="{704aedf8-388c-4b8c-bd30-93f42701868c}" FolderPath="Methods\">
+    <Method Name="Stopping_SC" Id="{c48ce6f1-8753-4401-a96f-1b8cb428b981}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Stopping_SC : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Suspend" Id="{cbd13e4c-e80f-496e-b1c4-4547acc74546}" FolderPath="Methods\">
+    <Method Name="Suspend" Id="{100b4daa-758e-4193-b8b6-78abf90f6a2d}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Suspend : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Suspending_SC" Id="{ee7dd256-fb6f-425a-9fb4-1c97880a63fa}" FolderPath="Methods\">
+    <Method Name="Suspending_SC" Id="{dd5eb7b5-6235-4e18-abb3-8a1e203399e0}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Suspending_SC : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Unhold" Id="{808ceb9e-32ff-42ed-8798-8542f8f1cc5c}" FolderPath="Methods\">
+    <Method Name="Unhold" Id="{290d9fac-4d68-48f4-8977-0a414affa371}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Unhold : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Unholding_SC" Id="{85803510-1a31-4e6a-886b-0e537a5f36b6}" FolderPath="Methods\">
+    <Method Name="Unholding_SC" Id="{9e1b6153-236d-4d80-b225-e1252b9c843b}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Unholding_SC : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Unsuspend" Id="{136f031f-19d1-4e3f-80a4-ea1f156aa0c8}" FolderPath="Methods\">
+    <Method Name="Unsuspend" Id="{06a22e3a-bf34-4ac2-9b20-625aa98b100e}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Unsuspend : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="Unsuspending_SC" Id="{695786f1-4de6-44e8-917a-6aa058954565}" FolderPath="Methods\">
+    <Method Name="Unsuspending_SC" Id="{84711ced-713c-4d89-999e-1c60665516b8}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Unsuspending_SC : BOOL
 ]]></Declaration>
     </Method>
-    <Method Name="ZeroAllVar" Id="{46bf6cc3-ccb7-47fe-81d9-b0a3f45a9c6c}">
+    <Method Name="ZeroAllVar" Id="{0816172b-b301-49a4-a8e1-d0bfa5a4d7c3}">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD ZeroAllVar : BOOL
 ]]></Declaration>

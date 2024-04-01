@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="CM_Motor_HMI" Id="{cb87481b-20a4-44fd-8d06-ce7d47e19c4c}">
+    <Declaration><![CDATA[TYPE CM_Motor_HMI :
+STRUCT
+	Start		: BOOL;
+	Stop		: BOOL;
+	Reset		: BOOL;
+	Abort		: BOOL;
+	Richting_L	: BOOL;
+	Richting_R	: BOOL;
+	Toerental	: INT;
+	Auto		: BOOL;
+	Manueel		: BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

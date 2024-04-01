@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="CM_Motor_WRN" Id="{f9234ab1-e257-4aa6-9cd2-088701cbe60c}">
+    <Declaration><![CDATA[TYPE CM_Motor_WRN :
+STRUCT
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

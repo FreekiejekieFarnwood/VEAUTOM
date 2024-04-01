@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <Itf Name="ITF_EM_Transport_StampUnit_SealShrink" Id="{7c18349a-38d6-425e-a306-2fe202877357}">
-    <Declaration><![CDATA[INTERFACE ITF_EM_Transport_StampUnit_SealShrink
-]]></Declaration>
-  </Itf>
-</TcPlcObject>

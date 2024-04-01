@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="CM_Sensor_STS" Id="{a3a52ed6-76eb-4eda-86b6-3df088bed856}">
+    <Declaration><![CDATA[TYPE CM_Sensor_STS :
+STRUCT
+	Tag				: STRING;
+	Output			: BOOL;
+	Auto			: BOOL;
+	Manueel			: BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

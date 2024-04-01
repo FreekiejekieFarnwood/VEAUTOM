@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="EM_Filling_SIM" Id="{d7c2c626-e667-4025-83b5-4b1db3971ad2}">
+    <Declaration><![CDATA[TYPE EM_Filling_SIM :
+STRUCT
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

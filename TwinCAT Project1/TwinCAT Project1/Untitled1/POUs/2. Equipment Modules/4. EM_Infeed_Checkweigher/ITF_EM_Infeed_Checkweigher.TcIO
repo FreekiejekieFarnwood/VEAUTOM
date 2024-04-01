@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <Itf Name="ITF_EM_Infeed_Checkweigher" Id="{ea284206-aee2-406e-9690-49de684e8e91}">
-    <Declaration><![CDATA[INTERFACE ITF_EM_Infeed_Checkweigher
-]]></Declaration>
-  </Itf>
-</TcPlcObject>

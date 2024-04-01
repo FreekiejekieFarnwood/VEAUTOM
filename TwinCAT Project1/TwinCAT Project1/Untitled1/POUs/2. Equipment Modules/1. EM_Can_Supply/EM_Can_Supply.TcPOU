@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="EM_Can_Supply" Id="{7d4cdf28-8942-4185-a3d0-da5253260d95}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK EM_Can_Supply IMPLEMENTS ITF_Can_Supply, ITF_PackML
+VAR
+	fb_mem : STRUCT_EM_Transport_CanSupply2;
+	
+	//SubModules
+	EM_Transport_Can_Supply1		: EM_Transport_Mechanische_Stop;
+	EM_Transport_Can_Supply2		: EM_Transport;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+$$$$$$$$\                                                                   $$\       $$$$$$$$\                     $$\                                         $$\                     
+$$  _____|                                                                  $$ |      $$  _____|                    \__|                                        \__|                    
+$$ |   $$$$$$\   $$$$$$\  $$$$$$$\  $$\  $$\  $$\  $$$$$$\   $$$$$$\   $$$$$$$ |      $$ |      $$$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\  
+$$$$$\ \____$$\ $$  __$$\ $$  __$$\ $$ | $$ | $$ |$$  __$$\ $$  __$$\ $$  __$$ |      $$$$$\    $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ 
+$$  __|$$$$$$$ |$$ |  \__|$$ |  $$ |$$ | $$ | $$ |$$ /  $$ |$$ /  $$ |$$ /  $$ |      $$  __|   $$ |  $$ |$$ /  $$ |$$ |$$ |  $$ |$$$$$$$$ |$$$$$$$$ |$$ |  \__|$$ |$$ |  $$ |$$ /  $$ |
+$$ |  $$  __$$ |$$ |      $$ |  $$ |$$ | $$ | $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |      $$ |      $$ |  $$ |$$ |  $$ |$$ |$$ |  $$ |$$   ____|$$   ____|$$ |      $$ |$$ |  $$ |$$ |  $$ |
+$$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |      $$$$$$$$\ $$ |  $$ |\$$$$$$$ |$$ |$$ |  $$ |\$$$$$$$\ \$$$$$$$\ $$ |      $$ |$$ |  $$ |\$$$$$$$ |
+\__|   \_______|\__|      \__|  \__| \_____\____/  \______/  \______/  \_______|      \________|\__|  \__| \____$$ |\__|\__|  \__| \_______| \_______|\__|      \__|\__|  \__| \____$$ |
+                                                                                                          $$\   $$ |                                                          $$\   $$ |
+                                                                                                          \$$$$$$  |                                                          \$$$$$$  |
+                                                                                                           \______/                                                            \______/ 
+*)
+(*
+CASE fb_mem.State OF
+	E_State_PackML.IDLE 			: 
+	E_State_PackML.STARTING 		:
+	E_State_PackML.EXECUTE 			: 
+	E_State_PackML.COMPLETE 		:
+	E_State_PackML.RESETTING 		:
+	E_State_PackML.HOLDING 			:
+	E_State_PackML.HELD 			:
+	E_State_PackML.UNHOLDING 		:
+	E_State_PackML.SUSPENDING 		:
+	E_State_PackML.SUSPENDED 		:
+	E_State_PackML.UNSUSPENDING 	:
+	E_State_PackML.ABORTED			:
+	E_State_PackML.ABORTING			:
+	E_State_PackML.CLEARING 		:
+	E_State_PackML.STOPPING 		:
+	E_State_PackML.STOPPED 			: 
+END_CASE
+*)]]></ST>
+    </Implementation>
+    <Folder Name="Methods" Id="{36205fe7-9974-4236-80c4-92d328922c64}" />
+    <Folder Name="Properties" Id="{29891b51-a7e8-4e37-9797-88f55053a09e}" />
+    <Method Name="Abort" Id="{f0757d08-3fb1-4c06-94be-ca1f9f5ec85f}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Abort : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Aborting_SC" Id="{368e5e53-68fa-40bf-9742-e1ac21da8480}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Aborting_SC : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Clear" Id="{2dcbaa2b-99be-42c9-be06-6b99a4709feb}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Clear : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Clearing_SC" Id="{170d5846-41ad-4c87-a9cf-e83a4254d87f}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Clearing_SC : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Completing_SC" Id="{cd181792-db66-4bf5-a261-b0342b4d0a06}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Completing_SC : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Execute_SC" Id="{1898bd33-ad43-4865-8b29-2a671d782dff}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Execute_SC : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_init" Id="{bb9eb240-1942-4bca-86a2-4f174f21d3cc}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Hold" Id="{a03bd8f8-c4a0-4eab-b084-dccb0c06335f}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Hold : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Holding_SC" Id="{023e1dcd-ed50-4878-ad31-333621a7f011}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Holding_SC : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Reset" Id="{a7f3a304-8199-4f0d-9546-0c950327d5a8}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Reset : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Resetting_SC" Id="{156ff42d-04e0-4a5a-9f76-a7c675735c21}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Resetting_SC : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{08133e8a-8899-4d73-a9bd-b39ca7d302d8}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Start : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Starting_SC" Id="{ae6cf9f8-7cdb-45e8-be8b-f8732a1f8b85}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Starting_SC : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="State" Id="{5dfc3d61-b4c4-46e3-a627-12cb6b267db1}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY State : TwinCAT_LIB.E_State_PackML
+]]></Declaration>
+      <Get Name="Get" Id="{561168c5-4601-4861-9408-f30e5dbf64b3}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Stop" Id="{1d4ba031-f06e-4766-b36b-fd2c23caae29}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stopping_SC" Id="{aa23244e-33a1-4d03-a1c5-2ed4c075ed68}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stopping_SC : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Suspend" Id="{1c680480-f89a-4ca8-aad8-43cacc419b9b}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Suspend : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Suspending_SC" Id="{1771dae6-f203-4503-a429-7c385ef5cd25}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Suspending_SC : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Unhold" Id="{6feb9b03-9c87-4bcb-ae6d-a23d1e77447a}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Unhold : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Unholding_SC" Id="{a16b69cc-9608-4344-9431-1ccdcce6f87f}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Unholding_SC : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Unsuspend" Id="{a792d0fd-5f22-4428-8db4-ba7bc065b32b}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Unsuspend : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Unsuspending_SC" Id="{f3e3d6c6-f6c2-444d-95d6-c32988915f01}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Unsuspending_SC : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="ZeroAllVar" Id="{f2032694-e612-411b-a380-5f4a137e6087}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD ZeroAllVar : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="EM_Can_Supply">
+      <LineId Id="92" Count="11" />
+      <LineId Id="91" Count="0" />
+      <LineId Id="127" Count="0" />
+      <LineId Id="133" Count="0" />
+      <LineId Id="146" Count="0" />
+      <LineId Id="161" Count="0" />
+      <LineId Id="183" Count="0" />
+      <LineId Id="187" Count="0" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="216" Count="0" />
+      <LineId Id="230" Count="0" />
+      <LineId Id="244" Count="0" />
+      <LineId Id="259" Count="0" />
+      <LineId Id="273" Count="1" />
+      <LineId Id="294" Count="0" />
+      <LineId Id="301" Count="0" />
+      <LineId Id="313" Count="0" />
+      <LineId Id="325" Count="0" />
+      <LineId Id="338" Count="0" />
+      <LineId Id="129" Count="0" />
+      <LineId Id="340" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Abort">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Aborting_SC">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Clear">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Clearing_SC">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Completing_SC">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Execute_SC">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.FB_init">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Hold">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Holding_SC">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Reset">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Resetting_SC">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Start">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Starting_SC">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.State.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Stop">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Stopping_SC">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Suspend">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Suspending_SC">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Unhold">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Unholding_SC">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Unsuspend">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Unsuspending_SC">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.ZeroAllVar">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
