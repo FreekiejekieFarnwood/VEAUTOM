@@ -190,6 +190,9 @@
     <Compile Include="POUs\4. Management\1. AlarmHandler\AlarmHandler.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\4. Management\1. AlarmHandler\stErrorHandling.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\4. Management\2. ModeSelect\ITF_ModeSelect.TcIO">
       <SubType>Code</SubType>
     </Compile>
