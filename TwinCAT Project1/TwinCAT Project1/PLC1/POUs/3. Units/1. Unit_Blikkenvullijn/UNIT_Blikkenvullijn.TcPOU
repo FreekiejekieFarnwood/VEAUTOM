@@ -200,7 +200,7 @@ CASE fbPackML_mem.State OF
 		//When all the underlying modules have resetted, the state is completed
 		IF 	EM_Can_Supply.State 						= E_State_PackML.IDLE AND
 			EM_Filling.State 							= E_State_PackML.IDLE AND
-			EM_Infeed_CheckWeigher						= E_State_PackML.IDLE AND
+			EM_Infeed_CheckWeigher.State				= E_State_PackML.IDLE AND
 			EM_CheckWeigher.State 						= E_State_PackML.IDLE AND
 			EM_Transport_Checkweigher_BottomSeal.State	= E_State_PackML.IDLE AND
 			EM_BottomSeal.State							= E_State_PackML.IDLE AND
@@ -228,8 +228,8 @@ CASE fbPackML_mem.State OF
 			EM_Can_Supply.State 						= E_State_PackML.HELD) AND
 		   (EM_Filling.State 							= E_State_PackML.SUSPENDED OR
 			EM_Filling.State 							= E_State_PackML.HELD) AND
-		   (EM_Infeed_CheckWeigher						= E_State_PackML.SUSPENDED OR
-			EM_Infeed_CheckWeigher						= E_State_PackML.HELD) AND
+		   (EM_Infeed_CheckWeigher.State				= E_State_PackML.SUSPENDED OR
+			EM_Infeed_CheckWeigher.State				= E_State_PackML.HELD) AND
 		   (EM_CheckWeigher.State 						= E_State_PackML.SUSPENDED OR
 			EM_CheckWeigher.State 						= E_State_PackML.HELD) AND
 		   (EM_Transport_Checkweigher_BottomSeal.State	= E_State_PackML.SUSPENDED OR
@@ -256,7 +256,7 @@ CASE fbPackML_mem.State OF
 	E_State_PackML.SUSPENDED 		:
 	IF 		EM_Can_Supply.State 						= E_State_PackML.UNHOLDING OR
 			EM_Filling.State 							= E_State_PackML.UNHOLDING OR
-			EM_Infeed_CheckWeigher						= E_State_PackML.UNHOLDING OR
+			EM_Infeed_CheckWeigher.State				= E_State_PackML.UNHOLDING OR
 			EM_CheckWeigher.State 						= E_State_PackML.UNHOLDING OR
 			EM_Transport_Checkweigher_BottomSeal.State	= E_State_PackML.UNHOLDING OR
 			EM_BottomSeal.State							= E_State_PackML.UNHOLDING OR
