@@ -23,6 +23,6 @@
     "bin/"
   ],
   "include": [
-    "Packages/Beckhoff.TwinCAT.HMI.Framework/TcHmi.d.ts"
+    "Beckhoff.TwinCAT.HMI.Framework.InstallPath/TcHmi.d.ts"
   ]
 }
