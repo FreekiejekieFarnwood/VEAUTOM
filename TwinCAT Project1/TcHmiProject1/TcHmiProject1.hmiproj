@@ -27,7 +27,7 @@
     <HmiViewportUserScaleable>Default</HmiViewportUserScaleable>
     <HmiPostProcessing>True</HmiPostProcessing>
     <Name>TcHmiProject1</Name>
-    <HmiCommunicationRouterPort>10102</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10105</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13000</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.760.59</HmiInitial>
     <HmiRecent>1.12.760.59</HmiRecent>
@@ -41,7 +41,7 @@
   <Import Project="$(TwinCATHmi_Targets)" />
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>d60f02f6-0198-452b-899f-82ffa6b26747</ProjectGuid>
+    <ProjectGuid>010c5716-285b-4e4c-9141-fb6caa2c4c56</ProjectGuid>
     <RootNamespace>TwinCAT3HmiProject</RootNamespace>
     <AssemblyName>TwinCAT3HmiProject</AssemblyName>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
@@ -110,14 +110,24 @@
   <Target Name="Clean" DependsOnTargets="$(CleanDependsOn)" />
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <ItemGroup>
+    <Folder Include="Contents\GreyBoxes" />
+    <Folder Include="Contents\Service Screens" />
     <Folder Include="Fonts\" />
     <Folder Include="Images" />
+    <Folder Include="Images\INDAUT\Actuatoren" />
+    <Folder Include="Images\INDAUT\Alarms" />
+    <Folder Include="Images\INDAUT\Control" />
+    <Folder Include="Images\INDAUT\Grey Boxes zonder tekst" />
+    <Folder Include="Images\INDAUT\Banner" />
+    <Folder Include="Images\INDAUT\Toolbar" />
     <Folder Include="Images\Manifest" />
+    <Folder Include="Images\INDAUT" />
     <Folder Include="Imports" />
     <Folder Include="Imports\Images" />
     <Folder Include="Imports\Videos" />
     <Folder Include="KeyboardLayouts\" />
     <Folder Include="Localization" />
+    <Folder Include="Contents" />
     <Folder Include="Themes" />
     <Folder Include="Themes\Base-Dark\Images\" />
     <Folder Include="Themes\Base\" />
@@ -128,6 +138,181 @@
     <Folder Include="Properties" />
     <Content Include=".eslintrc.json">
       <Visible>false</Visible>
+    </Content>
+    <Content Include="Contents\Alarms.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Contents\GreyBoxes\Home.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Contents\GreyBoxes\JB2.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Contents\GreyBoxes\JB3.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Contents\GreyBoxes\JB1.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Contents\Service Screens\Control.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Contents\Service Screens\Settings.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Contents\Service Screens\Service_Main.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Empty SVG.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Actuatoren\klep aan.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Actuatoren\klep uit.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Actuatoren\motor aan.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Actuatoren\motor uit.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Actuatoren\sensor aan.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Actuatoren\sensor uit.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Alarms\alarm prio 1.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Alarms\alarm prio 2.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Alarms\alarm prio 3.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Alarms\alarm prio 4.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Banner\icons8-alarm-100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Banner\icons8-back-100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Banner\icons8-control-100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Banner\icons8-home-100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Banner\icons8-manual-100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Banner\icons8-service-100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Banner\icons8-settings-100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Banner\logo InpakXpert Solutions.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Control\Auto Button.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Control\Backwards AAN.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Control\Backwards.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Control\Forwards AAN.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Control\Forwards.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Control\Manual Button.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Control\Start Stop AAN.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Control\Start Stop.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Fallback image.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\bottom seal aan.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\bottom seal uit.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\checkwigher aan.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\checkwigher uit.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\labeler aan.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\labeler uit.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\seal shrink aan.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\seal shrink uit.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\stamp unit aan.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\stamp unit uit.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\turning device aan.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\turning device uit.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\weigher aan.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\weigher uit.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Toolbar\Gebruiker admin.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Toolbar\Gebruiker gebruiker.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Toolbar\Gebruiker viewer.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Content1.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Localization\Language1.localization">
+      <SubType>Content</SubType>
+      <DependentUpon>Localization\Language1.tpl.localization</DependentUpon>
+    </Content>
+    <Content Include="Localization\Language1.tpl.localization">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="LoginPage1.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\ADS\ADS.Config.default.json">
+      <SubType>Content</SubType>
     </Content>
     <Content Include="Server\TcHmiLua\TcHmiLua.Config.default.json">
       <SubType>Content</SubType>
