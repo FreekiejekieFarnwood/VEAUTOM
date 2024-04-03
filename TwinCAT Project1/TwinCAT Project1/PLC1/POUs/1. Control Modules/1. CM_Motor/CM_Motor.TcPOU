@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="CM_Motor" Id="{ad18aa34-53f9-43d5-96e4-85da740b0380}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK CM_Motor IMPLEMENTS  ITF_Motor
+VAR
+	fb_mem : STRUCT_CM_Motor;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+$$$$$$$$\                                                                   $$\       $$$$$$$$\                     $$\                                         $$\                     
+$$  _____|                                                                  $$ |      $$  _____|                    \__|                                        \__|                    
+$$ |   $$$$$$\   $$$$$$\  $$$$$$$\  $$\  $$\  $$\  $$$$$$\   $$$$$$\   $$$$$$$ |      $$ |      $$$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\  
+$$$$$\ \____$$\ $$  __$$\ $$  __$$\ $$ | $$ | $$ |$$  __$$\ $$  __$$\ $$  __$$ |      $$$$$\    $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ 
+$$  __|$$$$$$$ |$$ |  \__|$$ |  $$ |$$ | $$ | $$ |$$ /  $$ |$$ /  $$ |$$ /  $$ |      $$  __|   $$ |  $$ |$$ /  $$ |$$ |$$ |  $$ |$$$$$$$$ |$$$$$$$$ |$$ |  \__|$$ |$$ |  $$ |$$ /  $$ |
+$$ |  $$  __$$ |$$ |      $$ |  $$ |$$ | $$ | $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |      $$ |      $$ |  $$ |$$ |  $$ |$$ |$$ |  $$ |$$   ____|$$   ____|$$ |      $$ |$$ |  $$ |$$ |  $$ |
+$$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |      $$$$$$$$\ $$ |  $$ |\$$$$$$$ |$$ |$$ |  $$ |\$$$$$$$\ \$$$$$$$\ $$ |      $$ |$$ |  $$ |\$$$$$$$ |
+\__|   \_______|\__|      \__|  \__| \_____\____/  \______/  \______/  \_______|      \________|\__|  \__| \____$$ |\__|\__|  \__| \_______| \_______|\__|      \__|\__|  \__| \____$$ |
+                                                                                                          $$\   $$ |                                                          $$\   $$ |
+      			                                                                                          \$$$$$$  |                                                          \$$$$$$  |
+                                                                                                           \______/                                                            \______/ 
+*)
+
+
+
+
+//Zero all CS signals
+fb_mem.CS.Auto			:= FALSE;
+fb_mem.CS.Manueel 		:= FALSE;
+fb_mem.CS.Abort			:= FALSE;
+fb_mem.CS.Reset			:= FALSE;
+fb_mem.CS.Richting_L	:= FALSE;
+fb_mem.CS.Richting_R	:= FALSE;
+fb_mem.CS.Start			:= FALSE;
+fb_mem.CS.Stop			:= FALSE;
+fb_mem.CS.Toerental		:= 0;
+
+//Zero all HMI signals
+fb_mem.HMI.Auto			:= FALSE;
+fb_mem.HMI.Manueel 		:= FALSE;
+fb_mem.HMI.Abort		:= FALSE;
+fb_mem.HMI.Reset		:= FALSE;
+fb_mem.HMI.Richting_L	:= FALSE;
+fb_mem.HMI.Richting_R	:= FALSE;
+fb_mem.HMI.Start		:= FALSE;
+fb_mem.HMI.Stop			:= FALSE;
+fb_mem.HMI.Toerental	:= 0;]]></ST>
+    </Implementation>
+    <Folder Name="Methods" Id="{e48a4f7d-e56b-428a-aa1b-5b87c7c2d9fa}" />
+    <Folder Name="Properties" Id="{bc8caceb-6cf9-4970-a7a5-33f216f9ab87}" />
+    <Method Name="Abort" Id="{bce41efd-d6b0-4d62-89f5-e33ac87557da}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Abort : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Auto" Id="{11ef47cb-7d87-440a-a57d-2cabaca58e35}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Auto : BOOl]]></Declaration>
+      <Get Name="Get" Id="{6a6dad5a-3122-4156-a7f6-902e7509088d}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[AUTO := fb_mem.STS.Auto;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{816dc6e2-11f2-441f-a7bc-68dcbe2dd7e0}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fb_mem.CS.Auto := AUTO;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="Error_State" Id="{e515215c-6fc9-4b62-8fc6-8b2fbbaf48cb}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY Error_State : E_Motor_Error_State
+]]></Declaration>
+      <Get Name="Get" Id="{f220728e-61e0-4b32-9b95-9b2cd9b4bf16}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Error_State := fb_mem.STS.Error_State;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="FB_init" Id="{b57a1db5-23e5-4a22-9fd5-673c65f1eb7c}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Manueel" Id="{7c431163-01ea-4de3-ba47-a54ca14c245f}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Manueel : BOOl]]></Declaration>
+      <Get Name="Get" Id="{76c0c133-7dce-466d-af0b-b4f6f0a95c4b}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Manueel := fb_mem.STS.Manueel;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{f1098c66-0c9f-45a5-9d18-b0c13f2df4b6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fb_mem.CS.Manueel :=  Manueel;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Reset" Id="{9ebe56cb-ee7c-443c-9b93-4574a33eba76}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Reset : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Richting_L" Id="{acd82104-10c0-4d3d-b202-3582cda0f6aa}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY Richting_L : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{254eef6c-679d-4955-9374-8c48813a2eba}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Richting_L := fb_mem.STS.Richting_L;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{971f8c41-0eec-4c04-8969-13b6e9bb900e}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fb_mem.CS.Richting_L := Richting_L;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="Richting_R" Id="{1dfa9288-7cf5-4117-bb7a-1871dc8acb27}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY Richting_R : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{c9301737-e65a-4566-b592-b9a0f81a954d}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Richting_R := fb_mem.STS.Richting_R;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{c093fe9c-b698-4b4c-be3d-d0eea63cb1c9}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fb_mem.CS.Richting_R := Richting_R;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Start" Id="{d85189c8-d167-4ff9-9393-dd18fc880ed7}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Start : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="State" Id="{b265f892-f5e4-4964-b773-e12474a75895}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY State : E_Motor_State
+]]></Declaration>
+      <Get Name="Get" Id="{d9b17dd7-10ff-4cfa-a319-4423eeaaebb7}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Stop" Id="{cf8e2e14-1e28-43cd-9de6-6cddfbbd163d}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Tag" Id="{fefd0db7-e012-4728-b2c5-4de1f2c675d0}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Tag : STRING]]></Declaration>
+      <Get Name="Get" Id="{46ff3736-98f0-4078-846d-f939f5f220ac}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Tag := fb_mem.Tag;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Toerental" Id="{648fbdfc-50d6-45b6-9f05-5bc65d6066b2}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Toerental : INT
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="CM_Motor">
+      <LineId Id="14" Count="11" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="27" Count="7" />
+      <LineId Id="39" Count="2" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="43" Count="1" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="45" Count="7" />
+      <LineId Id="26" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Abort">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Auto.Get">
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Auto.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Error_State.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.FB_init">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Manueel.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Manueel.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Reset">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Richting_L.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Richting_L.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Richting_R.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Richting_R.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Start">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.State.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Stop">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Tag.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Toerental">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
