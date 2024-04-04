@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="EM_Transport_ALM" Id="{2ab4d28f-ca88-4a95-9e5b-f96ae0f3abac}">
+    <Declaration><![CDATA[TYPE EM_Transport_ALM :
+STRUCT
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

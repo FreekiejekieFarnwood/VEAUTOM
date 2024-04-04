@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="E_State_PackML" Id="{b0d55560-83c1-4802-8222-4e4d9dcb0c31}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_State_PackML :
+(
+	IDLE := 0,
+	STARTING,
+	EXECUTE,
+	COMPLETING,
+	COMPLETE,
+	RESETTING,
+	HOLDING,
+	HELD,
+	UNHOLDING,
+	SUSPENDING,
+	SUSPENDED,
+	UNSUSPENDING,
+	ABORTING,
+	ABORTED,
+	CLEARING,
+	STOPPING,
+	STOPPED
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

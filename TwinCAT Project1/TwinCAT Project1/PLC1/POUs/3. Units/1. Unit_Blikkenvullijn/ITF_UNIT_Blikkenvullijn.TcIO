@@ -3,6 +3,12 @@
   <Itf Name="ITF_UNIT_Blikkenvullijn" Id="{b0828150-22c5-45c8-9e2c-aea04fc32620}">
     <Declaration><![CDATA[INTERFACE ITF_UNIT_Blikkenvullijn
 ]]></Declaration>
+    <Method Name="Auto" Id="{5b284624-3ca7-40d4-81f8-92598c6dc748}">
+      <Declaration><![CDATA[METHOD Auto : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
     <Method Name="FB_init" Id="{f09ea582-3a2e-488e-b32f-fc9d8bf63c1d}">
       <Declaration><![CDATA[METHOD FB_init : BOOL
 VAR_INPUT
@@ -10,6 +16,11 @@ VAR_INPUT
 	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
 END_VAR
 ]]></Declaration>
+    </Method>
+    <Method Name="Manueel" Id="{129ba574-754c-430f-99a1-b48df9bf28d1}">
+      <Declaration><![CDATA[METHOD Manueel : BOOL
+VAR_INPUT
+END_VAR]]></Declaration>
     </Method>
   </Itf>
 </TcPlcObject>

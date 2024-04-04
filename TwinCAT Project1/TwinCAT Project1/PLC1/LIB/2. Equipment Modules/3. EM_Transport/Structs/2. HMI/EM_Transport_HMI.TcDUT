@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="EM_Transport_HMI" Id="{aed052bd-58c1-4577-9e04-db27ab8dcd0d}">
+    <Declaration><![CDATA[TYPE EM_Transport_HMI :
+STRUCT
+	Start		: BOOL;
+	Stop		: BOOL;
+	Reset		: BOOL;
+	Abort		: BOOL;
+	Auto		: BOOL;
+	Manueel		: BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="EM_Transport_STS" Id="{a13c4b01-0ebd-4618-9c16-67853a92e93e}">
+    <Declaration><![CDATA[TYPE EM_Transport_STS :
+STRUCT
+	Tag				: STRING;
+	State 			: E_State_PackML;
+	Manueel			: BOOL;
+	Auto			: BOOL;
+END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

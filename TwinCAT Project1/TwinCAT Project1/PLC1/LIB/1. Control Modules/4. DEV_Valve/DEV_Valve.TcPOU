@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="DEV_Valve" Id="{36449132-d53d-484c-9ebb-e20c5d923732}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK DEV_Valve EXTENDS FB_DeviceBase IMPLEMENTS ITF_Valve
+
+VAR
+	I_FeedbackOpen		AT	%I* : BOOL;
+	I_FeedbackClosed 	AT 	%I* : BOOL;
+	I_Estop				AT	%I*	: BOOL;
+	Q_ValveOutput		AT	%Q*	: BOOL;
+	
+	s_eActualState				: E_ValveState;
+	s_eOperatingMode			: E_OperationMode;
+	s_tonFeedbackTime			: TON;
+	
+	bFeedbackError		: BOOL;
+	bEstopActive		: BOOL;
+	bBothFeedback		: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Method" Id="{e939ec98-8b7a-4b1e-af4c-b16997f2a20a}" />
+    <Folder Name="Properties" Id="{e5ddc51b-0b4a-4524-a37b-63772754452c}" />
+    <Method Name="_FExceptions" Id="{4182cdba-02cc-4eab-a4ed-e50d2a21d2b2}" FolderPath="Method\">
+      <Declaration><![CDATA[METHOD _FExceptions : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="_StHmi" Id="{4857c0f1-bb49-4ade-a221-03c3da4527f3}" FolderPath="Method\">
+      <Declaration><![CDATA[METHOD PRIVATE _StHmi
+VAR_INPUT
+	stHMI : stDevValve;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="ActualState" Id="{931ebd17-2b5f-4423-8f65-7ddf693cfc54}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY ActualState : E_ValveState
+]]></Declaration>
+      <Get Name="Get" Id="{d15455c8-edf5-4df5-93b3-199038b24bd6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Close" Id="{aca272f9-81f8-4175-862d-610a22b53210}" FolderPath="Method\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Close : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="EmergencyStatus" Id="{faebb791-9d9b-43b6-a8d9-17b06181c36a}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY EmergencyStatus : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{c3cce2a6-d6bf-4e0b-85f6-735f99dda6a1}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Open" Id="{0dd4219c-86e8-4ce9-a367-53dcd4f1bc91}" FolderPath="Method\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Open : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="OperatingMode" Id="{7a40270e-1e41-448a-af48-293399f4e85d}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY OperatingMode : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{ed17de1b-e5c2-4d93-978b-ef4e92e8ae6c}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Reset" Id="{17aa9f20-5165-42a4-9d4c-661c80698cc6}" FolderPath="Method\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Reset : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SetMode" Id="{dae04c1b-0e2a-44f9-aed5-12adf790a98c}" FolderPath="Method\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD SetMode : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="DEV_Valve">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_Valve._FExceptions">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_Valve._StHmi">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_Valve.ActualState.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_Valve.Close">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_Valve.EmergencyStatus.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_Valve.Open">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_Valve.OperatingMode.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_Valve.Reset">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_Valve.SetMode">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

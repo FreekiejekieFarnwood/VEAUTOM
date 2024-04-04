@@ -22,6 +22,156 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="LIB\1. Control Modules\1. DEV_Base\FB_DeviceBase.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\1. DEV_Base\stDevBase.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\2. DEV_AnaIn\FB_DEV_AnaIn.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\2. DEV_AnaIn\ITF_DEV_AnaIn.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\3. DEV_DigIn\FB_DEV_DigIn.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\3. DEV_DigIn\ITF_DigIn.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\DEV_Valve.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\ENUMs\E_ValveState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\ITF_Valve.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\4. DEV_Valve\STRUCTs\stDevValve.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\5. DEV_ControlValve\DEV_CtrlValve.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\5. DEV_ControlValve\ENUMs\E_CtrlValveState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\5. DEV_ControlValve\ITF_ControlValve.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\6. DEV_Motor\ENUMs\E_MotorState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\6. DEV_Motor\ITF_Motor_1.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\ENUMs\E_OperationMode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\1. Control Modules\FB_Devices.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\1. FB_Base\FB_EMbase.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\1. FB_Base\stEMbase.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\2. EM_Machine_PackML\E_State_PackML.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\2. EM_Machine_PackML\FB_Machine_PackML.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\2. EM_Machine_PackML\ITF_PackML.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\2. EM_Machine_PackML\ITF_PackMLV2.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\2. EM_Machine_PackML\PackML_StateMachine.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\2. EM_Machine_PackML\STRUCT_Machine_PackML.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\3. EM_Transport\EM_Transport.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\3. EM_Transport\ITF_EM_Transport.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\1. CS\EM_Transport_CS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\2. HMI\EM_Transport_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\3. STS\EM_Transport_STS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\4. ALM\EM_Transport_ALM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\5. WRN\EM_Transport_WRN.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\6. PAR\EM_Transport_PAR.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\7. SIM\EM_Transport_SIM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\STRUCT_EM_Transport.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\EM_Transport_Mechanische_Stop.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Enums\E_Mechanische_Stop.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\ITF_EM_Transport_Mechanische_Stop.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\1. CS\EM_Transport_Mechanische_Stop_CS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\2. HMI\EM_Transport_Mechanische_Stop_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\3. STS\EM_Transport_Mechanische_Stop_STS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\4. ALM\EM_Transport_Mechanische_Stop_ALM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\5. WRN\EM_Transport_Mechanische_Stop_WRN.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\6. PAR\EM_Transport_Mechanische_Stop_PAR.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\7. SIM\EM_Transport_Mechanische_Stop_SIM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\STRUCT_EM_Mechanische_Stop.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\3. Units\1. UN_Base\FB_UN_base.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\3. Units\1. UN_Base\stUNbase.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\FUN\PackML.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LIB\FUN\STRUCT_PackML.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -100,28 +250,28 @@
     <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\ITF_Can_Supply.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\1. CS\EM_TransportCanSupply2_CS.TcDUT">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\1. CS\EM_CanSupply_CS.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\2. HMI\EM_TransportCanSupply2_HMI.TcDUT">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\2. HMI\EM_CanSupply_HMI.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\3. STS\EM_TransportCanSupply2_STS.TcDUT">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\3. STS\EM_CanSupply_STS.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\4. ALM\EM_TransportCanSupply2_ALM.TcDUT">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\4. ALM\EM_CanSupply_ALM.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\5. WRN\EM_TransportCanSupply2_WRN.TcDUT">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\5. WRN\EM_CanSupply_WRN.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\6. PAR\EM_TransportCanSupply2_PAR.TcDUT">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\6. PAR\EM_CanSupply_PAR.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\7. SIM\EM_TransportCanSupply2_SIM.TcDUT">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\7. SIM\EM_CanSupply_SIM.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\STRUCT_EM_Transport_CanSupply2.TcDUT">
+    <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Structs\STRUCT_EM_CanSupply.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\EM_Filling.TcPOU">
@@ -155,6 +305,33 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\STRUCT_EM_Filling.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Machine\EM_Machine.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\1. CS\EM_Machine_CS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\2. HMI\EM_Machine_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\3. STS\EM_Machine_STS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\4. ALM\EM_Machine_ALM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\5. WRN\EM_Machine_WRN.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\6. PAR\EM_Machine_PAR.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\7. SIM\EM_Machine_SIM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\STRUCT_EM_Machine.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\3. Units\1. Unit_Blikkenvullijn\ITF_UNIT_Blikkenvullijn.TcIO">
@@ -212,6 +389,50 @@
     <Folder Include="DUTs\2. Equipment Modules" />
     <Folder Include="DUTs\4. Management" />
     <Folder Include="GVLs" />
+    <Folder Include="LIB" />
+    <Folder Include="LIB\1. Control Modules" />
+    <Folder Include="LIB\1. Control Modules\1. DEV_Base" />
+    <Folder Include="LIB\1. Control Modules\2. DEV_AnaIn" />
+    <Folder Include="LIB\1. Control Modules\3. DEV_DigIn" />
+    <Folder Include="LIB\1. Control Modules\4. DEV_Valve" />
+    <Folder Include="LIB\1. Control Modules\4. DEV_Valve\ENUMs" />
+    <Folder Include="LIB\1. Control Modules\4. DEV_Valve\STRUCTs" />
+    <Folder Include="LIB\1. Control Modules\5. DEV_ControlValve" />
+    <Folder Include="LIB\1. Control Modules\5. DEV_ControlValve\ENUMs" />
+    <Folder Include="LIB\1. Control Modules\5. DEV_ControlValve\STRUCTs" />
+    <Folder Include="LIB\1. Control Modules\6. DEV_Motor" />
+    <Folder Include="LIB\1. Control Modules\6. DEV_Motor\ENUMs" />
+    <Folder Include="LIB\1. Control Modules\6. DEV_Motor\STRUCTs" />
+    <Folder Include="LIB\1. Control Modules\7. DEV_ControlMotor" />
+    <Folder Include="LIB\1. Control Modules\ENUMs" />
+    <Folder Include="LIB\2. Equipment Modules" />
+    <Folder Include="LIB\2. Equipment Modules\1. FB_Base" />
+    <Folder Include="LIB\2. Equipment Modules\2. EM_Machine_PackML" />
+    <Folder Include="LIB\2. Equipment Modules\3. EM_Transport" />
+    <Folder Include="LIB\2. Equipment Modules\3. EM_Transport\Enums" />
+    <Folder Include="LIB\2. Equipment Modules\3. EM_Transport\Structs" />
+    <Folder Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\1. CS" />
+    <Folder Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\2. HMI" />
+    <Folder Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\3. STS" />
+    <Folder Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\4. ALM" />
+    <Folder Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\5. WRN" />
+    <Folder Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\6. PAR" />
+    <Folder Include="LIB\2. Equipment Modules\3. EM_Transport\Structs\7. SIM" />
+    <Folder Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop" />
+    <Folder Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Enums" />
+    <Folder Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs" />
+    <Folder Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\1. CS" />
+    <Folder Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\2. HMI" />
+    <Folder Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\3. STS" />
+    <Folder Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\4. ALM" />
+    <Folder Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\5. WRN" />
+    <Folder Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\6. PAR" />
+    <Folder Include="LIB\2. Equipment Modules\4. EM_Transport_Mechanische_Stop\Structs\7. SIM" />
+    <Folder Include="LIB\3. Units" />
+    <Folder Include="LIB\3. Units\1. UN_Base" />
+    <Folder Include="LIB\4. Management layer" />
+    <Folder Include="LIB\4. Management layer\FB_Alarmhandler" />
+    <Folder Include="LIB\FUN" />
     <Folder Include="POUs\1. Control Modules\1. CM_Motor" />
     <Folder Include="POUs\1. Control Modules\1. CM_Motor\Enums" />
     <Folder Include="POUs\1. Control Modules\1. CM_Motor\Structs" />
@@ -255,6 +476,15 @@
     <Folder Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\6. PAR" />
     <Folder Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\7. SIM" />
     <Folder Include="POUs\2. Equipment Modules\3. EM_TurningDevice" />
+    <Folder Include="POUs\2. Equipment Modules\4. EM_Machine" />
+    <Folder Include="POUs\2. Equipment Modules\4. EM_Machine\Structs" />
+    <Folder Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\1. CS" />
+    <Folder Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\2. HMI" />
+    <Folder Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\3. STS" />
+    <Folder Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\4. ALM" />
+    <Folder Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\5. WRN" />
+    <Folder Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\6. PAR" />
+    <Folder Include="POUs\2. Equipment Modules\4. EM_Machine\Structs\7. SIM" />
     <Folder Include="POUs\3. Units" />
     <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn" />
     <Folder Include="POUs\3. Units\1. Unit_Blikkenvullijn\Structs" />
@@ -289,10 +519,6 @@
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
     </PlaceholderReference>
-    <PlaceholderReference Include="TwinCAT_LIB">
-      <DefaultResolution>TwinCAT_LIB, * (Farnwood Engineering)</DefaultResolution>
-      <Namespace>TwinCAT_LIB</Namespace>
-    </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="PLC1.tmc">
@@ -314,9 +540,6 @@
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_Module">
       <Resolution>Tc3_Module, * (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="TwinCAT_LIB">
-      <Resolution>TwinCAT_LIB, * (Farnwood Engineering)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ProjectExtensions>

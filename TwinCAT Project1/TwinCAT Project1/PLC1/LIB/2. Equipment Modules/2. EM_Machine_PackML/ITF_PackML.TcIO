@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_PackML" Id="{5248f30f-addb-4da9-acad-d37400a13843}">
+    <Declaration><![CDATA[INTERFACE ITF_PackML
+]]></Declaration>
+    <Folder Name="Methods" Id="{2a7974e3-b175-4207-8a01-c2d55800274e}" />
+    <Folder Name="Properties" Id="{b0e45aa0-dfe6-47a8-9102-c217108d8143}" />
+    <Method Name="Abort" Id="{d4189803-68d4-443b-a885-8964c89ee20b}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Abort : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Aborting_SC" Id="{06298ce9-47b7-4eb4-8ca9-932ff057f715}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Aborting_SC : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Clear" Id="{a8cdeddb-ecdc-44aa-babf-c09197fd11a0}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Clear : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Clearing_SC" Id="{4f9918e3-ec7a-4a65-a57c-ee8e9c6774d8}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Clearing_SC : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Completing_SC" Id="{d816d996-fb57-426e-ba33-2505ea81ea76}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Completing_SC : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Execute_SC" Id="{edb6638a-2bc0-4467-b8e0-47df570ec312}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Execute_SC : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="FB_init" Id="{d6432e85-464e-47d9-8df3-b012ecd7b5e4}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD FB_init : BOOL
+VAR_INPUT
+	(* if TRUE, the retain variables are initialized (warm start / cold start)*)
+	bInitRetains	: BOOL;
+	(* if TRUE, the instance afterwards gets moved into the copy code (online change)*)
+	bInCopyCode	: BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Hold" Id="{a648521b-69cf-4248-ada2-dcc3e7a48db4}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Hold : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Holding_SC" Id="{8e737121-2ad7-47ae-933c-2ee90d003215}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Holding_SC : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Reset" Id="{687cbe37-13ba-4361-b37e-6005d90f41ec}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Resetting_SC" Id="{d557262e-4dd6-4308-9cd8-1445688643db}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Resetting_SC : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Start" Id="{c892f803-041a-4ca4-a9db-9f90efa49f1b}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Starting_SC" Id="{d814d893-3bb1-4138-b12f-2e2c9184d5ef}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Starting_SC : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="State" Id="{feafbd52-1feb-4947-9847-502380d6819d}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY State : E_State_PackML]]></Declaration>
+      <Get Name="Get" Id="{9b10b7f3-109a-4b13-a25d-0d3f6fd7b2d0}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="Stop" Id="{6d676261-21e8-48b0-9db1-914f04459589}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Stopping_SC" Id="{062635fb-1d7f-499c-9c75-36b5cd34ee65}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Stopping_SC : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Suspend" Id="{28878ef8-5d67-4229-b90b-7e78063d72c5}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Suspend : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Suspending_SC" Id="{95e3eecc-00b7-4858-a5a0-94a07b90bbd8}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Suspending_SC : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Unhold" Id="{d353edcc-1bcc-4f92-859b-008c60e0c12e}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Unhold : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Unholding_SC" Id="{236a1745-2ec6-49fa-ae20-02da1fc12304}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Unholding_SC : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Unsuspend" Id="{6ceccd71-66a9-404e-b1bb-025b41e823b2}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Unsuspend : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Unsuspending_SC" Id="{8644ece5-7350-40e6-9a79-987de8b48e33}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Unsuspending_SC : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="ZeroAllVar" Id="{06af984d-c760-4f0f-900c-ab9177ec9012}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD ZeroAllVar : BOOL
+VAR_INPUT
+END_VAR
+
+
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

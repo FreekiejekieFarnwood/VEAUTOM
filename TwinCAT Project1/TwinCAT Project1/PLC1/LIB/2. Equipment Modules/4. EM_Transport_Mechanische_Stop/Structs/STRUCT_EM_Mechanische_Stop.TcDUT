@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="STRUCT_EM_Mechanische_Stop" Id="{e347df3d-d747-4ead-9cc3-eccd1361ff96}">
+    <Declaration><![CDATA[TYPE STRUCT_EM_Mechanische_Stop :
+STRUCT
+	CS	: EM_Transport_Mechanische_Stop_CS;
+	HMI	: EM_Transport_Mechanische_Stop_HMI;
+	STS	: EM_Transport_Mechanische_Stop_STS;
+	ALM	: EM_Transport_Mechanische_Stop_ALM;
+	WRN	: EM_Transport_Mechanische_Stop_WRN;
+	PAR	: EM_Transport_Mechanische_Stop_PAR;
+	SIM	: EM_Transport_Mechanische_Stop_SIM;	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

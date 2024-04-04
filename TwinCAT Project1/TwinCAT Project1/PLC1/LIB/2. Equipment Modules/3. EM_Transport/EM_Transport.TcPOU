@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="EM_Transport" Id="{b4839b78-b43e-43c9-b2a5-dfab2150ed70}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK EM_Transport IMPLEMENTS  ITF_EM_Transport
+
+VAR
+	fb_mem : STRUCT_EM_Transport;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+$$$$$$$$\                                                                   $$\       $$$$$$$$\                     $$\                                         $$\                     
+$$  _____|                                                                  $$ |      $$  _____|                    \__|                                        \__|                    
+$$ |   $$$$$$\   $$$$$$\  $$$$$$$\  $$\  $$\  $$\  $$$$$$\   $$$$$$\   $$$$$$$ |      $$ |      $$$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\  
+$$$$$\ \____$$\ $$  __$$\ $$  __$$\ $$ | $$ | $$ |$$  __$$\ $$  __$$\ $$  __$$ |      $$$$$\    $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ 
+$$  __|$$$$$$$ |$$ |  \__|$$ |  $$ |$$ | $$ | $$ |$$ /  $$ |$$ /  $$ |$$ /  $$ |      $$  __|   $$ |  $$ |$$ /  $$ |$$ |$$ |  $$ |$$$$$$$$ |$$$$$$$$ |$$ |  \__|$$ |$$ |  $$ |$$ /  $$ |
+$$ |  $$  __$$ |$$ |      $$ |  $$ |$$ | $$ | $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |      $$ |      $$ |  $$ |$$ |  $$ |$$ |$$ |  $$ |$$   ____|$$   ____|$$ |      $$ |$$ |  $$ |$$ |  $$ |
+$$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |      $$$$$$$$\ $$ |  $$ |\$$$$$$$ |$$ |$$ |  $$ |\$$$$$$$\ \$$$$$$$\ $$ |      $$ |$$ |  $$ |\$$$$$$$ |
+\__|   \_______|\__|      \__|  \__| \_____\____/  \______/  \______/  \_______|      \________|\__|  \__| \____$$ |\__|\__|  \__| \_______| \_______|\__|      \__|\__|  \__| \____$$ |
+                                                                                                          $$\   $$ |                                                          $$\   $$ |
+                                                                                                          \$$$$$$  |                                                          \$$$$$$  |
+                                                                                                           \______/                                                            \______/ 
+*)]]></ST>
+    </Implementation>
+    <Folder Name="Methods" Id="{60ae86de-bafc-440d-bc9f-96901a1f7546}" />
+    <Folder Name="Properties" Id="{8dc97ebe-3ace-4fdf-a1ba-2a3cf702ba1f}" />
+    <Method Name="Abort" Id="{a1241ff4-a879-4566-a18a-400148da2e02}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Abort : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Auto" Id="{fc84f2d0-f38b-409b-8df9-09023902c7c6}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Auto : BOOl]]></Declaration>
+      <Get Name="Get" Id="{1019b566-897a-4932-a1e6-47bf5977817e}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[AUTO := fb_mem.STS.Auto;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{9f2d04fb-7261-48ac-9f62-2e687a3e1661}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fb_mem.CS.Auto := AUTO;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Clear" Id="{50fb058c-5658-455f-9a35-9c7a170ca4d9}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Clear : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Manueel" Id="{fb40a4a0-9273-4df4-bb96-4d1962f2f8a9}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Manueel : BOOl]]></Declaration>
+      <Get Name="Get" Id="{0b113612-b459-4b3a-a52f-128fab518be9}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Manueel := fb_mem.STS.Manueel;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{b261c000-a596-4714-8e62-0b931308433e}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fb_mem.CS.Manueel :=  Manueel;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Reset" Id="{65e2e2c7-b2da-48f0-9d00-3989a20bbf23}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Reset : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="RPM" Id="{d26f9484-70ed-43f2-858c-07c0b43837bd}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY RPM : INT
+]]></Declaration>
+      <Get Name="Get" Id="{56fdee3c-d30a-45a6-bc9a-95697aff9df6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{143a8ab9-f354-4ba7-88c1-f0978b1d945a}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Start" Id="{a87c6baf-8ed5-43d4-9a80-f2ab65334e87}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Start : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="State" Id="{046af506-8cf0-46af-a509-5569994c5df0}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY State : E_State_PackML
+]]></Declaration>
+      <Get Name="Get" Id="{027b1301-0c1f-44f4-a2eb-518122c4d3ed}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[State := fb_mem.STS.State;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Stop" Id="{6fc77e8f-257e-4b7c-8f1c-8ac856b8cd45}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Tag" Id="{7b2c485a-3821-43e3-83a2-c27ca1c63059}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY Tag : STRING
+]]></Declaration>
+      <Get Name="Get" Id="{5aa24341-14dd-4f8f-bca1-bc219fc01e1b}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Tag := fb_mem.STS.Tag;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="ZeroAllVar" Id="{18437b3c-0102-492f-af37-447af09c5d43}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD ZeroAllVar : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="EM_Transport">
+      <LineId Id="15" Count="11" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.Abort">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.Auto.Get">
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.Auto.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.Clear">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.Manueel.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.Manueel.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.Reset">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.RPM.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.RPM.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.Start">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.State.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.Stop">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.Tag.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport.ZeroAllVar">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

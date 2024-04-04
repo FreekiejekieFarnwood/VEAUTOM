@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PackML_StateMachine" Id="{1dc17e84-2765-4770-878c-06b6f6878d93}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION PackML_StateMachine : E_State_PackML
+VAR_INPUT
+	Start		: BOOL;
+	Stop		: BOOL;
+	Reset		: BOOL;
+	Abort		: BOOL;
+	Clear		: BOOL;
+	UnSuspend	: BOOL;
+	Suspend		: BOOL;
+	UnHold		: BOOL;
+	Hold		: BOOL;
+	
+	Starting_SC 	: BOOL;
+	Execute_SC 		: BOOL;
+	Resetting_SC 	: BOOL;
+	Holding_SC 		: BOOL;
+	Unholding_SC 	: BOOL;
+	Suspending_SC	: BOOL;
+	Unsuspending_SC	: BOOL;
+	Aborting_SC		: BOOL;
+	Clearing_SC		: BOOL;
+	Stopping_SC		: BOOL;
+END_VAR
+VAR
+	StepSwitch	: E_State_PackML;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+$$$$$$$$\                                                                   $$\       $$$$$$$$\                     $$\                                         $$\                     
+$$  _____|                                                                  $$ |      $$  _____|                    \__|                                        \__|                    
+$$ |   $$$$$$\   $$$$$$\  $$$$$$$\  $$\  $$\  $$\  $$$$$$\   $$$$$$\   $$$$$$$ |      $$ |      $$$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\  
+$$$$$\ \____$$\ $$  __$$\ $$  __$$\ $$ | $$ | $$ |$$  __$$\ $$  __$$\ $$  __$$ |      $$$$$\    $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ 
+$$  __|$$$$$$$ |$$ |  \__|$$ |  $$ |$$ | $$ | $$ |$$ /  $$ |$$ /  $$ |$$ /  $$ |      $$  __|   $$ |  $$ |$$ /  $$ |$$ |$$ |  $$ |$$$$$$$$ |$$$$$$$$ |$$ |  \__|$$ |$$ |  $$ |$$ /  $$ |
+$$ |  $$  __$$ |$$ |      $$ |  $$ |$$ | $$ | $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |      $$ |      $$ |  $$ |$$ |  $$ |$$ |$$ |  $$ |$$   ____|$$   ____|$$ |      $$ |$$ |  $$ |$$ |  $$ |
+$$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |      $$$$$$$$\ $$ |  $$ |\$$$$$$$ |$$ |$$ |  $$ |\$$$$$$$\ \$$$$$$$\ $$ |      $$ |$$ |  $$ |\$$$$$$$ |
+\__|   \_______|\__|      \__|  \__| \_____\____/  \______/  \______/  \_______|      \________|\__|  \__| \____$$ |\__|\__|  \__| \_______| \_______|\__|      \__|\__|  \__| \____$$ |
+                                                                                                          $$\   $$ |                                                          $$\   $$ |
+                                                                                                          \$$$$$$  |                                                          \$$$$$$  |
+                                                                                                           \______/                                                            \______/ 
+*)
+
+CASE StepSwitch OF
+	E_State_PackML.IDLE 			: 
+		//HAPPY FLOW		
+		IF Start AND NOT Abort THEN
+			StepSwitch := E_State_PackML.STARTING;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		IF Stop THEN
+			StepSwitch:= E_State_PackML.STOPPING;
+		END_IF
+	
+	E_State_PackML.STARTING 		:
+		//HAPPY FLOW		
+		IF Starting_SC AND NOT Abort THEN
+			StepSwitch:= E_State_PackML.IDLE;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		IF Stop THEN
+			StepSwitch:= E_State_PackML.STOPPING;
+		END_IF
+	
+	E_State_PackML.EXECUTE 			: 
+		//HAPPY FLOW		
+		IF (Execute_SC) AND (NOT Abort) THEN
+			StepSwitch:= E_State_PackML.IDLE;
+		END_IF
+		
+		IF Hold THEN
+			StepSwitch:= E_State_PackML.HOLDING;
+		END_IF
+		
+		IF Suspend THEN
+			StepSwitch := E_State_PackML.SUSPENDED;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		IF Stop THEN
+			StepSwitch:= E_State_PackML.STOPPING;
+		END_IF
+	
+	E_State_PackML.COMPLETE 		:
+		//HAPPY FLOW
+		StepSwitch:= E_State_PackML.RESETTING;
+	
+	E_State_PackML.RESETTING 		:
+		//HAPPY FLOW		
+		IF Resetting_SC AND NOT Abort THEN
+			StepSwitch:= E_State_PackML.IDLE;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		IF Stop THEN
+			StepSwitch:= E_State_PackML.STOPPING;
+		END_IF
+	
+	E_State_PackML.HOLDING 			:
+		//HAPPY FLOW		
+		IF Holding_SC AND NOT Abort THEN
+			StepSwitch:= E_State_PackML.HELD;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		IF Stop THEN
+			StepSwitch:= E_State_PackML.STOPPING;
+		END_IF
+		
+	
+	E_State_PackML.HELD 			:
+		//HAPPY FLOW		
+		IF Unhold AND NOT Abort THEN
+			StepSwitch := E_State_PackML.UNHOLDING;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		IF Stop THEN
+			StepSwitch:= E_State_PackML.STOPPING;
+		END_IF
+	
+	E_State_PackML.UNHOLDING 		:
+		//HAPPY FLOW		
+		IF Unholding_SC AND NOT Abort THEN
+			StepSwitch:= E_State_PackML.EXECUTE;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		IF Stop THEN
+			StepSwitch:= E_State_PackML.STOPPING;
+		END_IF
+	
+	E_State_PackML.SUSPENDING 		:
+		//HAPPY FLOW		
+		IF Suspending_SC AND NOT Abort THEN
+			StepSwitch:= E_State_PackML.SUSPENDED;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		IF Stop THEN
+			StepSwitch:= E_State_PackML.STOPPING;
+		END_IF
+	
+	
+	E_State_PackML.SUSPENDED 		:
+		//HAPPY FLOW		
+		IF Unsuspend AND NOT Abort THEN
+			StepSwitch:= E_State_PackML.UNSUSPENDING;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		IF Stop THEN
+			StepSwitch:= E_State_PackML.STOPPING;
+		END_IF
+	
+	E_State_PackML.UNSUSPENDING 	:
+		//HAPPY FLOW		
+		IF Unsuspending_SC AND NOT Abort THEN
+			StepSwitch:= E_State_PackML.EXECUTE;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		IF Stop THEN
+			StepSwitch:= E_State_PackML.STOPPING;
+		END_IF
+	
+	E_State_PackML.ABORTED			:
+		//HAPPY FLOW		
+		IF Clear THEN
+			StepSwitch:= E_State_PackML.CLEARING;
+		END_IF
+	
+		
+	E_State_PackML.ABORTING			:
+		//HAPPY FLOW		
+		IF Aborting_SC THEN
+			StepSwitch:= E_State_PackML.ABORTED;
+		END_IF
+	
+		
+	E_State_PackML.CLEARING 		:
+		//HAPPY FLOW		
+		IF Clearing_SC THEN
+			StepSwitch:= E_State_PackML.STOPPED;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		
+		
+	E_State_PackML.STOPPING 		:
+		//HAPPY FLOW
+		IF Stopping_SC THEN
+			StepSwitch:= E_State_PackML.STOPPED;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		
+	
+	E_State_PackML.STOPPED 			: 
+		//HAPPY FLOW
+		IF Reset AND NOT Abort THEN
+			StepSwitch:= E_State_PackML.RESETTING;
+		END_IF
+		
+		//EXEPTION HANDLING
+		IF Abort THEN
+			StepSwitch:= E_State_PackML.ABORTING;
+		END_IF
+		IF Stop THEN
+			StepSwitch:= E_State_PackML.STOPPING;
+		END_IF
+END_CASE
+
+PackML_StateMachine := StepSwitch;
+
+// Set variables FALSE
+(*
+Abort 			:= FALSE;
+Aborting_SC 	:= FALSE;
+Clear 			:= FALSE;
+Clearing_SC 	:= FALSE;
+Execute_SC 	:= FALSE;
+Completing_SC	:= FALSE;
+Hold 			:= FALSE;
+Holding_SC 	:= FALSE;
+Reset 			:= FALSE;
+Resetting_SC 	:= FALSE;
+Start 			:= FALSE;
+Starting_SC 	:= FALSE;
+Stop 			:= FALSE;
+Stopping_SC 	:= FALSE;
+Suspend 		:= FALSE;
+Suspending_SC 	:= FALSE;
+Unhold 		:= FALSE;
+Unholding_SC 	:= FALSE;
+Unsuspend 		:= FALSE;
+*)
+]]></ST>
+    </Implementation>
+    <LineIds Name="PackML_StateMachine">
+      <LineId Id="8" Count="220" />
+      <LineId Id="277" Count="0" />
+      <LineId Id="276" Count="0" />
+      <LineId Id="229" Count="22" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

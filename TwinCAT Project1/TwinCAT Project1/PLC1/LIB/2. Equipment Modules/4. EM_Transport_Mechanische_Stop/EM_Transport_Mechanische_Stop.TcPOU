@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="EM_Transport_Mechanische_Stop" Id="{b7168c61-ecd4-4685-b920-755ca0b861b8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK EM_Transport_Mechanische_Stop EXTENDS EM_Transport IMPLEMENTS  ITF_EM_Transport_Mechanische_Stop
+
+VAR
+	fbMechanischeStop_mem : STRUCT_EM_Mechanische_Stop;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="Methods" Id="{3d8b66f8-3d7c-495b-80c7-324b66a87557}" />
+    <Folder Name="Properties" Id="{9e87a29a-b81d-42a4-ad34-326d6677771f}" />
+    <Method Name="Close" Id="{bc7183c4-aedc-4363-8e85-1e5ded2c28c9}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Close : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Open" Id="{1e494ea6-65cf-4ee9-9f18-11ad53317a66}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Open : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Stop_State" Id="{3694e7d8-987e-4d1e-8f5d-02e4bf119952}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Stop_State : E_Mechanische_Stop
+]]></Declaration>
+      <Get Name="Get" Id="{e0e286d6-582b-4de6-8651-08ea60a23a4d}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Stop_State := fbMechanischeStop_mem.STS.State;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="ZeroAllValues" Id="{89462386-6c82-4719-9f6c-5c50a1373597}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD ZeroAllValues : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="EM_Transport_Mechanische_Stop">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport_Mechanische_Stop.Close">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport_Mechanische_Stop.Open">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport_Mechanische_Stop.Stop_State.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Transport_Mechanische_Stop.ZeroAllValues">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
