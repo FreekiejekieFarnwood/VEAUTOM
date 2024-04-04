@@ -9,6 +9,11 @@ STRUCT
 	Abort		: BOOL;
 	Auto		: BOOL;
 	Manueel		: BOOL;
+	Clear		: BOOL;
+	UnSuspend	: BOOL;
+	Suspend		: BOOL;
+	UnHold		: BOOL;
+	Hold		: BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

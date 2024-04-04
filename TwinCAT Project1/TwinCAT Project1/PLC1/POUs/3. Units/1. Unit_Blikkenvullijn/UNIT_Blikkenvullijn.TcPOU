@@ -315,7 +315,7 @@ CASE fb_mem.STS.State OF
 		EM_SealShrink.Unsuspend();
 		END_IF
 	E_State_PackML.UNSUSPENDING 	:
-		fb_mem.STS.Suspending_SC := TRUE;
+		fb_mem.STS.Unsuspending_SC	:= TRUE;
 	E_State_PackML.ABORTED			:
 		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
 			fb_mem.CS.Clear 							:= TRUE;

@@ -3,6 +3,7 @@
   <DUT Name="EM_Transport_SIM" Id="{8d300077-1d88-4620-8ced-a9ca53cd20c9}">
     <Declaration><![CDATA[TYPE EM_Transport_SIM :
 STRUCT
+	Stopping_SC	: BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

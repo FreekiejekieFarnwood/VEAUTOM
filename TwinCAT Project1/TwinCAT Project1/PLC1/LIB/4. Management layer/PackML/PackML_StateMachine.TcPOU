@@ -253,35 +253,13 @@ END_CASE
 
 PackML_StateMachine := StepSwitch;
 
-// Set variables FALSE
-(*
-Abort 			:= FALSE;
-Aborting_SC 	:= FALSE;
-Clear 			:= FALSE;
-Clearing_SC 	:= FALSE;
-Execute_SC 	:= FALSE;
-Completing_SC	:= FALSE;
-Hold 			:= FALSE;
-Holding_SC 	:= FALSE;
-Reset 			:= FALSE;
-Resetting_SC 	:= FALSE;
-Start 			:= FALSE;
-Starting_SC 	:= FALSE;
-Stop 			:= FALSE;
-Stopping_SC 	:= FALSE;
-Suspend 		:= FALSE;
-Suspending_SC 	:= FALSE;
-Unhold 		:= FALSE;
-Unholding_SC 	:= FALSE;
-Unsuspend 		:= FALSE;
-*)
 ]]></ST>
     </Implementation>
     <LineIds Name="PackML_StateMachine">
       <LineId Id="8" Count="220" />
       <LineId Id="277" Count="0" />
       <LineId Id="276" Count="0" />
-      <LineId Id="229" Count="22" />
+      <LineId Id="251" Count="0" />
       <LineId Id="7" Count="0" />
     </LineIds>
   </POU>

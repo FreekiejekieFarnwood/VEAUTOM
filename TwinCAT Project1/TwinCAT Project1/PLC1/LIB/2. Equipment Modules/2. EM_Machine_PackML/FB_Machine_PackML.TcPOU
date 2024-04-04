@@ -366,7 +366,7 @@ METHOD Starting_SC : BOOL
         <ST><![CDATA[fbPackML_mem.Starting_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Property Name="State" Id="{12585bee-b7dc-4602-a0af-aedb1f7976dd}">
+    <Property Name="State" Id="{12585bee-b7dc-4602-a0af-aedb1f7976dd}" FolderPath="Properties\">
       <Declaration><![CDATA[{warning 'add property implementation'}
 PROPERTY State : E_State_PackML
 ]]></Declaration>

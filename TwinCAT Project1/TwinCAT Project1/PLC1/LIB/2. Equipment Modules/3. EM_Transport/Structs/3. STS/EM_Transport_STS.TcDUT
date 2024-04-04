@@ -5,8 +5,19 @@
 STRUCT
 	Tag				: STRING;
 	State 			: E_State_PackML;
-	Manueel			: BOOL;
-	Auto			: BOOL;
+	Auto 			: BOOL;
+	Manueel 		: BOOL;
+	Starting_SC 	: BOOL;
+	Execute_SC 		: BOOL;
+	Resetting_SC 	: BOOL;
+	Holding_SC 		: BOOL;
+	Unholding_SC 	: BOOL;
+	Suspending_SC	: BOOL;
+	Unsuspending_SC	: BOOL;
+	Aborting_SC		: BOOL;
+	Clearing_SC		: BOOL;
+	Stopping_SC		: BOOL;
+	Completing_SC	: BOOL;
 END_STRUCT
 END_TYPE]]></Declaration>
   </DUT>
