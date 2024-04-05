@@ -235,6 +235,42 @@
     <Compile Include="POUs\1. Control Modules\2. CM_Sensor\Structs\STRUCT_CM_Sensor.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\1. Control Modules\4. CM_Valve\CM_Valve.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\4. CM_Valve\Enums\E_Valve_Error_State.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\4. CM_Valve\Enums\E_Valve_State.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\4. CM_Valve\ITF_Valve2.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\4. CM_Valve\Structs\1. CS\CM_Valve_CS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\4. CM_Valve\Structs\2. HMI\CM_Valve_HMI.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\4. CM_Valve\Structs\3. STS\CM_Valve_STS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\4. CM_Valve\Structs\4. ALM\CM_Valve_ALM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\4. CM_Valve\Structs\5. WRN\CM_Valve_WRN.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\4. CM_Valve\Structs\6. PAR\CM_Valve_PAR.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\4. CM_Valve\Structs\7. SIM\CM_Valve_SIM.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\1. Control Modules\4. CM_Valve\Structs\STRUCT_CM_Valve.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Enums\E_State_Can_Supply.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -449,6 +485,16 @@
     <Folder Include="POUs\1. Control Modules\2. CM_Sensor\Structs\6. PAR" />
     <Folder Include="POUs\1. Control Modules\2. CM_Sensor\Structs\7. SIM" />
     <Folder Include="POUs\1. Control Modules\3. CM_OutfeedProductionSensor" />
+    <Folder Include="POUs\1. Control Modules\4. CM_Valve" />
+    <Folder Include="POUs\1. Control Modules\4. CM_Valve\Enums" />
+    <Folder Include="POUs\1. Control Modules\4. CM_Valve\Structs" />
+    <Folder Include="POUs\1. Control Modules\4. CM_Valve\Structs\1. CS" />
+    <Folder Include="POUs\1. Control Modules\4. CM_Valve\Structs\2. HMI" />
+    <Folder Include="POUs\1. Control Modules\4. CM_Valve\Structs\3. STS" />
+    <Folder Include="POUs\1. Control Modules\4. CM_Valve\Structs\4. ALM" />
+    <Folder Include="POUs\1. Control Modules\4. CM_Valve\Structs\5. WRN" />
+    <Folder Include="POUs\1. Control Modules\4. CM_Valve\Structs\6. PAR" />
+    <Folder Include="POUs\1. Control Modules\4. CM_Valve\Structs\7. SIM" />
     <Folder Include="POUs\2. Equipment Modules" />
     <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply" />
     <Folder Include="POUs\2. Equipment Modules\1. EM_Can_Supply\Enums" />

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="CM_Valve_SIM" Id="{dbeabb42-d200-4016-aa1e-ad2d5b0e180c}">
+    <Declaration><![CDATA[TYPE CM_Valve_SIM :
+STRUCT
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

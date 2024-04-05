@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="CM_Valve_STS" Id="{c75fc124-efb5-45df-bcb6-67a7d1f2f520}">
+    <Declaration><![CDATA[TYPE CM_Valve_STS :
+STRUCT
+	Tag				: STRING;
+	State 			: E_State_PackML;
+	Error_State 	: E_Motor_Error_State;
+	Auto			: BOOL;
+	Manueel			: BOOL;
+	Open			: BOOL;
+	Close			: BOOL;
+	
+	Starting_SC		: BOOL;
+	Execute_SC		: BOOL;
+	Resetting_SC	: BOOL;
+	Holding_SC		: BOOL;
+	Unholding_SC	: BOOL;
+	Suspending_SC	: BOOL;
+	Unsuspending_SC	: BOOL;
+	Aborting_SC		: BOOL;
+	Clearing_SC		: BOOL;
+	Stopping_SC		: BOOL;
+	Completing_SC	: BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
