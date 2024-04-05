@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="CM_Valve" Id="{50d84cc6-aa4d-44df-b18f-022b3ce5e0ef}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK CM_Valve IMPLEMENTS  ITF_Valve2
+VAR
+	fb_mem : STRUCT_CM_Valve;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+$$$$$$$$\                                                                   $$\       $$$$$$$$\                     $$\                                         $$\                     
+$$  _____|                                                                  $$ |      $$  _____|                    \__|                                        \__|                    
+$$ |   $$$$$$\   $$$$$$\  $$$$$$$\  $$\  $$\  $$\  $$$$$$\   $$$$$$\   $$$$$$$ |      $$ |      $$$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\  
+$$$$$\ \____$$\ $$  __$$\ $$  __$$\ $$ | $$ | $$ |$$  __$$\ $$  __$$\ $$  __$$ |      $$$$$\    $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ 
+$$  __|$$$$$$$ |$$ |  \__|$$ |  $$ |$$ | $$ | $$ |$$ /  $$ |$$ /  $$ |$$ /  $$ |      $$  __|   $$ |  $$ |$$ /  $$ |$$ |$$ |  $$ |$$$$$$$$ |$$$$$$$$ |$$ |  \__|$$ |$$ |  $$ |$$ /  $$ |
+$$ |  $$  __$$ |$$ |      $$ |  $$ |$$ | $$ | $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |      $$ |      $$ |  $$ |$$ |  $$ |$$ |$$ |  $$ |$$   ____|$$   ____|$$ |      $$ |$$ |  $$ |$$ |  $$ |
+$$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |      $$$$$$$$\ $$ |  $$ |\$$$$$$$ |$$ |$$ |  $$ |\$$$$$$$\ \$$$$$$$\ $$ |      $$ |$$ |  $$ |\$$$$$$$ |
+\__|   \_______|\__|      \__|  \__| \_____\____/  \______/  \______/  \_______|      \________|\__|  \__| \____$$ |\__|\__|  \__| \_______| \_______|\__|      \__|\__|  \__| \____$$ |
+                                                                                                          $$\   $$ |                                                          $$\   $$ |
+      			                                                                                          \$$$$$$  |                                                          \$$$$$$  |
+                                                                                                           \______/                                                            \______/ 
+*)
+fb_mem.STS.State := PackML_StateMachine(Start           := fb_mem.CS.Start,
+										Stop            := fb_mem.CS.Stop,
+										Reset           := fb_mem.CS.Reset,
+										Abort           := fb_mem.CS.Abort,
+										Clear           := fb_mem.CS.Clear,
+										UnSuspend       := fb_mem.CS.UnSuspend,
+										Suspend         := fb_mem.CS.Suspend,
+										UnHold          := fb_mem.CS.UnHold,
+										Hold            := fb_mem.CS.Hold,
+										Starting_SC     := fb_mem.STS.Starting_SC,
+										Execute_SC      := fb_mem.STS.Execute_SC,
+										Resetting_SC    := fb_mem.STS.Resetting_SC,
+										Holding_SC      := fb_mem.STS.Holding_SC,
+										Unholding_SC    := fb_mem.STS.Unholding_SC,
+										Suspending_SC   := fb_mem.STS.Suspending_SC,
+										Unsuspending_SC := fb_mem.STS.Unsuspending_SC,
+										Aborting_SC     := fb_mem.STS.Aborting_SC,
+										Clearing_SC     := fb_mem.STS.Clearing_SC,
+										Stopping_SC     := fb_mem.STS.Stopping_SC);
+
+//********************************Auto manual logic***********************************
+IF fb_mem.CS.Auto THEN
+	fb_mem.STS.Auto := TRUE;
+	ELSE
+		fb_mem.STS.Auto := FALSE;
+END_IF
+
+IF fb_mem.CS.Manueel THEN
+	fb_mem.STS.Manueel := TRUE;
+	ELSE
+		fb_mem.STS.Manueel := FALSE;
+END_IF
+
+//********************************Exeptionhandling***********************************
+
+//********************************Action case***********************************
+CASE fb_mem.STS.State OF
+	E_State_PackML.IDLE 			:
+		//Do nothing
+	E_State_PackML.STARTING 		:
+		fb_mem.STS.Starting_SC 		:= TRUE;
+	E_State_PackML.EXECUTE 			: 
+		//Do nothing
+	E_State_PackML.COMPLETE 		:
+		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
+			fb_mem.STS.Completing_SC := TRUE;
+		END_IF
+	E_State_PackML.RESETTING 		:
+		FB_init(0,0);
+		fb_mem.STS.Resetting_SC 	:= TRUE;
+	E_State_PackML.HOLDING 			:
+		fb_mem.STS.Unholding_SC		:= TRUE;
+	E_State_PackML.HELD 			:
+		//Do nothing
+	E_State_PackML.UNHOLDING 		:
+		fb_mem.STS.Unholding_SC		:= TRUE;
+	E_State_PackML.SUSPENDING 		:
+		fb_mem.STS.Suspending_SC 	:= TRUE;
+	E_State_PackML.SUSPENDED 		:
+		fb_mem.CS.Unsuspend 		:= TRUE;
+	E_State_PackML.UNSUSPENDING 	:
+		fb_mem.STS.Unsuspending_SC 	:= TRUE;
+	E_State_PackML.ABORTED			:
+		//Do nothing
+	E_State_PackML.ABORTING			:
+		fb_mem.STS.Aborting_SC 		:= TRUE;
+	E_State_PackML.CLEARING 		:
+		fb_mem.STS.Clearing_SC 		:= TRUE;
+	E_State_PackML.STOPPING 		:
+		fb_mem.STS.Stopping_SC 		:= TRUE;
+	E_State_PackML.STOPPED 			:
+		//Do nothing
+		
+END_CASE
+
+
+
+
+//Zero all CS signals
+fb_mem.CS.Auto			:= FALSE;
+fb_mem.CS.Manueel 		:= FALSE;
+fb_mem.CS.Abort			:= FALSE;
+fb_mem.CS.Reset			:= FALSE;
+fb_mem.CS.Start			:= FALSE;
+fb_mem.CS.Stop			:= FALSE;
+
+//Zero all HMI signals
+fb_mem.HMI.Auto			:= FALSE;
+fb_mem.HMI.Manueel 		:= FALSE;
+fb_mem.HMI.Abort		:= FALSE;
+fb_mem.HMI.Reset		:= FALSE;
+fb_mem.HMI.Start		:= FALSE;
+fb_mem.HMI.Stop			:= FALSE;]]></ST>
+    </Implementation>
+    <Folder Name="Methods" Id="{e46b56ed-db35-46c1-8cab-d3ea75e448a6}" />
+    <Folder Name="Properties" Id="{051e65f6-b3f6-4d6d-ad1b-b059338e4c4c}" />
+    <Method Name="Abort" Id="{6bba516f-ae66-4e07-a358-2d89a647406e}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Abort : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Abort := TRUE;
+
+Abort := fb_mem.CS.Abort;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Auto" Id="{23207d80-76f5-4441-978d-04010994bcd9}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Auto : BOOl]]></Declaration>
+      <Get Name="Get" Id="{ca848de0-4684-4a3c-b25b-1cf8887283a3}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[AUTO := fb_mem.STS.Auto;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{4df17699-961e-45f2-a912-bdefcf8b1afc}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fb_mem.CS.Auto := AUTO;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Clear" Id="{5b15b59a-be31-472b-9d4e-65c002739a05}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Clear : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Clear := TRUE;
+
+Clear := fb_mem.CS.Abort;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Close" Id="{f05bfdcd-7296-4824-890e-d5f7a842ca33}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Close : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Close := TRUE;
+Close := fb_mem.STS.Close;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Error_State" Id="{dc8aa90f-9928-4995-8038-ee1ec047b629}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY Error_State : E_Motor_Error_State
+]]></Declaration>
+      <Get Name="Get" Id="{672153e2-6096-473a-81c2-7ada8a12d856}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Error_State := fb_mem.STS.Error_State;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="FB_init" Id="{5c4fd80b-892a-43fc-9bf4-2daff6db55bf}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.STS.State := E_State_PackML.IDLE;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Manueel" Id="{e8fef718-509b-4976-add4-66d742661a2f}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Manueel : BOOl]]></Declaration>
+      <Get Name="Get" Id="{12df9233-0666-4ea0-8ad6-4a5550edf652}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Manueel := fb_mem.STS.Manueel;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{2ee474ea-1eb2-481c-b217-f0c945709a76}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fb_mem.CS.Manueel :=  Manueel;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Open" Id="{2d5e1512-428d-4d24-b750-a85ea72d1fde}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Open : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Open := TRUE;
+Open := fb_mem.STS.Open;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Reset" Id="{e7cf8f8d-ac8a-43e7-9347-40ccade0c41d}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Reset : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Reset := TRUE;
+
+Reset := fb_mem.CS.Reset;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{a2d1ea15-ee1f-4e23-bec2-fa9d84a753a5}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Start : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Start := TRUE;
+
+Start := fb_mem.CS.Start;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="State" Id="{a759bc80-5e36-4408-88d3-cfd6503a2bbf}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY State : E_Motor_State
+]]></Declaration>
+      <Get Name="Get" Id="{8f60474b-c8f5-4540-910a-259f36868ab6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Stop" Id="{69145ac8-7c54-4ce2-8357-436d1f812573}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Stop := TRUE;
+
+Stop := fb_mem.CS.Stop;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Tag" Id="{cfe256b7-2fd2-4ea5-ad89-2952dcc0d2e2}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Tag : STRING]]></Declaration>
+      <Get Name="Get" Id="{409b834e-8f90-41b6-9348-0a6f5679bccf}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Tag := fb_mem.STS.Tag;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <LineIds Name="CM_Valve">
+      <LineId Id="14" Count="11" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="130" Count="0" />
+      <LineId Id="113" Count="16" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="61" Count="17" />
+      <LineId Id="131" Count="0" />
+      <LineId Id="79" Count="23" />
+      <LineId Id="133" Count="0" />
+      <LineId Id="104" Count="6" />
+      <LineId Id="132" Count="0" />
+      <LineId Id="111" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="59" Count="1" />
+      <LineId Id="29" Count="5" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="45" Count="2" />
+      <LineId Id="50" Count="2" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Abort">
+      <LineId Id="4" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Auto.Get">
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Auto.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Clear">
+      <LineId Id="6" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Close">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Error_State.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.FB_init">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Manueel.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Manueel.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Open">
+      <LineId Id="7" Count="0" />
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Reset">
+      <LineId Id="7" Count="1" />
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Start">
+      <LineId Id="7" Count="1" />
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.State.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Stop">
+      <LineId Id="7" Count="1" />
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Valve.Tag.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
