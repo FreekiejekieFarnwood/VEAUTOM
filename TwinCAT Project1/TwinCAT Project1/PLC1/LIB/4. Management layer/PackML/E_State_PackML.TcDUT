@@ -3,6 +3,7 @@
   <DUT Name="E_State_PackML" Id="{b0d55560-83c1-4802-8222-4e4d9dcb0c31}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 {attribute 'strict'}
+{attribute 'to_string'}
 TYPE E_State_PackML :
 (
 	IDLE := 0,
