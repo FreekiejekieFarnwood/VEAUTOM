@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="CM_Valve_CS" Id="{5b52dd52-e090-4863-94cd-4e921975941a}">
+    <Declaration><![CDATA[TYPE CM_Valve_CS :
+STRUCT
+	Start		: BOOL;
+	Stop		: BOOL;
+	Reset		: BOOL;
+	Abort		: BOOL;
+	Clear		: BOOL;
+	UnSuspend	: BOOL;
+	Suspend		: BOOL;
+	UnHold		: BOOL;
+	Hold		: BOOL;
+	Auto		: BOOL;
+	Manueel		: BOOL;
+	Open		: BOOL;
+	Close		: BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

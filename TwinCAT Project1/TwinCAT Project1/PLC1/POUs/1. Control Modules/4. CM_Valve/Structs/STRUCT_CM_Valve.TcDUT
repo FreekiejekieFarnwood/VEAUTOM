@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="STRUCT_CM_Valve" Id="{2ff5d8d9-eace-4136-b5b8-cb6001c6e050}">
+    <Declaration><![CDATA[TYPE STRUCT_CM_Valve :
+STRUCT
+	CS	: CM_Valve_CS;
+	HMI	: CM_Valve_HMI;
+	STS	: CM_Valve_STS;
+	ALM	: CM_Valve_ALM;
+	WRN	: CM_Valve_WRN;
+	PAR	: CM_Valve_PAR;
+	SIM	: CM_Valve_SIM;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
