@@ -3008,6 +3008,23 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.fb_mem.HMI.Auto": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::fb_mem::HMI::Auto",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 10
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Unit.fb_mem.HMI.Clear": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3020,6 +3037,23 @@
                     },
                     {
                         "propertyOrder": 5
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.fb_mem.HMI.Manueel": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::fb_mem::HMI::Manueel",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 11
                     }
                 ]
             },
@@ -3071,6 +3105,23 @@
                     },
                     {
                         "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.fb_mem.STS.Auto": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::fb_mem::STS::Auto",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 3
                     }
                 ]
             },
@@ -4031,10 +4082,13 @@
                 "PLC1.MAIN.Unit.EM_StampUnit.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.fb_mem.HMI.Abort": 3,
+                "PLC1.MAIN.Unit.fb_mem.HMI.Auto": 3,
                 "PLC1.MAIN.Unit.fb_mem.HMI.Clear": 3,
+                "PLC1.MAIN.Unit.fb_mem.HMI.Manueel": 3,
                 "PLC1.MAIN.Unit.fb_mem.HMI.Reset": 3,
                 "PLC1.MAIN.Unit.fb_mem.HMI.Start": 3,
                 "PLC1.MAIN.Unit.fb_mem.HMI.Stop": 3,
+                "PLC1.MAIN.Unit.fb_mem.STS.Auto": 3,
                 "PLC1.MAIN.Unit.fb_mem.STS.StringState": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
