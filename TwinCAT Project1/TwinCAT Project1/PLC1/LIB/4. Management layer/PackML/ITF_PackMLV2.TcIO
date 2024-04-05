@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_PackMLV2" Id="{f36d244c-592b-4934-bf10-34d2733c2b69}">
+    <Declaration><![CDATA[INTERFACE ITF_PackMLV2
+]]></Declaration>
+    <Folder Name="Methods" Id="{ddcff743-9172-48a1-aa3f-2923a4e5a717}" />
+    <Folder Name="Properties" Id="{724ddd69-9bdd-4634-bed6-92d3b4d9f721}" />
+    <Method Name="Abort" Id="{b3cd85b6-e815-44d2-a833-35dd873cf33b}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Abort : BOOL
+]]></Declaration>
+    </Method>
+    <Method Name="Auto" Id="{8aa48e67-7f30-4c5a-b97f-486f6632b37c}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Auto : BOOL
+]]></Declaration>
+    </Method>
+    <Method Name="Clear" Id="{3a26b058-50b0-465e-b7e1-a5b6d62d326f}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Clear : BOOL
+]]></Declaration>
+    </Method>
+    <Method Name="Hold" Id="{01ce3460-6cda-44cc-91f5-e074be119b85}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Hold : BOOL
+]]></Declaration>
+    </Method>
+    <Method Name="Manueel" Id="{adbf9fec-d566-4583-978e-dd89ec08d0e3}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Manueel : BOOL
+]]></Declaration>
+    </Method>
+    <Method Name="Reset" Id="{1977f694-ca78-4817-ad19-a0a555353a1e}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Reset : BOOL
+]]></Declaration>
+    </Method>
+    <Method Name="Start" Id="{a0fbca64-94bc-4799-988a-fc473354b945}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Start : BOOL
+]]></Declaration>
+    </Method>
+    <Property Name="State" Id="{4c1cce19-aa90-4f9c-a75c-2ad4ca3a0a0f}" FolderPath="Properties\">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY State : E_State_PackML
+]]></Declaration>
+      <Get Name="Get" Id="{df876be8-4d8b-43f1-be61-980e51c73cf5}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="Stop" Id="{16863f13-c902-43be-8cf4-75f2a86c8c55}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop : BOOL
+]]></Declaration>
+    </Method>
+    <Method Name="Suspend" Id="{a9332f93-571d-4221-be3c-a212b613c2a0}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Suspend : BOOL
+]]></Declaration>
+    </Method>
+    <Method Name="Unhold" Id="{0e3af376-253f-47b1-910f-f964932f88e9}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Unhold : BOOL
+]]></Declaration>
+    </Method>
+    <Method Name="Unsuspend" Id="{1ab7fc9b-3f30-4613-b7ed-d67b7c48f862}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Unsuspend : BOOL
+]]></Declaration>
+    </Method>
+    <Method Name="ZeroAllVar" Id="{fa5a6ea3-8212-4ee1-ac13-6ed8136e4ea7}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD ZeroAllVar : BOOL
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

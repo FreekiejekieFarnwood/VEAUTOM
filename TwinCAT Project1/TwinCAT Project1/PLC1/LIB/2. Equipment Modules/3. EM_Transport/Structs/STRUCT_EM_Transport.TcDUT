@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="STRUCT_EM_Transport" Id="{dd2ddcb5-8b2d-4394-9615-1f77c43ddd45}">
+    <Declaration><![CDATA[TYPE STRUCT_EM_Transport :
+STRUCT
+	CS	: EM_Transport_CS;
+	HMI	: EM_Transport_HMI;
+	STS	: EM_Transport_STS;
+	ALM	: EM_Transport_ALM;
+	WRN	: EM_Transport_WRN;
+	PAR	: EM_Transport_PAR;
+	SIM	: EM_Transport_SIM;	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

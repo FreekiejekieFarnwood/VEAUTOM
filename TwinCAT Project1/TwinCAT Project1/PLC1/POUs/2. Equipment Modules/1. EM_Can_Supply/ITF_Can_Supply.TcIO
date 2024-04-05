@@ -77,7 +77,7 @@ METHOD Starting_SC : BOOL
     </Method>
     <Property Name="State" Id="{4a8a11d1-a82f-4c23-914e-479f7db93af8}" FolderPath="Properties\">
       <Declaration><![CDATA[{warning 'add property implementation'}
-PROPERTY State : TwinCAT_LIB.E_State_PackML
+PROPERTY State : E_State_PackML
 ]]></Declaration>
       <Get Name="Get" Id="{b6e868ca-878f-4b3a-a1c8-39f62a723a8d}">
         <Declaration><![CDATA[]]></Declaration>

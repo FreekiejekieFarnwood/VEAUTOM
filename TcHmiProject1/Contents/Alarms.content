@@ -6,27 +6,21 @@
   "color": "rgba(255, 255, 255, 1)"
 }
 </script>
-<div id="TcHmiDatagrid" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="920" data-tchmi-height-unit="px" data-tchmi-left="40" data-tchmi-left-unit="px" data-tchmi-top="226" data-tchmi-top-unit="px" data-tchmi-width="1870" data-tchmi-width-unit="px">
+<div id="TcHmiDatagrid" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="68" data-tchmi-left-unit="px" data-tchmi-top="138" data-tchmi-top-unit="px" data-tchmi-width="629" data-tchmi-width-unit="px" data-tchmi-src-data="%s%PLC1.MAIN.ErrorArray%/s%">
 <script data-tchmi-target-attribute="data-tchmi-src-column" type="application/json">
 [
   {
-    "name": "Test1",
-    "label": "Column 1",
-    "control": "TextBlock",
-    "width": 70,
+    "name": "sMessage",
+    "label": "Message",
+    "control": "TextBox",
+    "width": 0,
     "widthUnit": "px",
-    "resize": true,
+    "resize": false,
     "sortable": false,
     "minWidth": 100,
     "minWidthUnit": "px",
-    "cellBackground": {
-      "color": "None"
-    },
-    "textColor": {
-      "color": "rgba(177, 33, 33, 1)"
-    },
     "editable": false,
-    "horizontalAlignment": "Center",
+    "horizontalAlignment": "Left",
     "verticalAlignment": "Center",
     "headerHorizontalAlignment": "Center",
     "headerVerticalAlignment": "Center",
@@ -35,55 +29,93 @@
     "autoSelectText": false
   },
   {
-    "name": "Test2",
-    "label": "Column 2",
-    "control": "TextBlock",
-    "width": 70,
-    "widthUnit": "px",
-    "resize": true,
-    "sortable": true,
-    "minWidth": 70,
-    "minWidthUnit": "px",
-    "editable": false,
-    "horizontalAlignment": "Center",
-    "verticalAlignment": "Center",
-    "headerHorizontalAlignment": "Center",
-    "headerVerticalAlignment": "Center",
-    "ignoreEscapeSequences": false,
-    "autoFocusOut": true,
-    "autoSelectText": false
-  },
-  {
-    "name": "Test3",
-    "label": "Column 3",
-    "control": "Button",
-    "width": 70,
-    "widthUnit": "px",
-    "resize": true,
-    "sortable": false,
-    "minWidth": 70,
-    "minWidthUnit": "px",
-    "editable": true,
-    "horizontalAlignment": "Center",
-    "verticalAlignment": "Center",
-    "headerHorizontalAlignment": "Center",
-    "headerVerticalAlignment": "Center",
-    "ignoreEscapeSequences": false,
-    "autoFocusOut": true,
-    "autoSelectText": false
-  },
-  {
-    "name": "Test4",
-    "label": "Column 4",
+    "name": "sPriority",
+    "label": "Priority",
     "control": "TextBox",
-    "width": 100,
+    "width": 0,
     "widthUnit": "px",
-    "resize": true,
+    "resize": false,
     "sortable": false,
-    "minWidth": 70,
+    "minWidth": 100,
     "minWidthUnit": "px",
-    "editable": true,
-    "horizontalAlignment": "Center",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": false
+  },
+  {
+    "name": "sDevice",
+    "label": "Device",
+    "control": "TextBox",
+    "width": 0,
+    "widthUnit": "px",
+    "resize": false,
+    "sortable": false,
+    "minWidth": 100,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": false
+  },
+  {
+    "name": "dErrorTime",
+    "label": "ErrorTime",
+    "control": "TextBox",
+    "width": 0,
+    "widthUnit": "px",
+    "resize": false,
+    "sortable": false,
+    "minWidth": 100,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": false
+  },
+  {
+    "name": "bIsAlarmAcknowledged",
+    "label": "Acknowledged",
+    "control": "Button",
+    "width": 0,
+    "widthUnit": "px",
+    "resize": false,
+    "sortable": false,
+    "minWidth": 100,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": false
+  },
+  {
+    "name": "bAcknowledged",
+    "label": "Acknowledge",
+    "control": "ToggleButton",
+    "width": 0,
+    "widthUnit": "px",
+    "resize": false,
+    "sortable": false,
+    "minWidth": 100,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
     "verticalAlignment": "Center",
     "headerHorizontalAlignment": "Center",
     "headerVerticalAlignment": "Center",
@@ -93,22 +125,7 @@
   }
 ]
 </script>
-<script data-tchmi-target-attribute="data-tchmi-src-data" type="application/json">
-[
-  {
-    "Test1": "Example Data",
-    "Test2": 42,
-    "Test3": true,
-    "Test4": "Editable Data"
-  },
-  {
-    "Test1": "Example Data",
-    "Test2": 3.1415,
-    "Test3": false,
-    "Test4": "Editable Data"
-  }
-]
-</script>
+
 <script data-tchmi-target-attribute="data-tchmi-cell-content-padding" type="application/json">
 {
   "left": 3,
@@ -122,11 +139,5 @@
 }
 </script>
 
-
-<script data-tchmi-target-attribute="data-tchmi-header-background-color" type="application/json">
-{
-  "color": "None"
-}
-</script>
 </div>
 </div>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="STRUCT_Machine_PackML" Id="{f955d8a1-b341-4c59-bc56-31a4eb223d5c}">
+    <Declaration><![CDATA[TYPE STRUCT_Machine_PackML :
+STRUCT
+	//Properties
+	State 			: E_State_PackML;
+	//Methods
+   	Abort 			: BOOL;
+	Aborting_SC 	: BOOL;
+	Clear 			: BOOL;
+	Clearing_SC 	: BOOL;
+	Execute_SC 		: BOOL;
+	Completing_SC	: BOOL;
+	Hold 			: BOOL;
+	Holding_SC 		: BOOL;
+	Reset 			: BOOL;
+	Resetting_SC 	: BOOL;
+	Start 			: BOOL;
+	Starting_SC 	: BOOL;
+	Stop 			: BOOL;
+	Stopping_SC 	: BOOL;
+	Suspend 		: BOOL;
+	Suspending_SC 	: BOOL;
+	Unhold 			: BOOL;
+	Unholding_SC 	: BOOL;
+	Unsuspend 		: BOOL;
+	Unsuspending_SC : BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

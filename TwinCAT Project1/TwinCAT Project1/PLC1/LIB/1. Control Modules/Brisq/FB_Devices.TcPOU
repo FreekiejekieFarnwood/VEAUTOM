@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Devices" Id="{5a1a6b57-ea7a-4b81-b40d-043e4cf8b574}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Devices
+VAR
+	devValveV2012 : DEV_Valve := (TagName := 'V2012', Description := 'Standard Valve', TagID := 1);
+	devValveV2020 : DEV_Valve := (TagName := 'V2020', Description := 'Standard Valve', TagID := 2);
+	devValveV2021 : DEV_Valve := (TagName := 'V2021', Description := 'Standard Valve', TagID := 3);
+	devValveV2022 : DEV_Valve := (TagName := 'V2022', Description := 'Standard Valve', TagID := 4);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[devValveV2012();
+devValveV2020();
+devValveV2021();
+devValveV2020();]]></ST>
+    </Implementation>
+    <LineIds Name="FB_Devices">
+      <LineId Id="9" Count="0" />
+      <LineId Id="15" Count="2" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

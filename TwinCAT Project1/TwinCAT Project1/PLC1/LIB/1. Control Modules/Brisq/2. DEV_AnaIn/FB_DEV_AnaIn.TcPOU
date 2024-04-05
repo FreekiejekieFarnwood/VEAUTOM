@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_DEV_AnaIn" Id="{0af2c6ce-90b5-4234-ac96-b088e81680e4}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_DEV_AnaIn EXTENDS FB_DeviceBase IMPLEMENTS ITF_DEV_AnaIn
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="FB_DEV_AnaIn">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

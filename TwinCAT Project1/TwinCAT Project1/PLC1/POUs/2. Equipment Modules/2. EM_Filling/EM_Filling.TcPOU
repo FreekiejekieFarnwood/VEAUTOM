@@ -3,7 +3,7 @@
   <POU Name="EM_Filling" Id="{63eb49f5-59e7-4030-85dd-f42cd0c3af32}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK EM_Filling IMPLEMENTS ITF_Filling, ITF_PackML
 VAR
-	fb_mem : STRUCT_EM_Transport_CanSupply2;
+	fb_mem : STRUCT_EM_Filling;
 	
 	//Submodules
 	EM_FillerA1				: FB_Machine_PackML;

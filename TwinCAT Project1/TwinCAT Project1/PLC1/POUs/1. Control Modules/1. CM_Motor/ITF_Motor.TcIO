@@ -20,6 +20,12 @@ END_VAR
         <Declaration><![CDATA[]]></Declaration>
       </Set>
     </Property>
+    <Method Name="Clear" Id="{3050cd44-f6e1-415b-8003-4f54791e0b45}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Clear : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
     <Property Name="Error_State" Id="{8a001584-c8e5-4b1b-834a-18bf92f94213}" FolderPath="Properties\">
       <Declaration><![CDATA[PROPERTY Error_State  : E_Motor_Error_State]]></Declaration>
       <Get Name="Get" Id="{3b12318f-9e8c-43d0-90f8-6f20232e7d70}">

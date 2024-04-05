@@ -28,6 +28,15 @@
     "DEFAULTTIMEZONE": "client",
     "DEFAULTUSERGROUP": "__SystemUsers",
     "DEFINITIONS": {
+        "PLC1.ARRAY_1..4_OF-stErrorHandling": {
+            "items": {
+                "$ref": "#/definitions/PLC1.stErrorHandling"
+            },
+            "maxItems": 4,
+            "minItems": 4,
+            "startOffset": 1,
+            "type": "array"
+        },
         "PLC1.DUT_Main": {
             "attributes": {
                 "generate_implicit_init_function": ""
@@ -87,6 +96,81 @@
                 }
             ],
             "type": "integer"
+        },
+        "PLC1.stErrorHandling": {
+            "properties": {
+                "bAcknowledged": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 7
+                        }
+                    ]
+                },
+                "bIsAlarmAcknowledged": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 6
+                        }
+                    ]
+                },
+                "dErrorTime": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/DATE_AND_TIME"
+                        },
+                        {
+                            "propertyOrder": 5
+                        }
+                    ]
+                },
+                "sDevice": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                        },
+                        {
+                            "propertyOrder": 4
+                        }
+                    ]
+                },
+                "sMessage": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                        },
+                        {
+                            "propertyOrder": 2
+                        }
+                    ]
+                },
+                "sPriority": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                        },
+                        {
+                            "propertyOrder": 3
+                        }
+                    ]
+                },
+                "sTag": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                        },
+                        {
+                            "propertyOrder": 1
+                        }
+                    ]
+                }
+            },
+            "type": "object"
         }
     },
     "DEFLATECOMPRESSIONLEVEL": 5,
@@ -2664,6 +2748,16 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.ErrorArray": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::ErrorArray",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.ARRAY_1..4_OF-stErrorHandling"
+            },
+            "USEMAPPING": true
+        },
         "RefreshDefinitions": {
             "ACCESS": 3,
             "DOMAIN": "TcHmiSrv",
@@ -3592,6 +3686,7 @@
                 "PLC1.HMI_Connection.Test_String2": 3,
                 "PLC1.HMI_Connection.Test_String3": 3,
                 "PLC1.HMI_Connection.enum": 3,
+                "PLC1.MAIN.ErrorArray": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
                 "TcHmiSqliteLogger.Diagnostics": 1,

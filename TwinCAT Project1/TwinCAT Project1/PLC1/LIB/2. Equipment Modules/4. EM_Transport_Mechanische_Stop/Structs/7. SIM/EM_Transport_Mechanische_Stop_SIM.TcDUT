@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="EM_Transport_Mechanische_Stop_SIM" Id="{53149119-ed5f-45d2-839f-3b0fdb1a4b64}">
+    <Declaration><![CDATA[TYPE EM_Transport_Mechanische_Stop_SIM :
+STRUCT
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
