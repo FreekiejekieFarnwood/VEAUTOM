@@ -77,6 +77,9 @@ END_IF
 
 //********************************Action case***********************************
 
+//********************************HMI_Connection***********************************
+fb_mem.STS.StringState     := TO_STRING(fb_mem.STS.State); 
+
 //********************************ZEROING***********************************
 fb_mem.CS.Auto            := FALSE;
 fb_mem.CS.Manueel         := FALSE;
@@ -332,7 +335,11 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="86" Count="0" />
       <LineId Id="85" Count="0" />
       <LineId Id="92" Count="0" />
-      <LineId Id="87" Count="1" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="101" Count="0" />
+      <LineId Id="103" Count="0" />
+      <LineId Id="102" Count="0" />
+      <LineId Id="88" Count="0" />
       <LineId Id="44" Count="10" />
       <LineId Id="43" Count="0" />
     </LineIds>

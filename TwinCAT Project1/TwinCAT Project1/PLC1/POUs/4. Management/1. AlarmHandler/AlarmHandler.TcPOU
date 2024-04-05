@@ -11,7 +11,7 @@ END_VAR
 
 
 VAR
-	ErrorArray:ARRAY[1..4] OF stErrorHandling;
+	ErrorArray:ARRAY[1..3] OF stErrorHandling;
 END_VAR
 
 ]]></Declaration>
@@ -25,10 +25,32 @@ ErrorArray[1].dErrorTime:= DT#2024-2-4-14:44:44;
 IF ErrorArray[1].bAcknowledged = 1 THEN
 	ErrorArray[1].bIsAlarmAcknowledged:=1;
 END_IF
+
+
+ErrorArray[2].sTag:='EM_TurningDevice';
+ErrorArray[2].sMessage:= 'Turning Device is in state Aborted';
+ErrorArray[2].sPriority:= '1';
+ErrorArray[2].sDevice:= 'EM_TurningDevice';
+ErrorArray[2].dErrorTime:= DT#2024-2-4-14:50:44;
+
+IF ErrorArray[2].bAcknowledged = 1 THEN
+	ErrorArray[2].bIsAlarmAcknowledged:=1;
+END_IF
+
+ErrorArray[3].sTag:='Conveyer T3';
+ErrorArray[3].sMessage:= 'Conveyer belt T3 is having more friction than accepted';
+ErrorArray[3].sPriority:= '4';
+ErrorArray[3].sDevice:= 'Conveyer Belt T3';
+ErrorArray[3].dErrorTime:= DT#2024-2-4-14:59:44;
+
+IF ErrorArray[3].bAcknowledged = 1 THEN
+	ErrorArray[3].bIsAlarmAcknowledged:=1;
+END_IF
 ]]></ST>
     </Implementation>
     <LineIds Name="AlarmHandler">
       <LineId Id="29" Count="8" />
+      <LineId Id="51" Count="20" />
       <LineId Id="9" Count="0" />
     </LineIds>
   </POU>
