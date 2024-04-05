@@ -8,7 +8,7 @@ VAR
 	
 	//Custom logic
 	EM_Can_Supply 							: EM_Can_Supply;		//Replace with actual block not function
-	//CM_TurningDevice						: CM_Motor;
+	CM_TurningDevice						: CM_Motor;
 	CM_Outfeed_ProductionLineSensor			: CM_Sensor;
 	
 	//PackML machine's
