@@ -4,6 +4,7 @@
     <Declaration><![CDATA[TYPE EM_Machine_STS :
 STRUCT
 	State 			: E_State_PackML;
+	StringState		: STRING;
 	Auto 			: BOOL;
 	Manueel 		: BOOL;
 	Starting_SC 	: BOOL;

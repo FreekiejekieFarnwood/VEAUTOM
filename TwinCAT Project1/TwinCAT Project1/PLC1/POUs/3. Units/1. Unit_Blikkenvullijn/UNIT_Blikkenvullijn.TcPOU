@@ -30,6 +30,7 @@ VAR
 	//Management Logic
 	AlarmHandler 							: AlarmHandler;
 	ModeSelect								: ModeSelect;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -103,7 +104,6 @@ AlarmHandler();
 ModeSelect();
 
 
-
 //********************************Auto manual logic***********************************
 IF fb_mem.CS.Auto THEN
 	fb_mem.STS.Auto := TRUE;
@@ -168,10 +168,12 @@ END_IF
 //********************************Action case***********************************
 CASE fb_mem.STS.State OF
 	E_State_PackML.IDLE 			: 
+		//fb_mem.STS.StringState     := TO_STRING(E_State_PackML.IDLE); 
 		IF fb_mem.CS.Start AND fb_mem.STS.Auto OR fb_mem.HMI.Start AND fb_mem.STS.Manueel THEN
 			fb_mem.CS.Start := TRUE;
 		END_IF
 	E_State_PackML.STARTING 		:
+		//fb_mem.STS.StringState     := TO_STRING(E_State_PackML.STARTING);
 		EM_Can_Supply.Start();
 		IF EM_Can_Supply.State = E_State_PackML.EXECUTE THEN
 			EM_Filling.Start();
@@ -409,6 +411,9 @@ CASE fb_mem.STS.State OF
 		END_IF 
 END_CASE
 
+//********************************HMI_Connection***********************************
+fb_mem.STS.StringState     := TO_STRING(fb_mem.STS.State); 
+
 //********************************ZEROING***********************************
 fb_mem.CS.Auto            := FALSE;
 fb_mem.CS.Manueel         := FALSE;
@@ -421,6 +426,7 @@ fb_mem.CS.UnSuspend       := FALSE;
 fb_mem.CS.Suspend         := FALSE;
 fb_mem.CS.UnHold          := FALSE;
 fb_mem.CS.Hold            := FALSE;
+
 
 
 //Make PackML values FALSE						//MAKE SURE UNDERLYING BLOCKS GETS ZERO-ED TOO!
@@ -617,7 +623,6 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="932" Count="0" />
       <LineId Id="931" Count="0" />
       <LineId Id="933" Count="0" />
-      <LineId Id="942" Count="0" />
       <LineId Id="940" Count="0" />
       <LineId Id="914" Count="0" />
       <LineId Id="812" Count="10" />
@@ -647,9 +652,11 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="414" Count="0" />
       <LineId Id="128" Count="0" />
       <LineId Id="111" Count="0" />
+      <LineId Id="1071" Count="0" />
       <LineId Id="263" Count="0" />
       <LineId Id="277" Count="1" />
       <LineId Id="112" Count="0" />
+      <LineId Id="1072" Count="0" />
       <LineId Id="580" Count="0" />
       <LineId Id="612" Count="1" />
       <LineId Id="615" Count="1" />
@@ -763,10 +770,14 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="531" Count="0" />
       <LineId Id="126" Count="0" />
       <LineId Id="550" Count="0" />
+      <LineId Id="1066" Count="0" />
+      <LineId Id="1068" Count="1" />
       <LineId Id="881" Count="0" />
       <LineId Id="827" Count="0" />
       <LineId Id="986" Count="9" />
-      <LineId Id="968" Count="1" />
+      <LineId Id="968" Count="0" />
+      <LineId Id="1065" Count="0" />
+      <LineId Id="969" Count="0" />
       <LineId Id="967" Count="0" />
       <LineId Id="828" Count="0" />
       <LineId Id="845" Count="0" />

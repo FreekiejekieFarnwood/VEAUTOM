@@ -97,6 +97,103 @@
             ],
             "type": "integer"
         },
+        "PLC1.E_State_PackML": {
+            "attributes": {
+                "generate_implicit_init_function": "",
+                "qualified_only": "",
+                "strict": ""
+            },
+            "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+            ],
+            "options": [
+                {
+                    "label": "IDLE",
+                    "value": 0
+                },
+                {
+                    "label": "STARTING",
+                    "value": 1
+                },
+                {
+                    "label": "EXECUTE",
+                    "value": 2
+                },
+                {
+                    "label": "COMPLETING",
+                    "value": 3
+                },
+                {
+                    "label": "COMPLETE",
+                    "value": 4
+                },
+                {
+                    "label": "RESETTING",
+                    "value": 5
+                },
+                {
+                    "label": "HOLDING",
+                    "value": 6
+                },
+                {
+                    "label": "HELD",
+                    "value": 7
+                },
+                {
+                    "label": "UNHOLDING",
+                    "value": 8
+                },
+                {
+                    "label": "SUSPENDING",
+                    "value": 9
+                },
+                {
+                    "label": "SUSPENDED",
+                    "value": 10
+                },
+                {
+                    "label": "UNSUSPENDING",
+                    "value": 11
+                },
+                {
+                    "label": "ABORTING",
+                    "value": 12
+                },
+                {
+                    "label": "ABORTED",
+                    "value": 13
+                },
+                {
+                    "label": "CLEARING",
+                    "value": 14
+                },
+                {
+                    "label": "STOPPING",
+                    "value": 15
+                },
+                {
+                    "label": "STOPPED",
+                    "value": 16
+                }
+            ],
+            "type": "integer"
+        },
         "PLC1.stErrorHandling": {
             "properties": {
                 "bAcknowledged": {
@@ -2758,6 +2855,244 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.EM_BottomSeal.fb_mem.STS.StringState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_BottomSeal::fb_mem::STS::StringState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.State": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_CheckWeigher::fb_mem::STS::State",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/PLC1.E_State_PackML"
+                    },
+                    {
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_CheckWeigher::fb_mem::STS::StringState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Filling::fb_mem::STS::StringState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Labeller.fb_mem.STS.StringState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Labeller::fb_mem::STS::StringState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_SealShrink.fb_mem.STS.StringState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_SealShrink::fb_mem::STS::StringState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_StampUnit.fb_mem.STS.StringState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_StampUnit::fb_mem::STS::StringState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.StringState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_TurningDevice::fb_mem::STS::StringState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.fb_mem.HMI.Abort": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::fb_mem::HMI::Abort",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 4
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.fb_mem.HMI.Clear": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::fb_mem::HMI::Clear",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 5
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.fb_mem.HMI.Reset": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::fb_mem::HMI::Reset",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 3
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.fb_mem.HMI.Start": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::fb_mem::HMI::Start",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.fb_mem.HMI.Stop": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::fb_mem::HMI::Stop",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.fb_mem.STS.StringState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::fb_mem::STS::StringState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "RefreshDefinitions": {
             "ACCESS": 3,
             "DOMAIN": "TcHmiSrv",
@@ -3687,6 +4022,20 @@
                 "PLC1.HMI_Connection.Test_String3": 3,
                 "PLC1.HMI_Connection.enum": 3,
                 "PLC1.MAIN.ErrorArray": 3,
+                "PLC1.MAIN.Unit.EM_BottomSeal.fb_mem.STS.StringState": 3,
+                "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.State": 3,
+                "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState": 3,
+                "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState": 3,
+                "PLC1.MAIN.Unit.EM_Labeller.fb_mem.STS.StringState": 3,
+                "PLC1.MAIN.Unit.EM_SealShrink.fb_mem.STS.StringState": 3,
+                "PLC1.MAIN.Unit.EM_StampUnit.fb_mem.STS.StringState": 3,
+                "PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.StringState": 3,
+                "PLC1.MAIN.Unit.fb_mem.HMI.Abort": 3,
+                "PLC1.MAIN.Unit.fb_mem.HMI.Clear": 3,
+                "PLC1.MAIN.Unit.fb_mem.HMI.Reset": 3,
+                "PLC1.MAIN.Unit.fb_mem.HMI.Start": 3,
+                "PLC1.MAIN.Unit.fb_mem.HMI.Stop": 3,
+                "PLC1.MAIN.Unit.fb_mem.STS.StringState": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
                 "TcHmiSqliteLogger.Diagnostics": 1,
