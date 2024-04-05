@@ -3,7 +3,7 @@
   <POU Name="EM_Can_Supply" Id="{7d4cdf28-8942-4185-a3d0-da5253260d95}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK EM_Can_Supply IMPLEMENTS ITF_Can_Supply, ITF_PackML
 VAR
-	fb_mem : STRUCT_EM_Transport_CanSupply2;
+	fb_mem : STRUCT_EM_CanSupply;
 	
 	//SubModules
 	EM_Transport_Can_Supply1		: EM_Transport_Mechanische_Stop;
@@ -158,14 +158,14 @@ METHOD Starting_SC : BOOL
     </Method>
     <Property Name="State" Id="{5dfc3d61-b4c4-46e3-a627-12cb6b267db1}" FolderPath="Properties\">
       <Declaration><![CDATA[{warning 'add property implementation'}
-PROPERTY State : TwinCAT_LIB.E_State_PackML
+PROPERTY State : E_State_PackML
 ]]></Declaration>
       <Get Name="Get" Id="{561168c5-4601-4861-9408-f30e5dbf64b3}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[]]></ST>
+          <ST><![CDATA[State := fb_mem.STS.State;]]></ST>
         </Implementation>
       </Get>
     </Property>

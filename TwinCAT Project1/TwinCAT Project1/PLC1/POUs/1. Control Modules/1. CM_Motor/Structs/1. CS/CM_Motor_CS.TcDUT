@@ -7,6 +7,11 @@ STRUCT
 	Stop		: BOOL;
 	Reset		: BOOL;
 	Abort		: BOOL;
+	Clear		: BOOL;
+	UnSuspend	: BOOL;
+	Suspend		: BOOL;
+	UnHold		: BOOL;
+	Hold		: BOOL;
 	Richting_L	: BOOL;
 	Richting_R	: BOOL;
 	Toerental	: INT;

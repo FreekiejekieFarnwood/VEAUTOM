@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="DEV_CtrlValve" Id="{67f00510-5ec6-402d-bfae-2a9531d817c8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK DEV_CtrlValve EXTENDS FB_DeviceBase IMPLEMENTS ITF_ControlValve
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="EmergencyStatus" Id="{fc6a8e00-1087-4c10-9a16-0c0379954313}">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY EmergencyStatus : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{4512adbe-bc25-4f48-9bb2-9457eead2eb9}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="OperatingMode" Id="{6be7feb2-23e6-4e87-92c0-17d3e176acb2}">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY OperatingMode : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{5779ce03-c990-4872-bc9c-3e491918717a}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="OutputValue" Id="{2683151c-7a22-4591-811a-19638f3397b4}">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY OutputValue : REAL
+]]></Declaration>
+      <Get Name="Get" Id="{b0268694-59ca-4eea-a68e-8bbd28a0dd88}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Reset" Id="{ef8a2d00-8ec6-49fc-be2e-a0abf07481b5}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Reset : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SetMode" Id="{ac5e996b-bd02-4600-b0e8-0414acb660a5}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD SetMode : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SetValue" Id="{c1d352d1-82de-4da4-bbf6-2a5bd1ffc569}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD SetValue : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="DEV_CtrlValve">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_CtrlValve.EmergencyStatus.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_CtrlValve.OperatingMode.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_CtrlValve.OutputValue.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_CtrlValve.Reset">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_CtrlValve.SetMode">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="DEV_CtrlValve.SetValue">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

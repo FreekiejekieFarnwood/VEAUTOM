@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_Motor_1" Id="{91bb75c3-0eea-4948-b6fa-d22d45de9de0}">
+    <Declaration><![CDATA[INTERFACE ITF_Motor_1
+]]></Declaration>
+    <Folder Name="Methods" Id="{05cee666-7261-4506-bd42-a9d3e1ab907a}" />
+    <Folder Name="Properties" Id="{5a756104-037d-4f39-a817-efae77a47e69}" />
+    <Property Name="ActualState" Id="{58b8f85d-fc8b-4544-9814-7c31c51d4939}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY ActualState : BOOL]]></Declaration>
+      <Get Name="Get" Id="{d6280de5-71b7-4f26-bb86-df6a1dc71dcb}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="Auto" Id="{76858ff0-4fd4-4320-9110-a8cb056b9886}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Auto : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="Error_State" Id="{b7650939-7fff-480c-b9e7-b0b9cae6b7f3}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Error_State : BOOL]]></Declaration>
+      <Get Name="Get" Id="{169b7ccb-be68-4d65-8b31-e60bb6dbe9cc}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="Manueel" Id="{17131916-26de-44cf-9ae6-c2754302f543}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Manueel : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Reset" Id="{b2a15614-ce49-4830-a720-02ee7a2c8817}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Richting_L" Id="{205a2fef-aeb9-4f68-9709-b96623a1a811}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Richting_L : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Richting_R" Id="{6dafc7ba-7ae0-405b-96d7-2ff49a93af2f}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Richting_R : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Start" Id="{f75b733a-46db-488f-b841-f282967d6767}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="State" Id="{f0747509-035d-4046-baf2-317499555aed}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY State : E_MotorState]]></Declaration>
+      <Get Name="Get" Id="{9f8f106c-c395-498c-9159-e8e5c6a43cf6}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="Stop" Id="{c25481e4-264d-47ce-8f03-3321d497d4a1}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Toerental" Id="{910f9299-17ed-41a5-9b54-8c39c72b44de}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Toerental : INT
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

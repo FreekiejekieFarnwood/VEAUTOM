@@ -28,10 +28,8 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
 METHOD Auto : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF NOT fb_mem.Manueel THEN
-	fb_mem.Auto 	:= TRUE;
-	fb_mem.Manueel 	:= FALSE;
-END_IF
+        <ST><![CDATA[fb_mem.Auto 	:= TRUE;
+fb_mem.Manueel 	:= FALSE;
 
 RETURN(fb_mem.Auto);]]></ST>
       </Implementation>
@@ -41,7 +39,8 @@ RETURN(fb_mem.Auto);]]></ST>
 METHOD Manueel : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[fb_mem.Manueel := TRUE;
+        <ST><![CDATA[fb_mem.Auto 	:= FALSE;
+fb_mem.Manueel 	:= TRUE;
 
 RETURN(fb_mem.Manueel);]]></ST>
       </Implementation>
@@ -74,13 +73,13 @@ END_VAR
       <LineId Id="30" Count="0" />
     </LineIds>
     <LineIds Name="ModeSelect.Auto">
-      <LineId Id="4" Count="1" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="12" Count="0" />
       <LineId Id="9" Count="0" />
       <LineId Id="8" Count="0" />
     </LineIds>
     <LineIds Name="ModeSelect.Manueel">
+      <LineId Id="10" Count="0" />
       <LineId Id="4" Count="0" />
       <LineId Id="6" Count="0" />
       <LineId Id="5" Count="0" />

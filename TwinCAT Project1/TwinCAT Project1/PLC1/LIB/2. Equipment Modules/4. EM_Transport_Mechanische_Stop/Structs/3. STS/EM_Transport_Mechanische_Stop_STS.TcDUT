@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="EM_Transport_Mechanische_Stop_STS" Id="{cc0c4b96-8192-43e3-b6ce-7538693a91a6}">
+    <Declaration><![CDATA[TYPE EM_Transport_Mechanische_Stop_STS :
+STRUCT
+	Tag				: STRING;
+	State 			: E_Mechanische_Stop;
+	Manueel			: BOOL;
+	Auto			: BOOL;
+END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

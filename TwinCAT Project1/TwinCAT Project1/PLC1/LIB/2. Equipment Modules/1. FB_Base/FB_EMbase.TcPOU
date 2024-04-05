@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_EMbase" Id="{d92c3cff-1ed3-441d-a6d7-7a26372df424}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_EMbase
+VAR
+	TagName : STRING;
+	Description : STRING;
+	TagID : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="FB_EMbase">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITF_EM_Transport_Mechanische_Stop" Id="{9becc123-f04b-41f6-9d54-c6c533669b0f}">
+    <Declaration><![CDATA[INTERFACE ITF_EM_Transport_Mechanische_Stop
+]]></Declaration>
+    <Folder Name="Methods" Id="{747cb245-cbb6-48d0-bd74-5cb1c8bc1fd7}" />
+    <Folder Name="Properties" Id="{d8069081-f088-4233-9d21-4d1043e2388c}" />
+    <Method Name="Close" Id="{2e0a3a9e-3414-41b6-8d0a-f9c3a1a04be1}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Close : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Open" Id="{751aa64a-9db8-4cd8-adcc-d5721aedb520}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Open : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="Stop_State" Id="{09e30a4e-51d1-4e19-8e54-4506024c7fd2}" FolderPath="Properties\">
+      <Declaration><![CDATA[PROPERTY Stop_State : E_Mechanische_Stop]]></Declaration>
+      <Get Name="Get" Id="{12c9520e-70a7-41ba-a02d-2ea4c2c9c603}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="ZeroAllValues" Id="{64f123c8-a668-46e6-b0b7-d1c90eb8c19a}">
+      <Declaration><![CDATA[METHOD ZeroAllValues : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

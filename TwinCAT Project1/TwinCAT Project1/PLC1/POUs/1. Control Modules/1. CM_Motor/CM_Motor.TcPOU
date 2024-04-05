@@ -20,6 +20,80 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
       			                                                                                          \$$$$$$  |                                                          \$$$$$$  |
                                                                                                            \______/                                                            \______/ 
 *)
+fb_mem.STS.State := PackML_StateMachine(Start           := fb_mem.CS.Start,
+										Stop            := fb_mem.CS.Stop,
+										Reset           := fb_mem.CS.Reset,
+										Abort           := fb_mem.CS.Abort,
+										Clear           := fb_mem.CS.Clear,
+										UnSuspend       := fb_mem.CS.UnSuspend,
+										Suspend         := fb_mem.CS.Suspend,
+										UnHold          := fb_mem.CS.UnHold,
+										Hold            := fb_mem.CS.Hold,
+										Starting_SC     := fb_mem.STS.Starting_SC,
+										Execute_SC      := fb_mem.STS.Execute_SC,
+										Resetting_SC    := fb_mem.STS.Resetting_SC,
+										Holding_SC      := fb_mem.STS.Holding_SC,
+										Unholding_SC    := fb_mem.STS.Unholding_SC,
+										Suspending_SC   := fb_mem.STS.Suspending_SC,
+										Unsuspending_SC := fb_mem.STS.Unsuspending_SC,
+										Aborting_SC     := fb_mem.STS.Aborting_SC,
+										Clearing_SC     := fb_mem.STS.Clearing_SC,
+										Stopping_SC     := fb_mem.STS.Stopping_SC);
+
+//********************************Auto manual logic***********************************
+IF fb_mem.CS.Auto THEN
+	fb_mem.STS.Auto := TRUE;
+	ELSE
+		fb_mem.STS.Auto := FALSE;
+END_IF
+
+IF fb_mem.CS.Manueel THEN
+	fb_mem.STS.Manueel := TRUE;
+	ELSE
+		fb_mem.STS.Manueel := FALSE;
+END_IF
+
+//********************************Exeptionhandling***********************************
+
+//********************************Action case***********************************
+CASE fb_mem.STS.State OF
+	E_State_PackML.IDLE 			:
+		//Do nothing
+	E_State_PackML.STARTING 		:
+		fb_mem.STS.Starting_SC 		:= TRUE;
+	E_State_PackML.EXECUTE 			: 
+		//Do nothing
+	E_State_PackML.COMPLETE 		:
+		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
+			fb_mem.STS.Completing_SC := TRUE;
+		END_IF
+	E_State_PackML.RESETTING 		:
+		FB_init(0,0);
+		fb_mem.STS.Resetting_SC 	:= TRUE;
+	E_State_PackML.HOLDING 			:
+		fb_mem.STS.Unholding_SC		:= TRUE;
+	E_State_PackML.HELD 			:
+		//Do nothing
+	E_State_PackML.UNHOLDING 		:
+		fb_mem.STS.Unholding_SC		:= TRUE;
+	E_State_PackML.SUSPENDING 		:
+		fb_mem.STS.Suspending_SC 	:= TRUE;
+	E_State_PackML.SUSPENDED 		:
+		fb_mem.CS.Unsuspend 		:= TRUE;
+	E_State_PackML.UNSUSPENDING 	:
+		fb_mem.STS.Unsuspending_SC 	:= TRUE;
+	E_State_PackML.ABORTED			:
+		//Do nothing
+	E_State_PackML.ABORTING			:
+		fb_mem.STS.Aborting_SC 		:= TRUE;
+	E_State_PackML.CLEARING 		:
+		fb_mem.STS.Clearing_SC 		:= TRUE;
+	E_State_PackML.STOPPING 		:
+		fb_mem.STS.Stopping_SC 		:= TRUE;
+	E_State_PackML.STOPPED 			:
+		//Do nothing
+		
+END_CASE
 
 
 
@@ -53,7 +127,9 @@ fb_mem.HMI.Toerental	:= 0;]]></ST>
 METHOD Abort : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Abort := TRUE;
+
+Abort := fb_mem.CS.Abort;]]></ST>
       </Implementation>
     </Method>
     <Property Name="Auto" Id="{11ef47cb-7d87-440a-a57d-2cabaca58e35}" FolderPath="Properties\">
@@ -75,6 +151,17 @@ END_VAR
         </Implementation>
       </Set>
     </Property>
+    <Method Name="Clear" Id="{0f8eb475-5a60-456a-a3b0-b756a25c73fb}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Clear : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Clear := TRUE;
+
+Clear := fb_mem.CS.Abort;]]></ST>
+      </Implementation>
+    </Method>
     <Property Name="Error_State" Id="{e515215c-6fc9-4b62-8fc6-8b2fbbaf48cb}" FolderPath="Properties\">
       <Declaration><![CDATA[{warning 'add property implementation'}
 PROPERTY Error_State : E_Motor_Error_State
@@ -96,7 +183,7 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.STS.State := E_State_PackML.IDLE;]]></ST>
       </Implementation>
     </Method>
     <Property Name="Manueel" Id="{7c431163-01ea-4de3-ba47-a54ca14c245f}" FolderPath="Properties\">
@@ -123,7 +210,9 @@ END_VAR
 METHOD Reset : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Reset := TRUE;
+
+Reset := fb_mem.CS.Reset;]]></ST>
       </Implementation>
     </Method>
     <Property Name="Richting_L" Id="{acd82104-10c0-4d3d-b202-3582cda0f6aa}" FolderPath="Properties\">
@@ -173,7 +262,9 @@ END_VAR
 METHOD Start : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Start := TRUE;
+
+Start := fb_mem.CS.Start;]]></ST>
       </Implementation>
     </Method>
     <Property Name="State" Id="{b265f892-f5e4-4964-b773-e12474a75895}" FolderPath="Properties\">
@@ -194,7 +285,9 @@ END_VAR
 METHOD Stop : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Stop := TRUE;
+
+Stop := fb_mem.CS.Stop;]]></ST>
       </Implementation>
     </Method>
     <Property Name="Tag" Id="{fefd0db7-e012-4728-b2c5-4de1f2c675d0}" FolderPath="Properties\">
@@ -204,7 +297,7 @@ METHOD Stop : BOOL
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[Tag := fb_mem.Tag;]]></ST>
+          <ST><![CDATA[Tag := fb_mem.STS.Tag;]]></ST>
         </Implementation>
       </Get>
     </Property>
@@ -213,13 +306,28 @@ END_VAR
 METHOD Toerental : INT
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Toerental := Toerental;
+
+Toerental := fb_mem.CS.Toerental;]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="CM_Motor">
       <LineId Id="14" Count="11" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="130" Count="0" />
+      <LineId Id="113" Count="16" />
       <LineId Id="9" Count="0" />
-      <LineId Id="27" Count="7" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="61" Count="17" />
+      <LineId Id="131" Count="0" />
+      <LineId Id="79" Count="23" />
+      <LineId Id="133" Count="0" />
+      <LineId Id="104" Count="6" />
+      <LineId Id="132" Count="0" />
+      <LineId Id="111" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="59" Count="1" />
+      <LineId Id="29" Count="5" />
       <LineId Id="39" Count="2" />
       <LineId Id="35" Count="0" />
       <LineId Id="43" Count="1" />
@@ -230,12 +338,18 @@ METHOD Toerental : INT
     </LineIds>
     <LineIds Name="CM_Motor.Abort">
       <LineId Id="4" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Auto.Get">
       <LineId Id="6" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Auto.Set">
       <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CM_Motor.Clear">
+      <LineId Id="6" Count="1" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Error_State.Get">
       <LineId Id="2" Count="0" />
@@ -250,6 +364,7 @@ METHOD Toerental : INT
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Reset">
+      <LineId Id="7" Count="1" />
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Richting_L.Get">
@@ -265,18 +380,21 @@ METHOD Toerental : INT
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Start">
+      <LineId Id="7" Count="1" />
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.State.Get">
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Stop">
+      <LineId Id="7" Count="1" />
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Tag.Get">
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Toerental">
+      <LineId Id="7" Count="1" />
       <LineId Id="4" Count="0" />
     </LineIds>
   </POU>

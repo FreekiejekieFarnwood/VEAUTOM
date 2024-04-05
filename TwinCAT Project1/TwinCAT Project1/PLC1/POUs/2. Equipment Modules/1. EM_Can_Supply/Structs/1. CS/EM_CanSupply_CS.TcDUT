@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="EM_CanSupply_CS" Id="{cf24752a-d580-46f3-9edc-ddbce48739ee}">
+    <Declaration><![CDATA[TYPE EM_CanSupply_CS :
+STRUCT
+	Start		: BOOL;
+	Stop		: BOOL;
+	Reset		: BOOL;
+	Abort		: BOOL;
+	Richting_L	: BOOL;
+	Richting_R	: BOOL;
+	Toerental	: INT;
+	Auto		: BOOL;
+	Manueel		: BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

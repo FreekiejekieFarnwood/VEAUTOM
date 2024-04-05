@@ -12,6 +12,8 @@ STRUCT
 	Suspend		: BOOL;
 	UnHold		: BOOL;
 	Hold		: BOOL;
+	Auto		: BOOL;
+	Manueel 	: BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>
