@@ -409,6 +409,9 @@ CASE fb_mem.STS.State OF
 		END_IF 
 END_CASE
 
+//********************************HMI_Connection***********************************
+fb_mem.STS.StringState     := TO_STRING(fb_mem.STS.State);
+
 //********************************ZEROING***********************************
 fb_mem.CS.Auto            := FALSE;
 fb_mem.CS.Manueel         := FALSE;
@@ -775,6 +778,9 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="531" Count="0" />
       <LineId Id="126" Count="0" />
       <LineId Id="550" Count="0" />
+      <LineId Id="1078" Count="0" />
+      <LineId Id="1077" Count="0" />
+      <LineId Id="1075" Count="0" />
       <LineId Id="881" Count="0" />
       <LineId Id="827" Count="0" />
       <LineId Id="986" Count="9" />
