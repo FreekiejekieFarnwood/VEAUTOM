@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="EM_Filling" Id="{63eb49f5-59e7-4030-85dd-f42cd0c3af32}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK EM_Filling IMPLEMENTS ITF_Filling, ITF_PackML
+    <Declaration><![CDATA[FUNCTION_BLOCK EM_Filling IMPLEMENTS ITF_Filling, ITF_PackMLV2
 VAR
 	fb_mem : STRUCT_EM_Filling;
 	
 	//Submodules
-	EM_FillerA1				: FB_Machine_PackML;
-	EM_FillerA2				: FB_Machine_PackML;
+	EM_FillerA1				: EM_Machine;
+	EM_FillerA2				: EM_Machine;
 	EM_TransportFillers		: EM_Transport;
 	EM_OutfeedFillers		: EM_Transport_Mechanische_Stop;
 END_VAR
@@ -26,6 +26,39 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                           \$$$$$$  |                                                          \$$$$$$  |
                                                                                                            \______/                                                            \______/ 
 *)
+fb_mem.STS.State := PackML_StateMachine(Start           := fb_mem.CS.Start,
+										Stop            := fb_mem.CS.Stop,
+										Reset           := fb_mem.CS.Reset,
+										Abort           := fb_mem.CS.Abort,
+										Clear           := fb_mem.CS.Clear,
+										UnSuspend       := fb_mem.CS.UnSuspend,
+										Suspend         := fb_mem.CS.Suspend,
+										UnHold          := fb_mem.CS.UnHold,
+										Hold            := fb_mem.CS.Hold,
+										Starting_SC     := fb_mem.STS.Starting_SC,
+										Execute_SC      := fb_mem.STS.Execute_SC,
+										Resetting_SC    := fb_mem.STS.Resetting_SC,
+										Holding_SC      := fb_mem.STS.Holding_SC,
+										Unholding_SC    := fb_mem.STS.Unholding_SC,
+										Suspending_SC   := fb_mem.STS.Suspending_SC,
+										Unsuspending_SC := fb_mem.STS.Unsuspending_SC,
+										Aborting_SC     := fb_mem.STS.Aborting_SC,
+										Clearing_SC     := fb_mem.STS.Clearing_SC,
+										Stopping_SC     := fb_mem.STS.Stopping_SC);
+	
+//********************************Auto manual logic***********************************
+IF fb_mem.CS.Auto THEN
+	fb_mem.STS.Auto := TRUE;
+	ELSE
+		fb_mem.STS.Auto := FALSE; 
+END_IF 
+
+IF fb_mem.CS.Manueel THEN 
+	fb_mem.STS.Manueel := TRUE; 
+	ELSE 
+		fb_mem.STS.Manueel := FALSE;
+END_IF
+	
 (*
 CASE fb_mem.State OF
 	E_State_PackML.IDLE 			: 
@@ -167,7 +200,7 @@ PROPERTY State : TwinCAT_LIB.E_State_PackML
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[]]></ST>
+          <ST><![CDATA[State := fb_mem.STS.State;]]></ST>
         </Implementation>
       </Get>
     </Property>
@@ -245,7 +278,9 @@ METHOD ZeroAllVar : BOOL
     </Method>
     <LineIds Name="EM_Filling">
       <LineId Id="92" Count="11" />
+      <LineId Id="351" Count="19" />
       <LineId Id="91" Count="0" />
+      <LineId Id="373" Count="12" />
       <LineId Id="127" Count="0" />
       <LineId Id="133" Count="0" />
       <LineId Id="146" Count="0" />

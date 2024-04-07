@@ -45,7 +45,8 @@ fb_mem.STS.State := PackML_StateMachine(Start           := fb_mem.CS.Start,
 										Clearing_SC     := fb_mem.STS.Clearing_SC,
 										Stopping_SC     := fb_mem.STS.Stopping_SC);
 										
-//********************************ZEROING***********************************									
+//********************************ZEROING***********************************	
+(*								
 fb_mem.STS.Auto 			:= FALSE;
 fb_mem.STS.Manueel 			:= FALSE;
 fb_mem.STS.Starting_SC 		:= FALSE;
@@ -59,7 +60,7 @@ fb_mem.STS.Aborting_SC 		:= FALSE;
 fb_mem.STS.Clearing_SC 		:= FALSE;
 fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
-
+*)
 //********************************Auto manual logic***********************************
 IF fb_mem.CS.Auto THEN
 	fb_mem.STS.Auto := TRUE;
@@ -328,6 +329,7 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="9" Count="0" />
       <LineId Id="73" Count="0" />
       <LineId Id="72" Count="0" />
+      <LineId Id="112" Count="0" />
       <LineId Id="60" Count="11" />
       <LineId Id="55" Count="1" />
       <LineId Id="74" Count="10" />
