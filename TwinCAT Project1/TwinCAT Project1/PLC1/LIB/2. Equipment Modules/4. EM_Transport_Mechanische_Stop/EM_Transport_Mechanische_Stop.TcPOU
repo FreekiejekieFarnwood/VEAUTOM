@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="EM_Transport_Mechanische_Stop" Id="{b7168c61-ecd4-4685-b920-755ca0b861b8}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK EM_Transport_Mechanische_Stop EXTENDS EM_Transport IMPLEMENTS  ITF_EM_Transport_Mechanische_Stop
+    <Declaration><![CDATA[FUNCTION_BLOCK EM_Transport_Mechanische_Stop EXTENDS EM_Transport IMPLEMENTS ITF_EM_Transport_Mechanische_Stop
 
 VAR
 	fbMechanischeStop_mem : STRUCT_EM_Mechanische_Stop;
@@ -60,6 +60,7 @@ END_IF
 
 //********************************ZEROING***********************************
 //Control Signals 
+(*
 fb_mem.CS.Auto            := FALSE;
 fb_mem.CS.Manueel         := FALSE;
 fb_mem.CS.Start           := FALSE;
@@ -71,6 +72,7 @@ fb_mem.CS.UnSuspend       := FALSE;
 fb_mem.CS.Suspend         := FALSE;
 fb_mem.CS.UnHold          := FALSE;
 fb_mem.CS.Hold            := FALSE;
+*)
 ]]></ST>
     </Implementation>
     <Folder Name="Methods" Id="{3d8b66f8-3d7c-495b-80c7-324b66a87557}" />
@@ -116,7 +118,10 @@ METHOD ZeroAllValues : BOOL
       <LineId Id="47" Count="1" />
       <LineId Id="50" Count="31" />
       <LineId Id="167" Count="0" />
-      <LineId Id="151" Count="13" />
+      <LineId Id="151" Count="2" />
+      <LineId Id="174" Count="0" />
+      <LineId Id="154" Count="10" />
+      <LineId Id="175" Count="0" />
       <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="EM_Transport_Mechanische_Stop.Close">

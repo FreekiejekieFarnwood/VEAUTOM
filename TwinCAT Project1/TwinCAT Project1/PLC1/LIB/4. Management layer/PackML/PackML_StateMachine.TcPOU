@@ -3,6 +3,7 @@
   <POU Name="PackML_StateMachine" Id="{1dc17e84-2765-4770-878c-06b6f6878d93}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION PackML_StateMachine : E_State_PackML
 VAR_INPUT
+	State		: E_State_PackML;
 	Start		: BOOL;
 	Stop		: BOOL;
 	Reset		: BOOL;
@@ -25,6 +26,7 @@ VAR_INPUT
 	Stopping_SC		: BOOL;
 END_VAR
 VAR
+	bFirstCylceBit	: BOOL := TRUE;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -41,219 +43,232 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                           \$$$$$$  |                                                          \$$$$$$  |
                                                                                                            \______/                                                            \______/ 
 *)
+//IF bFirstCylceBit THEN
+//	bFirstCylceBit := FALSE;
+//	State := E_State_PackML.STOPPED;
+//END_IF
 
-CASE PackML_StateMachine OF
+CASE State OF
 	E_State_PackML.IDLE 			: 
 		//HAPPY FLOW		
 		IF Start AND NOT Abort THEN
-			PackML_StateMachine := E_State_PackML.STARTING;
+			State := E_State_PackML.STARTING;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		IF Stop THEN
-			PackML_StateMachine:= E_State_PackML.STOPPING;
+			State:= E_State_PackML.STOPPING;
 		END_IF
 	
 	E_State_PackML.STARTING 		:
 		//HAPPY FLOW		
 		IF Starting_SC AND NOT Abort THEN
-			PackML_StateMachine:= E_State_PackML.EXECUTE;
+			State:= E_State_PackML.EXECUTE;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		IF Stop THEN
-			PackML_StateMachine:= E_State_PackML.STOPPING;
+			State:= E_State_PackML.STOPPING;
 		END_IF
 	
 	E_State_PackML.EXECUTE 			: 
 		//HAPPY FLOW		
 		IF Execute_SC AND NOT Abort THEN
-			PackML_StateMachine := E_State_PackML.COMPLETE;
+			State := E_State_PackML.COMPLETE;
 		END_IF
 		
 		IF Hold THEN
-			PackML_StateMachine := E_State_PackML.HOLDING;
+			State := E_State_PackML.HOLDING;
 		END_IF
 		
 		IF Suspend THEN
-			PackML_StateMachine := E_State_PackML.SUSPENDED;
+			State := E_State_PackML.SUSPENDED;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		IF Stop THEN
-			PackML_StateMachine:= E_State_PackML.STOPPING;
+			State:= E_State_PackML.STOPPING;
 		END_IF
 	
 	E_State_PackML.COMPLETE 		:
 		//HAPPY FLOW
-		PackML_StateMachine:= E_State_PackML.RESETTING;
+		State:= E_State_PackML.RESETTING;
 	
 	E_State_PackML.RESETTING 		:
 		//HAPPY FLOW		
 		IF Resetting_SC AND NOT Abort THEN
-			PackML_StateMachine:= E_State_PackML.IDLE;
+			State:= E_State_PackML.IDLE;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		IF Stop THEN
-			PackML_StateMachine:= E_State_PackML.STOPPING;
+			State:= E_State_PackML.STOPPING;
 		END_IF
 	
 	E_State_PackML.HOLDING 			:
 		//HAPPY FLOW		
 		IF Holding_SC AND NOT Abort THEN
-			PackML_StateMachine:= E_State_PackML.HELD;
+			State:= E_State_PackML.HELD;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		IF Stop THEN
-			PackML_StateMachine:= E_State_PackML.STOPPING;
+			State:= E_State_PackML.STOPPING;
 		END_IF
 		
 	
 	E_State_PackML.HELD 			:
 		//HAPPY FLOW		
 		IF Unhold AND NOT Abort THEN
-			PackML_StateMachine := E_State_PackML.UNHOLDING;
+			State := E_State_PackML.UNHOLDING;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		IF Stop THEN
-			PackML_StateMachine:= E_State_PackML.STOPPING;
+			State:= E_State_PackML.STOPPING;
 		END_IF
 	
 	E_State_PackML.UNHOLDING 		:
 		//HAPPY FLOW		
 		IF Unholding_SC AND NOT Abort THEN
-			PackML_StateMachine:= E_State_PackML.EXECUTE;
+			State:= E_State_PackML.EXECUTE;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		IF Stop THEN
-			PackML_StateMachine:= E_State_PackML.STOPPING;
+			State:= E_State_PackML.STOPPING;
 		END_IF
 	
 	E_State_PackML.SUSPENDING 		:
 		//HAPPY FLOW		
 		IF Suspending_SC AND NOT Abort THEN
-			PackML_StateMachine:= E_State_PackML.SUSPENDED;
+			State:= E_State_PackML.SUSPENDED;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		IF Stop THEN
-			PackML_StateMachine:= E_State_PackML.STOPPING;
+			State:= E_State_PackML.STOPPING;
 		END_IF
 	
 	
 	E_State_PackML.SUSPENDED 		:
 		//HAPPY FLOW		
 		IF Unsuspend AND NOT Abort THEN
-			PackML_StateMachine:= E_State_PackML.UNSUSPENDING;
+			State:= E_State_PackML.UNSUSPENDING;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		IF Stop THEN
-			PackML_StateMachine:= E_State_PackML.STOPPING;
+			State:= E_State_PackML.STOPPING;
 		END_IF
 	
 	E_State_PackML.UNSUSPENDING 	:
 		//HAPPY FLOW		
 		IF Unsuspending_SC AND NOT Abort THEN
-			PackML_StateMachine:= E_State_PackML.EXECUTE;
+			State:= E_State_PackML.EXECUTE;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		IF Stop THEN
-			PackML_StateMachine:= E_State_PackML.STOPPING;
+			State:= E_State_PackML.STOPPING;
 		END_IF
 	
 	E_State_PackML.ABORTED			:
 		//HAPPY FLOW		
 		IF Clear THEN
-			PackML_StateMachine:= E_State_PackML.CLEARING;
+			State:= E_State_PackML.CLEARING;
 		END_IF
 	
 		
 	E_State_PackML.ABORTING			:
 		//HAPPY FLOW		
 		IF Aborting_SC THEN
-			PackML_StateMachine:= E_State_PackML.ABORTED;
+			State:= E_State_PackML.ABORTED;
 		END_IF
 	
 		
 	E_State_PackML.CLEARING 		:
 		//HAPPY FLOW		
 		IF Clearing_SC THEN
-			PackML_StateMachine:= E_State_PackML.STOPPED;
+			State:= E_State_PackML.STOPPED;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		
 		
 	E_State_PackML.STOPPING 		:
 		//HAPPY FLOW
 		IF Stopping_SC THEN
-			PackML_StateMachine:= E_State_PackML.STOPPED;
+			State:= E_State_PackML.STOPPED;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		
 	
 	E_State_PackML.STOPPED 			: 
 		//HAPPY FLOW
 		IF Reset AND NOT Abort THEN
-			PackML_StateMachine:= E_State_PackML.RESETTING;
+			State:= E_State_PackML.RESETTING;
 		END_IF
 		
 		//EXEPTION HANDLING
 		IF Abort THEN
-			PackML_StateMachine:= E_State_PackML.ABORTING;
+			State:= E_State_PackML.ABORTING;
 		END_IF
 		IF Stop THEN
-			PackML_StateMachine:= E_State_PackML.STOPPING;
+			State:= E_State_PackML.STOPPING;
 		END_IF
 END_CASE
+
+PackML_StateMachine := State;
 
 ]]></ST>
     </Implementation>
     <LineIds Name="PackML_StateMachine">
-      <LineId Id="8" Count="220" />
+      <LineId Id="8" Count="13" />
+      <LineId Id="280" Count="0" />
+      <LineId Id="282" Count="0" />
+      <LineId Id="281" Count="0" />
+      <LineId Id="277" Count="0" />
+      <LineId Id="22" Count="206" />
+      <LineId Id="284" Count="0" />
+      <LineId Id="283" Count="0" />
       <LineId Id="251" Count="0" />
       <LineId Id="7" Count="0" />
     </LineIds>

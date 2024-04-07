@@ -25,7 +25,8 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                            \______/                                                            \______/ 
 *)
 //********************************Initiating***********************************
-fb_mem.STS.State := PackML_StateMachine(Start           := fb_mem.CS.Start,
+fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
+										Start           := fb_mem.CS.Start,
 										Stop            := fb_mem.CS.Stop,
 										Reset           := fb_mem.CS.Reset,
 										Abort           := fb_mem.CS.Abort,
@@ -82,6 +83,7 @@ END_IF
 fb_mem.STS.StringState     := TO_STRING(fb_mem.STS.State); 
 
 //********************************ZEROING***********************************
+(*
 fb_mem.CS.Auto            := FALSE;
 fb_mem.CS.Manueel         := FALSE;
 fb_mem.CS.Start           := FALSE;
@@ -92,7 +94,8 @@ fb_mem.CS.Clear           := FALSE;
 fb_mem.CS.UnSuspend       := FALSE;
 fb_mem.CS.Suspend         := FALSE;
 fb_mem.CS.UnHold          := FALSE;
-fb_mem.CS.Hold            := FALSE;]]></ST>
+fb_mem.CS.Hold            := FALSE;
+*)]]></ST>
     </Implementation>
     <Folder Name="Methods" Id="{880b40f2-88eb-491a-87ab-b85a58b2e18b}" />
     <Folder Name="Properties" Id="{00f11200-79c1-4854-9fd3-409f054934e7}" />
@@ -325,7 +328,9 @@ METHOD ZeroAllVar : BOOL
     <LineIds Name="EM_Machine">
       <LineId Id="10" Count="12" />
       <LineId Id="59" Count="0" />
-      <LineId Id="23" Count="17" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="24" Count="16" />
       <LineId Id="9" Count="0" />
       <LineId Id="73" Count="0" />
       <LineId Id="72" Count="0" />
@@ -342,8 +347,11 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="103" Count="0" />
       <LineId Id="102" Count="0" />
       <LineId Id="88" Count="0" />
-      <LineId Id="44" Count="10" />
+      <LineId Id="44" Count="1" />
+      <LineId Id="121" Count="0" />
+      <LineId Id="46" Count="8" />
       <LineId Id="43" Count="0" />
+      <LineId Id="122" Count="0" />
     </LineIds>
     <LineIds Name="EM_Machine.Abort">
       <LineId Id="4" Count="0" />

@@ -46,7 +46,8 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                           \$$$$$$  |                                                          \$$$$$$  |
                                                                                                            \______/                                                            \______/ 
 *)
-fb_mem.STS.State := PackML_StateMachine(Start           := fb_mem.CS.Start,
+fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
+										Start           := fb_mem.CS.Start,
 										Stop            := fb_mem.CS.Stop,
 										Reset           := fb_mem.CS.Reset,
 										Abort           := fb_mem.CS.Abort,
@@ -612,7 +613,9 @@ METHOD ZeroAllVar : BOOL
     </Method>
     <LineIds Name="UNIT_Blikkenvullijn">
       <LineId Id="33" Count="11" />
-      <LineId Id="1109" Count="18" />
+      <LineId Id="1109" Count="1" />
+      <LineId Id="1162" Count="0" />
+      <LineId Id="1111" Count="16" />
       <LineId Id="965" Count="0" />
       <LineId Id="1128" Count="0" />
       <LineId Id="972" Count="0" />
