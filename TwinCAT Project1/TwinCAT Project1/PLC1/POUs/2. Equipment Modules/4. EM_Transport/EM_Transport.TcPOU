@@ -23,8 +23,7 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                           $$\   $$ |                                                          $$\   $$ |
                                                                                                           \$$$$$$  |                                                          \$$$$$$  |
                                                                                                            \______/                                                            \______/ 
-*)
-//********************************Initiating***********************************
+*)//********************************Initiating***********************************
 fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Start           := fb_mem.CS.Start,
 										Stop            := fb_mem.CS.Stop,
@@ -45,12 +44,12 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Aborting_SC     := fb_mem.STS.Aborting_SC,
 										Clearing_SC     := fb_mem.STS.Clearing_SC,
 										Stopping_SC     := fb_mem.STS.Stopping_SC);
+
 //********************************Init***********************************
 Motor();
-Sensor();
+Sensor();			
 										
-//********************************ZEROING***********************************		
-(*							
+//********************************ZEROING***********************************								
 fb_mem.STS.Auto 			:= FALSE;
 fb_mem.STS.Manueel 			:= FALSE;
 fb_mem.STS.Starting_SC 		:= FALSE;
@@ -64,19 +63,18 @@ fb_mem.STS.Aborting_SC 		:= FALSE;
 fb_mem.STS.Clearing_SC 		:= FALSE;
 fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
-*)
 
 //********************************Auto manual logic***********************************
 IF fb_mem.CS.Auto THEN
 	fb_mem.STS.Auto := TRUE;
-	ELSE
-		fb_mem.STS.Auto := FALSE;
+ELSE
+	fb_mem.STS.Auto := FALSE;
 END_IF
 
 IF fb_mem.CS.Manueel THEN
 	fb_mem.STS.Manueel := TRUE;
-	ELSE
-		fb_mem.STS.Manueel := FALSE;
+ELSE
+	fb_mem.STS.Manueel := FALSE;
 END_IF
 
 //********************************Exeptionhandling***********************************
@@ -91,22 +89,23 @@ CASE fb_mem.STS.State OF
 			fb_mem.STS.Starting_SC 		:= TRUE;	
 		END_IF
 	E_State_PackML.EXECUTE 			: 
-		//Do nothing
+		IF fb_mem.CS.Stop AND fb_mem.STS.Auto OR fb_mem.HMI.Stop AND fb_mem.STS.Manueel THEN
+			fb_mem.STS.Execute_SC := TRUE;
+			Motor.Stop();
+		END_IF
 	E_State_PackML.COMPLETE 		:
-		Motor.Reset();
-		IF Motor.State = E_State_PackML.RESETTING THEN
+		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
 			fb_mem.STS.Completing_SC := TRUE;
 		END_IF
 	E_State_PackML.RESETTING 		:
-		FB_init(0,0);
-		Motor.FB_init(0,0);
+		Motor.Reset();
 		IF Motor.State = E_State_PackML.IDLE THEN
 			fb_mem.STS.Resetting_SC 	:= TRUE;
 		END_IF
 	E_State_PackML.HOLDING 			:
 		Motor.Stop();
 		IF Motor.State = E_State_PackML.STOPPED THEN
-			fb_mem.STS.Unholding_SC		:= TRUE;
+			fb_mem.STS.Holding_SC		:= TRUE;
 		END_IF
 	E_State_PackML.HELD 			:
 		//Do nothing
@@ -134,10 +133,12 @@ CASE fb_mem.STS.State OF
 		IF Motor.State = E_State_PackML.ABORTED THEN
 			fb_mem.STS.Aborting_SC 		:= TRUE;
 		END_IF
-	E_State_PackML.ABORTED			:
+	E_State_PackML.ABORTED			:		
+		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
+			Motor.Clear();
+		END_IF
 		//Do nothing
 	E_State_PackML.CLEARING 		:
-		Motor.Clear();
 		IF Motor.State = E_State_PackML.STOPPED THEN
 			fb_mem.STS.Clearing_SC 		:= TRUE;
 		END_IF
@@ -146,14 +147,16 @@ CASE fb_mem.STS.State OF
 			fb_mem.STS.Stopping_SC 		:= TRUE;
 		END_IF
 	E_State_PackML.STOPPED 			:
-		//Do nothing
+		IF fb_mem.CS.Reset AND fb_mem.STS.Auto OR fb_mem.HMI.Reset AND fb_mem.STS.Manueel THEN
+			Motor.Reset();
+		END_IF;
 END_CASE
 
-
+//********************************HMI_Connection***********************************
+fb_mem.STS.StringState     := TO_STRING(fb_mem.STS.State); 
 
 //********************************ZEROING***********************************
-//Control Signals 
-(*
+
 fb_mem.CS.Auto            := FALSE;
 fb_mem.CS.Manueel         := FALSE;
 fb_mem.CS.Start           := FALSE;
@@ -164,8 +167,7 @@ fb_mem.CS.Clear           := FALSE;
 fb_mem.CS.UnSuspend       := FALSE;
 fb_mem.CS.Suspend         := FALSE;
 fb_mem.CS.UnHold          := FALSE;
-fb_mem.CS.Hold            := FALSE;
-*)]]></ST>
+fb_mem.CS.Hold            := FALSE;]]></ST>
     </Implementation>
     <Folder Name="Methods" Id="{60ae86de-bafc-440d-bc9f-96901a1f7546}" />
     <Folder Name="Properties" Id="{8dc97ebe-3ace-4fdf-a1ba-2a3cf702ba1f}" />
@@ -433,16 +435,12 @@ METHOD ZeroAllVar : BOOL
     </Method>
     <LineIds Name="EM_Transport">
       <LineId Id="15" Count="11" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="47" Count="1" />
-      <LineId Id="488" Count="0" />
-      <LineId Id="49" Count="17" />
-      <LineId Id="394" Count="2" />
-      <LineId Id="67" Count="1" />
-      <LineId Id="490" Count="0" />
-      <LineId Id="69" Count="12" />
-      <LineId Id="491" Count="0" />
-      <LineId Id="82" Count="15" />
+      <LineId Id="515" Count="20" />
+      <LineId Id="569" Count="0" />
+      <LineId Id="565" Count="2" />
+      <LineId Id="536" Count="26" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="95" Count="2" />
       <LineId Id="115" Count="2" />
       <LineId Id="398" Count="0" />
       <LineId Id="121" Count="0" />
@@ -450,16 +448,14 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="399" Count="0" />
       <LineId Id="402" Count="0" />
       <LineId Id="401" Count="0" />
+      <LineId Id="595" Count="2" />
+      <LineId Id="610" Count="0" />
       <LineId Id="156" Count="0" />
-      <LineId Id="158" Count="0" />
       <LineId Id="173" Count="0" />
-      <LineId Id="452" Count="0" />
-      <LineId Id="404" Count="0" />
-      <LineId Id="406" Count="0" />
+      <LineId Id="570" Count="1" />
       <LineId Id="174" Count="0" />
       <LineId Id="177" Count="0" />
-      <LineId Id="179" Count="0" />
-      <LineId Id="453" Count="0" />
+      <LineId Id="572" Count="0" />
       <LineId Id="409" Count="0" />
       <LineId Id="411" Count="0" />
       <LineId Id="407" Count="0" />
@@ -487,11 +483,12 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="478" Count="0" />
       <LineId Id="476" Count="1" />
       <LineId Id="474" Count="0" />
+      <LineId Id="575" Count="0" />
+      <LineId Id="590" Count="0" />
+      <LineId Id="577" Count="0" />
       <LineId Id="266" Count="0" />
       <LineId Id="436" Count="0" />
-      <LineId Id="442" Count="0" />
-      <LineId Id="479" Count="0" />
-      <LineId Id="443" Count="0" />
+      <LineId Id="442" Count="1" />
       <LineId Id="445" Count="0" />
       <LineId Id="299" Count="0" />
       <LineId Id="446" Count="1" />
@@ -499,14 +496,11 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="315" Count="0" />
       <LineId Id="340" Count="0" />
       <LineId Id="397" Count="0" />
+      <LineId Id="592" Count="1" />
       <LineId Id="378" Count="0" />
-      <LineId Id="113" Count="1" />
-      <LineId Id="99" Count="1" />
-      <LineId Id="379" Count="0" />
-      <LineId Id="489" Count="0" />
-      <LineId Id="101" Count="9" />
+      <LineId Id="113" Count="0" />
+      <LineId Id="500" Count="14" />
       <LineId Id="32" Count="0" />
-      <LineId Id="381" Count="0" />
     </LineIds>
     <LineIds Name="EM_Transport.Abort">
       <LineId Id="4" Count="0" />

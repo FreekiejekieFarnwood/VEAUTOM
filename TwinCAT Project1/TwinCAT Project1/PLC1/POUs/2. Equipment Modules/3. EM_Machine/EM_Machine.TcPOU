@@ -74,9 +74,10 @@ ELSE
 	fb_mem.STS.Manueel := FALSE;
 END_IF
 
-//********************************Exeptionhandling***********************************
-
 //********************************Action case***********************************
+
+// THIS CODE SIMULATES A EXTERNAL MACHINE WICH RUNS ON PACKML. SO NO ACTION CASE IS PROGRAMMED
+
 
 //********************************HMI_Connection***********************************
 fb_mem.STS.StringState     := TO_STRING(fb_mem.STS.State); 
@@ -340,10 +341,8 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="124" Count="0" />
       <LineId Id="84" Count="0" />
       <LineId Id="58" Count="0" />
-      <LineId Id="86" Count="0" />
-      <LineId Id="85" Count="0" />
-      <LineId Id="92" Count="0" />
-      <LineId Id="87" Count="0" />
+      <LineId Id="86" Count="1" />
+      <LineId Id="134" Count="2" />
       <LineId Id="101" Count="0" />
       <LineId Id="103" Count="0" />
       <LineId Id="102" Count="0" />
