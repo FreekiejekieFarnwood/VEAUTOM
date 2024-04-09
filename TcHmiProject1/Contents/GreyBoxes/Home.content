@@ -28,7 +28,7 @@
 }
 </script>
 </div>
-<div id="TcHmiStateImage_23" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="1400" data-tchmi-left-unit="px" data-tchmi-top="100" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="39" data-tchmi-fallback-image="Images/INDAUT/Fallback image.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState%/s%">
+<div id="TcHmiStateImage_23" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="1400" data-tchmi-left-unit="px" data-tchmi-top="100" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="39" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
@@ -48,7 +48,7 @@
 
 
 </div>
-<div id="TcHmiStateImage_24" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="250" data-tchmi-left-unit="px" data-tchmi-top="100" data-tchmi-top-unit="px" data-tchmi-width="600" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Fallback image.svg">
+<div id="TcHmiStateImage_24" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="250" data-tchmi-left-unit="px" data-tchmi-top="100" data-tchmi-top-unit="px" data-tchmi-width="600" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
@@ -64,7 +64,7 @@
 
 
 </div>
-<div id="TcHmiStateImage_25" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="1650" data-tchmi-left-unit="px" data-tchmi-top="335" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Fallback image.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_BottomSeal.fb_mem.STS.StringState%/s%">
+<div id="TcHmiStateImage_25" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="1650" data-tchmi-left-unit="px" data-tchmi-top="335" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_BottomSeal.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
@@ -80,7 +80,7 @@
 
 
 </div>
-<div id="TcHmiStateImage_26" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="1270" data-tchmi-left-unit="px" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Fallback image.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Labeller.fb_mem.STS.StringState%/s%">
+<div id="TcHmiStateImage_26" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="1270" data-tchmi-left-unit="px" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Labeller.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
@@ -96,7 +96,7 @@
 
 
 </div>
-<div id="TcHmiStateImage_27" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="860" data-tchmi-left-unit="px" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Fallback image.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.StringState%/s%">
+<div id="TcHmiStateImage_27" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="860" data-tchmi-left-unit="px" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
@@ -112,7 +112,7 @@
 
 
 </div>
-<div id="TcHmiStateImage_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="460" data-tchmi-left-unit="px" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Fallback image.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_StampUnit.fb_mem.STS.StringState%/s%">
+<div id="TcHmiStateImage_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="460" data-tchmi-left-unit="px" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_StampUnit.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
@@ -128,7 +128,7 @@
 
 
 </div>
-<div id="TcHmiStateImage_29" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="60" data-tchmi-left-unit="px" data-tchmi-top="600" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Fallback image.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_SealShrink.fb_mem.STS.StringState%/s%">
+<div id="TcHmiStateImage_29" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="60" data-tchmi-left-unit="px" data-tchmi-top="600" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_SealShrink.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
@@ -490,7 +490,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiRectangle_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="525" data-tchmi-height-unit="px" data-tchmi-left="25" data-tchmi-left-unit="px" data-tchmi-top="395" data-tchmi-top-unit="px" data-tchmi-width="1815" data-tchmi-width-unit="px" data-tchmi-stroke-thickness="0" data-tchmi-zindex="41" data-tchmi-is-enabled="true">
+<div id="TcHmiRectangle_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="485" data-tchmi-height-unit="px" data-tchmi-left="25" data-tchmi-left-unit="px" data-tchmi-top="395" data-tchmi-top-unit="px" data-tchmi-width="1815" data-tchmi-width-unit="px" data-tchmi-stroke-thickness="0" data-tchmi-zindex="41" data-tchmi-is-enabled="true">
 <script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
 {
   "left": "Dashed",

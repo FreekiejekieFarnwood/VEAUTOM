@@ -186,25 +186,17 @@ END_VAR
         <ST><![CDATA[fb_mem.STS.Aborting_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Property Name="Auto" Id="{fc84f2d0-f38b-409b-8df9-09023902c7c6}" FolderPath="Properties\">
-      <Declaration><![CDATA[PROPERTY Auto : BOOl]]></Declaration>
-      <Get Name="Get" Id="{1019b566-897a-4932-a1e6-47bf5977817e}">
-        <Declaration><![CDATA[VAR
-END_VAR
+    <Method Name="Auto" Id="{0e7aef80-4c85-478b-a934-c85e954995c2}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Auto : BOOL
 ]]></Declaration>
-        <Implementation>
-          <ST><![CDATA[AUTO := fb_mem.STS.Auto;]]></ST>
-        </Implementation>
-      </Get>
-      <Set Name="Set" Id="{9f2d04fb-7261-48ac-9f62-2e687a3e1661}">
-        <Declaration><![CDATA[VAR
-END_VAR
-]]></Declaration>
-        <Implementation>
-          <ST><![CDATA[fb_mem.CS.Auto := AUTO;]]></ST>
-        </Implementation>
-      </Set>
-    </Property>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Auto := TRUE;
+fb_mem.CS.Manueel := FALSE;
+
+Auto := fb_mem.STS.Auto;]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="Clear" Id="{4bc6a9ab-0b4b-4eca-988f-8ccb82ec9a45}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Clear : BOOL
@@ -271,25 +263,17 @@ END_VAR
         <ST><![CDATA[fb_mem.STS.Holding_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Property Name="Manueel" Id="{fb40a4a0-9273-4df4-bb96-4d1962f2f8a9}" FolderPath="Properties\">
-      <Declaration><![CDATA[PROPERTY Manueel : BOOl]]></Declaration>
-      <Get Name="Get" Id="{0b113612-b459-4b3a-a52f-128fab518be9}">
-        <Declaration><![CDATA[VAR
-END_VAR
+    <Method Name="Manueel" Id="{ede4cda6-f1de-40d8-8a49-f05d845e9d0c}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Manueel : BOOL
 ]]></Declaration>
-        <Implementation>
-          <ST><![CDATA[Manueel := fb_mem.STS.Manueel;]]></ST>
-        </Implementation>
-      </Get>
-      <Set Name="Set" Id="{b261c000-a596-4714-8e62-0b931308433e}">
-        <Declaration><![CDATA[VAR
-END_VAR
-]]></Declaration>
-        <Implementation>
-          <ST><![CDATA[fb_mem.CS.Manueel :=  Manueel;]]></ST>
-        </Implementation>
-      </Set>
-    </Property>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Manueel := TRUE;
+fb_mem.CS.Auto := FALSE;
+
+Manueel := fb_mem.STS.Manueel;]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="Reset" Id="{9693ed28-985a-456a-9662-9dcebab0097c}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Reset : BOOL
@@ -530,11 +514,10 @@ METHOD ZeroAllVar : BOOL
     <LineIds Name="EM_Transport.Aborting_SC">
       <LineId Id="5" Count="0" />
     </LineIds>
-    <LineIds Name="EM_Transport.Auto.Get">
-      <LineId Id="6" Count="0" />
-    </LineIds>
-    <LineIds Name="EM_Transport.Auto.Set">
-      <LineId Id="2" Count="0" />
+    <LineIds Name="EM_Transport.Auto">
+      <LineId Id="5" Count="1" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="EM_Transport.Clear">
       <LineId Id="4" Count="0" />
@@ -557,11 +540,10 @@ METHOD ZeroAllVar : BOOL
     <LineIds Name="EM_Transport.Holding_SC">
       <LineId Id="5" Count="0" />
     </LineIds>
-    <LineIds Name="EM_Transport.Manueel.Get">
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="EM_Transport.Manueel.Set">
-      <LineId Id="2" Count="0" />
+    <LineIds Name="EM_Transport.Manueel">
+      <LineId Id="4" Count="1" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="8" Count="0" />
     </LineIds>
     <LineIds Name="EM_Transport.Reset">
       <LineId Id="4" Count="0" />

@@ -6,7 +6,8 @@
 {attribute 'to_string'}
 TYPE E_State_PackML :
 (
-	IDLE := 0,
+	STOPPED := 1,
+	IDLE,
 	STARTING,
 	EXECUTE,
 	COMPLETING,
@@ -21,8 +22,7 @@ TYPE E_State_PackML :
 	ABORTING,
 	ABORTED,
 	CLEARING,
-	STOPPING,
-	STOPPED
+	STOPPING
 );
 END_TYPE
 ]]></Declaration>

@@ -6,6 +6,8 @@ STRUCT
 	Tag				: STRING;
 	State 			: E_State_PackML;
 	Error_State 	: E_Motor_Error_State;
+	Auto			: BOOL;
+	Manueel			: BOOL;
 	Richting_L		: BOOL;
 	Richting_R		: BOOL;
 END_STRUCT

@@ -46,8 +46,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Clearing_SC     := fb_mem.STS.Clearing_SC,
 										Stopping_SC     := fb_mem.STS.Stopping_SC);
 										
-//********************************ZEROING***********************************	
-(*								
+//********************************ZEROING***********************************								
 fb_mem.STS.Auto 			:= FALSE;
 fb_mem.STS.Manueel 			:= FALSE;
 fb_mem.STS.Starting_SC 		:= FALSE;
@@ -61,18 +60,18 @@ fb_mem.STS.Aborting_SC 		:= FALSE;
 fb_mem.STS.Clearing_SC 		:= FALSE;
 fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
-*)
+
 //********************************Auto manual logic***********************************
 IF fb_mem.CS.Auto THEN
 	fb_mem.STS.Auto := TRUE;
-	ELSE
-		fb_mem.STS.Auto := FALSE;
+ELSE
+	fb_mem.STS.Auto := FALSE;
 END_IF
 
 IF fb_mem.CS.Manueel THEN
 	fb_mem.STS.Manueel := TRUE;
-	ELSE
-		fb_mem.STS.Manueel := FALSE;
+ELSE
+	fb_mem.STS.Manueel := FALSE;
 END_IF
 
 //********************************Exeptionhandling***********************************
@@ -83,7 +82,7 @@ END_IF
 fb_mem.STS.StringState     := TO_STRING(fb_mem.STS.State); 
 
 //********************************ZEROING***********************************
-(*
+
 fb_mem.CS.Auto            := FALSE;
 fb_mem.CS.Manueel         := FALSE;
 fb_mem.CS.Start           := FALSE;
@@ -95,7 +94,7 @@ fb_mem.CS.UnSuspend       := FALSE;
 fb_mem.CS.Suspend         := FALSE;
 fb_mem.CS.UnHold          := FALSE;
 fb_mem.CS.Hold            := FALSE;
-*)]]></ST>
+]]></ST>
     </Implementation>
     <Folder Name="Methods" Id="{880b40f2-88eb-491a-87ab-b85a58b2e18b}" />
     <Folder Name="Properties" Id="{00f11200-79c1-4854-9fd3-409f054934e7}" />
@@ -334,10 +333,12 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="9" Count="0" />
       <LineId Id="73" Count="0" />
       <LineId Id="72" Count="0" />
-      <LineId Id="112" Count="0" />
       <LineId Id="60" Count="11" />
-      <LineId Id="55" Count="1" />
-      <LineId Id="74" Count="10" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="133" Count="0" />
+      <LineId Id="74" Count="8" />
+      <LineId Id="124" Count="0" />
+      <LineId Id="84" Count="0" />
       <LineId Id="58" Count="0" />
       <LineId Id="86" Count="0" />
       <LineId Id="85" Count="0" />

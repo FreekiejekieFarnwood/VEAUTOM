@@ -43,13 +43,8 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                           \$$$$$$  |                                                          \$$$$$$  |
                                                                                                            \______/                                                            \______/ 
 *)
-//IF bFirstCylceBit THEN
-//	bFirstCylceBit := FALSE;
-//	State := E_State_PackML.STOPPED;
-//END_IF
-
 CASE State OF
-	E_State_PackML.IDLE 			: 
+	E_State_PackML.IDLE 			:
 		//HAPPY FLOW		
 		IF Start AND NOT Abort THEN
 			State := E_State_PackML.STARTING;
@@ -77,7 +72,7 @@ CASE State OF
 			State:= E_State_PackML.STOPPING;
 		END_IF
 	
-	E_State_PackML.EXECUTE 			: 
+	E_State_PackML.EXECUTE 			:
 		//HAPPY FLOW		
 		IF Execute_SC AND NOT Abort THEN
 			State := E_State_PackML.COMPLETE;
@@ -244,7 +239,7 @@ CASE State OF
 	E_State_PackML.STOPPED 			: 
 		//HAPPY FLOW
 		IF Reset AND NOT Abort THEN
-			State:= E_State_PackML.RESETTING;
+			State := E_State_PackML.RESETTING;
 		END_IF
 		
 		//EXEPTION HANDLING
@@ -261,11 +256,7 @@ PackML_StateMachine := State;
 ]]></ST>
     </Implementation>
     <LineIds Name="PackML_StateMachine">
-      <LineId Id="8" Count="13" />
-      <LineId Id="280" Count="0" />
-      <LineId Id="282" Count="0" />
-      <LineId Id="281" Count="0" />
-      <LineId Id="277" Count="0" />
+      <LineId Id="8" Count="12" />
       <LineId Id="22" Count="206" />
       <LineId Id="284" Count="0" />
       <LineId Id="283" Count="0" />

@@ -5,7 +5,7 @@
 
 VAR
 	fbMechanischeStop_mem : STRUCT_EM_Mechanische_Stop;
-	//Klep		: CM_Valve;
+	Klep		: CM_Valve;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -24,9 +24,11 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
 *)
 
 //********************************Init***********************************
-//Klep();
+Klep();
+SUPER^();
 										
-//********************************ZEROING***********************************									
+//********************************ZEROING***********************************	
+(*								
 fb_mem.STS.Auto 			:= FALSE;
 fb_mem.STS.Manueel 			:= FALSE;
 fb_mem.STS.Starting_SC 		:= FALSE;
@@ -40,22 +42,14 @@ fb_mem.STS.Aborting_SC 		:= FALSE;
 fb_mem.STS.Clearing_SC 		:= FALSE;
 fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
+*)
 
 //********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
-	fb_mem.STS.Auto := TRUE;
-	ELSE
-		fb_mem.STS.Auto := FALSE;
-END_IF
 
-IF fb_mem.CS.Manueel THEN
-	fb_mem.STS.Manueel := TRUE;
-	ELSE
-		fb_mem.STS.Manueel := FALSE;
-END_IF
 
 //********************************Exeptionhandling***********************************
 
+//********************************Action case***********************************
 
 
 //********************************ZEROING***********************************
@@ -116,7 +110,16 @@ METHOD ZeroAllValues : BOOL
     <LineIds Name="EM_Transport_Mechanische_Stop">
       <LineId Id="15" Count="12" />
       <LineId Id="47" Count="1" />
-      <LineId Id="50" Count="31" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="250" Count="1" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="176" Count="0" />
+      <LineId Id="53" Count="13" />
+      <LineId Id="177" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="78" Count="2" />
+      <LineId Id="249" Count="0" />
+      <LineId Id="81" Count="0" />
       <LineId Id="167" Count="0" />
       <LineId Id="151" Count="2" />
       <LineId Id="174" Count="0" />

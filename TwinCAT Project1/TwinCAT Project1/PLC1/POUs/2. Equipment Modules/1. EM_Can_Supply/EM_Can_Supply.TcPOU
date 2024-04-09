@@ -63,6 +63,17 @@ METHOD Aborting_SC : BOOL
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Method>
+    <Method Name="Auto" Id="{7c087c35-e98d-42a7-85c9-eba23efe1390}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Auto : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Auto := TRUE;
+fb_mem.CS.Manueel := FALSE;
+
+Auto := fb_mem.STS.Auto;]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="Clear" Id="{2dcbaa2b-99be-42c9-be06-6b99a4709feb}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Clear : BOOL
@@ -122,6 +133,17 @@ METHOD Holding_SC : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Manueel" Id="{2432d75e-7480-48d5-a595-ad34692b93da}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Manueel : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Manueel := TRUE;
+fb_mem.CS.Auto := FALSE;
+
+Manueel := fb_mem.STS.Manueel;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Reset" Id="{a7f3a304-8199-4f0d-9546-0c950327d5a8}" FolderPath="Methods\">
@@ -270,6 +292,11 @@ METHOD ZeroAllVar : BOOL
     <LineIds Name="EM_Can_Supply.Aborting_SC">
       <LineId Id="4" Count="0" />
     </LineIds>
+    <LineIds Name="EM_Can_Supply.Auto">
+      <LineId Id="5" Count="1" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
     <LineIds Name="EM_Can_Supply.Clear">
       <LineId Id="4" Count="0" />
     </LineIds>
@@ -290,6 +317,11 @@ METHOD ZeroAllVar : BOOL
     </LineIds>
     <LineIds Name="EM_Can_Supply.Holding_SC">
       <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Manueel">
+      <LineId Id="4" Count="1" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="8" Count="0" />
     </LineIds>
     <LineIds Name="EM_Can_Supply.Reset">
       <LineId Id="4" Count="0" />

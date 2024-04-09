@@ -10,24 +10,16 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
-    <Property Name="Auto" Id="{fc6e3e21-26ef-42cc-a0a1-4e367a1afd38}" FolderPath="Properties\">
-      <Declaration><![CDATA[PROPERTY Auto : BOOL]]></Declaration>
-      <Get Name="Get" Id="{a8e83ab7-d955-4f17-af6b-b4f91749c03c}">
-        <Declaration><![CDATA[]]></Declaration>
-      </Get>
-      <Set Name="Set" Id="{f4508969-96e8-47e0-8db1-9dac65f8a78b}">
-        <Declaration><![CDATA[]]></Declaration>
-      </Set>
-    </Property>
-    <Property Name="Manueel" Id="{6ead2dc1-40a7-4622-b37c-8156eff25637}" FolderPath="Properties\">
-      <Declaration><![CDATA[PROPERTY Manueel : BOOL]]></Declaration>
-      <Get Name="Get" Id="{d727bb69-932e-4891-beab-4685030f0244}">
-        <Declaration><![CDATA[]]></Declaration>
-      </Get>
-      <Set Name="Set" Id="{f3764319-7ed6-4936-8759-d79ec55acae6}">
-        <Declaration><![CDATA[]]></Declaration>
-      </Set>
-    </Property>
+    <Method Name="Auto" Id="{c81a4951-4da4-480d-b686-730e3b4e68fa}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Auto : BOOL
+]]></Declaration>
+    </Method>
+    <Method Name="Manueel" Id="{e7e815d6-568d-45ef-ab49-cfedf899ed66}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Manueel : BOOL
+]]></Declaration>
+    </Method>
     <Method Name="Reset" Id="{76be5b52-adde-42a0-a2a7-2b49f3338760}" FolderPath="Methods\">
       <Declaration><![CDATA[METHOD Reset : BOOL
 VAR_INPUT

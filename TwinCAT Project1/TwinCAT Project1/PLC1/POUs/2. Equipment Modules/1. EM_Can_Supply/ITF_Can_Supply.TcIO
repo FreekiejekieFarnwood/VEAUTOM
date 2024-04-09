@@ -15,6 +15,11 @@ METHOD Abort : BOOL
 METHOD Aborting_SC : BOOL
 ]]></Declaration>
     </Method>
+    <Method Name="Auto" Id="{973a3595-3042-468b-b69d-22767af63f3a}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Auto : BOOL
+]]></Declaration>
+    </Method>
     <Method Name="Clear" Id="{7a38a923-482d-4861-9315-89cfe0c296de}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Clear : BOOL
@@ -53,6 +58,11 @@ METHOD Hold : BOOL
     <Method Name="Holding_SC" Id="{75d0e30c-416f-41a6-8be3-d368589ec93c}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Holding_SC : BOOL
+]]></Declaration>
+    </Method>
+    <Method Name="Manueel" Id="{99c37bf6-e5c1-48cd-9d07-8b842bf9c3c0}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Manueel : BOOL
 ]]></Declaration>
     </Method>
     <Method Name="Reset" Id="{c4a0a244-05b7-40f7-a199-9634c2056ae8}" FolderPath="Methods\">
