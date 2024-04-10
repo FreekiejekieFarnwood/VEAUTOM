@@ -28,6 +28,15 @@
     "DEFAULTTIMEZONE": "client",
     "DEFAULTUSERGROUP": "__SystemUsers",
     "DEFINITIONS": {
+        "PLC1.ARRAY_1..3_OF-stErrorHandling": {
+            "items": {
+                "$ref": "#/definitions/PLC1.stErrorHandling"
+            },
+            "maxItems": 3,
+            "minItems": 3,
+            "startOffset": 1,
+            "type": "array"
+        },
         "PLC1.ARRAY_1..4_OF-stErrorHandling": {
             "items": {
                 "$ref": "#/definitions/PLC1.stErrorHandling"
@@ -2855,6 +2864,23 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.AlarmHandler.ErrorArray": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::AlarmHandler::ErrorArray",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/PLC1.ARRAY_1..3_OF-stErrorHandling"
+                    },
+                    {
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Unit.EM_BottomSeal.fb_mem.STS.StringState": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -4073,6 +4099,7 @@
                 "PLC1.HMI_Connection.Test_String3": 3,
                 "PLC1.HMI_Connection.enum": 3,
                 "PLC1.MAIN.ErrorArray": 3,
+                "PLC1.MAIN.Unit.AlarmHandler.ErrorArray": 3,
                 "PLC1.MAIN.Unit.EM_BottomSeal.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState": 3,

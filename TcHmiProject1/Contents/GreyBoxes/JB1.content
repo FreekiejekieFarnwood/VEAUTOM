@@ -1428,7 +1428,7 @@
 }
 </script>
 </div>
-<div id="TcHmiTextblock_239" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="94" data-tchmi-left-unit="px" data-tchmi-text="Start" data-tchmi-top="609" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-zindex="15">
+<div id="TcHmiTextblock_239" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="94" data-tchmi-left-unit="px" data-tchmi-text="Start" data-tchmi-top="763" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-zindex="15">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,
@@ -1713,7 +1713,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_241" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="94" data-tchmi-left-unit="px" data-tchmi-text="Stop" data-tchmi-top="657" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-zindex="15">
+<div id="TcHmiTextblock_241" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="94" data-tchmi-left-unit="px" data-tchmi-text="Stop" data-tchmi-top="815" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-zindex="15">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,
@@ -1757,7 +1757,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_242" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="182" data-tchmi-left-unit="px" data-tchmi-text="Clear" data-tchmi-top="609" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-zindex="5">
+<div id="TcHmiTextblock_242" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="182" data-tchmi-left-unit="px" data-tchmi-text="Clear" data-tchmi-top="763" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-zindex="5">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,
@@ -1801,7 +1801,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_243" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="182" data-tchmi-left-unit="px" data-tchmi-text="Abort" data-tchmi-top="657" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-zindex="14">
+<div id="TcHmiTextblock_243" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="182" data-tchmi-left-unit="px" data-tchmi-text="Abort" data-tchmi-top="813" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-zindex="14">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,
@@ -1845,7 +1845,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_244" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-text="Reset" data-tchmi-top="657" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-zindex="13">
+<div id="TcHmiTextblock_244" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="94" data-tchmi-left-unit="px" data-tchmi-text="Reset" data-tchmi-top="864" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-zindex="13">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,
@@ -4125,7 +4125,7 @@
 
 
 </div>
-<div id="TcHmiStateImage_132" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="184" data-tchmi-left-unit="px" data-tchmi-top="864" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-zindex="41" data-tchmi-state="%s%PLC1.MAIN.Unit.fb_mem.HMI.Auto%/s%" data-tchmi-fallback-image="Images/INDAUT/Control/Manual Button.svg">
+<div id="TcHmiStateImage_132" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="184" data-tchmi-left-unit="px" data-tchmi-top="864" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-zindex="41" data-tchmi-state="%s%PLC1.MAIN.Unit.fb_mem.STS.Auto%/s%" data-tchmi-fallback-image="Images/INDAUT/Control/Manual Button.svg">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
