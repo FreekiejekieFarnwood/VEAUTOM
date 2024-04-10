@@ -10,6 +10,8 @@ VAR
 	EM_FillerA2				: EM_Machine;
 	EM_TransportFillers		: EM_Transport;
 	EM_OutfeedFillers		: EM_Transport_Mechanische_Stop;
+	
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -102,12 +104,9 @@ CASE fb_mem.STS.State OF
 			END_IF
 		END_IF
 	E_State_PackML.EXECUTE 			: 
-		IF fb_mem.CS.Stop AND fb_mem.STS.Auto OR fb_mem.HMI.Stop AND fb_mem.STS.Manueel THEN
-			EM_FillerA1.Stop();
-			EM_FillerA2.Stop();
-			EM_TransportFillers.Stop();
-			EM_OutfeedFillers.Stop();
-		END_IF
+		// MAIN LOGIC:
+		IF 
+		
 	E_State_PackML.COMPLETE 		:
 		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
 			fb_mem.STS.Completing_SC := TRUE;
@@ -432,11 +431,10 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="644" Count="0" />
       <LineId Id="641" Count="0" />
       <LineId Id="513" Count="0" />
-      <LineId Id="470" Count="1" />
-      <LineId Id="648" Count="0" />
-      <LineId Id="650" Count="1" />
-      <LineId Id="653" Count="0" />
-      <LineId Id="649" Count="0" />
+      <LineId Id="470" Count="0" />
+      <LineId Id="664" Count="0" />
+      <LineId Id="666" Count="0" />
+      <LineId Id="665" Count="0" />
       <LineId Id="472" Count="0" />
       <LineId Id="536" Count="1" />
       <LineId Id="473" Count="0" />

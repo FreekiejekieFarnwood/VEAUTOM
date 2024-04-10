@@ -283,10 +283,14 @@ IF fb_mem.SIM.Resetting_SC THEN
 	EM_Labeller.Resetting_SC();
 	EM_StampUnit.Resetting_SC();
 	EM_SealShrink.Resetting_SC();
-	fb_mem.STS.Resetting_SC := TRUE;
+	EM_TurningDevice.Resetting_SC();
+	EM_Infeed_CheckWeigher.Resetting_SC();
+	EM_Transport_Checkweigher_BottomSeal.Resetting_SC();
+	EM_Transport_BottomSeal_Labeller.Resetting_SC();
+	EM_Transport_TurningDevice_StampUnit.Resetting_SC();
+	EM_Transport_StampUnit_SealShrink.Resetting_SC();
 END_IF;
 IF fb_mem.SIM.Holding_SC THEN
-	fb_mem.STS.Holding_SC := TRUE;
 	EM_Can_Supply.Holding_SC();
 	EM_Filling.Holding_SC();
 	EM_CheckWeigher.Holding_SC();
@@ -294,6 +298,12 @@ IF fb_mem.SIM.Holding_SC THEN
 	EM_Labeller.Holding_SC();
 	EM_StampUnit.Holding_SC();
 	EM_SealShrink.Holding_SC();
+	EM_TurningDevice.Holding_SC();
+	EM_Infeed_CheckWeigher.Holding_SC();
+	EM_Transport_Checkweigher_BottomSeal.Holding_SC();
+	EM_Transport_BottomSeal_Labeller.Holding_SC();
+	EM_Transport_TurningDevice_StampUnit.Holding_SC();
+	EM_Transport_StampUnit_SealShrink.Holding_SC();
 END_IF;
 IF fb_mem.SIM.Unholding_SC THEN
 	EM_Can_Supply.Unholding_SC();
@@ -303,10 +313,14 @@ IF fb_mem.SIM.Unholding_SC THEN
 	EM_Labeller.Unholding_SC();
 	EM_StampUnit.Unholding_SC();
 	EM_SealShrink.Unholding_SC();
-	fb_mem.STS.Unholding_SC := TRUE;
+	EM_TurningDevice.Unholding_SC();
+	EM_Infeed_CheckWeigher.Unholding_SC();
+	EM_Transport_Checkweigher_BottomSeal.Unholding_SC();
+	EM_Transport_BottomSeal_Labeller.Unholding_SC();
+	EM_Transport_TurningDevice_StampUnit.Unholding_SC();
+	EM_Transport_StampUnit_SealShrink.Unholding_SC();
 END_IF;
 IF fb_mem.SIM.Suspending_SC THEN
-	fb_mem.STS.Suspending_SC := TRUE;
 	EM_Can_Supply.Suspending_SC();
 	EM_Filling.Suspending_SC();
 	EM_CheckWeigher.Suspending_SC();
@@ -314,6 +328,12 @@ IF fb_mem.SIM.Suspending_SC THEN
 	EM_Labeller.Suspending_SC();
 	EM_StampUnit.Suspending_SC();
 	EM_SealShrink.Suspending_SC();
+	EM_TurningDevice.Suspending_SC();
+	EM_Infeed_CheckWeigher.Suspending_SC();
+	EM_Transport_Checkweigher_BottomSeal.Suspending_SC();
+	EM_Transport_BottomSeal_Labeller.Suspending_SC();
+	EM_Transport_TurningDevice_StampUnit.Suspending_SC();
+	EM_Transport_StampUnit_SealShrink.Suspending_SC();
 END_IF;
 IF fb_mem.SIM.Unsuspending_SC THEN
 	EM_Can_Supply.Unsuspending_SC();
@@ -323,7 +343,12 @@ IF fb_mem.SIM.Unsuspending_SC THEN
 	EM_Labeller.Unsuspending_SC();
 	EM_StampUnit.Unsuspending_SC();
 	EM_SealShrink.Unsuspending_SC();
-	fb_mem.STS.Unsuspending_SC := TRUE;
+	EM_TurningDevice.Unsuspending_SC();
+	EM_Infeed_CheckWeigher.Unsuspending_SC();
+	EM_Transport_Checkweigher_BottomSeal.Unsuspending_SC();
+	EM_Transport_BottomSeal_Labeller.Unsuspending_SC();
+	EM_Transport_TurningDevice_StampUnit.Unsuspending_SC();
+	EM_Transport_StampUnit_SealShrink.Unsuspending_SC();
 END_IF;
 IF fb_mem.SIM.Aborting_SC THEN
 	fb_mem.STS.Aborting_SC := TRUE;
@@ -334,9 +359,14 @@ IF fb_mem.SIM.Aborting_SC THEN
 	EM_Labeller.Aborting_SC();
 	EM_StampUnit.Aborting_SC();
 	EM_SealShrink.Aborting_SC();
+	EM_TurningDevice.Aborting_SC();
+	EM_Infeed_CheckWeigher.Aborting_SC();
+	EM_Transport_Checkweigher_BottomSeal.Aborting_SC();
+	EM_Transport_BottomSeal_Labeller.Aborting_SC();
+	EM_Transport_TurningDevice_StampUnit.Aborting_SC();
+	EM_Transport_StampUnit_SealShrink.Aborting_SC();
 END_IF;
 IF fb_mem.SIM.Clearing_SC THEN
-	fb_mem.STS.Clearing_SC := TRUE;
 	EM_Can_Supply.Clearing_SC();
 	EM_Filling.Clearing_SC();
 	EM_CheckWeigher.Clearing_SC();
@@ -344,9 +374,14 @@ IF fb_mem.SIM.Clearing_SC THEN
 	EM_Labeller.Clearing_SC();
 	EM_StampUnit.Clearing_SC();
 	EM_SealShrink.Clearing_SC();
+	EM_TurningDevice.Clearing_SC();
+	EM_Infeed_CheckWeigher.Clearing_SC();
+	EM_Transport_Checkweigher_BottomSeal.Clearing_SC();
+	EM_Transport_BottomSeal_Labeller.Clearing_SC();
+	EM_Transport_TurningDevice_StampUnit.Clearing_SC();
+	EM_Transport_StampUnit_SealShrink.Clearing_SC();
 END_IF;
 IF fb_mem.SIM.Stopping_SC THEN
-	fb_mem.STS.Stopping_SC := TRUE;
 	EM_Can_Supply.Stopping_SC();
 	EM_Filling.Stopping_SC();
 	EM_CheckWeigher.Stopping_SC();
@@ -354,6 +389,12 @@ IF fb_mem.SIM.Stopping_SC THEN
 	EM_Labeller.Stopping_SC();
 	EM_StampUnit.Stopping_SC();
 	EM_SealShrink.Stopping_SC();
+	EM_TurningDevice.Stopping_SC();
+	EM_Infeed_CheckWeigher.Stopping_SC();
+	EM_Transport_Checkweigher_BottomSeal.Stopping_SC();
+	EM_Transport_BottomSeal_Labeller.Stopping_SC();
+	EM_Transport_TurningDevice_StampUnit.Stopping_SC();
+	EM_Transport_StampUnit_SealShrink.Stopping_SC();
 END_IF
 
 //********************************Exeptionhandling***********************************
@@ -865,14 +906,54 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="1218" Count="0" />
       <LineId Id="1576" Count="20" />
       <LineId Id="1575" Count="0" />
-      <LineId Id="1598" Count="18" />
+      <LineId Id="1598" Count="7" />
+      <LineId Id="1794" Count="0" />
+      <LineId Id="1748" Count="0" />
+      <LineId Id="1750" Count="0" />
+      <LineId Id="1749" Count="0" />
+      <LineId Id="1751" Count="1" />
+      <LineId Id="1607" Count="1" />
+      <LineId Id="1610" Count="5" />
+      <LineId Id="1753" Count="0" />
+      <LineId Id="1795" Count="0" />
+      <LineId Id="1754" Count="3" />
+      <LineId Id="1616" Count="0" />
       <LineId Id="1597" Count="0" />
-      <LineId Id="1618" Count="29" />
-      <LineId Id="1657" Count="9" />
+      <LineId Id="1618" Count="6" />
+      <LineId Id="1763" Count="0" />
+      <LineId Id="1796" Count="0" />
+      <LineId Id="1764" Count="3" />
+      <LineId Id="1625" Count="0" />
+      <LineId Id="1627" Count="0" />
+      <LineId Id="1803" Count="0" />
+      <LineId Id="1630" Count="5" />
+      <LineId Id="1768" Count="0" />
+      <LineId Id="1797" Count="0" />
+      <LineId Id="1769" Count="3" />
+      <LineId Id="1636" Count="8" />
+      <LineId Id="1773" Count="0" />
+      <LineId Id="1798" Count="0" />
+      <LineId Id="1774" Count="3" />
+      <LineId Id="1645" Count="0" />
+      <LineId Id="1647" Count="0" />
+      <LineId Id="1657" Count="7" />
+      <LineId Id="1778" Count="0" />
+      <LineId Id="1800" Count="0" />
+      <LineId Id="1779" Count="3" />
+      <LineId Id="1665" Count="1" />
       <LineId Id="1675" Count="0" />
-      <LineId Id="1667" Count="7" />
+      <LineId Id="1668" Count="5" />
+      <LineId Id="1783" Count="0" />
+      <LineId Id="1793" Count="0" />
+      <LineId Id="1784" Count="3" />
+      <LineId Id="1674" Count="0" />
       <LineId Id="1617" Count="0" />
-      <LineId Id="1678" Count="8" />
+      <LineId Id="1678" Count="0" />
+      <LineId Id="1680" Count="5" />
+      <LineId Id="1788" Count="0" />
+      <LineId Id="1802" Count="0" />
+      <LineId Id="1789" Count="3" />
+      <LineId Id="1686" Count="0" />
       <LineId Id="1677" Count="0" />
       <LineId Id="417" Count="0" />
       <LineId Id="415" Count="0" />
