@@ -23,27 +23,108 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                           $$\   $$ |                                                          $$\   $$ |
                                                                                                           \$$$$$$  |                                                          \$$$$$$  |
                                                                                                            \______/                                                            \______/ 
-*)
-(*
-CASE fb_mem.State OF
+*)//********************************Initiating***********************************
+fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
+										Start           := fb_mem.CS.Start,
+										Stop            := fb_mem.CS.Stop,
+										Reset           := fb_mem.CS.Reset,
+										Abort           := fb_mem.CS.Abort,
+										Clear           := fb_mem.CS.Clear,
+										UnSuspend       := fb_mem.CS.UnSuspend,
+										Suspend         := fb_mem.CS.Suspend,
+										UnHold          := fb_mem.CS.UnHold,
+										Hold            := fb_mem.CS.Hold,
+										Starting_SC     := fb_mem.STS.Starting_SC,
+										Execute_SC      := fb_mem.STS.Execute_SC,
+										Resetting_SC    := fb_mem.STS.Resetting_SC,
+										Holding_SC      := fb_mem.STS.Holding_SC,
+										Unholding_SC    := fb_mem.STS.Unholding_SC,
+										Suspending_SC   := fb_mem.STS.Suspending_SC,
+										Unsuspending_SC := fb_mem.STS.Unsuspending_SC,
+										Aborting_SC     := fb_mem.STS.Aborting_SC,
+										Clearing_SC     := fb_mem.STS.Clearing_SC,
+										Stopping_SC     := fb_mem.STS.Stopping_SC);
+
+//********************************Init***********************************
+EM_Transport_Can_Supply1();
+EM_Transport_Can_Supply2();			
+										
+//********************************ZEROING***********************************								
+fb_mem.STS.Auto 			:= FALSE;
+fb_mem.STS.Manueel 			:= FALSE;
+fb_mem.STS.Starting_SC 		:= FALSE;
+fb_mem.STS.Execute_SC 		:= FALSE;
+fb_mem.STS.Resetting_SC 	:= FALSE;
+fb_mem.STS.Holding_SC 		:= FALSE;
+fb_mem.STS.Unholding_SC 	:= FALSE;
+fb_mem.STS.Suspending_SC 	:= FALSE;
+fb_mem.STS.Unsuspending_SC 	:= FALSE;
+fb_mem.STS.Aborting_SC 		:= FALSE;
+fb_mem.STS.Clearing_SC 		:= FALSE;
+fb_mem.STS.Stopping_SC 		:= FALSE;
+fb_mem.STS.Completing_SC 	:= FALSE;
+
+//********************************Auto manual logic***********************************
+IF fb_mem.CS.Auto THEN
+	fb_mem.STS.Auto := TRUE;
+ELSE
+	fb_mem.STS.Auto := FALSE;
+END_IF
+
+IF fb_mem.CS.Manueel THEN
+	fb_mem.STS.Manueel := TRUE;
+ELSE
+	fb_mem.STS.Manueel := FALSE;
+END_IF
+
+//********************************Exeptionhandling***********************************
+
+//********************************Action case***********************************
+CASE fb_mem.STS.State OF
 	E_State_PackML.IDLE 			: 
+		//Do nothing
 	E_State_PackML.STARTING 		:
+		//Do nothing
 	E_State_PackML.EXECUTE 			: 
+		//Do nothing
 	E_State_PackML.COMPLETE 		:
+		//Do nothing
 	E_State_PackML.RESETTING 		:
+		//Do nothing
 	E_State_PackML.HOLDING 			:
+		//Do nothing
 	E_State_PackML.HELD 			:
+		//Do nothing
 	E_State_PackML.UNHOLDING 		:
+		//Do nothing
 	E_State_PackML.SUSPENDING 		:
+		//Do nothing
 	E_State_PackML.SUSPENDED 		:
+		//Do nothing
 	E_State_PackML.UNSUSPENDING 	:
+		//Do nothing
 	E_State_PackML.ABORTED			:
-	E_State_PackML.ABORTING			:
+		//Do nothing
 	E_State_PackML.CLEARING 		:
-	E_State_PackML.STOPPING 		:
-	E_State_PackML.STOPPED 			: 
+		//Do nothing
 END_CASE
-*)]]></ST>
+
+//********************************HMI_Connection***********************************
+fb_mem.STS.StringState     := TO_STRING(fb_mem.STS.State); 
+
+//********************************ZEROING***********************************
+
+fb_mem.CS.Auto            := FALSE;
+fb_mem.CS.Manueel         := FALSE;
+fb_mem.CS.Start           := FALSE;
+fb_mem.CS.Stop            := FALSE;
+fb_mem.CS.Reset           := FALSE;
+fb_mem.CS.Abort           := FALSE;
+fb_mem.CS.Clear           := FALSE;
+fb_mem.CS.UnSuspend       := FALSE;
+fb_mem.CS.Suspend         := FALSE;
+fb_mem.CS.UnHold          := FALSE;
+fb_mem.CS.Hold            := FALSE;]]></ST>
     </Implementation>
     <Folder Name="Methods" Id="{36205fe7-9974-4236-80c4-92d328922c64}" />
     <Folder Name="Properties" Id="{29891b51-a7e8-4e37-9797-88f55053a09e}" />
@@ -61,6 +142,17 @@ METHOD Aborting_SC : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Auto" Id="{7c087c35-e98d-42a7-85c9-eba23efe1390}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Auto : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Auto := TRUE;
+fb_mem.CS.Manueel := FALSE;
+
+Auto := fb_mem.STS.Auto;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Clear" Id="{2dcbaa2b-99be-42c9-be06-6b99a4709feb}" FolderPath="Methods\">
@@ -122,6 +214,17 @@ METHOD Holding_SC : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Manueel" Id="{2432d75e-7480-48d5-a595-ad34692b93da}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Manueel : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Manueel := TRUE;
+fb_mem.CS.Auto := FALSE;
+
+Manueel := fb_mem.STS.Manueel;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Reset" Id="{a7f3a304-8199-4f0d-9546-0c950327d5a8}" FolderPath="Methods\">
@@ -242,26 +345,28 @@ METHOD ZeroAllVar : BOOL
       </Implementation>
     </Method>
     <LineIds Name="EM_Can_Supply">
-      <LineId Id="92" Count="11" />
-      <LineId Id="91" Count="0" />
-      <LineId Id="127" Count="0" />
-      <LineId Id="133" Count="0" />
-      <LineId Id="146" Count="0" />
-      <LineId Id="161" Count="0" />
-      <LineId Id="183" Count="0" />
-      <LineId Id="187" Count="0" />
-      <LineId Id="201" Count="0" />
-      <LineId Id="216" Count="0" />
-      <LineId Id="230" Count="0" />
-      <LineId Id="244" Count="0" />
-      <LineId Id="259" Count="0" />
-      <LineId Id="273" Count="1" />
-      <LineId Id="294" Count="0" />
-      <LineId Id="301" Count="0" />
-      <LineId Id="313" Count="0" />
-      <LineId Id="325" Count="0" />
-      <LineId Id="338" Count="0" />
-      <LineId Id="129" Count="0" />
+      <LineId Id="349" Count="71" />
+      <LineId Id="425" Count="0" />
+      <LineId Id="508" Count="0" />
+      <LineId Id="426" Count="1" />
+      <LineId Id="432" Count="0" />
+      <LineId Id="507" Count="0" />
+      <LineId Id="437" Count="0" />
+      <LineId Id="505" Count="0" />
+      <LineId Id="443" Count="0" />
+      <LineId Id="504" Count="0" />
+      <LineId Id="444" Count="1" />
+      <LineId Id="451" Count="0" />
+      <LineId Id="503" Count="0" />
+      <LineId Id="456" Count="0" />
+      <LineId Id="502" Count="0" />
+      <LineId Id="457" Count="1" />
+      <LineId Id="469" Count="0" />
+      <LineId Id="501" Count="0" />
+      <LineId Id="470" Count="1" />
+      <LineId Id="482" Count="0" />
+      <LineId Id="500" Count="0" />
+      <LineId Id="483" Count="16" />
       <LineId Id="340" Count="0" />
     </LineIds>
     <LineIds Name="EM_Can_Supply.Abort">
@@ -269,6 +374,11 @@ METHOD ZeroAllVar : BOOL
     </LineIds>
     <LineIds Name="EM_Can_Supply.Aborting_SC">
       <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Auto">
+      <LineId Id="5" Count="1" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="EM_Can_Supply.Clear">
       <LineId Id="4" Count="0" />
@@ -290,6 +400,11 @@ METHOD ZeroAllVar : BOOL
     </LineIds>
     <LineIds Name="EM_Can_Supply.Holding_SC">
       <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Can_Supply.Manueel">
+      <LineId Id="4" Count="1" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="8" Count="0" />
     </LineIds>
     <LineIds Name="EM_Can_Supply.Reset">
       <LineId Id="4" Count="0" />

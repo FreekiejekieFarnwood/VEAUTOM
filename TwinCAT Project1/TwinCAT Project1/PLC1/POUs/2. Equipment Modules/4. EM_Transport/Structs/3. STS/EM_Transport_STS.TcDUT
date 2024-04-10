@@ -5,6 +5,7 @@
 STRUCT
 	Tag				: STRING;
 	State 			: E_State_PackML;
+	StringState		: STRING;
 	Auto 			: BOOL;
 	Manueel 		: BOOL;
 	Starting_SC 	: BOOL;
