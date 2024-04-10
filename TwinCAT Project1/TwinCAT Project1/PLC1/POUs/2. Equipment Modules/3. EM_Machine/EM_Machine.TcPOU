@@ -25,7 +25,8 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                            \______/                                                            \______/ 
 *)
 //********************************Initiating***********************************
-fb_mem.STS.State := PackML_StateMachine(Start           := fb_mem.CS.Start,
+fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
+										Start           := fb_mem.CS.Start,
 										Stop            := fb_mem.CS.Stop,
 										Reset           := fb_mem.CS.Reset,
 										Abort           := fb_mem.CS.Abort,
@@ -45,7 +46,7 @@ fb_mem.STS.State := PackML_StateMachine(Start           := fb_mem.CS.Start,
 										Clearing_SC     := fb_mem.STS.Clearing_SC,
 										Stopping_SC     := fb_mem.STS.Stopping_SC);
 										
-//********************************ZEROING***********************************									
+//********************************ZEROING***********************************								
 fb_mem.STS.Auto 			:= FALSE;
 fb_mem.STS.Manueel 			:= FALSE;
 fb_mem.STS.Starting_SC 		:= FALSE;
@@ -63,24 +64,26 @@ fb_mem.STS.Completing_SC 	:= FALSE;
 //********************************Auto manual logic***********************************
 IF fb_mem.CS.Auto THEN
 	fb_mem.STS.Auto := TRUE;
-	ELSE
-		fb_mem.STS.Auto := FALSE;
+ELSE
+	fb_mem.STS.Auto := FALSE;
 END_IF
 
 IF fb_mem.CS.Manueel THEN
 	fb_mem.STS.Manueel := TRUE;
-	ELSE
-		fb_mem.STS.Manueel := FALSE;
+ELSE
+	fb_mem.STS.Manueel := FALSE;
 END_IF
 
-//********************************Exeptionhandling***********************************
-
 //********************************Action case***********************************
+
+// THIS CODE SIMULATES A EXTERNAL MACHINE WICH RUNS ON PACKML. SO NO ACTION CASE IS PROGRAMMED
+
 
 //********************************HMI_Connection***********************************
 fb_mem.STS.StringState     := TO_STRING(fb_mem.STS.State); 
 
 //********************************ZEROING***********************************
+
 fb_mem.CS.Auto            := FALSE;
 fb_mem.CS.Manueel         := FALSE;
 fb_mem.CS.Start           := FALSE;
@@ -91,7 +94,8 @@ fb_mem.CS.Clear           := FALSE;
 fb_mem.CS.UnSuspend       := FALSE;
 fb_mem.CS.Suspend         := FALSE;
 fb_mem.CS.UnHold          := FALSE;
-fb_mem.CS.Hold            := FALSE;]]></ST>
+fb_mem.CS.Hold            := FALSE;
+]]></ST>
     </Implementation>
     <Folder Name="Methods" Id="{880b40f2-88eb-491a-87ab-b85a58b2e18b}" />
     <Folder Name="Properties" Id="{00f11200-79c1-4854-9fd3-409f054934e7}" />
@@ -324,24 +328,30 @@ METHOD ZeroAllVar : BOOL
     <LineIds Name="EM_Machine">
       <LineId Id="10" Count="12" />
       <LineId Id="59" Count="0" />
-      <LineId Id="23" Count="17" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="24" Count="16" />
       <LineId Id="9" Count="0" />
       <LineId Id="73" Count="0" />
       <LineId Id="72" Count="0" />
       <LineId Id="60" Count="11" />
-      <LineId Id="55" Count="1" />
-      <LineId Id="74" Count="10" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="133" Count="0" />
+      <LineId Id="74" Count="8" />
+      <LineId Id="124" Count="0" />
+      <LineId Id="84" Count="0" />
       <LineId Id="58" Count="0" />
-      <LineId Id="86" Count="0" />
-      <LineId Id="85" Count="0" />
-      <LineId Id="92" Count="0" />
-      <LineId Id="87" Count="0" />
+      <LineId Id="86" Count="1" />
+      <LineId Id="134" Count="2" />
       <LineId Id="101" Count="0" />
       <LineId Id="103" Count="0" />
       <LineId Id="102" Count="0" />
       <LineId Id="88" Count="0" />
-      <LineId Id="44" Count="10" />
+      <LineId Id="44" Count="1" />
+      <LineId Id="121" Count="0" />
+      <LineId Id="46" Count="8" />
       <LineId Id="43" Count="0" />
+      <LineId Id="122" Count="0" />
     </LineIds>
     <LineIds Name="EM_Machine.Abort">
       <LineId Id="4" Count="0" />

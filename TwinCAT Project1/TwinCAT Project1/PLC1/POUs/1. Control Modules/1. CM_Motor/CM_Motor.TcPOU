@@ -20,7 +20,8 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
       			                                                                                          \$$$$$$  |                                                          \$$$$$$  |
                                                                                                            \______/                                                            \______/ 
 *)
-fb_mem.STS.State := PackML_StateMachine(Start           := fb_mem.CS.Start,
+fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
+										Start           := fb_mem.CS.Start,
 										Stop            := fb_mem.CS.Stop,
 										Reset           := fb_mem.CS.Reset,
 										Abort           := fb_mem.CS.Abort,
@@ -315,6 +316,7 @@ Toerental := fb_mem.CS.Toerental;]]></ST>
       <LineId Id="14" Count="11" />
       <LineId Id="112" Count="0" />
       <LineId Id="130" Count="0" />
+      <LineId Id="138" Count="0" />
       <LineId Id="113" Count="16" />
       <LineId Id="9" Count="0" />
       <LineId Id="27" Count="0" />

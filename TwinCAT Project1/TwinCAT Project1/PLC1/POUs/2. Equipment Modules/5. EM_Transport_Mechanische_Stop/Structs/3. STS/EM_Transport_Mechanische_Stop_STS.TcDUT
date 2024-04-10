@@ -5,6 +5,7 @@
 STRUCT
 	Tag				: STRING;
 	State 			: E_Mechanische_Stop;
+	State2			: E_State_PackML := E_State_PackML.STOPPED;
 	Manueel			: BOOL;
 	Auto			: BOOL;
 END_STRUCT

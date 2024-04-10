@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="EM_Transport_Mechanische_Stop" Id="{b7168c61-ecd4-4685-b920-755ca0b861b8}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK EM_Transport_Mechanische_Stop EXTENDS EM_Transport IMPLEMENTS  ITF_EM_Transport_Mechanische_Stop
+    <Declaration><![CDATA[FUNCTION_BLOCK EM_Transport_Mechanische_Stop EXTENDS EM_Transport IMPLEMENTS ITF_EM_Transport_Mechanische_Stop
 
 VAR
 	fbMechanischeStop_mem : STRUCT_EM_Mechanische_Stop;
-	//Klep		: CM_Valve;
+	Klep		: CM_Valve;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -24,9 +24,11 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
 *)
 
 //********************************Init***********************************
-//Klep();
+Klep();
+SUPER^();
 										
-//********************************ZEROING***********************************									
+//********************************ZEROING***********************************	
+(*								
 fb_mem.STS.Auto 			:= FALSE;
 fb_mem.STS.Manueel 			:= FALSE;
 fb_mem.STS.Starting_SC 		:= FALSE;
@@ -40,26 +42,19 @@ fb_mem.STS.Aborting_SC 		:= FALSE;
 fb_mem.STS.Clearing_SC 		:= FALSE;
 fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
+*)
 
 //********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
-	fb_mem.STS.Auto := TRUE;
-	ELSE
-		fb_mem.STS.Auto := FALSE;
-END_IF
 
-IF fb_mem.CS.Manueel THEN
-	fb_mem.STS.Manueel := TRUE;
-	ELSE
-		fb_mem.STS.Manueel := FALSE;
-END_IF
 
 //********************************Exeptionhandling***********************************
 
+//********************************Action case***********************************
 
 
 //********************************ZEROING***********************************
 //Control Signals 
+(*
 fb_mem.CS.Auto            := FALSE;
 fb_mem.CS.Manueel         := FALSE;
 fb_mem.CS.Start           := FALSE;
@@ -71,6 +66,7 @@ fb_mem.CS.UnSuspend       := FALSE;
 fb_mem.CS.Suspend         := FALSE;
 fb_mem.CS.UnHold          := FALSE;
 fb_mem.CS.Hold            := FALSE;
+*)
 ]]></ST>
     </Implementation>
     <Folder Name="Methods" Id="{3d8b66f8-3d7c-495b-80c7-324b66a87557}" />
@@ -114,9 +110,21 @@ METHOD ZeroAllValues : BOOL
     <LineIds Name="EM_Transport_Mechanische_Stop">
       <LineId Id="15" Count="12" />
       <LineId Id="47" Count="1" />
-      <LineId Id="50" Count="31" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="250" Count="1" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="176" Count="0" />
+      <LineId Id="53" Count="13" />
+      <LineId Id="177" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="78" Count="2" />
+      <LineId Id="249" Count="0" />
+      <LineId Id="81" Count="0" />
       <LineId Id="167" Count="0" />
-      <LineId Id="151" Count="13" />
+      <LineId Id="151" Count="2" />
+      <LineId Id="174" Count="0" />
+      <LineId Id="154" Count="10" />
+      <LineId Id="175" Count="0" />
       <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="EM_Transport_Mechanische_Stop.Close">
