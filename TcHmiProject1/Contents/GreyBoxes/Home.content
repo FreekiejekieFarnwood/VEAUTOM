@@ -32,11 +32,11 @@
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": "Execute",
+    "state": "EXECUTE",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher aan.svg"
   },
   {
-    "state": "Stopped",
+    "state": "STOPPED",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
   }
 ]
@@ -52,11 +52,11 @@
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": "Execute",
+    "state": "EXECUTE",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher aan.svg"
   },
   {
-    "state": "Stopped",
+    "state": "STOPPED",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
   }
 ]
@@ -68,7 +68,7 @@
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": "Execute",
+    "state": "EXECUTE",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal aan.svg"
   },
   {
@@ -84,7 +84,7 @@
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": "Execute",
+    "state": "EXECUTE",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler aan.svg"
   },
   {
@@ -100,7 +100,7 @@
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": "Execute",
+    "state": "EXECUTE",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device aan.svg"
   },
   {
@@ -116,7 +116,7 @@
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": "Execute",
+    "state": "EXECUTE",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit aan.svg"
   },
   {
@@ -132,7 +132,7 @@
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": "Execute",
+    "state": "EXECUTE",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink aan.svg"
   },
   {
@@ -490,7 +490,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiRectangle_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="485" data-tchmi-height-unit="px" data-tchmi-left="25" data-tchmi-left-unit="px" data-tchmi-top="395" data-tchmi-top-unit="px" data-tchmi-width="1815" data-tchmi-width-unit="px" data-tchmi-stroke-thickness="0" data-tchmi-zindex="41" data-tchmi-is-enabled="true">
+<div id="TcHmiRectangle_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="544" data-tchmi-height-unit="px" data-tchmi-left="25" data-tchmi-left-unit="px" data-tchmi-top="390" data-tchmi-top-unit="px" data-tchmi-width="1815" data-tchmi-width-unit="px" data-tchmi-stroke-thickness="0" data-tchmi-zindex="41" data-tchmi-is-enabled="true">
 <script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
 {
   "left": "Dashed",
