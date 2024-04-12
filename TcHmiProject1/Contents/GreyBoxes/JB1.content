@@ -5,21 +5,57 @@
   "color": "rgba(174, 174, 174, 1)"
 }
 </script>
-<div id="TcHmiStateImage_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="469" data-tchmi-left-unit="px" data-tchmi-top="366" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test_String%/s%" data-tchmi-zindex="15">
+<div id="TcHmiStateImage_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="469" data-tchmi-left-unit="px" data-tchmi-top="366" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.fb_mem.STS.State%/s%" data-tchmi-zindex="15" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/motor aan.svg">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": "Running",
-    "stateIcon": "Images/INDAUT/Actuatoren/motor aan.svg"
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
   },
   {
-    "state": "Stopped",
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "STOPPING",
     "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
   }
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_15" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="549" data-tchmi-left-unit="px" data-tchmi-text="ConveyerT1" data-tchmi-top="366" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-zindex="17">
+<div id="TcHmiTextblock_15" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="549" data-tchmi-left-unit="px" data-tchmi-top="366" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-zindex="17" data-tchmi-text="%s%PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.fb_mem.STS.Tag%/s%">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 1,
@@ -132,20 +168,6 @@
 }
 </script>
 </div>
-<div id="TcHmiStateImage_9" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="592" data-tchmi-left-unit="px" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test_String2%/s%" data-tchmi-zindex="15">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": "Open",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep aan.svg"
-  },
-  {
-    "state": "Close",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  }
-]
-</script>
-</div>
 <div id="TcHmiTextblock_18" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="592" data-tchmi-left-unit="px" data-tchmi-text="Status:" data-tchmi-top="223" data-tchmi-top-unit="px" data-tchmi-width="45" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-text-font-weight="Auto" data-tchmi-zindex="17">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
@@ -213,39 +235,21 @@
 }
 </script>
 </div>
-<div id="TcHmiStateImage_22" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="644" data-tchmi-left-unit="px" data-tchmi-top="359" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true">
+<div id="TcHmiStateImage_22" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="644" data-tchmi-left-unit="px" data-tchmi-top="359" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
     "state": true,
-    "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
+    "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
   },
   {
     "state": false,
-    "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
+    "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
   }
 ]
 </script>
 </div>
 <div id="TcHmiTextblock_61" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="667" data-tchmi-left-unit="px" data-tchmi-text="ConveyerT1_Detect" data-tchmi-top="359" data-tchmi-top-unit="px" data-tchmi-width="118" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-zindex="35">
-</div>
-<div id="TcHmiStateImage_30" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="400" data-tchmi-height-unit="px" data-tchmi-left="210" data-tchmi-left-unit="px" data-tchmi-top="50" data-tchmi-top-unit="px" data-tchmi-width="1200" data-tchmi-width-unit="px" data-tchmi-zindex="6">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": "Running",
-    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher aan.svg"
-  },
-  {
-    "state": "Stopped",
-    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
-  }
-]
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-state" type="application/json">
-"Stopped"
-</script>
 </div>
 <div id="TcHmiTextblock_111" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="366" data-tchmi-left-unit="px" data-tchmi-top="100" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Left" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="25" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="43" data-tchmi-text="Running">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
@@ -272,7 +276,7 @@
 
 
 </div>
-<div id="TcHmiTextblock_112" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="270" data-tchmi-left-unit="px" data-tchmi-text="Weighers" data-tchmi-top="100" data-tchmi-top-unit="px" data-tchmi-width="96" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="25" data-tchmi-zindex="42">
+<div id="TcHmiTextblock_112" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="270" data-tchmi-left-unit="px" data-tchmi-text="Fillers" data-tchmi-top="100" data-tchmi-top-unit="px" data-tchmi-width="96" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="25" data-tchmi-zindex="42">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,
@@ -293,34 +297,6 @@
   "top": "Solid",
   "bottom": "None"
 }
-</script>
-</div>
-<div id="TcHmiStateImage_31" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="975" data-tchmi-left-unit="px" data-tchmi-top="245" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": true,
-    "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
-  },
-  {
-    "state": false,
-    "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
-  }
-]
-</script>
-</div>
-<div id="TcHmiStateImage_32" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1230" data-tchmi-left-unit="px" data-tchmi-top="245" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": true,
-    "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
-  },
-  {
-    "state": false,
-    "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
-  }
-]
 </script>
 </div>
 <div id="TcHmiRectangle_31" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="32" data-tchmi-height-unit="px" data-tchmi-left="1401" data-tchmi-left-unit="px" data-tchmi-top="210" data-tchmi-top-unit="px" data-tchmi-width="400" data-tchmi-width-unit="px" data-tchmi-zindex="7">
@@ -397,20 +373,6 @@
         "asyncWait": true
       }
     ]
-  }
-]
-</script>
-</div>
-<div id="TcHmiStateImage_37" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="1050" data-tchmi-left-unit="px" data-tchmi-top="366" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test_String%/s%" data-tchmi-zindex="15">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": "Running",
-    "stateIcon": "Images/INDAUT/Actuatoren/motor aan.svg"
-  },
-  {
-    "state": "Stopped",
-    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
   }
 ]
 </script>
@@ -505,48 +467,6 @@
 ]
 </script>
 </div>
-<div id="TcHmiStateImage_38" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="915" data-tchmi-left-unit="px" data-tchmi-top="306" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": true,
-    "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
-  },
-  {
-    "state": false,
-    "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
-  }
-]
-</script>
-</div>
-<div id="TcHmiStateImage_39" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1156" data-tchmi-left-unit="px" data-tchmi-top="339" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": true,
-    "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
-  },
-  {
-    "state": false,
-    "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
-  }
-]
-</script>
-</div>
-<div id="TcHmiStateImage_40" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="1409" data-tchmi-left-unit="px" data-tchmi-top="244" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test_String%/s%" data-tchmi-zindex="15">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": "Running",
-    "stateIcon": "Images/INDAUT/Actuatoren/motor aan.svg"
-  },
-  {
-    "state": "Stopped",
-    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
-  }
-]
-</script>
-</div>
 <div id="TcHmiTextblock_123" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1489" data-tchmi-left-unit="px" data-tchmi-text="ConveyerT1" data-tchmi-top="244" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-zindex="17">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
@@ -635,20 +555,6 @@
   "top": "None",
   "bottom": "Solid"
 }
-</script>
-</div>
-<div id="TcHmiStateImage_41" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="774" data-tchmi-left-unit="px" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test_String2%/s%" data-tchmi-zindex="15">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": "Open",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep aan.svg"
-  },
-  {
-    "state": "Close",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  }
-]
 </script>
 </div>
 <div id="TcHmiTextblock_126" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="814" data-tchmi-left-unit="px" data-tchmi-top="223" data-tchmi-top-unit="px" data-tchmi-width="40" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="17" data-tchmi-text="%s%PLC1.HMI_Connection.Test_String2%/s%">
@@ -741,20 +647,6 @@
 }
 </script>
 </div>
-<div id="TcHmiStateImage_42" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="1409" data-tchmi-left-unit="px" data-tchmi-top="160" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test_String2%/s%" data-tchmi-zindex="15">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": "Open",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep aan.svg"
-  },
-  {
-    "state": "Close",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  }
-]
-</script>
-</div>
 <div id="TcHmiTextblock_129" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1449" data-tchmi-left-unit="px" data-tchmi-top="135" data-tchmi-top-unit="px" data-tchmi-width="40" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="17" data-tchmi-text="%s%PLC1.HMI_Connection.Test_String2%/s%">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
@@ -843,20 +735,6 @@
   "top": "Solid",
   "bottom": "None"
 }
-</script>
-</div>
-<div id="TcHmiStateImage_43" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1495" data-tchmi-left-unit="px" data-tchmi-top="185" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": true,
-    "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
-  },
-  {
-    "state": false,
-    "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
-  }
-]
 </script>
 </div>
 <div id="TcHmiStateImage_90" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="405" data-tchmi-left-unit="px" data-tchmi-top="875" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-zindex="41" data-tchmi-state="%s%PLC1.HMI_Connection.Test_String3%/s%" data-tchmi-fallback-image="Images/INDAUT/Control/Manual Button.svg">
@@ -4247,6 +4125,482 @@
   "top": "Solid",
   "bottom": "None"
 }
+</script>
+</div>
+<div id="TcHmiStateImage_139" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="400" data-tchmi-height-unit="px" data-tchmi-left="209" data-tchmi-left-unit="px" data-tchmi-top="50" data-tchmi-top-unit="px" data-tchmi-width="1200" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/weigher aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  }
+]
+</script>
+
+
+</div>
+<div id="TcHmiStateImage_140" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="145" data-tchmi-height-unit="px" data-tchmi-left="930" data-tchmi-left-unit="px" data-tchmi-top="72" data-tchmi-top-unit="px" data-tchmi-width="145" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/Filling aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  }
+]
+</script>
+
+
+</div>
+<div id="TcHmiStateImage_141" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="145" data-tchmi-height-unit="px" data-tchmi-left="1170" data-tchmi-left-unit="px" data-tchmi-top="72" data-tchmi-top-unit="px" data-tchmi-width="145" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/Filling aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  }
+]
+</script>
+
+
+</div>
+<div id="TcHmiStateImage_142" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="1047" data-tchmi-left-unit="px" data-tchmi-top="366" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply2.fb_mem.STS.State%/s%" data-tchmi-zindex="15" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/motor aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  }
+]
+</script>
+</div>
+<div id="TcHmiStateImage_143" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="1409" data-tchmi-left-unit="px" data-tchmi-top="244" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-zindex="15" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/motor aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Actuatoren/motor uit.svg"
+  }
+]
+</script>
+</div>
+<div id="TcHmiStateImage_144" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="592" data-tchmi-left-unit="px" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.fb_mem.STS.State%/s%" data-tchmi-zindex="15" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/klep aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  }
+]
+</script>
+</div>
+<div id="TcHmiStateImage_145" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="774" data-tchmi-left-unit="px" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.fb_mem.STS.State%/s%" data-tchmi-zindex="15" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/klep aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  }
+]
+</script>
+</div>
+<div id="TcHmiStateImage_146" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="1409" data-tchmi-left-unit="px" data-tchmi-top="160" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.fb_mem.STS.State%/s%" data-tchmi-zindex="15" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/klep aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  }
+]
+</script>
+</div>
+<div id="TcHmiStateImage_147" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="915" data-tchmi-left-unit="px" data-tchmi-top="305" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": true,
+    "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
+  },
+  {
+    "state": false,
+    "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
+  }
+]
+</script>
+</div>
+<div id="TcHmiStateImage_148" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="975" data-tchmi-left-unit="px" data-tchmi-top="244" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": true,
+    "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
+  },
+  {
+    "state": false,
+    "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
+  }
+]
+</script>
+</div>
+<div id="TcHmiStateImage_149" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1230" data-tchmi-left-unit="px" data-tchmi-top="242" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": true,
+    "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
+  },
+  {
+    "state": false,
+    "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
+  }
+]
+</script>
+</div>
+<div id="TcHmiStateImage_150" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1156" data-tchmi-left-unit="px" data-tchmi-top="339" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": true,
+    "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
+  },
+  {
+    "state": false,
+    "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
+  }
+]
+</script>
+</div>
+<div id="TcHmiStateImage_151" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1494" data-tchmi-left-unit="px" data-tchmi-top="185" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": true,
+    "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
+  },
+  {
+    "state": false,
+    "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
+  }
+]
 </script>
 </div>
 </div>
