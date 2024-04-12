@@ -8,6 +8,10 @@ VAR
 	//SubModules
 	EM_Transport_Can_Supply1		: EM_Transport_Mechanische_Stop;
 	EM_Transport_Can_Supply2		: EM_Transport;
+	Sen_A1_Near						: CM_Sensor;
+	Sen_A1_Far						: CM_Sensor;
+	Sen_A2_Near						: CM_Sensor;
+	Sen_A2_Far						: CM_Sensor;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -77,6 +81,20 @@ ELSE
 	fb_mem.STS.Manueel := FALSE;
 END_IF
 
+//********************Manupilatie***********8
+IF fb_mem.SIM.Sen_A1_Near_TRUE THEN
+	Sen_A1_Near.Output := TRUE;
+END_IF
+IF fb_mem.SIM.Sen_A1_Far_TRUE THEN
+	Sen_A1_Far.Output := TRUE;
+END_IF
+IF fb_mem.SIM.Sen_A2_Near_TRUE THEN
+	Sen_A2_Near.Output := TRUE;
+END_IF
+IF fb_mem.SIM.Sen_A2_Far_TRUE THEN
+	Sen_A2_Far.Output := TRUE;
+END_IF
+
 //********************************Exeptionhandling***********************************
 
 //********************************Action case***********************************
@@ -84,9 +102,23 @@ CASE fb_mem.STS.State OF
 	E_State_PackML.IDLE 			: 
 		//Do nothing
 	E_State_PackML.STARTING 		:
-		//Do nothing
+		//Hier heen en weer swichen totdat bijden buffers vol zijn en dus alle sensoren waar zijn met filler 1 prioriteit
+		fb_mem.STS.Richting_L:=TRUE;	//Richting_L naar filler 1
+		IF Sen_A1_Far.Output=TRUE AND Sen_A2_Far.Output=TRUE AND Sen_A2_Near.Output=FALSE THEN //filler 2 hoeft nog niet vol te zijn om te starten
+			fb_mem.STS.Richting_R:=TRUE;	//Richting_L naar filler 2
+			fb_mem.STS.Starting_SC := TRUE;
+		END_IF
 	E_State_PackML.EXECUTE 			: 
-		//Do nothing
+		//Als Sen_A1_Far AND Sen_A1_Near AND !Sen_A2_Near THEN wissel naar A2 en vise versa
+		IF Sen_A1_Far.Output=TRUE AND Sen_A2_Far.Output=TRUE AND Sen_A1_Near.Output=TRUE AND Sen_A2_Near.Output=FALSE THEN
+			fb_mem.STS.Richting_R:=TRUE;	//Richting_L naar filler 2
+		END_IF
+		IF Sen_A1_Far.Output=TRUE AND Sen_A2_Far.Output=TRUE AND Sen_A2_Near.Output=TRUE AND Sen_A1_Near.Output=FALSE THEN
+			fb_mem.STS.Richting_L:=TRUE;	//Richting_L naar filler 1
+		END_IF
+		IF Sen_A1_Far.Output=FALSE THEN
+			fb_mem.STS.Richting_L:=TRUE;	//Richting_L naar filler 1
+		END_IF
 	E_State_PackML.COMPLETE 		:
 		//Do nothing
 	E_State_PackML.RESETTING 		:
@@ -356,10 +388,32 @@ METHOD ZeroAllVar : BOOL
       </Implementation>
     </Method>
     <LineIds Name="EM_Can_Supply">
-      <LineId Id="349" Count="71" />
+      <LineId Id="349" Count="64" />
+      <LineId Id="528" Count="0" />
+      <LineId Id="527" Count="0" />
+      <LineId Id="530" Count="1" />
+      <LineId Id="529" Count="0" />
+      <LineId Id="539" Count="1" />
+      <LineId Id="538" Count="0" />
+      <LineId Id="542" Count="1" />
+      <LineId Id="541" Count="0" />
+      <LineId Id="545" Count="1" />
+      <LineId Id="544" Count="0" />
+      <LineId Id="414" Count="6" />
       <LineId Id="425" Count="0" />
       <LineId Id="508" Count="0" />
+      <LineId Id="576" Count="0" />
+      <LineId Id="578" Count="2" />
+      <LineId Id="577" Count="0" />
       <LineId Id="426" Count="1" />
+      <LineId Id="525" Count="0" />
+      <LineId Id="532" Count="0" />
+      <LineId Id="550" Count="0" />
+      <LineId Id="554" Count="1" />
+      <LineId Id="553" Count="0" />
+      <LineId Id="557" Count="0" />
+      <LineId Id="573" Count="0" />
+      <LineId Id="556" Count="0" />
       <LineId Id="432" Count="0" />
       <LineId Id="507" Count="0" />
       <LineId Id="437" Count="0" />
