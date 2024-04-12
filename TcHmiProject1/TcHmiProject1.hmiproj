@@ -259,6 +259,12 @@
     <Content Include="Images\INDAUT\Grey Boxes zonder tekst\checkwigher uit.svg">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\Filling aan.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\Filling uit.svg">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Images\INDAUT\Grey Boxes zonder tekst\labeler aan.svg">
       <SubType>Content</SubType>
     </Content>

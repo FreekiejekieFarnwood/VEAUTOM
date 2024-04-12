@@ -28,35 +28,51 @@
 }
 </script>
 </div>
-<div id="TcHmiStateImage_23" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="1400" data-tchmi-left-unit="px" data-tchmi-top="100" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="39" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState%/s%">
+<div id="TcHmiStateImage_24" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="250" data-tchmi-left-unit="px" data-tchmi-top="100" data-tchmi-top-unit="px" data-tchmi-width="600" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/weigher aan.svg">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
     "state": "EXECUTE",
-    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher aan.svg"
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
   },
   {
-    "state": "STOPPED",
-    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
-  }
-]
-</script>
-
-
-
-
-
-
-</div>
-<div id="TcHmiStateImage_24" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="250" data-tchmi-left-unit="px" data-tchmi-top="100" data-tchmi-top-unit="px" data-tchmi-width="600" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": "EXECUTE",
-    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher aan.svg"
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
   },
   {
-    "state": "STOPPED",
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
+  },
+  {
+    "state": "STARTING",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/weigher uit.svg"
   }
 ]
@@ -64,15 +80,51 @@
 
 
 </div>
-<div id="TcHmiStateImage_25" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="1650" data-tchmi-left-unit="px" data-tchmi-top="335" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_BottomSeal.fb_mem.STS.StringState%/s%">
+<div id="TcHmiStateImage_25" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="1651" data-tchmi-left-unit="px" data-tchmi-top="336" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/bottom seal aan.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_BottomSeal.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
     "state": "EXECUTE",
-    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal aan.svg"
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg"
   },
   {
-    "state": "Stopped",
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg"
+  },
+  {
+    "state": "STARTING",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/bottom seal uit.svg"
   }
 ]
@@ -80,15 +132,51 @@
 
 
 </div>
-<div id="TcHmiStateImage_26" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="1270" data-tchmi-left-unit="px" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Labeller.fb_mem.STS.StringState%/s%">
+<div id="TcHmiStateImage_26" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="1270" data-tchmi-left-unit="px" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/labeler aan.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Labeller.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
     "state": "EXECUTE",
-    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler aan.svg"
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg"
   },
   {
-    "state": "Stopped",
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg"
+  },
+  {
+    "state": "STARTING",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/labeler uit.svg"
   }
 ]
@@ -96,15 +184,51 @@
 
 
 </div>
-<div id="TcHmiStateImage_27" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="860" data-tchmi-left-unit="px" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.StringState%/s%">
+<div id="TcHmiStateImage_27" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="860" data-tchmi-left-unit="px" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/turning device aan.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": "EXECUTE",
-    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device aan.svg"
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg"
   },
   {
-    "state": "Stopped",
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg"
+  },
+  {
+    "state": "EXECUTE",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/turning device uit.svg"
   }
 ]
@@ -112,15 +236,51 @@
 
 
 </div>
-<div id="TcHmiStateImage_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="460" data-tchmi-left-unit="px" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_StampUnit.fb_mem.STS.StringState%/s%">
+<div id="TcHmiStateImage_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="460" data-tchmi-left-unit="px" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/stamp unit aan.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_StampUnit.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": "EXECUTE",
-    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit aan.svg"
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg"
   },
   {
-    "state": "Stopped",
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg"
+  },
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg"
+  },
+  {
+    "state": "EXECUTE",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg"
   }
 ]
@@ -128,15 +288,51 @@
 
 
 </div>
-<div id="TcHmiStateImage_29" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="60" data-tchmi-left-unit="px" data-tchmi-top="600" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/stamp unit uit.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_SealShrink.fb_mem.STS.StringState%/s%">
+<div id="TcHmiStateImage_29" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="60" data-tchmi-left-unit="px" data-tchmi-top="600" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="18" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/seal shrink aan.svg" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_SealShrink.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
     "state": "EXECUTE",
-    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink aan.svg"
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink uit.svg"
   },
   {
-    "state": "Stopped",
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink uit.svg"
+  },
+  {
+    "state": "STARTING",
     "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/seal shrink uit.svg"
   }
 ]
@@ -433,7 +629,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiRectangle_27" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="535" data-tchmi-height-unit="px" data-tchmi-left="1326" data-tchmi-left-unit="px" data-tchmi-top="15" data-tchmi-top-unit="px" data-tchmi-width="569" data-tchmi-width-unit="px" data-tchmi-stroke-thickness="0" data-tchmi-zindex="1" data-tchmi-is-enabled="true">
+<div id="TcHmiRectangle_27" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="535" data-tchmi-height-unit="px" data-tchmi-left="1325" data-tchmi-left-unit="px" data-tchmi-top="15" data-tchmi-top-unit="px" data-tchmi-width="569" data-tchmi-width-unit="px" data-tchmi-stroke-thickness="0" data-tchmi-zindex="1" data-tchmi-is-enabled="true">
 <script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
 {
   "left": "Dashed",
@@ -490,7 +686,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiRectangle_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="544" data-tchmi-height-unit="px" data-tchmi-left="25" data-tchmi-left-unit="px" data-tchmi-top="390" data-tchmi-top-unit="px" data-tchmi-width="1815" data-tchmi-width-unit="px" data-tchmi-stroke-thickness="0" data-tchmi-zindex="41" data-tchmi-is-enabled="true">
+<div id="TcHmiRectangle_28" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="544" data-tchmi-height-unit="px" data-tchmi-left="24" data-tchmi-left-unit="px" data-tchmi-top="384" data-tchmi-top-unit="px" data-tchmi-width="1815" data-tchmi-width-unit="px" data-tchmi-stroke-thickness="0" data-tchmi-zindex="0" data-tchmi-is-enabled="true">
 <script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
 {
   "left": "Dashed",
@@ -618,7 +814,7 @@
 </div>
 <div id="TcHmi_Controls_Beckhoff_TcHmiImage_10" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="0" data-tchmi-height-unit="px" data-tchmi-left="1177" data-tchmi-left-unit="px" data-tchmi-src="Images/INDAUT/Grey Boxes zonder tekst/bottom seal aan.svg" data-tchmi-top="527" data-tchmi-top-unit="px" data-tchmi-width="0" data-tchmi-width-unit="px" data-tchmi-zindex="6">
 </div>
-<div id="TcHmiTextblock_97" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1410" data-tchmi-left-unit="px" data-tchmi-text="Checkweigher" data-tchmi-top="110" data-tchmi-top-unit="px" data-tchmi-width="190" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Bottom" data-tchmi-text-font-size="20" data-tchmi-zindex="40">
+<div id="TcHmiTextblock_97" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1410" data-tchmi-left-unit="px" data-tchmi-text="Checkweigher" data-tchmi-top="110" data-tchmi-top-unit="px" data-tchmi-width="190" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Bottom" data-tchmi-text-font-size="20" data-tchmi-zindex="44">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,
@@ -641,7 +837,7 @@
 }
 </script>
 </div>
-<div id="TcHmiTextblock_98" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1410" data-tchmi-left-unit="px" data-tchmi-top="135" data-tchmi-top-unit="px" data-tchmi-width="93" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Left" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="41" data-tchmi-text="%s%PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState%/s%">
+<div id="TcHmiTextblock_98" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1410" data-tchmi-left-unit="px" data-tchmi-top="135" data-tchmi-top-unit="px" data-tchmi-width="93" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Left" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="43" data-tchmi-text="%s%PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,
@@ -894,7 +1090,7 @@
 }
 </script>
 </div>
-<div id="TcHmiTextblock_109" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="280" data-tchmi-left-unit="px" data-tchmi-text="Weighers" data-tchmi-top="120" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Bottom" data-tchmi-text-font-size="20" data-tchmi-zindex="40">
+<div id="TcHmiTextblock_109" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="280" data-tchmi-left-unit="px" data-tchmi-text="Fillers" data-tchmi-top="120" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Bottom" data-tchmi-text-font-size="20" data-tchmi-zindex="40">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,
@@ -939,5 +1135,161 @@
   "bottom": "Solid"
 }
 </script>
+</div>
+<div id="TcHmiStateImage_133" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="610" data-tchmi-left-unit="px" data-tchmi-top="110" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/Filling aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  }
+]
+</script>
+
+
+</div>
+<div id="TcHmiStateImage_134" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="730" data-tchmi-left-unit="px" data-tchmi-top="110" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/Filling aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/Filling uit.svg"
+  }
+]
+</script>
+
+
+</div>
+<div id="TcHmiStateImage_135" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="1400" data-tchmi-left-unit="px" data-tchmi-top="100" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/checkwigher aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Grey Boxes zonder tekst/checkwigher uit.svg"
+  }
+]
+</script>
+
+
 </div>
 </div>
