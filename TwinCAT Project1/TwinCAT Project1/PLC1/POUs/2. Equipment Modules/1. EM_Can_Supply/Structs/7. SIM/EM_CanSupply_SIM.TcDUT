@@ -3,6 +3,10 @@
   <DUT Name="EM_CanSupply_SIM" Id="{7454fec1-4913-41ed-8bde-f006e90fbf4f}">
     <Declaration><![CDATA[TYPE EM_CanSupply_SIM :
 STRUCT
+	Sen_A1_Near_TRUE	: BOOL;
+	Sen_A1_Far_TRUE		: BOOL;
+	Sen_A2_Near_TRUE	: BOOL;
+	Sen_A2_Far_TRUE		: BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>
