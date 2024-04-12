@@ -2952,6 +2952,40 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.HMI.Manueel": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_CheckWeigher::fb_mem::HMI::Manueel",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 11
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.Auto": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_CheckWeigher::fb_mem::STS::Auto",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 3
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.State": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -4158,6 +4192,8 @@
                 "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.fb_mem.STS.Tag": 3,
                 "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply2.fb_mem.STS.State": 3,
+                "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.HMI.Manueel": 3,
+                "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.Auto": 3,
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState": 3,
