@@ -2,7 +2,7 @@
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
 {
-  "color": "rgba(174, 174, 174, 1)"
+  "color": "rgba(207, 207, 207, 1)"
 }
 </script>
 <div id="TcHmiRectangle_34" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="436" data-tchmi-left-unit="px" data-tchmi-top="340" data-tchmi-top-unit="px" data-tchmi-width="1376" data-tchmi-width-unit="px" data-tchmi-zindex="41">
