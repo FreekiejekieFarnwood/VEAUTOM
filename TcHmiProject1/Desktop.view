@@ -308,7 +308,7 @@
 <div id="TcHmiRectangle_26" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="10" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="1070" data-tchmi-top-unit="px" data-tchmi-width="1920" data-tchmi-width-unit="px" data-tchmi-zindex="20">
 <script data-tchmi-target-attribute="data-tchmi-fill-color" type="application/json">
 {
-  "color": "rgba(147, 161, 161, 1)"
+  "color": "rgba(116, 116, 116, 1)"
 }
 </script>
 
@@ -317,6 +317,8 @@
   "color": "None"
 }
 </script>
+
+
 
 
 
