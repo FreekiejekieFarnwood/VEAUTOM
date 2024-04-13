@@ -5,7 +5,7 @@
   "color": "rgba(246, 246, 246, 1)"
 }
 </script>
-<div id="TcHmiRectangle_18" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="840" data-tchmi-left-unit="px" data-tchmi-top="180" data-tchmi-top-unit="px" data-tchmi-width="570" data-tchmi-width-unit="px" data-tchmi-zindex="4">
+<div id="TcHmiRectangle_18" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="16" data-tchmi-height-unit="px" data-tchmi-left="840" data-tchmi-left-unit="px" data-tchmi-top="180" data-tchmi-top-unit="px" data-tchmi-width="570" data-tchmi-width-unit="px" data-tchmi-zindex="4" data-tchmi-visibility="Visible" data-tchmi-width-mode="Value" data-tchmi-fill-color="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.Execute_SC%/s%">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 1,
@@ -26,6 +26,97 @@
   "top": "Solid",
   "bottom": "Solid"
 }
+</script>
+
+
+
+
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-box-shadow" type="application/json">
+[]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctrl%TcHmiRectangle_18::FillColor%/ctrl%",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.State%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
+                  "value": 4
+                },
+                "compareOperator": "==",
+                "logic": null
+              },
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/String",
+                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.State%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
+                  "value": 3
+                },
+                "compareOperator": "==",
+                "logic": "OR"
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%TcHmiRectangle_18::FillColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "rgba(255, 8, 8, 1)"
+                  }
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%TcHmiRectangle_18::FillColor%/ctrl%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "rgba(5, 255, 15, 1)"
+                  }
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
 </script>
 </div>
 <div id="TcHmiStateImage_24" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="200" data-tchmi-height-unit="px" data-tchmi-left="250" data-tchmi-left-unit="px" data-tchmi-top="100" data-tchmi-top-unit="px" data-tchmi-width="600" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Grey Boxes zonder tekst/weigher aan.svg">
@@ -572,7 +663,7 @@
 }
 </script>
 </div>
-<div id="TcHmiRectangle_25" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="375" data-tchmi-height-unit="px" data-tchmi-left="25" data-tchmi-left-unit="px" data-tchmi-top="15" data-tchmi-top-unit="px" data-tchmi-width="1300" data-tchmi-width-unit="px" data-tchmi-stroke-thickness="0" data-tchmi-zindex="3" data-tchmi-is-enabled="true">
+<div id="TcHmiRectangle_25" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="375" data-tchmi-height-unit="px" data-tchmi-left="24" data-tchmi-left-unit="px" data-tchmi-top="15" data-tchmi-top-unit="px" data-tchmi-width="1300" data-tchmi-width-unit="px" data-tchmi-stroke-thickness="0" data-tchmi-zindex="3" data-tchmi-is-enabled="true">
 <script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
 {
   "left": "Dashed",

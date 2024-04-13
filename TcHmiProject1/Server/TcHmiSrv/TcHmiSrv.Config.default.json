@@ -2986,6 +2986,40 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.Execute_SC": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Filling::fb_mem::STS::Execute_SC",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 6
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.State": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Filling::fb_mem::STS::State",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/PLC1.E_State_PackML"
+                    },
+                    {
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -4160,6 +4194,8 @@
                 "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply2.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState": 3,
+                "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.Execute_SC": 3,
+                "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Labeller.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_SealShrink.fb_mem.STS.StringState": 3,
