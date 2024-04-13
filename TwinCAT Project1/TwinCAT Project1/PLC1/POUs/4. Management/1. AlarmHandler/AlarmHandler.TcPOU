@@ -17,21 +17,22 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[ErrorArray[1].sTag:='Valv_StopT1';
-ErrorArray[1].sMessage:= 'End sensor does not respond';
-ErrorArray[1].sPriority:= '2';
+ErrorArray[1].sMessage:= 'Temprature of motor is rising';
+ErrorArray[1].sPriority:= 3;
 ErrorArray[1].sDevice:= 'b_CM_Valve_CanStopper_CanSupply';
 ErrorArray[1].dErrorTime:= DT#2024-2-4-14:44:44;
-
+ErrorArray[1].sPossibleSolution:= 'Check heatsink or motor itself';
 IF ErrorArray[1].bAcknowledged = 1 THEN
 	ErrorArray[1].bIsAlarmAcknowledged:=1;
 END_IF
 
 
-ErrorArray[2].sTag:='EM_TurningDevice';
-ErrorArray[2].sMessage:= 'Turning Device is in state Aborted';
-ErrorArray[2].sPriority:= '1';
-ErrorArray[2].sDevice:= 'EM_TurningDevice';
+ErrorArray[2].sTag:='ConveyerT1_Detect';
+ErrorArray[2].sMessage:= 'Sensor is giving timeout';
+ErrorArray[2].sPriority:= 2;
+ErrorArray[2].sDevice:= 'ConveyerT1_Detect';
 ErrorArray[2].dErrorTime:= DT#2024-2-4-14:50:44;
+ErrorArray[2].sPossibleSolution:= 'Check for dust blocking the sensor or conection cable';
 
 IF ErrorArray[2].bAcknowledged = 1 THEN
 	ErrorArray[2].bIsAlarmAcknowledged:=1;
@@ -39,10 +40,10 @@ END_IF
 
 ErrorArray[3].sTag:='Conveyer T3';
 ErrorArray[3].sMessage:= 'Conveyer belt T3 is having more friction than accepted';
-ErrorArray[3].sPriority:= '4';
+ErrorArray[3].sPriority:= 4;
 ErrorArray[3].sDevice:= 'Conveyer Belt T3';
 ErrorArray[3].dErrorTime:= DT#2024-2-4-14:59:44;
-
+ErrorArray[3].sPossibleSolution:= 'Check the spinning friction of the belt rollers or check the motor itself.';
 IF ErrorArray[3].bAcknowledged = 1 THEN
 	ErrorArray[3].bIsAlarmAcknowledged:=1;
 END_IF
@@ -50,7 +51,9 @@ END_IF
     </Implementation>
     <LineIds Name="AlarmHandler">
       <LineId Id="29" Count="8" />
-      <LineId Id="51" Count="20" />
+      <LineId Id="51" Count="6" />
+      <LineId Id="85" Count="0" />
+      <LineId Id="58" Count="13" />
       <LineId Id="9" Count="0" />
     </LineIds>
   </POU>

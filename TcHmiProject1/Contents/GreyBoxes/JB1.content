@@ -2882,6 +2882,14 @@
   "bottomRightUnit": "px"
 }
 </script>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "None"
+}
+</script>
 </div>
 <div id="TcHmiRectangle_51" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="220" data-tchmi-height-unit="px" data-tchmi-left="1142" data-tchmi-left-unit="px" data-tchmi-top="719" data-tchmi-top-unit="px" data-tchmi-width="151" data-tchmi-width-unit="px" data-tchmi-zindex="25">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
@@ -3883,36 +3891,6 @@
 </div>
 <div id="TcHmiTextblock_283" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1515" data-tchmi-left-unit="px" data-tchmi-text="ConveyerT1_Detect" data-tchmi-top="185" data-tchmi-top-unit="px" data-tchmi-width="118" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-zindex="35">
 </div>
-<div id="TcHmiStateImage_131" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="1200" data-tchmi-left-unit="px" data-tchmi-top="688" data-tchmi-top-unit="px" data-tchmi-width="40" data-tchmi-width-unit="px" data-tchmi-zindex="41" data-tchmi-state="%s%PLC1.HMI_Connection.AlarmTest%/s%" data-tchmi-fallback-image="Images/INDAUT/Alarms/alarm prio 1.svg">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": 0,
-    "stateIcon": "Images/Empty SVG.svg"
-  },
-  {
-    "state": 1.0,
-    "stateIcon": "Images/INDAUT/Alarms/alarm prio 1.svg"
-  },
-  {
-    "state": 2.0,
-    "stateIcon": "Images/INDAUT/Alarms/alarm prio 2.svg"
-  },
-  {
-    "state": 3.0,
-    "stateIcon": "Images/INDAUT/Alarms/alarm prio 3.svg"
-  },
-  {
-    "state": 4.0,
-    "stateIcon": "Images/INDAUT/Alarms/alarm prio 4.svg"
-  }
-]
-</script>
-
-
-
-
-</div>
 <div id="TcHmiStateImage_132" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="184" data-tchmi-left-unit="px" data-tchmi-top="864" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-zindex="41" data-tchmi-state="%s%PLC1.MAIN.Unit.fb_mem.STS.Auto%/s%">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
@@ -4509,6 +4487,106 @@
   {
     "state": false,
     "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
+  }
+]
+</script>
+</div>
+<div id="TcHmi_Controls_Beckhoff_TcHmiImage_11" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="60" data-tchmi-height-unit="px" data-tchmi-left="1063" data-tchmi-left-unit="px" data-tchmi-src="Images/INDAUT/Alarms/alarm prio 4.svg" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="60" data-tchmi-width-unit="px" data-tchmi-zindex="74">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "TcHmi_Controls_Beckhoff_TcHmiImage_11.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%TcHmiRegion_Home::TargetContent%/ctrl%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/ContentPath",
+          "value": "Contents/Alarms.content"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%Banner::Text%/ctrl%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/String",
+          "value": "Alarms"
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+<div id="TcHmi_Controls_Beckhoff_TcHmiImage_12" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="60" data-tchmi-height-unit="px" data-tchmi-left="1574" data-tchmi-left-unit="px" data-tchmi-src="Images/INDAUT/Alarms/alarm prio 3.svg" data-tchmi-top="680" data-tchmi-top-unit="px" data-tchmi-width="60" data-tchmi-width-unit="px" data-tchmi-zindex="74">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "TcHmi_Controls_Beckhoff_TcHmiImage_12.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%TcHmiRegion_Home::TargetContent%/ctrl%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/ContentPath",
+          "value": "Contents/Alarms.content"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%Banner::Text%/ctrl%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/String",
+          "value": "Alarms"
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+<div id="TcHmi_Controls_Beckhoff_TcHmiImage_13" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="60" data-tchmi-height-unit="px" data-tchmi-left="696" data-tchmi-left-unit="px" data-tchmi-src="Images/INDAUT/Alarms/alarm prio 2.svg" data-tchmi-top="379" data-tchmi-top-unit="px" data-tchmi-width="60" data-tchmi-width-unit="px" data-tchmi-zindex="74">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "TcHmi_Controls_Beckhoff_TcHmiImage_13.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%TcHmiRegion_Home::TargetContent%/ctrl%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/ContentPath",
+          "value": "Contents/Alarms.content"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%Banner::Text%/ctrl%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/String",
+          "value": "Alarms"
+        },
+        "asyncWait": true
+      }
+    ]
   }
 ]
 </script>

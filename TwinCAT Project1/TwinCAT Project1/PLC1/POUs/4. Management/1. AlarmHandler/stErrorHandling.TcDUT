@@ -5,11 +5,12 @@
 STRUCT
 	sTag: STRING;
 	sMessage: STRING;
-	sPriority: STRING;
+	sPriority: INT;
 	sDevice: STRING;
 	dErrorTime: DATE_AND_TIME;
 	bIsAlarmAcknowledged : BOOL;
 	bAcknowledged: BOOL;
+	sPossibleSolution: STRING;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

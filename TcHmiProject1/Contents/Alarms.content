@@ -6,7 +6,7 @@
   "color": "rgba(255, 255, 255, 1)"
 }
 </script>
-<div id="TcHmiDatagrid" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="204" data-tchmi-height-unit="px" data-tchmi-left="67" data-tchmi-left-unit="px" data-tchmi-top="71" data-tchmi-top-unit="px" data-tchmi-width="1731" data-tchmi-width-unit="px" data-tchmi-src-data="%s%PLC1.MAIN.Unit.AlarmHandler.ErrorArray|BindingMode=TwoWay%/s%">
+<div id="TcHmiDatagrid" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="204" data-tchmi-height-unit="px" data-tchmi-left="67" data-tchmi-left-unit="px" data-tchmi-top="70" data-tchmi-top-unit="px" data-tchmi-width="1731" data-tchmi-width-unit="px" data-tchmi-src-data="%s%PLC1.MAIN.Unit.AlarmHandler.ErrorArray|BindingMode=TwoWay%/s%">
 <script data-tchmi-target-attribute="data-tchmi-src-column" type="application/json">
 [
   {
@@ -115,6 +115,25 @@
     "minWidth": 100,
     "minWidthUnit": "px",
     "editable": true,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": false
+  },
+  {
+    "name": "sPossibleSolution",
+    "label": "Possible solution",
+    "control": "TextBlock",
+    "width": 500,
+    "widthUnit": "px",
+    "resize": false,
+    "sortable": false,
+    "minWidth": 100,
+    "minWidthUnit": "px",
+    "editable": false,
     "horizontalAlignment": "Left",
     "verticalAlignment": "Center",
     "headerHorizontalAlignment": "Center",
