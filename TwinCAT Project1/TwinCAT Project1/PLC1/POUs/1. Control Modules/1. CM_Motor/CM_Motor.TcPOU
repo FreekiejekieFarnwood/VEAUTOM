@@ -108,7 +108,6 @@ fb_mem.CS.Richting_L	:= FALSE;
 fb_mem.CS.Richting_R	:= FALSE;
 fb_mem.CS.Start			:= FALSE;
 fb_mem.CS.Stop			:= FALSE;
-fb_mem.CS.Toerental		:= 0;
 
 //Zero all HMI signals
 fb_mem.HMI.Auto			:= FALSE;
@@ -118,8 +117,7 @@ fb_mem.HMI.Reset		:= FALSE;
 fb_mem.HMI.Richting_L	:= FALSE;
 fb_mem.HMI.Richting_R	:= FALSE;
 fb_mem.HMI.Start		:= FALSE;
-fb_mem.HMI.Stop			:= FALSE;
-fb_mem.HMI.Toerental	:= 0;]]></ST>
+fb_mem.HMI.Stop			:= FALSE;]]></ST>
     </Implementation>
     <Folder Name="Methods" Id="{e48a4f7d-e56b-428a-aa1b-5b87c7c2d9fa}" />
     <Folder Name="Properties" Id="{bc8caceb-6cf9-4970-a7a5-33f216f9ab87}" />
@@ -332,11 +330,10 @@ Toerental := fb_mem.CS.Toerental;]]></ST>
       <LineId Id="29" Count="5" />
       <LineId Id="39" Count="2" />
       <LineId Id="35" Count="0" />
-      <LineId Id="43" Count="1" />
+      <LineId Id="43" Count="0" />
       <LineId Id="42" Count="0" />
       <LineId Id="36" Count="0" />
       <LineId Id="45" Count="7" />
-      <LineId Id="26" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Abort">
       <LineId Id="4" Count="0" />

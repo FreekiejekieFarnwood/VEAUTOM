@@ -92,18 +92,6 @@ CASE fb_mem.STS.State OF
 		END_IF
 	E_State_PackML.EXECUTE 			: 
 		//Do nothing
-		TON1();
-		TON1.PT := T#10S;
-		
-		IF sensor.Output = FALSE THEN
-			TON1.IN := TRUE;
-		ELSE
-			TON1.IN := FALSE;
-		END_IF
-		
-		IF TON1.Q THEN
-			fb_mem.STS.Execute_SC := TRUE;
-		END_IF
 	E_State_PackML.COMPLETE 		:
 		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
 			fb_mem.STS.Completing_SC := TRUE;
@@ -461,15 +449,6 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="401" Count="0" />
       <LineId Id="595" Count="0" />
       <LineId Id="156" Count="0" />
-      <LineId Id="622" Count="0" />
-      <LineId Id="626" Count="1" />
-      <LineId Id="625" Count="0" />
-      <LineId Id="628" Count="1" />
-      <LineId Id="631" Count="0" />
-      <LineId Id="630" Count="0" />
-      <LineId Id="632" Count="0" />
-      <LineId Id="621" Count="0" />
-      <LineId Id="623" Count="1" />
       <LineId Id="173" Count="0" />
       <LineId Id="570" Count="1" />
       <LineId Id="174" Count="0" />
