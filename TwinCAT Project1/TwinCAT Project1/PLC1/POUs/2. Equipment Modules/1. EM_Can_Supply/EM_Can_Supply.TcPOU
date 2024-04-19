@@ -12,6 +12,7 @@ VAR
 	Sen_A1_Far						: CM_Sensor;
 	Sen_A2_Near						: CM_Sensor;
 	Sen_A2_Far						: CM_Sensor;
+	ValveDirection					: CM_Valve;  
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -103,21 +104,21 @@ CASE fb_mem.STS.State OF
 		//Do nothing
 	E_State_PackML.STARTING 		:
 		//Hier heen en weer swichen totdat bijden buffers vol zijn en dus alle sensoren waar zijn met filler 1 prioriteit
-		fb_mem.STS.Richting_L:=TRUE;	//Richting_L naar filler 1
+		ValveDirection.Close();	//Richting_L naar filler 1
 		IF Sen_A1_Far.Output=TRUE AND Sen_A2_Far.Output=TRUE AND Sen_A2_Near.Output=FALSE THEN //filler 2 hoeft nog niet vol te zijn om te starten
-			fb_mem.STS.Richting_R:=TRUE;	//Richting_L naar filler 2
+			ValveDirection.Open();	//Richting_L naar filler 2
 			fb_mem.STS.Starting_SC := TRUE;
 		END_IF
 	E_State_PackML.EXECUTE 			: 
 		//Als Sen_A1_Far AND Sen_A1_Near AND !Sen_A2_Near THEN wissel naar A2 en vise versa
 		IF Sen_A1_Far.Output=TRUE AND Sen_A2_Far.Output=TRUE AND Sen_A1_Near.Output=TRUE AND Sen_A2_Near.Output=FALSE THEN
-			fb_mem.STS.Richting_R:=TRUE;	//Richting_L naar filler 2
+			ValveDirection.Open();	//Richting_L naar filler 2 heet open
 		END_IF
 		IF Sen_A1_Far.Output=TRUE AND Sen_A2_Far.Output=TRUE AND Sen_A2_Near.Output=TRUE AND Sen_A1_Near.Output=FALSE THEN
-			fb_mem.STS.Richting_L:=TRUE;	//Richting_L naar filler 1
+			ValveDirection.Close();	//Richting_L naar filler 1
 		END_IF
 		IF Sen_A1_Far.Output=FALSE THEN
-			fb_mem.STS.Richting_L:=TRUE;	//Richting_L naar filler 1
+			ValveDirection.Close();		//Richting_L naar filler 1 heet close
 		END_IF
 	E_State_PackML.COMPLETE 		:
 		//Do nothing
