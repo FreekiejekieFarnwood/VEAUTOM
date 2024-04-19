@@ -27,7 +27,7 @@
     <HmiViewportUserScaleable>Default</HmiViewportUserScaleable>
     <HmiPostProcessing>True</HmiPostProcessing>
     <Name>TcHmiProject1</Name>
-    <HmiCommunicationRouterPort>10109</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10112</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13001</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.760.59</HmiInitial>
     <HmiRecent>1.12.760.59</HmiRecent>
@@ -257,6 +257,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Images\INDAUT\Grey Boxes zonder tekst\checkwigher uit.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\Filling aan.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\Filling uit.svg">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Images\INDAUT\Grey Boxes zonder tekst\labeler aan.svg">
