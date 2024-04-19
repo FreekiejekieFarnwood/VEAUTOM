@@ -163,6 +163,8 @@ METHOD Close : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Close := TRUE;
+fb_mem.STS.Close:=TRUE;
+fb_mem.STS.Open:=FALSE;
 Close := fb_mem.STS.Close;]]></ST>
       </Implementation>
     </Method>
@@ -215,6 +217,8 @@ METHOD Open : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Open := TRUE;
+fb_mem.STS.Open:=TRUE;
+fb_mem.STS.Close:=FALSE;
 Open := fb_mem.STS.Open;]]></ST>
       </Implementation>
     </Method>
@@ -314,7 +318,9 @@ END_VAR
       <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="CM_Valve.Close">
-      <LineId Id="5" Count="1" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="9" Count="1" />
+      <LineId Id="6" Count="0" />
     </LineIds>
     <LineIds Name="CM_Valve.Error_State.Get">
       <LineId Id="2" Count="0" />
@@ -330,6 +336,7 @@ END_VAR
     </LineIds>
     <LineIds Name="CM_Valve.Open">
       <LineId Id="7" Count="0" />
+      <LineId Id="10" Count="1" />
       <LineId Id="6" Count="0" />
     </LineIds>
     <LineIds Name="CM_Valve.Reset">

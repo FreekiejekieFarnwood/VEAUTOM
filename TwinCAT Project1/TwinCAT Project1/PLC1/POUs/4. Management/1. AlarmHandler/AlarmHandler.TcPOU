@@ -12,6 +12,7 @@ END_VAR
 
 VAR
 	ErrorArray:ARRAY[1..3] OF stErrorHandling;
+	ShowAlarms:BOOL;
 END_VAR
 
 ]]></Declaration>

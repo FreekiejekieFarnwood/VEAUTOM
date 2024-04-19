@@ -253,6 +253,12 @@
     <Content Include="Images\INDAUT\Grey Boxes zonder tekst\bottom seal uit.svg">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\CanSupply1.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Grey Boxes zonder tekst\CanSupply2.svg">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Images\INDAUT\Grey Boxes zonder tekst\checkwigher aan.svg">
       <SubType>Content</SubType>
     </Content>
