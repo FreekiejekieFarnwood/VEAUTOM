@@ -71,18 +71,15 @@ fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
 
 //********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
+IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
 	fb_mem.STS.Auto := TRUE;
-ELSE
-	fb_mem.STS.Auto := FALSE;
-END_IF
-
-IF fb_mem.CS.Manueel THEN
-	fb_mem.STS.Manueel := TRUE;
-ELSE
 	fb_mem.STS.Manueel := FALSE;
 END_IF
 
+IF fb_mem.CS.Manueel OR fb_mem.HMI.Manueel THEN
+	fb_mem.STS.Auto := FALSE;
+	fb_mem.STS.Manueel := TRUE;
+END_IF
 //********************************Exeptionhandling***********************************
 
 //********************************Action case***********************************
@@ -240,6 +237,15 @@ METHOD Aborting_SC : BOOL
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Method>
+    <Method Name="Auto" Id="{78977318-4f1e-4251-9132-f8f0ef8fa8ef}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Auto : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Auto := TRUE;
+Auto := fb_mem.STS.Auto;]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="Clear" Id="{846080eb-5f58-436b-8b0b-2d9787f9b143}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Clear : BOOL
@@ -299,6 +305,15 @@ METHOD Holding_SC : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Manueel" Id="{8e71a748-a937-4329-b10f-7a56db20ccbd}" FolderPath="Methods\">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Manueel : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fb_mem.CS.Manueel := TRUE;
+Manueel := fb_mem.STS.Manueel;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Reset" Id="{b635a72a-5a2e-495e-ada8-0bbcaa721e4b}" FolderPath="Methods\">
@@ -421,7 +436,9 @@ METHOD ZeroAllVar : BOOL
     <LineIds Name="EM_Filling">
       <LineId Id="396" Count="36" />
       <LineId Id="509" Count="1" />
-      <LineId Id="433" Count="34" />
+      <LineId Id="433" Count="16" />
+      <LineId Id="679" Count="7" />
+      <LineId Id="461" Count="6" />
       <LineId Id="511" Count="0" />
       <LineId Id="522" Count="0" />
       <LineId Id="636" Count="1" />
@@ -477,6 +494,10 @@ METHOD ZeroAllVar : BOOL
     <LineIds Name="EM_Filling.Aborting_SC">
       <LineId Id="4" Count="0" />
     </LineIds>
+    <LineIds Name="EM_Filling.Auto">
+      <LineId Id="5" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
     <LineIds Name="EM_Filling.Clear">
       <LineId Id="4" Count="0" />
     </LineIds>
@@ -497,6 +518,10 @@ METHOD ZeroAllVar : BOOL
     </LineIds>
     <LineIds Name="EM_Filling.Holding_SC">
       <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="EM_Filling.Manueel">
+      <LineId Id="4" Count="0" />
+      <LineId Id="8" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Reset">
       <LineId Id="4" Count="0" />

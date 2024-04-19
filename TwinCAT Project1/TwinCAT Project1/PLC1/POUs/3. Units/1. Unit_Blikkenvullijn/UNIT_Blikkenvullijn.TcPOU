@@ -69,8 +69,6 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Stopping_SC     := fb_mem.STS.Stopping_SC);
 
 //********************************ZEROING***********************************								
-fb_mem.STS.Auto 			:= FALSE;
-fb_mem.STS.Manueel 			:= FALSE;
 fb_mem.STS.Starting_SC 		:= FALSE;
 fb_mem.STS.Execute_SC 		:= FALSE;
 fb_mem.STS.Resetting_SC 	:= FALSE;
@@ -125,31 +123,17 @@ EM_Transport_TurningDevice_StampUnit();
 EM_Transport_StampUnit_SealShrink();
 
 //********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
+IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
 	fb_mem.STS.Auto := TRUE;
-ELSE
-	fb_mem.STS.Auto := FALSE;
+	fb_mem.STS.Manueel := FALSE;
 END_IF
 
-IF fb_mem.CS.Manueel THEN
+IF fb_mem.CS.Manueel OR fb_mem.HMI.Manueel THEN
+	fb_mem.STS.Auto := FALSE;
 	fb_mem.STS.Manueel := TRUE;
-ELSE
-	fb_mem.STS.Manueel := FALSE;
 END_IF
 
 //********************************Control signals***********************************
-//********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
-	fb_mem.STS.Auto := TRUE;
-ELSE
-	fb_mem.STS.Auto := FALSE;
-END_IF
-
-IF fb_mem.CS.Manueel THEN
-	fb_mem.STS.Manueel := TRUE;
-ELSE
-	fb_mem.STS.Manueel := FALSE;
-END_IF
 
 IF fb_mem.CS.Reset THEN
 	EM_Can_Supply.Reset();
@@ -743,8 +727,6 @@ METHOD Auto : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Auto := TRUE;
-fb_mem.CS.Manueel := FALSE;
-
 Auto := fb_mem.STS.Auto;]]></ST>
       </Implementation>
     </Method>
@@ -802,8 +784,6 @@ METHOD Manueel : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Manueel := TRUE;
-fb_mem.CS.Auto := FALSE;
-
 Manueel := fb_mem.STS.Manueel;]]></ST>
       </Implementation>
     </Method>
@@ -882,7 +862,8 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="1460" Count="19" />
       <LineId Id="965" Count="0" />
       <LineId Id="1128" Count="0" />
-      <LineId Id="1480" Count="12" />
+      <LineId Id="1480" Count="0" />
+      <LineId Id="1483" Count="9" />
       <LineId Id="943" Count="0" />
       <LineId Id="314" Count="0" />
       <LineId Id="913" Count="0" />
@@ -914,11 +895,12 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="1866" Count="3" />
       <LineId Id="914" Count="0" />
       <LineId Id="1870" Count="0" />
-      <LineId Id="812" Count="10" />
+      <LineId Id="812" Count="2" />
+      <LineId Id="816" Count="3" />
+      <LineId Id="1906" Count="0" />
+      <LineId Id="822" Count="0" />
       <LineId Id="810" Count="0" />
       <LineId Id="1163" Count="1" />
-      <LineId Id="1498" Count="10" />
-      <LineId Id="1414" Count="0" />
       <LineId Id="1291" Count="0" />
       <LineId Id="1277" Count="13" />
       <LineId Id="1197" Count="0" />
@@ -1146,8 +1128,7 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="UNIT_Blikkenvullijn.Auto">
-      <LineId Id="5" Count="1" />
-      <LineId Id="10" Count="0" />
+      <LineId Id="5" Count="0" />
       <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="UNIT_Blikkenvullijn.Clear">
@@ -1166,8 +1147,7 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="UNIT_Blikkenvullijn.Manueel">
-      <LineId Id="4" Count="1" />
-      <LineId Id="9" Count="0" />
+      <LineId Id="4" Count="0" />
       <LineId Id="8" Count="0" />
     </LineIds>
     <LineIds Name="UNIT_Blikkenvullijn.Reset">

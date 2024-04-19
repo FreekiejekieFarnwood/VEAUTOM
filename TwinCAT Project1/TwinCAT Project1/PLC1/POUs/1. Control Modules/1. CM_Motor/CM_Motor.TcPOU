@@ -42,16 +42,14 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Stopping_SC     := fb_mem.STS.Stopping_SC);
 
 //********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
+IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
 	fb_mem.STS.Auto := TRUE;
-	ELSE
-		fb_mem.STS.Auto := FALSE;
+	fb_mem.STS.Manueel := FALSE;
 END_IF
 
-IF fb_mem.CS.Manueel THEN
+IF fb_mem.CS.Manueel OR fb_mem.HMI.Manueel THEN
+	fb_mem.STS.Auto := FALSE;
 	fb_mem.STS.Manueel := TRUE;
-	ELSE
-		fb_mem.STS.Manueel := FALSE;
 END_IF
 
 //********************************Exeptionhandling***********************************
@@ -318,7 +316,9 @@ Toerental := fb_mem.CS.Toerental;]]></ST>
       <LineId Id="113" Count="16" />
       <LineId Id="9" Count="0" />
       <LineId Id="27" Count="0" />
-      <LineId Id="61" Count="17" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="143" Count="7" />
+      <LineId Id="72" Count="6" />
       <LineId Id="131" Count="0" />
       <LineId Id="79" Count="23" />
       <LineId Id="133" Count="0" />
