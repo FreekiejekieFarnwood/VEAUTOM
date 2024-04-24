@@ -2767,93 +2767,6 @@
             },
             "USEMAPPING": true
         },
-        "PLC1.HMI_Connection.AlarmTest": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::HMI_Connection::AlarmTest",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/INT"
-            },
-            "USEMAPPING": true
-        },
-        "PLC1.HMI_Connection.Struct_Test.Stop": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::HMI_Connection::Struct_Test::Stop",
-            "SCHEMA": {
-                "allOf": [
-                    {
-                        "$ref": "tchmi:general#/definitions/BOOL"
-                    },
-                    {
-                        "propertyOrder": 2
-                    }
-                ]
-            },
-            "USEMAPPING": true
-        },
-        "PLC1.HMI_Connection.Test1": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::HMI_Connection::Test1",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/INT"
-            },
-            "USEMAPPING": true
-        },
-        "PLC1.HMI_Connection.Test5": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::HMI_Connection::Test5",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/BOOL"
-            },
-            "USEMAPPING": true
-        },
-        "PLC1.HMI_Connection.Test_String": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::HMI_Connection::Test_String",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/STRING%2880%29"
-            },
-            "USEMAPPING": true
-        },
-        "PLC1.HMI_Connection.Test_String2": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::HMI_Connection::Test_String2",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/STRING%2880%29"
-            },
-            "USEMAPPING": true
-        },
-        "PLC1.HMI_Connection.Test_String3": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::HMI_Connection::Test_String3",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/STRING%2880%29"
-            },
-            "USEMAPPING": true
-        },
-        "PLC1.HMI_Connection.enum": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::HMI_Connection::enum",
-            "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.DUT_Main"
-            },
-            "USEMAPPING": true
-        },
         "PLC1.MAIN.Abort": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -2950,6 +2863,23 @@
                     },
                     {
                         "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.Motor.fb_mem.HMI.Toerental": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Can_Supply::EM_Transport_Can_Supply1::Motor::fb_mem::HMI::Toerental",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "propertyOrder": 12
                     }
                 ]
             },
@@ -4333,6 +4263,7 @@
                 "PLC1.MAIN.Stop": 3,
                 "PLC1.MAIN.Unit.AlarmHandler.ErrorArray": 3,
                 "PLC1.MAIN.Unit.EM_BottomSeal.fb_mem.STS.StringState": 3,
+                "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.Motor.fb_mem.HMI.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState": 3,

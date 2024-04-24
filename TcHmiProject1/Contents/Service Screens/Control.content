@@ -70,7 +70,7 @@
       {
         "objectType": "WriteToSymbol",
         "active": true,
-        "symbolExpression": "%s%PLC1.HMI_Connection.Test1%/s%",
+        "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.Motor.fb_mem.HMI.Toerental%/s%",
         "value": {
           "objectType": "Symbol",
           "valueType": "tchmi:general#/definitions/String",

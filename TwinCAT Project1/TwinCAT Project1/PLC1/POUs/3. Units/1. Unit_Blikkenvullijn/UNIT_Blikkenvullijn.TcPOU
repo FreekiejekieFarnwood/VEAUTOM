@@ -443,9 +443,9 @@ END_IF
 CASE fb_mem.STS.State OF
 	E_State_PackML.IDLE 			: 
 		IF fb_mem.CS.Start AND fb_mem.STS.Auto OR fb_mem.HMI.Start AND fb_mem.STS.Manueel THEN
-			fb_mem.CS.Start := TRUE;
-			
+		//do nothing
 		END_IF
+	
 	E_State_PackML.STARTING 		:
 		EM_Can_Supply.Start();
 		IF EM_Can_Supply.State = E_State_PackML.EXECUTE THEN
@@ -490,27 +490,27 @@ CASE fb_mem.STS.State OF
 		END_IF
 	
 	E_State_PackML.EXECUTE 			: 
-		IF fb_mem.CS.Stop AND fb_mem.STS.Auto OR fb_mem.HMI.Stop AND fb_mem.STS.Manueel THEN
-			fb_mem.STS.Execute_SC := TRUE;
-			EM_Can_Supply.Stop();
-			EM_Filling.Stop();
-			EM_Infeed_CheckWeigher.Stop();
-			EM_CheckWeigher.Stop();
-			EM_Transport_Checkweigher_BottomSeal.Stop();
-			EM_BottomSeal.Stop();
-			EM_Transport_BottomSeal_Labeller.Stop();
-			EM_Labeller.Stop();
-			EM_TurningDevice.Stop();	
-			EM_Transport_TurningDevice_StampUnit.Stop();
-			EM_StampUnit.Stop();
-			EM_Transport_StampUnit_SealShrink.Stop();
-			EM_SealShrink.Stop();
+		IF 	EM_Can_Supply.State 						= E_State_PackML.COMPLETE AND
+			EM_Filling.State 							= E_State_PackML.COMPLETE AND
+			EM_Infeed_CheckWeigher.State 				= E_State_PackML.COMPLETE AND
+			EM_CheckWeigher.State 						= E_State_PackML.COMPLETE AND
+			EM_Transport_Checkweigher_BottomSeal.State 	= E_State_PackML.COMPLETE AND
+			EM_BottomSeal.State 						= E_State_PackML.COMPLETE AND
+			EM_Transport_BottomSeal_Labeller.State 		= E_State_PackML.COMPLETE AND
+			EM_Labeller.State 							= E_State_PackML.COMPLETE AND
+			EM_TurningDevice.State 						= E_State_PackML.COMPLETE AND
+			EM_Transport_TurningDevice_StampUnit.State 	= E_State_PackML.COMPLETE AND
+			EM_StampUnit.State 							= E_State_PackML.COMPLETE AND
+			EM_Transport_StampUnit_SealShrink.State 	= E_State_PackML.COMPLETE AND
+			EM_SealShrink.State 						= E_State_PackML.COMPLETE THEN
+		fb_mem.STS.Execute_SC := TRUE;
 		END_IF
 	
 	E_State_PackML.COMPLETE 		:
 		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
 			fb_mem.STS.Completing_SC := TRUE;
 		END_IF
+	
 	E_State_PackML.RESETTING 		:
 		IF 	EM_Can_Supply.State 						= E_State_PackML.IDLE AND
 			EM_Filling.State 							= E_State_PackML.IDLE AND
@@ -528,14 +528,18 @@ CASE fb_mem.STS.State OF
 		//State complete:
 		fb_mem.STS.Resetting_SC := TRUE;
 		END_IF
+	
 	E_State_PackML.HOLDING 			:	// TO BE PROGRAMMED
 		//Not defined
 		
+	
 	E_State_PackML.HELD 			:	// TO BE PROGRAMMED
 		//Not defined
 	
+	
 	E_State_PackML.UNHOLDING 		:	// TO BE PROGRAMMED
 		//Not defined
+	
 	
 	E_State_PackML.SUSPENDING 		:
 		IF (EM_Can_Supply.State 						= E_State_PackML.SUSPENDED OR
@@ -566,6 +570,7 @@ CASE fb_mem.STS.State OF
 			EM_SealShrink.State							= E_State_PackML.HELD) THEN
 		fb_mem.STS.Suspending_SC := TRUE;
 		END_IF
+	
 	E_State_PackML.SUSPENDED 		:
 		IF	EM_Can_Supply.State 						= E_State_PackML.UNHOLDING OR
 			EM_Filling.State 							= E_State_PackML.UNHOLDING OR
@@ -595,8 +600,10 @@ CASE fb_mem.STS.State OF
 		EM_Transport_StampUnit_SealShrink.Start();
 		EM_SealShrink.Unsuspend();
 		END_IF
+	
 	E_State_PackML.UNSUSPENDING 	:
 		fb_mem.STS.Unsuspending_SC	:= TRUE;
+	
 	E_State_PackML.ABORTING			:
 		IF 	EM_Can_Supply.State 							= E_State_PackML.ABORTED AND
 				EM_Filling.State 							= E_State_PackML.ABORTED AND
@@ -613,6 +620,7 @@ CASE fb_mem.STS.State OF
 				EM_SealShrink.State 						= E_State_PackML.ABORTED THEN
 			fb_mem.STS.Aborting_SC := TRUE;
 		END_IF
+	
 	E_State_PackML.ABORTED			:
 		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
 			fb_mem.CS.Clear 							:= TRUE;
@@ -630,6 +638,7 @@ CASE fb_mem.STS.State OF
 			EM_Transport_StampUnit_SealShrink.Clear();
 			EM_SealShrink.Clear();
 		END_IF
+	
 	E_State_PackML.CLEARING 		:
 		IF 	EM_Can_Supply.State 							= E_State_PackML.STOPPED AND
 				EM_Filling.State 							= E_State_PackML.STOPPED AND
@@ -646,6 +655,7 @@ CASE fb_mem.STS.State OF
 				EM_SealShrink.State 						= E_State_PackML.STOPPED THEN
 			fb_mem.STS.Clearing_SC := TRUE;
 		END_IF
+	
 	E_State_PackML.STOPPING 		:
 		EM_Can_Supply.Stop();
 		EM_Filling.Stop();
@@ -660,8 +670,24 @@ CASE fb_mem.STS.State OF
 		EM_StampUnit.Stop();
 		EM_Transport_StampUnit_SealShrink.Stop();
 		EM_SealShrink.Stop();
+		IF 	EM_Can_Supply.State 							= E_State_PackML.STOPPED AND
+				EM_Filling.State 							= E_State_PackML.STOPPED AND
+				EM_Infeed_CheckWeigher.State				= E_State_PackML.STOPPED AND
+				EM_CheckWeigher.State 						= E_State_PackML.STOPPED AND
+				EM_Transport_Checkweigher_BottomSeal.State	= E_State_PackML.STOPPED AND
+				EM_BottomSeal.State							= E_State_PackML.STOPPED AND
+				EM_Transport_BottomSeal_Labeller.State		= E_State_PackML.STOPPED AND
+				EM_Labeller.State 							= E_State_PackML.STOPPED AND
+				EM_TurningDevice.State						= E_State_PackML.STOPPED AND
+				EM_Transport_TurningDevice_StampUnit.State	= E_State_PackML.STOPPED AND
+				EM_StampUnit.State							= E_State_PackML.STOPPED AND
+				EM_Transport_StampUnit_SealShrink.State		= E_State_PackML.STOPPED AND
+				EM_SealShrink.State 						= E_State_PackML.STOPPED THEN
+			fb_mem.STS.Stopping_SC := TRUE;
+		END_IF 
+	
 	E_State_PackML.STOPPED 			:
-		IF fb_mem.CS.Reset AND fb_mem.STS.Auto OR fb_mem.HMI.Reset AND fb_mem.STS.Manueel THEN
+		IF (fb_mem.CS.Reset AND fb_mem.STS.Auto) OR (fb_mem.HMI.Reset AND fb_mem.STS.Manueel) THEN
 			fb_mem.CS.Reset := TRUE;
 			EM_Can_Supply.Reset();
 			EM_Filling.Reset();
@@ -1000,10 +1026,9 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="128" Count="0" />
       <LineId Id="111" Count="0" />
       <LineId Id="263" Count="0" />
-      <LineId Id="277" Count="0" />
-      <LineId Id="1717" Count="0" />
-      <LineId Id="278" Count="0" />
+      <LineId Id="277" Count="1" />
       <LineId Id="112" Count="0" />
+      <LineId Id="1982" Count="0" />
       <LineId Id="1548" Count="0" />
       <LineId Id="612" Count="1" />
       <LineId Id="1129" Count="0" />
@@ -1036,29 +1061,32 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="614" Count="0" />
       <LineId Id="678" Count="0" />
       <LineId Id="1549" Count="0" />
-      <LineId Id="679" Count="0" />
-      <LineId Id="681" Count="0" />
-      <LineId Id="683" Count="11" />
-      <LineId Id="680" Count="0" />
-      <LineId Id="676" Count="0" />
+      <LineId Id="1938" Count="11" />
+      <LineId Id="1937" Count="0" />
+      <LineId Id="1950" Count="1" />
       <LineId Id="1551" Count="0" />
       <LineId Id="114" Count="0" />
       <LineId Id="546" Count="0" />
       <LineId Id="548" Count="1" />
       <LineId Id="158" Count="0" />
+      <LineId Id="1980" Count="0" />
       <LineId Id="1560" Count="12" />
       <LineId Id="256" Count="1" />
       <LineId Id="1557" Count="0" />
       <LineId Id="116" Count="0" />
+      <LineId Id="1979" Count="0" />
       <LineId Id="698" Count="0" />
       <LineId Id="695" Count="0" />
       <LineId Id="117" Count="0" />
+      <LineId Id="1978" Count="0" />
       <LineId Id="699" Count="0" />
       <LineId Id="696" Count="0" />
       <LineId Id="118" Count="0" />
+      <LineId Id="1977" Count="0" />
       <LineId Id="700" Count="0" />
       <LineId Id="697" Count="0" />
       <LineId Id="119" Count="0" />
+      <LineId Id="1976" Count="0" />
       <LineId Id="333" Count="0" />
       <LineId Id="364" Count="0" />
       <LineId Id="334" Count="0" />
@@ -1087,25 +1115,36 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="376" Count="0" />
       <LineId Id="345" Count="1" />
       <LineId Id="120" Count="0" />
+      <LineId Id="1975" Count="0" />
       <LineId Id="348" Count="12" />
       <LineId Id="392" Count="12" />
       <LineId Id="361" Count="0" />
       <LineId Id="347" Count="0" />
       <LineId Id="121" Count="0" />
+      <LineId Id="1974" Count="0" />
       <LineId Id="701" Count="0" />
-      <LineId Id="1702" Count="14" />
+      <LineId Id="1702" Count="0" />
+      <LineId Id="1973" Count="0" />
+      <LineId Id="1703" Count="13" />
       <LineId Id="122" Count="0" />
       <LineId Id="1701" Count="0" />
+      <LineId Id="1972" Count="0" />
       <LineId Id="511" Count="0" />
       <LineId Id="514" Count="0" />
       <LineId Id="516" Count="11" />
       <LineId Id="512" Count="1" />
-      <LineId Id="496" Count="14" />
+      <LineId Id="496" Count="0" />
+      <LineId Id="1971" Count="0" />
+      <LineId Id="497" Count="13" />
       <LineId Id="124" Count="0" />
       <LineId Id="528" Count="0" />
+      <LineId Id="1970" Count="0" />
       <LineId Id="734" Count="11" />
       <LineId Id="732" Count="0" />
+      <LineId Id="1984" Count="13" />
+      <LineId Id="1983" Count="0" />
       <LineId Id="174" Count="0" />
+      <LineId Id="1969" Count="0" />
       <LineId Id="530" Count="0" />
       <LineId Id="532" Count="12" />
       <LineId Id="531" Count="0" />
