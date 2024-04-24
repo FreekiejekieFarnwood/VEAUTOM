@@ -246,9 +246,6 @@ CASE State OF
 		IF Abort THEN
 			State:= E_State_PackML.ABORTING;
 		END_IF
-		IF Stop THEN
-			State:= E_State_PackML.STOPPING;
-		END_IF
 END_CASE
 
 PackML_StateMachine := State;
@@ -257,7 +254,8 @@ PackML_StateMachine := State;
     </Implementation>
     <LineIds Name="PackML_StateMachine">
       <LineId Id="8" Count="12" />
-      <LineId Id="22" Count="206" />
+      <LineId Id="22" Count="202" />
+      <LineId Id="228" Count="0" />
       <LineId Id="284" Count="0" />
       <LineId Id="283" Count="0" />
       <LineId Id="251" Count="0" />

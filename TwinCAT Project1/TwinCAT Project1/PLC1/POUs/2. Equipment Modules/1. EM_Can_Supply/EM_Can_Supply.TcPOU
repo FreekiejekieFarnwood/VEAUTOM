@@ -70,16 +70,14 @@ fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
 
 //********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
+IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
 	fb_mem.STS.Auto := TRUE;
-ELSE
-	fb_mem.STS.Auto := FALSE;
+	fb_mem.STS.Manueel := FALSE;
 END_IF
 
-IF fb_mem.CS.Manueel THEN
+IF fb_mem.CS.Manueel OR fb_mem.HMI.Manueel THEN
+	fb_mem.STS.Auto := FALSE;
 	fb_mem.STS.Manueel := TRUE;
-ELSE
-	fb_mem.STS.Manueel := FALSE;
 END_IF
 
 //********************Manupilatie***********8
@@ -178,14 +176,12 @@ END_VAR
         <ST><![CDATA[fb_mem.STS.Aborting_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Auto" Id="{a9833b4a-d04c-406e-ad03-dc7d8bbde31e}" FolderPath="Methods\">
+    <Method Name="Auto" Id="{3de32530-42eb-4924-90cf-af6c4db39c4e}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Auto : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Auto := TRUE;
-fb_mem.CS.Manueel := FALSE;
-
 Auto := fb_mem.STS.Auto;]]></ST>
       </Implementation>
     </Method>
@@ -254,14 +250,12 @@ END_VAR
         <ST><![CDATA[fb_mem.STS.Holding_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Manueel" Id="{271cced8-6de0-4858-a432-19a84bbee774}" FolderPath="Methods\">
+    <Method Name="Manueel" Id="{ef0b7851-5c06-402a-b160-6a9f79924c73}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Manueel : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Manueel := TRUE;
-fb_mem.CS.Auto := FALSE;
-
 Manueel := fb_mem.STS.Manueel;]]></ST>
       </Implementation>
     </Method>
@@ -389,7 +383,9 @@ METHOD ZeroAllVar : BOOL
       </Implementation>
     </Method>
     <LineIds Name="EM_Can_Supply">
-      <LineId Id="349" Count="64" />
+      <LineId Id="349" Count="53" />
+      <LineId Id="594" Count="7" />
+      <LineId Id="413" Count="0" />
       <LineId Id="528" Count="0" />
       <LineId Id="527" Count="0" />
       <LineId Id="530" Count="1" />
@@ -443,8 +439,7 @@ METHOD ZeroAllVar : BOOL
     </LineIds>
     <LineIds Name="EM_Can_Supply.Auto">
       <LineId Id="5" Count="0" />
-      <LineId Id="9" Count="1" />
-      <LineId Id="6" Count="0" />
+      <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="EM_Can_Supply.Clear">
       <LineId Id="4" Count="0" />
@@ -469,8 +464,7 @@ METHOD ZeroAllVar : BOOL
     </LineIds>
     <LineIds Name="EM_Can_Supply.Manueel">
       <LineId Id="4" Count="0" />
-      <LineId Id="8" Count="1" />
-      <LineId Id="5" Count="0" />
+      <LineId Id="8" Count="0" />
     </LineIds>
     <LineIds Name="EM_Can_Supply.Reset">
       <LineId Id="4" Count="0" />

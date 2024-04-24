@@ -5,7 +5,6 @@
 VAR
 	bFirstCycleExecuted : BOOL := FALSE;
 	Unit : UNIT_Blikkenvullijn;
-	testPackML	: EM_Machine;
 //	Devices : FB_Devices;
 	
 	Start		: BOOL;
@@ -38,7 +37,6 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
 
 //*****************************UNIT*****************************//
 Unit();
-testPackML();
 
 //******************************CM******************************//
 //Devices();
@@ -57,53 +55,44 @@ testPackML();
 
 
 
-IF unit.Auto() THEN
+
     // Implement automatic mode logic
     IF Start THEN
         unit.start();
-        testPackML.start();
     END_IF
     
-    IF Stop THEN
-        unit.stop();
-        testPackML.stop();
-    END_IF
-    
-    IF Reset THEN
-        Unit.reset();
-        testPackML.reset();
-    END_IF
-    
-    IF Abort THEN
-        unit.abort();
-        testPackML.abort();
-    END_IF
-    
-    IF Clear THEN
-        unit.clear();
-        testPackML.clear();
-    END_IF
-    
-    IF UnSuspend THEN
-        unit.unsuspend();
-        testPackML.unsuspend();
-    END_IF
-    
-    IF Suspend THEN
-        unit.suspend();
-        testPackML.suspend();
-    END_IF
-    
-    IF UnHold THEN
-        unit.unhold();
-        testPackML.unhold();
-    END_IF
-    
-    IF Hold THEN
-        unit.hold();
-        testPackML.hold();
-    END_IF
+IF Stop THEN
+	unit.stop();
 END_IF
+
+IF Reset THEN
+	Unit.reset();
+END_IF
+
+IF Abort THEN
+	unit.abort();
+END_IF
+
+IF Clear THEN
+	unit.clear();
+END_IF
+
+IF UnSuspend THEN
+	unit.unsuspend();
+END_IF
+
+IF Suspend THEN
+	unit.suspend();
+END_IF
+
+IF UnHold THEN
+	unit.unhold();
+END_IF
+
+IF Hold THEN
+	unit.hold();
+END_IF
+
 
 
 ]]></ST>
@@ -117,7 +106,6 @@ END_IF
       <LineId Id="33" Count="0" />
       <LineId Id="32" Count="0" />
       <LineId Id="7" Count="0" />
-      <LineId Id="160" Count="0" />
       <LineId Id="35" Count="1" />
       <LineId Id="100" Count="0" />
       <LineId Id="49" Count="1" />
@@ -131,25 +119,7 @@ END_IF
       <LineId Id="162" Count="0" />
       <LineId Id="161" Count="0" />
       <LineId Id="67" Count="0" />
-      <LineId Id="101" Count="3" />
-      <LineId Id="169" Count="0" />
-      <LineId Id="105" Count="3" />
-      <LineId Id="170" Count="0" />
-      <LineId Id="109" Count="3" />
-      <LineId Id="171" Count="0" />
-      <LineId Id="113" Count="3" />
-      <LineId Id="172" Count="0" />
-      <LineId Id="117" Count="3" />
-      <LineId Id="173" Count="0" />
-      <LineId Id="121" Count="3" />
-      <LineId Id="174" Count="0" />
-      <LineId Id="125" Count="3" />
-      <LineId Id="175" Count="0" />
-      <LineId Id="129" Count="3" />
-      <LineId Id="176" Count="0" />
-      <LineId Id="133" Count="3" />
-      <LineId Id="177" Count="0" />
-      <LineId Id="137" Count="1" />
+      <LineId Id="101" Count="37" />
       <LineId Id="159" Count="0" />
       <LineId Id="78" Count="0" />
       <LineId Id="62" Count="0" />

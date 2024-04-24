@@ -42,16 +42,14 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Stopping_SC     := fb_mem.STS.Stopping_SC);
 
 //********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
+IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
 	fb_mem.STS.Auto := TRUE;
-	ELSE
-		fb_mem.STS.Auto := FALSE;
+	fb_mem.STS.Manueel := FALSE;
 END_IF
 
-IF fb_mem.CS.Manueel THEN
+IF fb_mem.CS.Manueel OR fb_mem.HMI.Manueel THEN
+	fb_mem.STS.Auto := FALSE;
 	fb_mem.STS.Manueel := TRUE;
-	ELSE
-		fb_mem.STS.Manueel := FALSE;
 END_IF
 
 //********************************Exeptionhandling***********************************
@@ -108,7 +106,6 @@ fb_mem.CS.Richting_L	:= FALSE;
 fb_mem.CS.Richting_R	:= FALSE;
 fb_mem.CS.Start			:= FALSE;
 fb_mem.CS.Stop			:= FALSE;
-fb_mem.CS.Toerental		:= 0;
 
 //Zero all HMI signals
 fb_mem.HMI.Auto			:= FALSE;
@@ -118,8 +115,7 @@ fb_mem.HMI.Reset		:= FALSE;
 fb_mem.HMI.Richting_L	:= FALSE;
 fb_mem.HMI.Richting_R	:= FALSE;
 fb_mem.HMI.Start		:= FALSE;
-fb_mem.HMI.Stop			:= FALSE;
-fb_mem.HMI.Toerental	:= 0;]]></ST>
+fb_mem.HMI.Stop			:= FALSE;]]></ST>
     </Implementation>
     <Folder Name="Methods" Id="{e48a4f7d-e56b-428a-aa1b-5b87c7c2d9fa}" />
     <Folder Name="Properties" Id="{bc8caceb-6cf9-4970-a7a5-33f216f9ab87}" />
@@ -320,7 +316,9 @@ Toerental := fb_mem.CS.Toerental;]]></ST>
       <LineId Id="113" Count="16" />
       <LineId Id="9" Count="0" />
       <LineId Id="27" Count="0" />
-      <LineId Id="61" Count="17" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="143" Count="7" />
+      <LineId Id="72" Count="6" />
       <LineId Id="131" Count="0" />
       <LineId Id="79" Count="23" />
       <LineId Id="133" Count="0" />
@@ -332,11 +330,10 @@ Toerental := fb_mem.CS.Toerental;]]></ST>
       <LineId Id="29" Count="5" />
       <LineId Id="39" Count="2" />
       <LineId Id="35" Count="0" />
-      <LineId Id="43" Count="1" />
+      <LineId Id="43" Count="0" />
       <LineId Id="42" Count="0" />
       <LineId Id="36" Count="0" />
       <LineId Id="45" Count="7" />
-      <LineId Id="26" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Abort">
       <LineId Id="4" Count="0" />

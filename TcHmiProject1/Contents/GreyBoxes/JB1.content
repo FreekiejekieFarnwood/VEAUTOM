@@ -4174,7 +4174,7 @@
                 "compare1": {
                   "objectType": "Symbol",
                   "valueType": "tchmi:general#/definitions/BOOL",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.fb_mem.HMI.Auto%/s%"
+                  "symbolExpression": "%s%PLC1.MAIN.Unit.fb_mem.STS.Auto%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
