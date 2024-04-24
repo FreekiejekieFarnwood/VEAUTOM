@@ -6,7 +6,7 @@
   "color": "rgba(255, 255, 255, 1)"
 }
 </script>
-<div id="TcHmiDatagrid" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="204" data-tchmi-height-unit="px" data-tchmi-left="67" data-tchmi-left-unit="px" data-tchmi-top="70" data-tchmi-top-unit="px" data-tchmi-width="1731" data-tchmi-width-unit="px" data-tchmi-src-data="%s%PLC1.MAIN.Unit.AlarmHandler.ErrorArray|BindingMode=TwoWay%/s%">
+<div id="TcHmiDatagrid" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="204" data-tchmi-height-unit="px" data-tchmi-left="66" data-tchmi-left-unit="px" data-tchmi-top="70" data-tchmi-top-unit="px" data-tchmi-width="1731" data-tchmi-width-unit="px" data-tchmi-src-data="%s%PLC1.MAIN.Unit.AlarmHandler.ErrorArray|BindingMode=TwoWay%/s%">
 <script data-tchmi-target-attribute="data-tchmi-src-column" type="application/json">
 [
   {
@@ -158,7 +158,5 @@
 }
 </script>
 
-</div>
-<div id="ShowAlarms" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiCheckbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="77" data-tchmi-left-unit="px" data-tchmi-text="Show error for demo" data-tchmi-top="824" data-tchmi-top-unit="px" data-tchmi-width="188" data-tchmi-width-unit="px" data-tchmi-toggle-state="Active">
 </div>
 </div>
