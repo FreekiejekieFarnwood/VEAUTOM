@@ -38,6 +38,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Hold            := fb_mem.CS.Hold,
 										Starting_SC     := fb_mem.STS.Starting_SC,
 										Execute_SC      := fb_mem.STS.Execute_SC,
+										Completing_SC	:= fb_mem.STS.Completing_SC,
 										Resetting_SC    := fb_mem.STS.Resetting_SC,
 										Holding_SC      := fb_mem.STS.Holding_SC,
 										Unholding_SC    := fb_mem.STS.Unholding_SC,
@@ -325,7 +326,9 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="59" Count="0" />
       <LineId Id="23" Count="0" />
       <LineId Id="123" Count="0" />
-      <LineId Id="24" Count="16" />
+      <LineId Id="24" Count="9" />
+      <LineId Id="163" Count="0" />
+      <LineId Id="34" Count="6" />
       <LineId Id="9" Count="0" />
       <LineId Id="73" Count="0" />
       <LineId Id="72" Count="0" />
