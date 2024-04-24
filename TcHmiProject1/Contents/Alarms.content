@@ -159,4 +159,6 @@
 </script>
 
 </div>
+<div id="ShowAlarms" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiCheckbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="77" data-tchmi-left-unit="px" data-tchmi-text="Show error for demo" data-tchmi-top="824" data-tchmi-top-unit="px" data-tchmi-width="188" data-tchmi-width-unit="px" data-tchmi-toggle-state="Active">
+</div>
 </div>

@@ -107,7 +107,7 @@ CASE fb_mem.STS.State OF
 			ValveDirection.Open();	//Richting_L naar filler 2
 			fb_mem.STS.Starting_SC := TRUE;
 		END_IF
-	E_State_PackML.EXECUTE 			: 
+	E_State_PackML.STOPPED			: // dit was execute
 		//Als Sen_A1_Far AND Sen_A1_Near AND !Sen_A2_Near THEN wissel naar A2 en vise versa
 		IF Sen_A1_Far.Output=TRUE AND Sen_A2_Far.Output=TRUE AND Sen_A1_Near.Output=TRUE AND Sen_A2_Near.Output=FALSE THEN
 			ValveDirection.Open();	//Richting_L naar filler 2 heet open
