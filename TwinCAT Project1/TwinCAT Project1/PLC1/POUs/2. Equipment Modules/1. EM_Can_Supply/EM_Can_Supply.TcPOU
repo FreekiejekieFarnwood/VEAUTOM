@@ -41,6 +41,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Hold            := fb_mem.CS.Hold,
 										Starting_SC     := fb_mem.STS.Starting_SC,
 										Execute_SC      := fb_mem.STS.Execute_SC,
+										Completing_SC	:= fb_mem.STS.Completing_SC,
 										Resetting_SC    := fb_mem.STS.Resetting_SC,
 										Holding_SC      := fb_mem.STS.Holding_SC,
 										Unholding_SC    := fb_mem.STS.Unholding_SC,
@@ -123,7 +124,12 @@ CASE fb_mem.STS.State OF
 		IF Sen_A1_Far.Output=FALSE THEN
 			ValveDirection.Close();		//Richting_L naar filler 1 heet close
 		END_IF
-		
+	E_State_PackML.COMPLETING		:
+		EM_Transport_Can_Supply1.Execute_SC();
+		EM_Transport_Can_Supply2.Execute_SC();
+		IF EM_Transport_Can_Supply1.State = E_State_PackML.COMPLETE AND EM_Transport_Can_Supply2.State = E_State_PackML.COMPLETE THEN
+			fb_mem.STS.Completing_SC := TRUE;
+		END_IF
 	E_State_PackML.COMPLETE 		:
 		fb_mem.STS.Completing_SC:=TRUE;
 		
@@ -430,7 +436,9 @@ METHOD ZeroAllVar : BOOL
       </Implementation>
     </Method>
     <LineIds Name="EM_Can_Supply">
-      <LineId Id="349" Count="53" />
+      <LineId Id="349" Count="24" />
+      <LineId Id="615" Count="0" />
+      <LineId Id="374" Count="28" />
       <LineId Id="594" Count="7" />
       <LineId Id="413" Count="0" />
       <LineId Id="528" Count="0" />
@@ -464,10 +472,8 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="557" Count="0" />
       <LineId Id="573" Count="0" />
       <LineId Id="556" Count="0" />
-      <LineId Id="695" Count="0" />
-      <LineId Id="628" Count="0" />
-      <LineId Id="618" Count="0" />
-      <LineId Id="691" Count="0" />
+      <LineId Id="432" Count="0" />
+      <LineId Id="507" Count="0" />
       <LineId Id="437" Count="0" />
       <LineId Id="621" Count="2" />
       <LineId Id="626" Count="0" />

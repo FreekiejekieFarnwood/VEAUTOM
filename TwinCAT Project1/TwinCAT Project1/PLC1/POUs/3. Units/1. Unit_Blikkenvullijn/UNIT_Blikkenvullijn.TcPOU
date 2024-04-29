@@ -59,6 +59,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Hold            := fb_mem.CS.Hold,
 										Starting_SC     := fb_mem.STS.Starting_SC,
 										Execute_SC      := fb_mem.STS.Execute_SC,
+										Completing_SC	:= fb_mem.STS.Completing_SC,
 										Resetting_SC    := fb_mem.STS.Resetting_SC,
 										Holding_SC      := fb_mem.STS.Holding_SC,
 										Unholding_SC    := fb_mem.STS.Unholding_SC,
@@ -505,7 +506,22 @@ CASE fb_mem.STS.State OF
 			EM_SealShrink.State 						= E_State_PackML.COMPLETE THEN
 		fb_mem.STS.Execute_SC := TRUE;
 		END_IF
-	
+	E_State_PackML.COMPLETING 		:
+		IF 	EM_Can_Supply.State 						= E_State_PackML.COMPLETE AND
+			EM_Filling.State 							= E_State_PackML.COMPLETE AND
+			EM_Infeed_CheckWeigher.State				= E_State_PackML.COMPLETE AND
+			EM_CheckWeigher.State 						= E_State_PackML.COMPLETE AND
+			EM_Transport_Checkweigher_BottomSeal.State	= E_State_PackML.COMPLETE AND
+			EM_BottomSeal.State							= E_State_PackML.COMPLETE AND
+			EM_Transport_BottomSeal_Labeller.State		= E_State_PackML.COMPLETE AND
+			EM_Labeller.State 							= E_State_PackML.COMPLETE AND
+			EM_TurningDevice.State						= E_State_PackML.COMPLETE AND
+			EM_Transport_TurningDevice_StampUnit.State	= E_State_PackML.COMPLETE AND
+			EM_StampUnit.State							= E_State_PackML.COMPLETE AND
+			EM_Transport_StampUnit_SealShrink.State		= E_State_PackML.COMPLETE AND
+			EM_SealShrink.State 						= E_State_PackML.COMPLETE THEN
+		fb_mem.STS.Completing_SC := TRUE;
+		END_IF
 	E_State_PackML.COMPLETE 		:
 		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
 			fb_mem.STS.Completing_SC := TRUE;
@@ -885,7 +901,9 @@ METHOD ZeroAllVar : BOOL
     <LineIds Name="UNIT_Blikkenvullijn">
       <LineId Id="33" Count="11" />
       <LineId Id="1109" Count="0" />
-      <LineId Id="1460" Count="19" />
+      <LineId Id="1460" Count="12" />
+      <LineId Id="2028" Count="0" />
+      <LineId Id="1473" Count="6" />
       <LineId Id="965" Count="0" />
       <LineId Id="1128" Count="0" />
       <LineId Id="1480" Count="0" />
@@ -1065,6 +1083,9 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="1937" Count="0" />
       <LineId Id="1950" Count="1" />
       <LineId Id="1551" Count="0" />
+      <LineId Id="2031" Count="11" />
+      <LineId Id="2030" Count="0" />
+      <LineId Id="2043" Count="1" />
       <LineId Id="114" Count="0" />
       <LineId Id="546" Count="0" />
       <LineId Id="548" Count="1" />

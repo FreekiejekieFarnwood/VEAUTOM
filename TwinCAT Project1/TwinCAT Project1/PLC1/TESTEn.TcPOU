@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="TESTEn" Id="{d47b6755-5237-4aad-95f3-208022e770fb}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK TESTEn
+VAR
+	State		: E_State_PackML;
+	Start		: BOOL;
+	Stop		: BOOL;
+	Reset		: BOOL;
+	Abort		: BOOL;
+	Clear		: BOOL;
+	UnSuspend	: BOOL;
+	Suspend		: BOOL;
+	UnHold		: BOOL;
+	Hold		: BOOL;
+	
+	Starting_SC 	: BOOL;
+	Execute_SC 		: BOOL;
+	Completing_SC	: BOOL;
+	Resetting_SC 	: BOOL;
+	Holding_SC 		: BOOL;
+	Unholding_SC 	: BOOL;
+	Suspending_SC	: BOOL;
+	Unsuspending_SC	: BOOL;
+	Aborting_SC		: BOOL;
+	Clearing_SC		: BOOL;
+	Stopping_SC		: BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[State := PackML_StateMachine(	State			:= State,
+								Start           := Start,
+								Stop            := Stop,
+								Reset           := Reset,
+								Abort           := Abort,
+								Clear           := Clear,
+								UnSuspend       := UnSuspend,
+								Suspend         := Suspend,
+								UnHold          := UnHold,
+								Hold            := Hold,
+								Starting_SC     := Starting_SC,
+								Execute_SC      := Execute_SC,
+								Completing_SC	:= Completing_SC,
+								Resetting_SC    := Resetting_SC,
+								Holding_SC      := Holding_SC,
+								Unholding_SC    := Unholding_SC,
+								Suspending_SC   := Suspending_SC,
+								Unsuspending_SC := Unsuspending_SC,
+								Aborting_SC     := Aborting_SC,
+								Clearing_SC     := Clearing_SC,
+								Stopping_SC     := Stopping_SC);]]></ST>
+    </Implementation>
+    <LineIds Name="TESTEn">
+      <LineId Id="12" Count="11" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="24" Count="6" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

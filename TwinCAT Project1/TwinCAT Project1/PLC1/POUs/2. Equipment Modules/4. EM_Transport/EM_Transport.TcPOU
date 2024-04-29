@@ -38,6 +38,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Hold            := fb_mem.CS.Hold,
 										Starting_SC     := fb_mem.STS.Starting_SC,
 										Execute_SC      := fb_mem.STS.Execute_SC,
+										Completing_SC	:= fb_mem.STS.Completing_SC,
 										Resetting_SC    := fb_mem.STS.Resetting_SC,
 										Holding_SC      := fb_mem.STS.Holding_SC,
 										Unholding_SC    := fb_mem.STS.Unholding_SC,
@@ -90,10 +91,11 @@ CASE fb_mem.STS.State OF
 		END_IF
 	E_State_PackML.EXECUTE 			: 
 		//Do nothing
+	E_State_PackML.COMPLETING		:
+		Motor.Stop();
+		fb_mem.STS.Completing_SC := TRUE;
 	E_State_PackML.COMPLETE 		:
-		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
-			fb_mem.STS.Completing_SC := TRUE;
-		END_IF
+		//Do nothing
 	E_State_PackML.RESETTING 		:
 		Motor.Reset();
 		IF Motor.State = E_State_PackML.IDLE THEN
@@ -131,11 +133,9 @@ CASE fb_mem.STS.State OF
 			fb_mem.STS.Aborting_SC 		:= TRUE;
 		END_IF
 	E_State_PackML.ABORTED			:		
-		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
-			Motor.Clear();
-		END_IF
 		//Do nothing
 	E_State_PackML.CLEARING 		:
+		Motor.Clear();
 		IF Motor.State = E_State_PackML.STOPPED THEN
 			fb_mem.STS.Clearing_SC 		:= TRUE;
 		END_IF
@@ -144,9 +144,7 @@ CASE fb_mem.STS.State OF
 			fb_mem.STS.Stopping_SC 		:= TRUE;
 		END_IF
 	E_State_PackML.STOPPED 			:
-		IF fb_mem.CS.Reset AND fb_mem.STS.Auto OR fb_mem.HMI.Reset AND fb_mem.STS.Manueel THEN
-			Motor.Reset();
-		END_IF;
+		//Do nothing
 END_CASE
 
 //********************************HMI_Connection***********************************
@@ -428,7 +426,9 @@ METHOD ZeroAllVar : BOOL
     </Method>
     <LineIds Name="EM_Transport">
       <LineId Id="15" Count="11" />
-      <LineId Id="515" Count="20" />
+      <LineId Id="515" Count="12" />
+      <LineId Id="624" Count="0" />
+      <LineId Id="528" Count="7" />
       <LineId Id="569" Count="0" />
       <LineId Id="565" Count="2" />
       <LineId Id="536" Count="16" />
@@ -444,9 +444,9 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="401" Count="0" />
       <LineId Id="595" Count="0" />
       <LineId Id="156" Count="0" />
+      <LineId Id="625" Count="2" />
       <LineId Id="173" Count="0" />
-      <LineId Id="570" Count="1" />
-      <LineId Id="174" Count="0" />
+      <LineId Id="629" Count="0" />
       <LineId Id="177" Count="0" />
       <LineId Id="572" Count="0" />
       <LineId Id="409" Count="0" />
@@ -477,19 +477,17 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="476" Count="1" />
       <LineId Id="474" Count="0" />
       <LineId Id="575" Count="0" />
-      <LineId Id="590" Count="0" />
-      <LineId Id="577" Count="0" />
-      <LineId Id="266" Count="0" />
       <LineId Id="436" Count="0" />
-      <LineId Id="442" Count="1" />
+      <LineId Id="442" Count="0" />
+      <LineId Id="630" Count="0" />
+      <LineId Id="443" Count="0" />
       <LineId Id="445" Count="0" />
       <LineId Id="299" Count="0" />
       <LineId Id="446" Count="1" />
       <LineId Id="449" Count="0" />
       <LineId Id="315" Count="0" />
       <LineId Id="340" Count="0" />
-      <LineId Id="397" Count="0" />
-      <LineId Id="592" Count="1" />
+      <LineId Id="593" Count="0" />
       <LineId Id="378" Count="0" />
       <LineId Id="113" Count="0" />
       <LineId Id="500" Count="14" />

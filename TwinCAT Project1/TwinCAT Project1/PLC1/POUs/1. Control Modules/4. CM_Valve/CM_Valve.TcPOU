@@ -32,6 +32,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Hold            := fb_mem.CS.Hold,
 										Starting_SC     := fb_mem.STS.Starting_SC,
 										Execute_SC      := fb_mem.STS.Execute_SC,
+										Completing_SC	:= fb_mem.STS.Completing_SC,
 										Resetting_SC    := fb_mem.STS.Resetting_SC,
 										Holding_SC      := fb_mem.STS.Holding_SC,
 										Unholding_SC    := fb_mem.STS.Unholding_SC,
@@ -62,6 +63,8 @@ CASE fb_mem.STS.State OF
 		fb_mem.STS.Starting_SC 		:= TRUE;
 	E_State_PackML.EXECUTE 			: 
 		//Do nothing
+	E_State_PackML.COMPLETING		:
+		fb_mem.STS.Completing_SC := TRUE;
 	E_State_PackML.COMPLETE 		:
 		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
 			fb_mem.STS.Completing_SC := TRUE;
@@ -279,14 +282,18 @@ END_VAR
       <LineId Id="112" Count="0" />
       <LineId Id="130" Count="0" />
       <LineId Id="138" Count="0" />
-      <LineId Id="113" Count="16" />
+      <LineId Id="113" Count="9" />
+      <LineId Id="155" Count="0" />
+      <LineId Id="123" Count="6" />
       <LineId Id="9" Count="0" />
       <LineId Id="27" Count="0" />
       <LineId Id="61" Count="0" />
       <LineId Id="143" Count="7" />
       <LineId Id="72" Count="6" />
       <LineId Id="131" Count="0" />
-      <LineId Id="79" Count="23" />
+      <LineId Id="79" Count="3" />
+      <LineId Id="156" Count="1" />
+      <LineId Id="83" Count="19" />
       <LineId Id="133" Count="0" />
       <LineId Id="104" Count="6" />
       <LineId Id="132" Count="0" />
