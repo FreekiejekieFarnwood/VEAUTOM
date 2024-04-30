@@ -4316,7 +4316,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiStateImage_148" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="973" data-tchmi-left-unit="px" data-tchmi-top="242" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Can_Supply.Sen_A2_Far.fb_mem.STS.Output%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
+<div id="TcHmiStateImage_148" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="973" data-tchmi-left-unit="px" data-tchmi-top="242" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Can_Supply.Sen_A1_Far.fb_mem.STS.Output%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
@@ -4344,8 +4344,8 @@
               {
                 "compare1": {
                   "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Can_Supply.Sen_A2_Far.fb_mem.STS.Output%/s%"
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Can_Supply.Sen_A1_Far.fb_mem.STS.Output%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
@@ -4363,7 +4363,7 @@
                 "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Can_Supply.Sen_A1_Far.fb_mem.STS.Output%/s%",
                 "value": {
                   "objectType": "StaticValue",
-                  "valueType": "tchmi:general#/definitions/String",
+                  "valueType": "tchmi:general#/definitions/BOOL",
                   "value": true
                 },
                 "asyncWait": true
@@ -4378,7 +4378,7 @@
                 "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Can_Supply.Sen_A1_Far.fb_mem.STS.Output%/s%",
                 "value": {
                   "objectType": "StaticValue",
-                  "valueType": "tchmi:general#/definitions/String",
+                  "valueType": "tchmi:general#/definitions/BOOL",
                   "value": false
                 },
                 "asyncWait": true
@@ -4393,7 +4393,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiStateImage_149" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1230" data-tchmi-left-unit="px" data-tchmi-top="242" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
+<div id="TcHmiStateImage_149" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1230" data-tchmi-left-unit="px" data-tchmi-top="242" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Can_Supply.Sen_A2_Far.fb_mem.STS.Output%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
@@ -4470,7 +4470,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiStateImage_150" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1156" data-tchmi-left-unit="px" data-tchmi-top="339" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.HMI_Connection.Test5%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
+<div id="TcHmiStateImage_150" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1156" data-tchmi-left-unit="px" data-tchmi-top="339" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Can_Supply.Sen_A2_Near.fb_mem.STS.Output%/s%" data-tchmi-zindex="17" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
@@ -4498,13 +4498,13 @@
               {
                 "compare1": {
                   "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "valueType": "tchmi:general#/definitions/String",
                   "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Can_Supply.Sen_A2_Near.fb_mem.STS.Output%/s%"
                 },
                 "compare2": {
                   "objectType": "StaticValue",
                   "valueType": "tchmi:general#/definitions/BOOL",
-                  "value": false
+                  "value": "False"
                 },
                 "compareOperator": "==",
                 "logic": null
