@@ -2,9 +2,9 @@
 <TcLicenseInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2011/11/TcLicenseInfo">
 	<LicenseInfo>
 		<SystemId>{4A79446E-4B75-F2F6-49A0-C180887284A6}</SystemId>
-		<IssueTime>2024-04-19T14:35:00</IssueTime>
-		<ExpireTime>2024-04-27T00:00:00</ExpireTime>
-		<LicenseKey>f54d7baef746203fce4b8ded5e69253f4552339befad2c97d874228f7a0cd95f29183a1e00176f1fb68461aed1e3f990bc672435e6a83b0c8a37e2f1fd4abe7c9006d0807ab19585ed34f9100c94ae5b0d8e2761a7557d8063a08c8cf8c30a93226346f9bd1fee24cd83a5e8520e7198203d459621bb92652745d14dfd6148da595adff4def80a75d66f24e5ef026f13e029a60ff36dd05e9178ae69be2a3c7e38ff688607153b8ddae2aaa4120e41918fe0a40f9220c342a6682cf2fa27b19082a9f5ee0ef2741d5411c074c090fc94ca61d05585f44ed05f6425a9ec37953a3dfcf54d8a588500d205eb49b115a836257c8e70e3ac19a71d93ea4073d9c0c0</LicenseKey>
+		<IssueTime>2024-05-07T11:01:00</IssueTime>
+		<ExpireTime>2024-05-15T00:00:00</ExpireTime>
+		<LicenseKey>c7a24ca18302ddc07fd60ec7fe63b01744e849798bc1b763bf9aba6fdd035aac5184a6c17c88bca277b069846810d186418a900ed4e6ec2a824be2af5cc17be276c0e471eb1bd4301428878822a7e1a4be2288322720e4765e1bd6382f9e219d08fc703c418125cafe76df16c754430548ce7156a8b54d3bcc41084c7438f29b183977652d6484ca73bc90d8dc9df7a77c8256802529663f7a5295c595411715b7444f8571b9a1dfb419f4cb66fe9f3a6ae558a7cec3bf4aa0505a68fbd900df5fe8aff9660631fa665de87a22219fae8dfda5fd80a0c29188c4fe1beab673875f85346baf180a114044dd59d406f37f5f9cd4fe66681968a368e1b99e070256</LicenseKey>
 		<License>
 			<LicenseId>{4C256767-E6E6-4AF5-BD68-9F7ABAD0C200}</LicenseId>
 			<Name>TC3 ADS</Name>
@@ -19,6 +19,16 @@
 			<LicenseId>{66689887-CCBD-452C-AC9A-039D997C6E66}</LicenseId>
 			<Name>TC3 PLC</Name>
 			<OrderNo>TC1200</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{6952449D-F68C-49A2-ADE4-8639D85B33A4}</LicenseId>
+			<Name>TC3 Modbus-TCP</Name>
+			<OrderNo>TF6250</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{A1AF8A04-C08D-4853-A5A0-0E6C3A278A8C}</LicenseId>
+			<Name>TC3 Modbus-RTU</Name>
+			<OrderNo>TF6255</OrderNo>
 		</License>
 	</LicenseInfo>
 </TcLicenseInfo>
