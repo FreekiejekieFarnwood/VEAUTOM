@@ -35,7 +35,7 @@
 
 
 </div>
-<div id="TcHmi_Controls_Beckhoff_TcHmiImage_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="80" data-tchmi-height-unit="px" data-tchmi-left="270" data-tchmi-left-unit="px" data-tchmi-src="Images/INDAUT/Banner/icons8-home-100.png" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-zindex="21">
+<div id="TcHmi_Controls_Beckhoff_TcHmiImage_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="80" data-tchmi-height-unit="px" data-tchmi-left="271" data-tchmi-left-unit="px" data-tchmi-src="Images/INDAUT/Banner/icons8-home-100.png" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-zindex="21">
 
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [

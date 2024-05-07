@@ -2902,6 +2902,91 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.EM_Can_Supply.Sen_A1_Far.fb_mem.STS.Output": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Can_Supply::Sen_A1_Far::fb_mem::STS::Output",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Can_Supply.Sen_A1_Near.fb_mem.STS.Output": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Can_Supply::Sen_A1_Near::fb_mem::STS::Output",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Can_Supply.Sen_A2_Far.fb_mem.STS.Output": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Can_Supply::Sen_A2_Far::fb_mem::STS::Output",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Can_Supply.Sen_A2_Near.fb_mem.STS.Output": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Can_Supply::Sen_A2_Near::fb_mem::STS::Output",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Can_Supply.ValveDirection.fb_mem.STS.Close": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Can_Supply::ValveDirection::fb_mem::STS::Close",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 7
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.State": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -4282,6 +4367,11 @@
                 "PLC1.MAIN.Unit.AlarmHandler.ShowAlarms": 3,
                 "PLC1.MAIN.Unit.EM_BottomSeal.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.Motor.fb_mem.HMI.Toerental": 3,
+                "PLC1.MAIN.Unit.EM_Can_Supply.Sen_A1_Far.fb_mem.STS.Output": 3,
+                "PLC1.MAIN.Unit.EM_Can_Supply.Sen_A1_Near.fb_mem.STS.Output": 3,
+                "PLC1.MAIN.Unit.EM_Can_Supply.Sen_A2_Far.fb_mem.STS.Output": 3,
+                "PLC1.MAIN.Unit.EM_Can_Supply.Sen_A2_Near.fb_mem.STS.Output": 3,
+                "PLC1.MAIN.Unit.EM_Can_Supply.ValveDirection.fb_mem.STS.Close": 3,
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState": 3,
