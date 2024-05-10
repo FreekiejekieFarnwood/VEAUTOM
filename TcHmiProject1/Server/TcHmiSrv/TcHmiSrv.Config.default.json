@@ -46,6 +46,9 @@
             "startOffset": 1,
             "type": "array"
         },
+        "PLC1.CM_Motor_PAR": {
+            "type": "object"
+        },
         "PLC1.DUT_Main": {
             "attributes": {
                 "generate_implicit_init_function": ""
@@ -110,10 +113,12 @@
             "attributes": {
                 "generate_implicit_init_function": "",
                 "qualified_only": "",
-                "strict": ""
+                "strict": "",
+                "to_string": "",
+                "to_string_function": "__TO_STRING__141",
+                "to_wstring_function": "__TO_WSTRING__141"
             },
             "enum": [
-                0,
                 1,
                 2,
                 3,
@@ -129,76 +134,77 @@
                 13,
                 14,
                 15,
-                16
+                16,
+                17
             ],
             "options": [
                 {
-                    "label": "IDLE",
-                    "value": 0
-                },
-                {
-                    "label": "STARTING",
+                    "label": "STOPPED",
                     "value": 1
                 },
                 {
-                    "label": "EXECUTE",
+                    "label": "IDLE",
                     "value": 2
                 },
                 {
-                    "label": "COMPLETING",
+                    "label": "STARTING",
                     "value": 3
                 },
                 {
-                    "label": "COMPLETE",
+                    "label": "EXECUTE",
                     "value": 4
                 },
                 {
-                    "label": "RESETTING",
+                    "label": "COMPLETING",
                     "value": 5
                 },
                 {
-                    "label": "HOLDING",
+                    "label": "COMPLETE",
                     "value": 6
                 },
                 {
-                    "label": "HELD",
+                    "label": "RESETTING",
                     "value": 7
                 },
                 {
-                    "label": "UNHOLDING",
+                    "label": "HOLDING",
                     "value": 8
                 },
                 {
-                    "label": "SUSPENDING",
+                    "label": "HELD",
                     "value": 9
                 },
                 {
-                    "label": "SUSPENDED",
+                    "label": "UNHOLDING",
                     "value": 10
                 },
                 {
-                    "label": "UNSUSPENDING",
+                    "label": "SUSPENDING",
                     "value": 11
                 },
                 {
-                    "label": "ABORTING",
+                    "label": "SUSPENDED",
                     "value": 12
                 },
                 {
-                    "label": "ABORTED",
+                    "label": "UNSUSPENDING",
                     "value": 13
                 },
                 {
-                    "label": "CLEARING",
+                    "label": "ABORTING",
                     "value": 14
                 },
                 {
-                    "label": "STOPPING",
+                    "label": "ABORTED",
                     "value": 15
                 },
                 {
-                    "label": "STOPPED",
+                    "label": "CLEARING",
                     "value": 16
+                },
+                {
+                    "label": "STOPPING",
+                    "value": 17
                 }
             ],
             "type": "integer"
@@ -3055,6 +3061,23 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.STS.State": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Infeed_CheckWeigher::Motor::fb_mem::STS::State",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/PLC1.E_State_PackML"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Unit.EM_Labeller.fb_mem.STS.StringState": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3157,6 +3180,23 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.Tag": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Transport_BottomSeal_Labeller::fb_mem::STS::Tag",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Motor.fb_mem.CS.Toerental": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3169,6 +3209,23 @@
                     },
                     {
                         "propertyOrder": 12
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Motor.fb_mem.STS.State": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Transport_Checkweigher_BottomSeal::Motor::fb_mem::STS::State",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/PLC1.E_State_PackML"
+                    },
+                    {
+                        "propertyOrder": 2
                     }
                 ]
             },
@@ -3220,6 +3277,23 @@
                     },
                     {
                         "propertyOrder": 12
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.Motor.fb_mem.PAR": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Transport_StampUnit_SealShrink::Motor::fb_mem::PAR",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/PLC1.CM_Motor_PAR"
+                    },
+                    {
+                        "propertyOrder": 6
                     }
                 ]
             },
@@ -4376,16 +4450,20 @@
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.CS.Toerental": 3,
+                "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_Labeller.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_SealShrink.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_StampUnit.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.Motor.fb_mem.CS.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.Motor.fb_mem.HMI.Start": 3,
                 "PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.Sensor.fb_mem.STS.Output": 3,
+                "PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.Tag": 3,
                 "PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Motor.fb_mem.CS.Toerental": 3,
+                "PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Motor.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Sensor.fb_mem.STS.Output": 3,
                 "PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.Motor.fb_mem.CS.Toerental": 3,
+                "PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.Motor.fb_mem.PAR": 3,
                 "PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.Sensor.fb_mem.STS.Output": 3,
                 "PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.Motor.fb_mem.CS.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.StringState": 3,
