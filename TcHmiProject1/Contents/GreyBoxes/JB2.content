@@ -154,7 +154,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_137" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="641" data-tchmi-left-unit="px" data-tchmi-text="%s%PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.CS.Toerental%/s%" data-tchmi-top="200" data-tchmi-top-unit="px" data-tchmi-width="40" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="10">
+<div id="TcHmiTextblock_137" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="641" data-tchmi-left-unit="px" data-tchmi-text="%s%PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.STS.Toerental%/s%" data-tchmi-top="200" data-tchmi-top-unit="px" data-tchmi-width="40" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="10">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,
@@ -177,15 +177,15 @@
 }
 </script>
 </div>
-<div id="TcHmiStateImage_46" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1078" data-tchmi-left-unit="px" data-tchmi-top="125" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Sensor.fb_mem.STS.Output%/s%" data-tchmi-zindex="10" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
+<div id="TcHmiStateImage_46" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1077" data-tchmi-left-unit="px" data-tchmi-top="125" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Sensor.fb_mem.STS.Output%/s%" data-tchmi-zindex="10" data-tchmi-is-enabled="true" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/sensor aan.svg">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": true,
+    "state": false,
     "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
   },
   {
-    "state": false,
+    "state": true,
     "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
   }
 ]
@@ -339,7 +339,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_142" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1220" data-tchmi-left-unit="px" data-tchmi-text="%s%PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Motor.fb_mem.CS.Toerental%/s%" data-tchmi-top="200" data-tchmi-top-unit="px" data-tchmi-width="40" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="10">
+<div id="TcHmiTextblock_142" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1220" data-tchmi-left-unit="px" data-tchmi-text="%s%PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Motor.fb_mem.STS.Toerental%/s%" data-tchmi-top="200" data-tchmi-top-unit="px" data-tchmi-width="40" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="10">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,

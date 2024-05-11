@@ -72,7 +72,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiTextblock_158" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1743" data-tchmi-left-unit="px" data-tchmi-text="%s%PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.CS.Toerental%/s%" data-tchmi-top="255" data-tchmi-top-unit="px" data-tchmi-width="40" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="36">
+<div id="TcHmiTextblock_158" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1743" data-tchmi-left-unit="px" data-tchmi-text="%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.Motor.fb_mem.STS.Toerental%/s%" data-tchmi-top="255" data-tchmi-top-unit="px" data-tchmi-width="40" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="36">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,
@@ -156,11 +156,11 @@
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": true,
+    "state": false,
     "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
   },
   {
-    "state": false,
+    "state": true,
     "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
   }
 ]
@@ -327,15 +327,15 @@
 }
 </script>
 </div>
-<div id="TcHmiStateImage_61" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="878" data-tchmi-left-unit="px" data-tchmi-top="330" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Sensor.fb_mem.STS.Output%/s%" data-tchmi-zindex="36" data-tchmi-is-enabled="true">
+<div id="TcHmiStateImage_61" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="878" data-tchmi-left-unit="px" data-tchmi-top="330" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.Sensor.fb_mem.STS.Output%/s%" data-tchmi-zindex="36" data-tchmi-is-enabled="true">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": true,
+    "state": false,
     "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
   },
   {
-    "state": false,
+    "state": true,
     "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
   }
 ]
@@ -345,11 +345,11 @@
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": true,
+    "state": false,
     "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
   },
   {
-    "state": false,
+    "state": true,
     "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
   }
 ]
@@ -5092,15 +5092,15 @@
 </div>
 <div id="TcHmiTextblock_318" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1164" data-tchmi-left-unit="px" data-tchmi-text="ConveyerT7_Detect" data-tchmi-top="330" data-tchmi-top-unit="px" data-tchmi-width="118" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-zindex="28">
 </div>
-<div id="TcHmiStateImage_163" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1282" data-tchmi-left-unit="px" data-tchmi-top="330" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Sensor.fb_mem.STS.Output%/s%" data-tchmi-zindex="36" data-tchmi-is-enabled="true">
+<div id="TcHmiStateImage_163" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1282" data-tchmi-left-unit="px" data-tchmi-top="330" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.Sensor.fb_mem.STS.Output%/s%" data-tchmi-zindex="36" data-tchmi-is-enabled="true">
 <script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
 [
   {
-    "state": true,
+    "state": false,
     "stateIcon": "Images/INDAUT/Actuatoren/sensor aan.svg"
   },
   {
-    "state": false,
+    "state": true,
     "stateIcon": "Images/INDAUT/Actuatoren/sensor uit.svg"
   }
 ]
