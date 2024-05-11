@@ -5,7 +5,6 @@
 VAR
 	bFirstCycleExecuted : BOOL := FALSE;
 	Unit : UNIT_Blikkenvullijn;
-	Test : TESTEn;
 //	Devices : FB_Devices;
 	
 	Start		: BOOL;
@@ -38,22 +37,17 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
 
 //*****************************UNIT*****************************//
 Unit();
-Test();
 
 //******************************CM******************************//
 //Devices();
 
 
-//IF NOT bFirstCycleExecuted THEN
-//	//Unit
-//	Unit.FB_init(0,0);
-//	unit.Auto();
-//	//PackML
-//	testPackML.FB_init(0,0);
-//	testPackML.Auto();
-//	
-//	bFirstCycleExecuted := TRUE;
-//END_IF
+IF NOT bFirstCycleExecuted THEN
+	//Unit
+	Unit.FB_init(0,0);
+	unit.Auto();	
+	bFirstCycleExecuted := TRUE;
+END_IF
 
 
 
@@ -123,7 +117,6 @@ END_IF]]></ST>
       <LineId Id="33" Count="0" />
       <LineId Id="32" Count="0" />
       <LineId Id="7" Count="0" />
-      <LineId Id="289" Count="0" />
       <LineId Id="35" Count="1" />
       <LineId Id="100" Count="0" />
       <LineId Id="49" Count="1" />
@@ -131,8 +124,7 @@ END_IF]]></ST>
       <LineId Id="167" Count="0" />
       <LineId Id="52" Count="0" />
       <LineId Id="139" Count="0" />
-      <LineId Id="168" Count="0" />
-      <LineId Id="163" Count="3" />
+      <LineId Id="166" Count="0" />
       <LineId Id="53" Count="0" />
       <LineId Id="162" Count="0" />
       <LineId Id="161" Count="0" />

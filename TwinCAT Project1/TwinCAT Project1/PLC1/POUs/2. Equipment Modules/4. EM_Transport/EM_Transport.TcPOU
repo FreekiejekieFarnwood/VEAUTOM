@@ -5,6 +5,7 @@
 
 VAR
 	fb_mem : STRUCT_EM_Transport;
+	bFirstCycleExecuted	: BOOL;
 	
 	Motor		: CM_Motor;
 	Sensor		: CM_Sensor;
@@ -52,9 +53,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 Motor();
 Sensor();			
 										
-//********************************ZEROING***********************************								
-fb_mem.STS.Auto 			:= FALSE;
-fb_mem.STS.Manueel 			:= FALSE;
+//********************************ZEROING***********************************
 fb_mem.STS.Starting_SC 		:= FALSE;
 fb_mem.STS.Execute_SC 		:= FALSE;
 fb_mem.STS.Resetting_SC 	:= FALSE;
@@ -68,6 +67,12 @@ fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
 
 //********************************Auto manual logic***********************************
+IF NOT bFirstCycleExecuted THEN
+	Motor.Auto := TRUE;
+	Sensor.Auto := TRUE;
+	bFirstCycleExecuted := TRUE;
+END_IF
+
 IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
 	fb_mem.STS.Auto := TRUE;
 	fb_mem.STS.Manueel := FALSE;
@@ -431,7 +436,13 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="528" Count="7" />
       <LineId Id="569" Count="0" />
       <LineId Id="565" Count="2" />
-      <LineId Id="536" Count="16" />
+      <LineId Id="536" Count="0" />
+      <LineId Id="539" Count="12" />
+      <LineId Id="660" Count="1" />
+      <LineId Id="675" Count="0" />
+      <LineId Id="678" Count="0" />
+      <LineId Id="676" Count="1" />
+      <LineId Id="552" Count="0" />
       <LineId Id="606" Count="7" />
       <LineId Id="66" Count="0" />
       <LineId Id="95" Count="2" />

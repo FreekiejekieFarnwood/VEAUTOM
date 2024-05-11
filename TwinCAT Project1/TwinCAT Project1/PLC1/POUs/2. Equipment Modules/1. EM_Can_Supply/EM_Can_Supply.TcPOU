@@ -4,6 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK EM_Can_Supply IMPLEMENTS ITF_Can_Supply, ITF_PackML
 VAR
 	fb_mem : STRUCT_EM_CanSupply;
+	bFirstCycleExecuted : BOOL;
 	
 	//SubModules
 	EM_Transport_Can_Supply1		: EM_Transport_Mechanische_Stop;
@@ -46,8 +47,6 @@ EM_Transport_Can_Supply1();
 EM_Transport_Can_Supply2();			
 										
 //********************************ZEROING***********************************								
-fb_mem.STS.Auto 			:= FALSE;
-fb_mem.STS.Manueel 			:= FALSE;
 fb_mem.STS.Starting_SC 		:= FALSE;
 fb_mem.STS.Execute_SC 		:= FALSE;
 fb_mem.STS.Resetting_SC 	:= FALSE;
@@ -61,6 +60,13 @@ fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
 
 //********************************Auto manual logic***********************************
+IF NOT bFirstCycleExecuted THEN
+	EM_Transport_Can_Supply1.Auto();
+	EM_Transport_Can_Supply2.Auto();
+	ValveDirection.Auto := TRUE;
+	bFirstCycleExecuted := TRUE;
+END_IF
+
 IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
 	fb_mem.STS.Auto := TRUE;
 	fb_mem.STS.Manueel := FALSE;
@@ -429,7 +435,14 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="349" Count="0" />
       <LineId Id="360" Count="13" />
       <LineId Id="615" Count="0" />
-      <LineId Id="374" Count="28" />
+      <LineId Id="374" Count="13" />
+      <LineId Id="390" Count="12" />
+      <LineId Id="731" Count="1" />
+      <LineId Id="727" Count="0" />
+      <LineId Id="733" Count="0" />
+      <LineId Id="728" Count="0" />
+      <LineId Id="722" Count="0" />
+      <LineId Id="729" Count="0" />
       <LineId Id="594" Count="7" />
       <LineId Id="413" Count="0" />
       <LineId Id="528" Count="0" />

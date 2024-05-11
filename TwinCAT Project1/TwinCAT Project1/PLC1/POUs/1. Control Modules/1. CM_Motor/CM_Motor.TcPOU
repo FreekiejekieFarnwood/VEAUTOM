@@ -53,6 +53,10 @@ IF fb_mem.CS.Manueel OR fb_mem.HMI.Manueel THEN
 	fb_mem.STS.Manueel := TRUE;
 END_IF
 
+//********************************Toerental***********************************
+
+fb_mem.STS.Toerental := fb_mem.CS.Toerental;
+
 //********************************Exeptionhandling***********************************
 
 //********************************Action case***********************************
@@ -308,7 +312,7 @@ METHOD Toerental : INT
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Toerental := Toerental;
 
-Toerental := fb_mem.CS.Toerental;]]></ST>
+Toerental := fb_mem.STS.Toerental;]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="CM_Motor">
@@ -323,7 +327,12 @@ Toerental := fb_mem.CS.Toerental;]]></ST>
       <LineId Id="27" Count="0" />
       <LineId Id="61" Count="0" />
       <LineId Id="143" Count="7" />
-      <LineId Id="72" Count="6" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="165" Count="0" />
+      <LineId Id="164" Count="0" />
+      <LineId Id="163" Count="0" />
+      <LineId Id="162" Count="0" />
+      <LineId Id="73" Count="5" />
       <LineId Id="131" Count="0" />
       <LineId Id="79" Count="3" />
       <LineId Id="156" Count="1" />
