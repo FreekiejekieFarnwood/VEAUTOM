@@ -4,15 +4,15 @@
     <Declaration><![CDATA[FUNCTION_BLOCK UNIT_Blikkenvullijn IMPLEMENTS  ITF_UNIT_Blikkenvullijn, ITF_PackMLV2
 VAR
 	fb_mem									: STRUCT_UNIT_Blikkenvullijn;
-	//PackML									: PackML_StateMachine;
+	bFirstCycleExecuted						: BOOL;
 	
 	//Custom logic
 	EM_Can_Supply 							: EM_Can_Supply;	//To be programmed
+	EM_Filling								: EM_Filling;		//To be tested
 	CM_TurningDevice						: CM_Motor;			//To be programmed
 	CM_Outfeed_ProductionLineSensor			: CM_Sensor;		//To be Tested
 	
 	//PackML machine's
-	EM_Filling								: EM_Machine;		//Tested
 	EM_CheckWeigher							: EM_Machine;		//Tested
 	EM_BottomSeal							: EM_Machine;		//Tested
 	EM_Labeller								: EM_Machine;		//Tested
@@ -21,10 +21,10 @@ VAR
 	EM_SealShrink							: EM_Machine;		//Tested
 	
 	//Transport logic
-	EM_Infeed_CheckWeigher					: EM_Transport;								//To be tested
+	EM_Infeed_CheckWeigher					: EM_Transport;			//To be tested
 	EM_Transport_Checkweigher_BottomSeal	: EM_Transport;			//To be tested
 	EM_Transport_BottomSeal_Labeller		: EM_Transport;			//To be tested
-	EM_Transport_TurningDevice_StampUnit	: EM_Transport;								//To be tested
+	EM_Transport_TurningDevice_StampUnit	: EM_Transport;			//To be tested
 	EM_Transport_StampUnit_SealShrink		: EM_Transport;			//To be tested
 	
 	//Management Logic
@@ -124,6 +124,24 @@ EM_Transport_TurningDevice_StampUnit();
 EM_Transport_StampUnit_SealShrink();
 
 //********************************Auto manual logic***********************************
+IF NOT bFirstCycleExecuted THEN
+	EM_Can_Supply.Auto();
+	//CM_Outfeed_ProductionLineSensor.Auto();
+	EM_Filling.Auto();
+	EM_CheckWeigher.Auto();
+	EM_BottomSeal.Auto();
+	EM_Labeller.Auto();
+	EM_TurningDevice.Auto();
+	EM_StampUnit.Auto();
+	EM_SealShrink.Auto();
+	EM_Infeed_CheckWeigher.Auto();
+	EM_Transport_Checkweigher_BottomSeal.Auto();
+	EM_Transport_BottomSeal_Labeller.Auto();
+	EM_Transport_TurningDevice_StampUnit.Auto();
+	EM_Transport_StampUnit_SealShrink.Auto();	
+	bFirstCycleExecuted := TRUE;
+END_IF
+
 IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
 	fb_mem.STS.Auto := TRUE;
 	fb_mem.STS.Manueel := FALSE;
@@ -939,7 +957,13 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="1866" Count="3" />
       <LineId Id="914" Count="0" />
       <LineId Id="1870" Count="0" />
-      <LineId Id="812" Count="2" />
+      <LineId Id="812" Count="0" />
+      <LineId Id="2077" Count="0" />
+      <LineId Id="2084" Count="12" />
+      <LineId Id="2083" Count="0" />
+      <LineId Id="2081" Count="1" />
+      <LineId Id="2076" Count="0" />
+      <LineId Id="813" Count="1" />
       <LineId Id="816" Count="3" />
       <LineId Id="1906" Count="0" />
       <LineId Id="822" Count="0" />

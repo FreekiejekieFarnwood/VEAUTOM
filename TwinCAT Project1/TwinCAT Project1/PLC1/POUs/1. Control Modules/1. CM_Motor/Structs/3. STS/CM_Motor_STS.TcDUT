@@ -10,6 +10,7 @@ STRUCT
 	Richting_R		: BOOL;
 	Auto			: BOOL;
 	Manueel			: BOOL;
+	Toerental 		: INT;
 	
 	Starting_SC		: BOOL;
 	Execute_SC		: BOOL;

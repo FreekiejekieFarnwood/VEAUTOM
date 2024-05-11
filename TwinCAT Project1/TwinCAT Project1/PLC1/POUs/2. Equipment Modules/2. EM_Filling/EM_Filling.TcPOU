@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="EM_Filling" Id="{63eb49f5-59e7-4030-85dd-f42cd0c3af32}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK EM_Filling IMPLEMENTS ITF_Filling, ITF_PackMLV2
+    <Declaration><![CDATA[FUNCTION_BLOCK EM_Filling IMPLEMENTS ITF_PackML
 VAR
 	fb_mem : STRUCT_EM_Filling;
+	bFirstCycleExecuted : BOOL;
 	
 	//Submodules
 	EM_FillerA1				: EM_Machine;
@@ -47,6 +48,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Unsuspending_SC := fb_mem.STS.Unsuspending_SC,
 										Aborting_SC     := fb_mem.STS.Aborting_SC,
 										Clearing_SC     := fb_mem.STS.Clearing_SC,
+										Completing_SC	:= fb_mem.STS.Completing_SC,
 										Stopping_SC     := fb_mem.STS.Stopping_SC);
 
 //********************************Init***********************************
@@ -55,9 +57,7 @@ EM_FillerA2();
 EM_TransportFillers();
 EM_OutfeedFillers();	
 										
-//********************************ZEROING***********************************								
-fb_mem.STS.Auto 			:= FALSE;
-fb_mem.STS.Manueel 			:= FALSE;
+//********************************ZEROING***********************************
 fb_mem.STS.Starting_SC 		:= FALSE;
 fb_mem.STS.Execute_SC 		:= FALSE;
 fb_mem.STS.Resetting_SC 	:= FALSE;
@@ -71,6 +71,14 @@ fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
 
 //********************************Auto manual logic***********************************
+IF NOT bFirstCycleExecuted THEN
+	EM_FillerA1.Auto();
+	EM_FillerA2.Auto();
+	EM_TransportFillers.Auto();
+	EM_OutfeedFillers.Auto();
+	bFirstCycleExecuted := TRUE;
+END_IF
+
 IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
 	fb_mem.STS.Auto := TRUE;
 	fb_mem.STS.Manueel := FALSE;
@@ -102,7 +110,7 @@ CASE fb_mem.STS.State OF
 		END_IF
 	E_State_PackML.EXECUTE 			: 
 		// MAIN LOGIC:
-		IF 
+
 		
 	E_State_PackML.COMPLETE 		:
 		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
@@ -219,25 +227,26 @@ fb_mem.CS.Suspend         := FALSE;
 fb_mem.CS.UnHold          := FALSE;
 fb_mem.CS.Hold            := FALSE;]]></ST>
     </Implementation>
-    <Folder Name="Methods" Id="{2cb65f53-063c-49d4-843d-6674455a915e}" />
-    <Folder Name="Properties" Id="{ebdc75e3-7fe1-4b65-b735-6af8f98fcfd8}" />
-    <Method Name="Abort" Id="{707c684c-3abf-48d3-9960-e1576f70a644}" FolderPath="Methods\">
+    <Folder Name="Methods" Id="{0b1e0426-3e87-45b9-be2a-c3e65703943c}" />
+    <Folder Name="Properties" Id="{eca8ff42-6510-4750-8c8d-f31adc143342}" />
+    <Method Name="Abort" Id="{de576d48-1580-4ef1-851c-8690248a838b}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Abort : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Abort := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Aborting_SC" Id="{1e1aeac9-fc4f-402c-8059-38a2ea263e08}" FolderPath="Methods\">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD Aborting_SC : BOOL
+    <Method Name="Aborting_SC" Id="{ec11ac36-ff47-4fa6-a336-ad04ccd23777}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Aborting_SC : BOOL
+VAR_INPUT
+END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.STS.Aborting_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Auto" Id="{78977318-4f1e-4251-9132-f8f0ef8fa8ef}" FolderPath="Methods\">
+    <Method Name="Auto" Id="{1f399241-baee-4f3d-8f4f-1686032e618d}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Auto : BOOL
 ]]></Declaration>
@@ -246,68 +255,71 @@ METHOD Auto : BOOL
 Auto := fb_mem.STS.Auto;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Clear" Id="{846080eb-5f58-436b-8b0b-2d9787f9b143}" FolderPath="Methods\">
+    <Method Name="Clear" Id="{4ec69a50-a207-4aa6-af82-b9c5406ad417}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Clear : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Clear := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Clearing_SC" Id="{23411263-4da2-4930-ae46-99794c66a416}" FolderPath="Methods\">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD Clearing_SC : BOOL
+    <Method Name="Clearing_SC" Id="{37515559-bd82-44e8-9879-f16da79819b4}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Clearing_SC : BOOL
+VAR_INPUT
+END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.STS.Clearing_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Completing_SC" Id="{0bd16898-2d04-4e7e-ab58-0d9f16bf87d2}" FolderPath="Methods\">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD Completing_SC : BOOL
+    <Method Name="Completing_SC" Id="{8efdd68b-f70e-41c2-8567-61d086e86304}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Completing_SC : BOOL
+VAR_INPUT
+END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.STS.Completing_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Execute_SC" Id="{7c43486e-e389-4587-88e5-c4f78a35623f}" FolderPath="Methods\">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD Execute_SC : BOOL
+    <Method Name="Execute_SC" Id="{fd6e5026-f4cb-45d3-aea2-5bea4f4eb6e2}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Execute_SC : BOOL
+VAR_INPUT
+END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.STS.Execute_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="FB_init" Id="{a8dc6619-ed75-4713-85c3-653324d66acd}">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD FB_init : BOOL
+    <Method Name="FB_init" Id="{aa125f9a-4ad2-4e17-b506-f38ff2abab24}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
 VAR_INPUT
 	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
 	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
 END_VAR
-
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[//**************************INITIATE**************************//
+]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Hold" Id="{ef3166e8-e776-4510-a5fd-7721abe75ee2}" FolderPath="Methods\">
+    <Method Name="Hold" Id="{a7608fed-984b-4813-8f3d-213316dd7613}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Hold : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Hold := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Holding_SC" Id="{e03c14f5-a008-4f26-bce9-c6cf0ec22835}" FolderPath="Methods\">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD Holding_SC : BOOL
+    <Method Name="Holding_SC" Id="{ce68ca51-3e40-4243-9d27-b9eee86e2334}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Holding_SC : BOOL
+VAR_INPUT
+END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.STS.Holding_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Manueel" Id="{8e71a748-a937-4329-b10f-7a56db20ccbd}" FolderPath="Methods\">
+    <Method Name="Manueel" Id="{4c628e23-a488-4c91-bc19-d4a80cf148c7}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Manueel : BOOL
 ]]></Declaration>
@@ -316,43 +328,45 @@ METHOD Manueel : BOOL
 Manueel := fb_mem.STS.Manueel;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Reset" Id="{b635a72a-5a2e-495e-ada8-0bbcaa721e4b}" FolderPath="Methods\">
+    <Method Name="Reset" Id="{ad9250a8-0ae5-4609-a70d-02ae4ea615a6}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Reset : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Reset := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Resetting_SC" Id="{8c039277-f173-422a-8c15-04a8ab5fa965}" FolderPath="Methods\">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD Resetting_SC : BOOL
+    <Method Name="Resetting_SC" Id="{0420a9e2-119a-4677-aed8-4fc4e3991921}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Resetting_SC : BOOL
+VAR_INPUT
+END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.STS.Resetting_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Start" Id="{398c28cb-7692-4656-b32b-393ba423da8c}" FolderPath="Methods\">
+    <Method Name="Start" Id="{d070dcd6-3f46-4d8a-a212-a55bbe41f84f}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Start : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Start := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Starting_SC" Id="{ab10e04c-fd49-4ce6-b30c-16624a273e48}" FolderPath="Methods\">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD Starting_SC : BOOL
+    <Method Name="Starting_SC" Id="{62d43b1e-69d1-4b7f-bd9b-c283a4f10ebe}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Starting_SC : BOOL
+VAR_INPUT
+END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.STS.Starting_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Property Name="State" Id="{2501272b-2459-4173-91a1-0a813f18a888}" FolderPath="Properties\">
+    <Property Name="State" Id="{63589fe4-dc24-46e1-b14a-162ac93043a0}" FolderPath="Properties\">
       <Declaration><![CDATA[{warning 'add property implementation'}
-PROPERTY State : TwinCAT_LIB.E_State_PackML
+PROPERTY State : E_State_PackML
 ]]></Declaration>
-      <Get Name="Get" Id="{d9f13007-7813-4d1b-a0d8-348b1176a205}">
+      <Get Name="Get" Id="{29c19747-d72e-4046-8642-68fcf2df8f9b}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
@@ -361,71 +375,75 @@ END_VAR
         </Implementation>
       </Get>
     </Property>
-    <Method Name="Stop" Id="{5f2e5061-9b0b-42b3-a78a-c096dd435a13}" FolderPath="Methods\">
+    <Method Name="Stop" Id="{c25028d4-f6ba-4cac-9e84-0049729f5794}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Stop : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Stop := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Stopping_SC" Id="{53640b02-c277-43d4-90c2-d66d74b7a240}" FolderPath="Methods\">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD Stopping_SC : BOOL
+    <Method Name="Stopping_SC" Id="{cccbedc5-9e9d-4812-a6f1-7f59262cc5c1}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Stopping_SC : BOOL
+VAR_INPUT
+END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.STS.Stopping_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Suspend" Id="{cb177315-af99-4647-af9d-a9af80c91847}" FolderPath="Methods\">
+    <Method Name="Suspend" Id="{5e91378e-70fe-4d35-9c63-8d07df445e60}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Suspend : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Suspend := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Suspending_SC" Id="{41975971-036f-473b-ace5-9381d54b22ed}" FolderPath="Methods\">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD Suspending_SC : BOOL
+    <Method Name="Suspending_SC" Id="{b886767c-50e4-4fbc-8916-62ade2b1b35a}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Suspending_SC : BOOL
+VAR_INPUT
+END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.STS.Suspending_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Unhold" Id="{dd746614-9d03-4ec9-88a0-660deffaa15e}" FolderPath="Methods\">
+    <Method Name="Unhold" Id="{78bf6dba-4e62-4393-9ab8-62e7c22f576b}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Unhold : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Unhold := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Unholding_SC" Id="{5395d565-ec82-4d36-bc91-05e9643cc9cc}" FolderPath="Methods\">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD Unholding_SC : BOOL
+    <Method Name="Unholding_SC" Id="{858b8333-c43d-43e8-8558-c42d88806c48}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Unholding_SC : BOOL
+VAR_INPUT
+END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.STS.Unholding_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Unsuspend" Id="{93369419-fed1-4a89-a4a0-a4133787fe1f}" FolderPath="Methods\">
+    <Method Name="Unsuspend" Id="{77fd945d-fe93-4ec4-ae38-4203358358a0}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Unsuspend : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.CS.Unsuspend := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Unsuspending_SC" Id="{012c74be-0322-4c7d-bc2e-1b60758db904}" FolderPath="Methods\">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD Unsuspending_SC : BOOL
+    <Method Name="Unsuspending_SC" Id="{69a1d844-8984-4b58-be47-374b60ab4cef}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Unsuspending_SC : BOOL
+VAR_INPUT
+END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[fb_mem.STS.Unsuspending_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="ZeroAllVar" Id="{51794cb3-32c1-483c-8b7b-25be046025bf}">
+    <Method Name="ZeroAllVar" Id="{f66bf3cd-9d75-4dda-b5b8-eddc2795f887}">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD ZeroAllVar : BOOL
 ]]></Declaration>
@@ -434,9 +452,17 @@ METHOD ZeroAllVar : BOOL
       </Implementation>
     </Method>
     <LineIds Name="EM_Filling">
-      <LineId Id="396" Count="36" />
+      <LineId Id="396" Count="31" />
+      <LineId Id="722" Count="0" />
+      <LineId Id="428" Count="4" />
       <LineId Id="509" Count="1" />
-      <LineId Id="433" Count="16" />
+      <LineId Id="433" Count="0" />
+      <LineId Id="436" Count="13" />
+      <LineId Id="700" Count="0" />
+      <LineId Id="718" Count="2" />
+      <LineId Id="714" Count="1" />
+      <LineId Id="699" Count="0" />
+      <LineId Id="716" Count="0" />
       <LineId Id="679" Count="7" />
       <LineId Id="461" Count="6" />
       <LineId Id="511" Count="0" />
@@ -492,7 +518,7 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Aborting_SC">
-      <LineId Id="4" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Auto">
       <LineId Id="5" Count="0" />
@@ -502,22 +528,23 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Clearing_SC">
-      <LineId Id="4" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Completing_SC">
-      <LineId Id="4" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Execute_SC">
-      <LineId Id="4" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.FB_init">
-      <LineId Id="4" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="7" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Hold">
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Holding_SC">
-      <LineId Id="4" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Manueel">
       <LineId Id="4" Count="0" />
@@ -527,13 +554,13 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Resetting_SC">
-      <LineId Id="4" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Start">
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Starting_SC">
-      <LineId Id="4" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.State.Get">
       <LineId Id="2" Count="0" />
@@ -542,25 +569,25 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Stopping_SC">
-      <LineId Id="4" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Suspend">
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Suspending_SC">
-      <LineId Id="4" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Unhold">
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Unholding_SC">
-      <LineId Id="4" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Unsuspend">
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.Unsuspending_SC">
-      <LineId Id="4" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Filling.ZeroAllVar">
       <LineId Id="4" Count="0" />
