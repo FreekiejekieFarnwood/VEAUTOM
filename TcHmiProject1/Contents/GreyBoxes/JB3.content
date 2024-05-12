@@ -5306,56 +5306,6 @@
 ]
 </script>
 </div>
-<div id="TcHmiStateImage_169" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="228" data-tchmi-left-unit="px" data-tchmi-top="378" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.fb_mem.STS.State%/s%" data-tchmi-zindex="15" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/klep aan.svg">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": "EXECUTE",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "COMPLETING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "HOLDING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "UNHOLDING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "UNSUSPENDING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "SUSPENDING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "ABORTING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "CLEARING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "RESETTING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "STARTING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "STOPPING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  }
-]
-</script>
-</div>
 <div id="TcHmiTextblock_322" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="228" data-tchmi-left-unit="px" data-tchmi-text="Valv_stop_T9" data-tchmi-top="328" data-tchmi-top-unit="px" data-tchmi-width="82" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-zindex="17">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
@@ -5444,56 +5394,6 @@
   "top": "None",
   "bottom": "Solid"
 }
-</script>
-</div>
-<div id="TcHmiStateImage_170" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="1712" data-tchmi-left-unit="px" data-tchmi-top="379" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.fb_mem.STS.State%/s%" data-tchmi-zindex="15" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/klep aan.svg">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": "EXECUTE",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "COMPLETING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "HOLDING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "UNHOLDING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "UNSUSPENDING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "SUSPENDING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "ABORTING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "CLEARING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "RESETTING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "STARTING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  },
-  {
-    "state": "STOPPING",
-    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
-  }
-]
 </script>
 </div>
 <div id="TcHmiTextblock_325" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1712" data-tchmi-left-unit="px" data-tchmi-text="Valv_stop_T6" data-tchmi-top="328" data-tchmi-top-unit="px" data-tchmi-width="82" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-zindex="17">
@@ -5747,6 +5647,34 @@
   "top": "Solid",
   "bottom": "None"
 }
+</script>
+</div>
+<div id="TcHmiStateImage_174" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="1712" data-tchmi-left-unit="px" data-tchmi-top="378" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.ModeSelect%/s%" data-tchmi-zindex="15" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/klep aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": false,
+    "stateIcon": "Images/INDAUT/Actuatoren/klep aan.svg"
+  },
+  {
+    "state": true,
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  }
+]
+</script>
+</div>
+<div id="TcHmiStateImage_175" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="228" data-tchmi-left-unit="px" data-tchmi-top="378" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Can_Supply.ValveDirection.fb_mem.STS.Open%/s%" data-tchmi-zindex="15" data-tchmi-fallback-image="Images/INDAUT/Actuatoren/klep aan.svg">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": false,
+    "stateIcon": "Images/INDAUT/Actuatoren/klep aan.svg"
+  },
+  {
+    "state": true,
+    "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
+  }
+]
 </script>
 </div>
 </div>

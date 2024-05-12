@@ -209,6 +209,59 @@
             ],
             "type": "integer"
         },
+        "PLC1.ModeSelect": {
+            "attributes": {
+                "TcImplements": "ITF_ModeSelect"
+            },
+            "properties": {
+                "fb_mem": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/PLC1.STRUCT_ModeSelect"
+                        },
+                        {
+                            "propertyOrder": 1
+                        }
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "PLC1.STRUCT_ModeSelect": {
+            "properties": {
+                "Auto": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 1
+                        }
+                    ]
+                },
+                "Manueel": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 2
+                        }
+                    ]
+                },
+                "Tag": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                        },
+                        {
+                            "propertyOrder": 3
+                        }
+                    ]
+                }
+            },
+            "type": "object"
+        },
         "PLC1.stErrorHandling": {
             "properties": {
                 "bAcknowledged": {
@@ -2891,6 +2944,40 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.Klep.fb_mem.STS.Open": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Can_Supply::EM_Transport_Can_Supply1::Klep::fb_mem::STS::Open",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 6
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.Klep.fb_mem.STS.State": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Can_Supply::EM_Transport_Can_Supply1::Klep::fb_mem::STS::State",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/PLC1.E_State_PackML"
+                    },
+                    {
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.Motor.fb_mem.HMI.Toerental": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -2903,6 +2990,23 @@
                     },
                     {
                         "propertyOrder": 12
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply2.Motor.fb_mem.STS.State": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Can_Supply::EM_Transport_Can_Supply2::Motor::fb_mem::STS::State",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/PLC1.E_State_PackML"
+                    },
+                    {
+                        "propertyOrder": 2
                     }
                 ]
             },
@@ -2993,6 +3097,23 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.EM_Can_Supply.ValveDirection.fb_mem.STS.Open": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Can_Supply::ValveDirection::fb_mem::STS::Open",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 6
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.State": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3022,6 +3143,57 @@
                     },
                     {
                         "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Filling.EM_OutfeedFillers.Klep.fb_mem.STS.Open": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Filling::EM_OutfeedFillers::Klep::fb_mem::STS::Open",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 6
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Filling.EM_OutfeedFillers.Motor.fb_mem.STS.Toerental": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Filling::EM_OutfeedFillers::Motor::fb_mem::STS::Toerental",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "propertyOrder": 8
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Filling.EM_TransportFillers.Motor.fb_mem.STS.Toerental": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Filling::EM_TransportFillers::Motor::fb_mem::STS::Toerental",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "propertyOrder": 8
                     }
                 ]
             },
@@ -3430,6 +3602,23 @@
                     },
                     {
                         "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.ModeSelect": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::ModeSelect",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:server#/definitions/PLC1.ModeSelect"
+                    },
+                    {
+                        "propertyOrder": 19
                     }
                 ]
             },
@@ -4525,14 +4714,21 @@
                 "PLC1.MAIN.Unit.AlarmHandler.ErrorArray": 3,
                 "PLC1.MAIN.Unit.AlarmHandler.ShowAlarms": 3,
                 "PLC1.MAIN.Unit.EM_BottomSeal.fb_mem.STS.StringState": 3,
+                "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.Klep.fb_mem.STS.Open": 3,
+                "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.Klep.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply1.Motor.fb_mem.HMI.Toerental": 3,
+                "PLC1.MAIN.Unit.EM_Can_Supply.EM_Transport_Can_Supply2.Motor.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_Can_Supply.Sen_A1_Far.fb_mem.STS.Output": 3,
                 "PLC1.MAIN.Unit.EM_Can_Supply.Sen_A1_Near.fb_mem.STS.Output": 3,
                 "PLC1.MAIN.Unit.EM_Can_Supply.Sen_A2_Far.fb_mem.STS.Output": 3,
                 "PLC1.MAIN.Unit.EM_Can_Supply.Sen_A2_Near.fb_mem.STS.Output": 3,
                 "PLC1.MAIN.Unit.EM_Can_Supply.ValveDirection.fb_mem.STS.Close": 3,
+                "PLC1.MAIN.Unit.EM_Can_Supply.ValveDirection.fb_mem.STS.Open": 3,
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.State": 3,
                 "PLC1.MAIN.Unit.EM_CheckWeigher.fb_mem.STS.StringState": 3,
+                "PLC1.MAIN.Unit.EM_Filling.EM_OutfeedFillers.Klep.fb_mem.STS.Open": 3,
+                "PLC1.MAIN.Unit.EM_Filling.EM_OutfeedFillers.Motor.fb_mem.STS.Toerental": 3,
+                "PLC1.MAIN.Unit.EM_Filling.EM_TransportFillers.Motor.fb_mem.STS.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.CS.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.STS.State": 3,
@@ -4557,6 +4753,7 @@
                 "PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.Motor.fb_mem.CS.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.Sensor.fb_mem.STS.Output": 3,
                 "PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.StringState": 3,
+                "PLC1.MAIN.Unit.ModeSelect": 3,
                 "PLC1.MAIN.Unit.fb_mem.HMI.Abort": 3,
                 "PLC1.MAIN.Unit.fb_mem.HMI.Auto": 3,
                 "PLC1.MAIN.Unit.fb_mem.HMI.Clear": 3,
