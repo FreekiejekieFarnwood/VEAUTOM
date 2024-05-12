@@ -55,8 +55,75 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 EM_FillerA1();
 EM_FillerA2();	
 EM_TransportFillers();
-EM_OutfeedFillers();	
-										
+EM_OutfeedFillers();
+
+IF fb_mem.STS.Starting_SC THEN
+	EM_FillerA1.Starting_SC();
+	EM_FillerA2.Starting_SC();
+	EM_TransportFillers.Starting_SC();
+	EM_OutfeedFillers.Starting_SC();
+END_IF
+IF fb_mem.STS.Execute_SC THEN
+	EM_FillerA1.Execute_SC();
+	EM_FillerA2.Execute_SC();
+	EM_TransportFillers.Execute_SC();
+	EM_OutfeedFillers.Execute_SC();
+END_IF
+IF fb_mem.STS.Resetting_SC THEN
+	EM_FillerA1.Resetting_SC();
+	EM_FillerA2.Resetting_SC();
+	EM_TransportFillers.Resetting_SC();
+	EM_OutfeedFillers.Resetting_SC();
+END_IF
+IF fb_mem.STS.Holding_SC THEN
+	EM_FillerA1.Holding_SC();
+	EM_FillerA2.Holding_SC();
+	EM_TransportFillers.Holding_SC();
+	EM_OutfeedFillers.Holding_SC();
+END_IF
+IF fb_mem.STS.Unholding_SC THEN
+	EM_FillerA1.Unholding_SC();
+	EM_FillerA2.Unholding_SC();
+	EM_TransportFillers.Unholding_SC();
+	EM_OutfeedFillers.Unholding_SC();
+END_IF
+IF fb_mem.STS.Suspending_SC THEN
+	EM_FillerA1.Suspending_SC();
+	EM_FillerA2.Suspending_SC();
+	EM_TransportFillers.Suspending_SC();
+	EM_OutfeedFillers.Suspending_SC();
+END_IF
+IF fb_mem.STS.Unsuspending_SC THEN
+	EM_FillerA1.Unsuspending_SC();
+	EM_FillerA2.Unsuspending_SC();
+	EM_TransportFillers.Unsuspending_SC();
+	EM_OutfeedFillers.Unsuspending_SC();
+END_IF
+IF fb_mem.STS.Aborting_SC THEN
+	EM_FillerA1.Aborting_SC();
+	EM_FillerA2.Aborting_SC();
+	EM_TransportFillers.Aborting_SC();
+	EM_OutfeedFillers.Aborting_SC();
+END_IF
+IF fb_mem.STS.Clearing_SC THEN
+	EM_FillerA1.Clearing_SC();
+	EM_FillerA2.Clearing_SC();
+	EM_TransportFillers.Clearing_SC();
+	EM_OutfeedFillers.Clearing_SC();
+END_IF
+IF fb_mem.STS.Stopping_SC THEN
+	EM_FillerA1.Stopping_SC();
+	EM_FillerA2.Stopping_SC();
+	EM_TransportFillers.Stopping_SC();
+	EM_OutfeedFillers.Stopping_SC();
+END_IF
+IF fb_mem.STS.Completing_SC THEN
+	EM_FillerA1.Completing_SC();
+	EM_FillerA2.Completing_SC();
+	EM_TransportFillers.Completing_SC();
+	EM_OutfeedFillers.Completing_SC();
+END_IF
+								
 //********************************ZEROING***********************************
 fb_mem.STS.Starting_SC 		:= FALSE;
 fb_mem.STS.Execute_SC 		:= FALSE;
@@ -88,6 +155,57 @@ IF fb_mem.CS.Manueel OR fb_mem.HMI.Manueel THEN
 	fb_mem.STS.Auto := FALSE;
 	fb_mem.STS.Manueel := TRUE;
 END_IF
+
+
+IF fb_mem.CS.Reset THEN
+	EM_FillerA1.Reset();
+	EM_FillerA2.Reset();
+	EM_TransportFillers.Reset();
+	EM_OutfeedFillers.Reset();
+END_IF
+
+IF fb_mem.CS.Abort THEN
+	EM_FillerA1.Abort();
+	EM_FillerA2.Abort();
+	EM_TransportFillers.Abort();
+	EM_OutfeedFillers.Abort();
+END_IF
+
+IF fb_mem.CS.Clear THEN
+	EM_FillerA1.Clear();
+	EM_FillerA2.Clear();
+	EM_TransportFillers.Clear();
+	EM_OutfeedFillers.Clear();
+END_IF
+
+IF fb_mem.CS.UnSuspend THEN
+	EM_FillerA1.UnSuspend();
+	EM_FillerA2.UnSuspend();
+	EM_TransportFillers.UnSuspend();
+	EM_OutfeedFillers.UnSuspend();
+END_IF
+
+IF fb_mem.CS.Suspend THEN
+	EM_FillerA1.Suspend();
+	EM_FillerA2.Suspend();
+	EM_TransportFillers.Suspend();
+	EM_OutfeedFillers.Suspend();
+END_IF
+
+IF fb_mem.CS.UnHold THEN
+	EM_FillerA1.UnHold();
+	EM_FillerA2.UnHold();
+	EM_TransportFillers.UnHold();
+	EM_OutfeedFillers.UnHold();
+END_IF
+
+IF fb_mem.CS.Hold THEN
+	EM_FillerA1.Hold();
+	EM_FillerA2.Hold();
+	EM_TransportFillers.Hold();
+	EM_OutfeedFillers.Hold();
+END_IF
+
 //********************************Exeptionhandling***********************************
 
 //********************************Action case***********************************
@@ -125,7 +243,7 @@ CASE fb_mem.STS.State OF
 			EM_FillerA2.State 			= E_State_PackML.IDLE AND 
 			EM_TransportFillers.State	= E_State_PackML.IDLE AND 
 			EM_OutfeedFillers.State		= E_State_PackML.IDLE THEN
-				fb_mem.STS.Starting_SC 		:= TRUE;	
+				fb_mem.STS.Resetting_SC 		:= TRUE;	
 		END_IF
 	E_State_PackML.HOLDING 			:
 		EM_FillerA1.Hold();
@@ -456,7 +574,18 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="722" Count="0" />
       <LineId Id="428" Count="4" />
       <LineId Id="509" Count="1" />
+      <LineId Id="886" Count="0" />
+      <LineId Id="885" Count="0" />
+      <LineId Id="887" Count="0" />
+      <LineId Id="889" Count="2" />
+      <LineId Id="888" Count="0" />
+      <LineId Id="893" Count="4" />
+      <LineId Id="892" Count="0" />
+      <LineId Id="899" Count="34" />
+      <LineId Id="935" Count="11" />
+      <LineId Id="948" Count="5" />
       <LineId Id="433" Count="0" />
+      <LineId Id="955" Count="0" />
       <LineId Id="436" Count="13" />
       <LineId Id="700" Count="0" />
       <LineId Id="718" Count="2" />
@@ -464,7 +593,26 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="699" Count="0" />
       <LineId Id="716" Count="0" />
       <LineId Id="679" Count="7" />
-      <LineId Id="461" Count="6" />
+      <LineId Id="461" Count="0" />
+      <LineId Id="737" Count="0" />
+      <LineId Id="739" Count="1" />
+      <LineId Id="857" Count="2" />
+      <LineId Id="754" Count="2" />
+      <LineId Id="861" Count="3" />
+      <LineId Id="771" Count="2" />
+      <LineId Id="865" Count="3" />
+      <LineId Id="788" Count="2" />
+      <LineId Id="869" Count="3" />
+      <LineId Id="805" Count="2" />
+      <LineId Id="873" Count="3" />
+      <LineId Id="822" Count="2" />
+      <LineId Id="877" Count="3" />
+      <LineId Id="839" Count="2" />
+      <LineId Id="881" Count="3" />
+      <LineId Id="856" Count="0" />
+      <LineId Id="738" Count="0" />
+      <LineId Id="736" Count="0" />
+      <LineId Id="462" Count="5" />
       <LineId Id="511" Count="0" />
       <LineId Id="522" Count="0" />
       <LineId Id="636" Count="1" />
