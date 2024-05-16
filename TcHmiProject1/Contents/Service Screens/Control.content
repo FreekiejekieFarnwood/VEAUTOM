@@ -104,10 +104,11 @@
 
 
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
-    "event": "TcHmiNumericInput_Conv_T1.onMouseLeave",
+    "event": "TcHmiNumericInput_Conv_T1.onUserInteractionFinished",
     "actions": [
       {
         "objectType": "WriteToSymbol",
@@ -123,8 +124,7 @@
     ],
     "displayName": "Toerental invoegen"
   }
-]
-</script>
+]</script>
 </div>
 <div id="TcHmiTextblock_189" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="249" data-tchmi-left-unit="px" data-tchmi-text="Conveyer T1" data-tchmi-top="148" data-tchmi-top-unit="px" data-tchmi-width="207" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="25" data-tchmi-zindex="35">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
@@ -241,7 +241,7 @@
 }
 </script>
 </div>
-<div id="TcHmiTextblock_194" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="454" data-tchmi-left-unit="px" data-tchmi-text="rpm" data-tchmi-top="291" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="25" data-tchmi-zindex="35">
+<div id="TcHmiTextblock_194" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="456" data-tchmi-left-unit="px" data-tchmi-text="rpm" data-tchmi-top="291" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="25" data-tchmi-zindex="35">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 1,
@@ -333,7 +333,7 @@
 }
 </script>
 </div>
-<div id="TcHmiTextblock_198" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="453" data-tchmi-left-unit="px" data-tchmi-text="rpm" data-tchmi-top="436" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="25" data-tchmi-zindex="35">
+<div id="TcHmiTextblock_198" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="455" data-tchmi-left-unit="px" data-tchmi-text="rpm" data-tchmi-top="436" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="25" data-tchmi-zindex="35">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 1,
@@ -478,10 +478,12 @@
 
 
 
+
+
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "TcHmiNumericInput_Conv_T1_1.onMouseLeave",
+    "event": "TcHmiNumericInput_Conv_T1_1.onUserInteractionFinished",
     "actions": [
       {
         "objectType": "WriteToSymbol",
@@ -500,7 +502,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiNumericInput_Conv_T1_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiNumericInput" data-tchmi-auto-focus-out="true" data-tchmi-decimal-digits="0" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="455" data-tchmi-left-unit="px" data-tchmi-max-value="5000" data-tchmi-min-value="0" data-tchmi-reset-to-last-valid-value="true" data-tchmi-top="228" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-value="%s%PLC1.MAIN.Unit.EM_Filling.EM_TransportFillers.Motor.fb_mem.HMI.Toerental%/s%" data-tchmi-value-horizontal-alignment="Center" data-tchmi-value-font-size="25">
+<div id="TcHmiNumericInput_Conv_T1_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiNumericInput" data-tchmi-auto-focus-out="true" data-tchmi-decimal-digits="0" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="453" data-tchmi-left-unit="px" data-tchmi-max-value="5000" data-tchmi-min-value="0" data-tchmi-reset-to-last-valid-value="true" data-tchmi-top="228" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-value="%s%PLC1.MAIN.Unit.EM_Filling.EM_TransportFillers.Motor.fb_mem.HMI.Toerental%/s%" data-tchmi-value-horizontal-alignment="Center" data-tchmi-value-font-size="25">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
 {
   "top": 3,
@@ -553,10 +555,12 @@
 
 
 
+
+
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "TcHmiNumericInput_Conv_T1_2.onMouseLeave",
+    "event": "TcHmiNumericInput_Conv_T1_2.onUserInteractionFinished",
     "actions": [
       {
         "objectType": "WriteToSymbol",
@@ -628,10 +632,12 @@
 
 
 
+
+
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "TcHmiNumericInput_Conv_T1_3.onMouseLeave",
+    "event": "TcHmiNumericInput_Conv_T1_3.onUserInteractionFinished",
     "actions": [
       {
         "objectType": "WriteToSymbol",
@@ -650,7 +656,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiNumericInput_Conv_T1_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiNumericInput" data-tchmi-auto-focus-out="true" data-tchmi-decimal-digits="0" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="453" data-tchmi-left-unit="px" data-tchmi-max-value="5000" data-tchmi-min-value="0" data-tchmi-reset-to-last-valid-value="true" data-tchmi-top="374" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-value="%s%PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Motor.fb_mem.HMI.Toerental%/s%" data-tchmi-value-horizontal-alignment="Center" data-tchmi-value-font-size="25">
+<div id="TcHmiNumericInput_Conv_T1_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiNumericInput" data-tchmi-auto-focus-out="true" data-tchmi-decimal-digits="0" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="457" data-tchmi-left-unit="px" data-tchmi-max-value="5000" data-tchmi-min-value="0" data-tchmi-reset-to-last-valid-value="true" data-tchmi-top="374" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-value="%s%PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Motor.fb_mem.HMI.Toerental%/s%" data-tchmi-value-horizontal-alignment="Center" data-tchmi-value-font-size="25">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
 {
   "top": 3,
@@ -703,10 +709,12 @@
 
 
 
+
+
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "TcHmiNumericInput_Conv_T1_4.onMouseLeave",
+    "event": "TcHmiNumericInput_Conv_T1_4.onUserInteractionFinished",
     "actions": [
       {
         "objectType": "WriteToSymbol",
@@ -725,7 +733,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiNumericInput_Conv_T1_5" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiNumericInput" data-tchmi-auto-focus-out="true" data-tchmi-decimal-digits="0" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="454" data-tchmi-left-unit="px" data-tchmi-max-value="5000" data-tchmi-min-value="0" data-tchmi-reset-to-last-valid-value="true" data-tchmi-top="478" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-value="%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.Motor.fb_mem.HMI.Toerental%/s%" data-tchmi-value-horizontal-alignment="Center" data-tchmi-value-font-size="25">
+<div id="TcHmiNumericInput_Conv_T1_5" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiNumericInput" data-tchmi-auto-focus-out="true" data-tchmi-decimal-digits="0" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="456" data-tchmi-left-unit="px" data-tchmi-max-value="5000" data-tchmi-min-value="0" data-tchmi-reset-to-last-valid-value="true" data-tchmi-top="478" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-value="%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.Motor.fb_mem.HMI.Toerental%/s%" data-tchmi-value-horizontal-alignment="Center" data-tchmi-value-font-size="25">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
 {
   "top": 3,
@@ -778,10 +786,12 @@
 
 
 
+
+
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "TcHmiNumericInput_Conv_T1_5.onMouseLeave",
+    "event": "TcHmiNumericInput_Conv_T1_5.onUserInteractionFinished",
     "actions": [
       {
         "objectType": "WriteToSymbol",
@@ -853,10 +863,12 @@
 
 
 
+
+
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "TcHmiNumericInput_Conv_T1_6.onMouseLeave",
+    "event": "TcHmiNumericInput_Conv_T1_6.onUserInteractionFinished",
     "actions": [
       {
         "objectType": "WriteToSymbol",
@@ -875,7 +887,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiNumericInput_Conv_T1_7" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiNumericInput" data-tchmi-auto-focus-out="true" data-tchmi-decimal-digits="0" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="453" data-tchmi-left-unit="px" data-tchmi-max-value="5000" data-tchmi-min-value="0" data-tchmi-reset-to-last-valid-value="true" data-tchmi-top="562" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-value="%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.Motor.fb_mem.HMI.Toerental%/s%" data-tchmi-value-horizontal-alignment="Center" data-tchmi-value-font-size="25" data-tchmi-ignore-invalid-values="true">
+<div id="TcHmiNumericInput_Conv_T1_7" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiNumericInput" data-tchmi-auto-focus-out="true" data-tchmi-decimal-digits="0" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="456" data-tchmi-left-unit="px" data-tchmi-max-value="5000" data-tchmi-min-value="0" data-tchmi-reset-to-last-valid-value="true" data-tchmi-top="562" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-value="%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.Motor.fb_mem.HMI.Toerental%/s%" data-tchmi-value-horizontal-alignment="Center" data-tchmi-value-font-size="25" data-tchmi-ignore-invalid-values="true">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
 {
   "top": 3,
@@ -928,10 +940,12 @@
 
 
 
+
+
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "TcHmiNumericInput_Conv_T1_7.onMouseLeave",
+    "event": "TcHmiNumericInput_Conv_T1_7.onUserInteractionFinished",
     "actions": [
       {
         "objectType": "WriteToSymbol",
@@ -940,7 +954,7 @@
         "value": {
           "objectType": "Symbol",
           "valueType": "tchmi:general#/definitions/String",
-          "symbolExpression": "%ctrl%TcHmiNumericInput_Conv_T1::Value%/ctrl%"
+          "symbolExpression": "%ctrl%TcHmiNumericInput_Conv_T1_7::Value%/ctrl%"
         },
         "asyncWait": true
       }
@@ -950,7 +964,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiNumericInput_Conv_T1_8" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiNumericInput" data-tchmi-auto-focus-out="true" data-tchmi-decimal-digits="0" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="454" data-tchmi-left-unit="px" data-tchmi-max-value="5000" data-tchmi-min-value="0" data-tchmi-reset-to-last-valid-value="true" data-tchmi-top="603" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-value="%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.Motor.fb_mem.HMI.Toerental%/s%" data-tchmi-value-horizontal-alignment="Center" data-tchmi-value-font-size="25">
+<div id="TcHmiNumericInput_Conv_T1_8" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiNumericInput" data-tchmi-auto-focus-out="true" data-tchmi-decimal-digits="0" data-tchmi-height="30" data-tchmi-height-unit="px" data-tchmi-left="456" data-tchmi-left-unit="px" data-tchmi-max-value="5000" data-tchmi-min-value="0" data-tchmi-reset-to-last-valid-value="true" data-tchmi-top="603" data-tchmi-top-unit="px" data-tchmi-width="170" data-tchmi-width-unit="px" data-tchmi-value="%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.Motor.fb_mem.HMI.Toerental%/s%" data-tchmi-value-horizontal-alignment="Center" data-tchmi-value-font-size="25">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
 {
   "top": 3,
@@ -1003,10 +1017,14 @@
 
 
 
+
+
+
+
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "TcHmiNumericInput_Conv_T1_8.onMouseLeave",
+    "event": "TcHmiNumericInput_Conv_T1_8.onUserInteractionFinished",
     "actions": [
       {
         "objectType": "WriteToSymbol",

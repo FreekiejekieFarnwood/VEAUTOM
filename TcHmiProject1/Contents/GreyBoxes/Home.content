@@ -1922,7 +1922,7 @@
 }
 </script>
 </div>
-<div id="TcHmiTextblock_110" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="359" data-tchmi-left-unit="px" data-tchmi-top="120" data-tchmi-top-unit="px" data-tchmi-width="153" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Left" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="41" data-tchmi-text="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState%/s%">
+<div id="TcHmiTextblock_110" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="360" data-tchmi-left-unit="px" data-tchmi-top="120" data-tchmi-top-unit="px" data-tchmi-width="153" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Left" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="41" data-tchmi-text="%s%PLC1.MAIN.Unit.EM_Filling.fb_mem.STS.StringState%/s%">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
   "left": 0,
