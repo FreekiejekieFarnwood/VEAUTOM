@@ -4,6 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK EM_Can_Supply IMPLEMENTS ITF_Can_Supply, ITF_PackML
 VAR
 	fb_mem : STRUCT_EM_CanSupply;
+	bFirstCycleExecuted : BOOL;
 	
 	//SubModules
 	EM_Transport_Can_Supply1		: EM_Transport_Mechanische_Stop;
@@ -12,21 +13,12 @@ VAR
 	Sen_A1_Far						: CM_Sensor;
 	Sen_A2_Near						: CM_Sensor;
 	Sen_A2_Far						: CM_Sensor;
+	ValveDirection					: CM_Valve;  
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(*
-$$$$$$$$\                                                                   $$\       $$$$$$$$\                     $$\                                         $$\                     
-$$  _____|                                                                  $$ |      $$  _____|                    \__|                                        \__|                    
-$$ |   $$$$$$\   $$$$$$\  $$$$$$$\  $$\  $$\  $$\  $$$$$$\   $$$$$$\   $$$$$$$ |      $$ |      $$$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\  $$\ $$$$$$$\   $$$$$$\  
-$$$$$\ \____$$\ $$  __$$\ $$  __$$\ $$ | $$ | $$ |$$  __$$\ $$  __$$\ $$  __$$ |      $$$$$\    $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\ $$ |$$  __$$\ $$  __$$\ 
-$$  __|$$$$$$$ |$$ |  \__|$$ |  $$ |$$ | $$ | $$ |$$ /  $$ |$$ /  $$ |$$ /  $$ |      $$  __|   $$ |  $$ |$$ /  $$ |$$ |$$ |  $$ |$$$$$$$$ |$$$$$$$$ |$$ |  \__|$$ |$$ |  $$ |$$ /  $$ |
-$$ |  $$  __$$ |$$ |      $$ |  $$ |$$ | $$ | $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |      $$ |      $$ |  $$ |$$ |  $$ |$$ |$$ |  $$ |$$   ____|$$   ____|$$ |      $$ |$$ |  $$ |$$ |  $$ |
-$$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |      $$$$$$$$\ $$ |  $$ |\$$$$$$$ |$$ |$$ |  $$ |\$$$$$$$\ \$$$$$$$\ $$ |      $$ |$$ |  $$ |\$$$$$$$ |
-\__|   \_______|\__|      \__|  \__| \_____\____/  \______/  \______/  \_______|      \________|\__|  \__| \____$$ |\__|\__|  \__| \_______| \_______|\__|      \__|\__|  \__| \____$$ |
-                                                                                                          $$\   $$ |                                                          $$\   $$ |
-                                                                                                          \$$$$$$  |                                                          \$$$$$$  |
-                                                                                                           \______/                                                            \______/ 
+Tijn Verdurmen
 *)//********************************Initiating***********************************
 fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Start           := fb_mem.CS.Start,
@@ -40,6 +32,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Hold            := fb_mem.CS.Hold,
 										Starting_SC     := fb_mem.STS.Starting_SC,
 										Execute_SC      := fb_mem.STS.Execute_SC,
+										Completing_SC	:= fb_mem.STS.Completing_SC,
 										Resetting_SC    := fb_mem.STS.Resetting_SC,
 										Holding_SC      := fb_mem.STS.Holding_SC,
 										Unholding_SC    := fb_mem.STS.Unholding_SC,
@@ -54,8 +47,6 @@ EM_Transport_Can_Supply1();
 EM_Transport_Can_Supply2();			
 										
 //********************************ZEROING***********************************								
-fb_mem.STS.Auto 			:= FALSE;
-fb_mem.STS.Manueel 			:= FALSE;
 fb_mem.STS.Starting_SC 		:= FALSE;
 fb_mem.STS.Execute_SC 		:= FALSE;
 fb_mem.STS.Resetting_SC 	:= FALSE;
@@ -69,16 +60,21 @@ fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
 
 //********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
-	fb_mem.STS.Auto := TRUE;
-ELSE
-	fb_mem.STS.Auto := FALSE;
+IF NOT bFirstCycleExecuted THEN
+	EM_Transport_Can_Supply1.Auto();
+	EM_Transport_Can_Supply2.Auto();
+	ValveDirection.Auto := TRUE;
+	bFirstCycleExecuted := TRUE;
 END_IF
 
-IF fb_mem.CS.Manueel THEN
-	fb_mem.STS.Manueel := TRUE;
-ELSE
+IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
+	fb_mem.STS.Auto := TRUE;
 	fb_mem.STS.Manueel := FALSE;
+END_IF
+
+IF fb_mem.CS.Manueel OR fb_mem.HMI.Manueel THEN
+	fb_mem.STS.Auto := FALSE;
+	fb_mem.STS.Manueel := TRUE;
 END_IF
 
 //********************Manupilatie***********8
@@ -102,45 +98,97 @@ CASE fb_mem.STS.State OF
 	E_State_PackML.IDLE 			: 
 		//Do nothing
 	E_State_PackML.STARTING 		:
-		//Hier heen en weer swichen totdat bijden buffers vol zijn en dus alle sensoren waar zijn met filler 1 prioriteit
-		fb_mem.STS.Richting_L:=TRUE;	//Richting_L naar filler 1
-		IF Sen_A1_Far.Output=TRUE AND Sen_A2_Far.Output=TRUE AND Sen_A2_Near.Output=FALSE THEN //filler 2 hoeft nog niet vol te zijn om te starten
-			fb_mem.STS.Richting_R:=TRUE;	//Richting_L naar filler 2
-			fb_mem.STS.Starting_SC := TRUE;
+		EM_Transport_Can_Supply1.Start();
+		EM_Transport_Can_Supply2.Start();
+		IF ((EM_Transport_Can_Supply1.State= E_State_PackML.EXECUTE) AND (EM_Transport_Can_Supply2.State= E_State_PackML.EXECUTE)) THEN
+			ValveDirection.Close();	//=naar filler 1
+				IF Sen_A1_Far.Output=TRUE AND Sen_A1_Near.Output=TRUE THEN //filler 2 hoeft nog niet vol te zijn om te starten
+					ValveDirection.Open();	//=naar filler 2
+					fb_mem.STS.Starting_SC := TRUE;
+				END_IF
 		END_IF
-	E_State_PackML.EXECUTE 			: 
+		
+	E_State_PackML.EXECUTE		: // dit was execute
+		//Hier heen en weer swichen totdat bijden buffers vol zijn en dus alle sensoren waar zijn met filler 1 prioriteit
 		//Als Sen_A1_Far AND Sen_A1_Near AND !Sen_A2_Near THEN wissel naar A2 en vise versa
 		IF Sen_A1_Far.Output=TRUE AND Sen_A2_Far.Output=TRUE AND Sen_A1_Near.Output=TRUE AND Sen_A2_Near.Output=FALSE THEN
-			fb_mem.STS.Richting_R:=TRUE;	//Richting_L naar filler 2
+			ValveDirection.Open();	//Richting_L naar filler 2 heet open
 		END_IF
 		IF Sen_A1_Far.Output=TRUE AND Sen_A2_Far.Output=TRUE AND Sen_A2_Near.Output=TRUE AND Sen_A1_Near.Output=FALSE THEN
-			fb_mem.STS.Richting_L:=TRUE;	//Richting_L naar filler 1
+			ValveDirection.Close();	//Richting_L naar filler 1
 		END_IF
 		IF Sen_A1_Far.Output=FALSE THEN
-			fb_mem.STS.Richting_L:=TRUE;	//Richting_L naar filler 1
+			ValveDirection.Close();		//Richting_L naar filler 1 heet close
+		END_IF
+	E_State_PackML.COMPLETING		:
+		EM_Transport_Can_Supply1.Execute_SC();
+		EM_Transport_Can_Supply2.Execute_SC();
+		IF EM_Transport_Can_Supply1.State = E_State_PackML.COMPLETE AND EM_Transport_Can_Supply2.State = E_State_PackML.COMPLETE THEN
+			fb_mem.STS.Completing_SC := TRUE;
 		END_IF
 	E_State_PackML.COMPLETE 		:
-		//Do nothing
+		fb_mem.STS.Completing_SC:=TRUE;
+		
 	E_State_PackML.RESETTING 		:
-		//Do nothing
+		EM_Transport_Can_Supply1.Reset();
+		EM_Transport_Can_Supply2.Reset();
+		IF	((EM_Transport_Can_Supply1.State= E_State_PackML.IDLE) AND (EM_Transport_Can_Supply2.State= E_State_PackML.IDLE)) THEN
+			fb_mem.STS.Resetting_SC:=TRUE;
+		END_IF
+		
 	E_State_PackML.HOLDING 			:
-		//Do nothing
+		EM_Transport_Can_Supply1.Hold();
+		EM_Transport_Can_Supply2.Hold();
+		IF	((EM_Transport_Can_Supply1.State= E_State_PackML.HELD) AND (EM_Transport_Can_Supply2.State= E_State_PackML.HELD)) THEN
+			fb_mem.STS.Holding_SC:=TRUE;
+		END_IF
+		
 	E_State_PackML.HELD 			:
-		//Do nothing
+		// Do nothing
 	E_State_PackML.UNHOLDING 		:
-		//Do nothing
+		EM_Transport_Can_Supply1.Unhold();
+		EM_Transport_Can_Supply2.Unhold();
+		IF	((EM_Transport_Can_Supply1.State= E_State_PackML.EXECUTE) AND (EM_Transport_Can_Supply2.State= E_State_PackML.EXECUTE)) THEN
+			fb_mem.STS.Unholding_SC:=TRUE;
+		END_IF
+		
 	E_State_PackML.SUSPENDING 		:
-		//Do nothing
+		EM_Transport_Can_Supply1.Suspend();
+		EM_Transport_Can_Supply2.Suspend();
+		IF	((EM_Transport_Can_Supply1.State= E_State_PackML.SUSPENDED) AND (EM_Transport_Can_Supply2.State= E_State_PackML.SUSPENDED)) THEN
+			fb_mem.STS.Suspending_SC:=TRUE;
+		END_IF
+		
 	E_State_PackML.SUSPENDED 		:
-		//Do nothing
+		// Do nothing
+		
 	E_State_PackML.UNSUSPENDING 	:
-		//Do nothing
+		EM_Transport_Can_Supply1.Unsuspend();
+		EM_Transport_Can_Supply2.Unsuspend();
+		IF	((EM_Transport_Can_Supply1.State= E_State_PackML.EXECUTE) AND (EM_Transport_Can_Supply2.State= E_State_PackML.EXECUTE)) THEN
+			fb_mem.STS.Unsuspending_SC:=TRUE;
+		END_IF
+	
+	E_State_PackML.ABORTING			:
+		EM_Transport_Can_Supply1.Abort();
+		EM_Transport_Can_Supply2.Abort();
+		IF	((EM_Transport_Can_Supply1.State= E_State_PackML.ABORTED) AND (EM_Transport_Can_Supply2.State= E_State_PackML.ABORTED)) THEN
+			fb_mem.STS.Aborting_SC:=TRUE;
+		END_IF
+		
 	E_State_PackML.ABORTED			:
-		//Do nothing
+		// Do nothing
+		
 	E_State_PackML.CLEARING 		:
-		//Do nothing
-END_CASE
-
+		EM_Transport_Can_Supply1.Clear();
+		EM_Transport_Can_Supply2.Clear();
+		IF	((EM_Transport_Can_Supply1.State= E_State_PackML.STOPPED) AND (EM_Transport_Can_Supply2.State= E_State_PackML.STOPPED)) THEN
+			fb_mem.STS.Clearing_SC:=TRUE;
+		END_IF
+		
+	E_State_PackML.STOPPED			:
+		// DO nothing
+END_CASE 
 //********************************HMI_Connection***********************************
 fb_mem.STS.StringState     := TO_STRING(fb_mem.STS.State); 
 
@@ -177,14 +225,12 @@ END_VAR
         <ST><![CDATA[fb_mem.STS.Aborting_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Auto" Id="{a9833b4a-d04c-406e-ad03-dc7d8bbde31e}" FolderPath="Methods\">
+    <Method Name="Auto" Id="{3de32530-42eb-4924-90cf-af6c4db39c4e}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Auto : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Auto := TRUE;
-fb_mem.CS.Manueel := FALSE;
-
 Auto := fb_mem.STS.Auto;]]></ST>
       </Implementation>
     </Method>
@@ -253,14 +299,12 @@ END_VAR
         <ST><![CDATA[fb_mem.STS.Holding_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Manueel" Id="{271cced8-6de0-4858-a432-19a84bbee774}" FolderPath="Methods\">
+    <Method Name="Manueel" Id="{ef0b7851-5c06-402a-b160-6a9f79924c73}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Manueel : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Manueel := TRUE;
-fb_mem.CS.Auto := FALSE;
-
 Manueel := fb_mem.STS.Manueel;]]></ST>
       </Implementation>
     </Method>
@@ -388,7 +432,19 @@ METHOD ZeroAllVar : BOOL
       </Implementation>
     </Method>
     <LineIds Name="EM_Can_Supply">
-      <LineId Id="349" Count="64" />
+      <LineId Id="349" Count="0" />
+      <LineId Id="360" Count="13" />
+      <LineId Id="615" Count="0" />
+      <LineId Id="374" Count="13" />
+      <LineId Id="390" Count="12" />
+      <LineId Id="731" Count="1" />
+      <LineId Id="727" Count="0" />
+      <LineId Id="733" Count="0" />
+      <LineId Id="728" Count="0" />
+      <LineId Id="722" Count="0" />
+      <LineId Id="729" Count="0" />
+      <LineId Id="594" Count="7" />
+      <LineId Id="413" Count="0" />
       <LineId Id="528" Count="0" />
       <LineId Id="527" Count="0" />
       <LineId Id="530" Count="1" />
@@ -402,10 +458,16 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="414" Count="6" />
       <LineId Id="425" Count="0" />
       <LineId Id="508" Count="0" />
+      <LineId Id="641" Count="0" />
+      <LineId Id="693" Count="0" />
       <LineId Id="576" Count="0" />
       <LineId Id="578" Count="2" />
+      <LineId Id="643" Count="0" />
       <LineId Id="577" Count="0" />
-      <LineId Id="426" Count="1" />
+      <LineId Id="694" Count="0" />
+      <LineId Id="426" Count="0" />
+      <LineId Id="617" Count="0" />
+      <LineId Id="427" Count="0" />
       <LineId Id="525" Count="0" />
       <LineId Id="532" Count="0" />
       <LineId Id="550" Count="0" />
@@ -417,22 +479,46 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="432" Count="0" />
       <LineId Id="507" Count="0" />
       <LineId Id="437" Count="0" />
+      <LineId Id="621" Count="2" />
+      <LineId Id="626" Count="0" />
       <LineId Id="505" Count="0" />
+      <LineId Id="692" Count="0" />
       <LineId Id="443" Count="0" />
+      <LineId Id="644" Count="3" />
       <LineId Id="504" Count="0" />
-      <LineId Id="444" Count="1" />
+      <LineId Id="667" Count="0" />
+      <LineId Id="444" Count="0" />
+      <LineId Id="666" Count="0" />
       <LineId Id="451" Count="0" />
+      <LineId Id="652" Count="3" />
       <LineId Id="503" Count="0" />
+      <LineId Id="665" Count="0" />
       <LineId Id="456" Count="0" />
+      <LineId Id="661" Count="3" />
       <LineId Id="502" Count="0" />
+      <LineId Id="668" Count="0" />
       <LineId Id="457" Count="1" />
+      <LineId Id="696" Count="0" />
       <LineId Id="469" Count="0" />
+      <LineId Id="673" Count="3" />
       <LineId Id="501" Count="0" />
-      <LineId Id="470" Count="1" />
+      <LineId Id="697" Count="1" />
+      <LineId Id="700" Count="3" />
+      <LineId Id="699" Count="0" />
+      <LineId Id="704" Count="0" />
+      <LineId Id="470" Count="0" />
+      <LineId Id="677" Count="0" />
+      <LineId Id="471" Count="0" />
       <LineId Id="482" Count="0" />
+      <LineId Id="706" Count="1" />
+      <LineId Id="683" Count="1" />
       <LineId Id="500" Count="0" />
-      <LineId Id="483" Count="16" />
+      <LineId Id="685" Count="1" />
+      <LineId Id="708" Count="0" />
+      <LineId Id="484" Count="15" />
       <LineId Id="340" Count="0" />
+      <LineId Id="189" Count="5" />
+      <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="EM_Can_Supply.Abort">
       <LineId Id="4" Count="0" />
@@ -442,8 +528,7 @@ METHOD ZeroAllVar : BOOL
     </LineIds>
     <LineIds Name="EM_Can_Supply.Auto">
       <LineId Id="5" Count="0" />
-      <LineId Id="9" Count="1" />
-      <LineId Id="6" Count="0" />
+      <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="EM_Can_Supply.Clear">
       <LineId Id="4" Count="0" />
@@ -468,8 +553,7 @@ METHOD ZeroAllVar : BOOL
     </LineIds>
     <LineIds Name="EM_Can_Supply.Manueel">
       <LineId Id="4" Count="0" />
-      <LineId Id="8" Count="1" />
-      <LineId Id="5" Count="0" />
+      <LineId Id="8" Count="0" />
     </LineIds>
     <LineIds Name="EM_Can_Supply.Reset">
       <LineId Id="4" Count="0" />

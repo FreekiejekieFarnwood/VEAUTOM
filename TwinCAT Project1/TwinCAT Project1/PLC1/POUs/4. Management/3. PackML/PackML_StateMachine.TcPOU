@@ -23,6 +23,7 @@ VAR_INPUT
 	Unsuspending_SC	: BOOL;
 	Aborting_SC		: BOOL;
 	Clearing_SC		: BOOL;
+	Completing_SC	: BOOL;
 	Stopping_SC		: BOOL;
 END_VAR
 VAR
@@ -75,7 +76,7 @@ CASE State OF
 	E_State_PackML.EXECUTE 			:
 		//HAPPY FLOW		
 		IF Execute_SC AND NOT Abort THEN
-			State := E_State_PackML.COMPLETE;
+			State := E_State_PackML.COMPLETING;
 		END_IF
 		
 		IF Hold THEN
@@ -83,7 +84,7 @@ CASE State OF
 		END_IF
 		
 		IF Suspend THEN
-			State := E_State_PackML.SUSPENDED;
+			State := E_State_PackML.SUSPENDING;
 		END_IF
 		
 		//EXEPTION HANDLING
@@ -93,10 +94,30 @@ CASE State OF
 		IF Stop THEN
 			State:= E_State_PackML.STOPPING;
 		END_IF
-	
+	E_State_PackML.COMPLETING		:
+		//HAPPY FLOW
+		IF Completing_SC THEN
+			State := E_State_PackML.COMPLETE;
+		END_IF
+		//EXEPTION HANDLING
+		IF Abort THEN
+			State := E_State_PackML.ABORTING;
+		END_IF
+		IF Stop	THEN
+			State := E_State_PackML.STOPPING;
+		END_IF
 	E_State_PackML.COMPLETE 		:
 		//HAPPY FLOW
-		State:= E_State_PackML.RESETTING;
+		IF Reset AND NOT ABORT THEN
+			State:= E_State_PackML.RESETTING;
+		END_IF
+		//EXEPTION HANDLING
+		IF Abort THEN
+			State := E_State_PackML.ABORTING;
+		END_IF
+		IF Stop	THEN
+			State := E_State_PackML.STOPPING;
+		END_IF
 	
 	E_State_PackML.RESETTING 		:
 		//HAPPY FLOW		
@@ -246,9 +267,6 @@ CASE State OF
 		IF Abort THEN
 			State:= E_State_PackML.ABORTING;
 		END_IF
-		IF Stop THEN
-			State:= E_State_PackML.STOPPING;
-		END_IF
 END_CASE
 
 PackML_StateMachine := State;
@@ -257,7 +275,19 @@ PackML_StateMachine := State;
     </Implementation>
     <LineIds Name="PackML_StateMachine">
       <LineId Id="8" Count="12" />
-      <LineId Id="22" Count="206" />
+      <LineId Id="22" Count="50" />
+      <LineId Id="321" Count="1" />
+      <LineId Id="331" Count="1" />
+      <LineId Id="323" Count="3" />
+      <LineId Id="328" Count="2" />
+      <LineId Id="73" Count="1" />
+      <LineId Id="315" Count="0" />
+      <LineId Id="318" Count="0" />
+      <LineId Id="333" Count="6" />
+      <LineId Id="317" Count="0" />
+      <LineId Id="76" Count="147" />
+      <LineId Id="312" Count="0" />
+      <LineId Id="228" Count="0" />
       <LineId Id="284" Count="0" />
       <LineId Id="283" Count="0" />
       <LineId Id="251" Count="0" />

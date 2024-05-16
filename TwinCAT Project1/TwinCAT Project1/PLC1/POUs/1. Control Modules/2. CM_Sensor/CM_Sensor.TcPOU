@@ -21,7 +21,7 @@ $$ |  \$$$$$$$ |$$ |      $$ |  $$ |\$$$$$\$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$$ |
                                                                                                            \______/                                                            \______/ 
 *)
 
-
+fb_mem.STS.Output := fb_mem.CS.Output;
 
 //Zero all CS signals
 fb_mem.CS.Auto		:= FALSE;

@@ -32,6 +32,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Hold            := fb_mem.CS.Hold,
 										Starting_SC     := fb_mem.STS.Starting_SC,
 										Execute_SC      := fb_mem.STS.Execute_SC,
+										Completing_SC	:= fb_mem.STS.Completing_SC,
 										Resetting_SC    := fb_mem.STS.Resetting_SC,
 										Holding_SC      := fb_mem.STS.Holding_SC,
 										Unholding_SC    := fb_mem.STS.Unholding_SC,
@@ -42,17 +43,19 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Stopping_SC     := fb_mem.STS.Stopping_SC);
 
 //********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
+IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
 	fb_mem.STS.Auto := TRUE;
-	ELSE
-		fb_mem.STS.Auto := FALSE;
+	fb_mem.STS.Manueel := FALSE;
 END_IF
 
-IF fb_mem.CS.Manueel THEN
+IF fb_mem.CS.Manueel OR fb_mem.HMI.Manueel THEN
+	fb_mem.STS.Auto := FALSE;
 	fb_mem.STS.Manueel := TRUE;
-	ELSE
-		fb_mem.STS.Manueel := FALSE;
 END_IF
+
+//********************************Toerental***********************************
+
+fb_mem.STS.Toerental := fb_mem.CS.Toerental;
 
 //********************************Exeptionhandling***********************************
 
@@ -64,6 +67,8 @@ CASE fb_mem.STS.State OF
 		fb_mem.STS.Starting_SC 		:= TRUE;
 	E_State_PackML.EXECUTE 			: 
 		//Do nothing
+	E_State_PackML.COMPLETING		:
+		fb_mem.STS.Completing_SC := TRUE;
 	E_State_PackML.COMPLETE 		:
 		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
 			fb_mem.STS.Completing_SC := TRUE;
@@ -108,7 +113,6 @@ fb_mem.CS.Richting_L	:= FALSE;
 fb_mem.CS.Richting_R	:= FALSE;
 fb_mem.CS.Start			:= FALSE;
 fb_mem.CS.Stop			:= FALSE;
-fb_mem.CS.Toerental		:= 0;
 
 //Zero all HMI signals
 fb_mem.HMI.Auto			:= FALSE;
@@ -118,8 +122,7 @@ fb_mem.HMI.Reset		:= FALSE;
 fb_mem.HMI.Richting_L	:= FALSE;
 fb_mem.HMI.Richting_R	:= FALSE;
 fb_mem.HMI.Start		:= FALSE;
-fb_mem.HMI.Stop			:= FALSE;
-fb_mem.HMI.Toerental	:= 0;]]></ST>
+fb_mem.HMI.Stop			:= FALSE;]]></ST>
     </Implementation>
     <Folder Name="Methods" Id="{e48a4f7d-e56b-428a-aa1b-5b87c7c2d9fa}" />
     <Folder Name="Properties" Id="{bc8caceb-6cf9-4970-a7a5-33f216f9ab87}" />
@@ -309,7 +312,7 @@ METHOD Toerental : INT
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Toerental := Toerental;
 
-Toerental := fb_mem.CS.Toerental;]]></ST>
+Toerental := fb_mem.STS.Toerental;]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="CM_Motor">
@@ -317,12 +320,23 @@ Toerental := fb_mem.CS.Toerental;]]></ST>
       <LineId Id="112" Count="0" />
       <LineId Id="130" Count="0" />
       <LineId Id="138" Count="0" />
-      <LineId Id="113" Count="16" />
+      <LineId Id="113" Count="9" />
+      <LineId Id="155" Count="0" />
+      <LineId Id="123" Count="6" />
       <LineId Id="9" Count="0" />
       <LineId Id="27" Count="0" />
-      <LineId Id="61" Count="17" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="143" Count="7" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="165" Count="0" />
+      <LineId Id="164" Count="0" />
+      <LineId Id="163" Count="0" />
+      <LineId Id="162" Count="0" />
+      <LineId Id="73" Count="5" />
       <LineId Id="131" Count="0" />
-      <LineId Id="79" Count="23" />
+      <LineId Id="79" Count="3" />
+      <LineId Id="156" Count="1" />
+      <LineId Id="83" Count="19" />
       <LineId Id="133" Count="0" />
       <LineId Id="104" Count="6" />
       <LineId Id="132" Count="0" />
@@ -332,11 +346,10 @@ Toerental := fb_mem.CS.Toerental;]]></ST>
       <LineId Id="29" Count="5" />
       <LineId Id="39" Count="2" />
       <LineId Id="35" Count="0" />
-      <LineId Id="43" Count="1" />
+      <LineId Id="43" Count="0" />
       <LineId Id="42" Count="0" />
       <LineId Id="36" Count="0" />
       <LineId Id="45" Count="7" />
-      <LineId Id="26" Count="0" />
     </LineIds>
     <LineIds Name="CM_Motor.Abort">
       <LineId Id="4" Count="0" />

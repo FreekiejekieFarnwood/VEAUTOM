@@ -5,6 +5,7 @@
 
 VAR
 	fb_mem : STRUCT_EM_Transport;
+	bFirstCycleExecuted	: BOOL;
 	
 	Motor		: CM_Motor;
 	Sensor		: CM_Sensor;
@@ -38,6 +39,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Hold            := fb_mem.CS.Hold,
 										Starting_SC     := fb_mem.STS.Starting_SC,
 										Execute_SC      := fb_mem.STS.Execute_SC,
+										Completing_SC	:= fb_mem.STS.Completing_SC,
 										Resetting_SC    := fb_mem.STS.Resetting_SC,
 										Holding_SC      := fb_mem.STS.Holding_SC,
 										Unholding_SC    := fb_mem.STS.Unholding_SC,
@@ -51,9 +53,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 Motor();
 Sensor();			
 										
-//********************************ZEROING***********************************								
-fb_mem.STS.Auto 			:= FALSE;
-fb_mem.STS.Manueel 			:= FALSE;
+//********************************ZEROING***********************************
 fb_mem.STS.Starting_SC 		:= FALSE;
 fb_mem.STS.Execute_SC 		:= FALSE;
 fb_mem.STS.Resetting_SC 	:= FALSE;
@@ -67,16 +67,20 @@ fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
 
 //********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
-	fb_mem.STS.Auto := TRUE;
-ELSE
-	fb_mem.STS.Auto := FALSE;
+IF NOT bFirstCycleExecuted THEN
+	Motor.Auto := TRUE;
+	Sensor.Auto := TRUE;
+	bFirstCycleExecuted := TRUE;
 END_IF
 
-IF fb_mem.CS.Manueel THEN
-	fb_mem.STS.Manueel := TRUE;
-ELSE
+IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
+	fb_mem.STS.Auto := TRUE;
 	fb_mem.STS.Manueel := FALSE;
+END_IF
+
+IF fb_mem.CS.Manueel OR fb_mem.HMI.Manueel THEN
+	fb_mem.STS.Auto := FALSE;
+	fb_mem.STS.Manueel := TRUE;
 END_IF
 
 //********************************Exeptionhandling***********************************
@@ -92,22 +96,11 @@ CASE fb_mem.STS.State OF
 		END_IF
 	E_State_PackML.EXECUTE 			: 
 		//Do nothing
-		TON1();
-		TON1.PT := T#10S;
-		
-		IF sensor.Output = FALSE THEN
-			TON1.IN := TRUE;
-		ELSE
-			TON1.IN := FALSE;
-		END_IF
-		
-		IF TON1.Q THEN
-			fb_mem.STS.Execute_SC := TRUE;
-		END_IF
+	E_State_PackML.COMPLETING		:
+		Motor.Stop();
+		fb_mem.STS.Completing_SC := TRUE;
 	E_State_PackML.COMPLETE 		:
-		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
-			fb_mem.STS.Completing_SC := TRUE;
-		END_IF
+		//Do nothing
 	E_State_PackML.RESETTING 		:
 		Motor.Reset();
 		IF Motor.State = E_State_PackML.IDLE THEN
@@ -145,11 +138,9 @@ CASE fb_mem.STS.State OF
 			fb_mem.STS.Aborting_SC 		:= TRUE;
 		END_IF
 	E_State_PackML.ABORTED			:		
-		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
-			Motor.Clear();
-		END_IF
 		//Do nothing
 	E_State_PackML.CLEARING 		:
+		Motor.Clear();
 		IF Motor.State = E_State_PackML.STOPPED THEN
 			fb_mem.STS.Clearing_SC 		:= TRUE;
 		END_IF
@@ -158,9 +149,7 @@ CASE fb_mem.STS.State OF
 			fb_mem.STS.Stopping_SC 		:= TRUE;
 		END_IF
 	E_State_PackML.STOPPED 			:
-		IF fb_mem.CS.Reset AND fb_mem.STS.Auto OR fb_mem.HMI.Reset AND fb_mem.STS.Manueel THEN
-			Motor.Reset();
-		END_IF;
+		//Do nothing
 END_CASE
 
 //********************************HMI_Connection***********************************
@@ -199,14 +188,12 @@ END_VAR
         <ST><![CDATA[fb_mem.STS.Aborting_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Auto" Id="{0e7aef80-4c85-478b-a934-c85e954995c2}" FolderPath="Methods\">
+    <Method Name="Auto" Id="{69f7613e-73b1-41a2-a448-45f43baeb6fe}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Auto : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Auto := TRUE;
-fb_mem.CS.Manueel := FALSE;
-
 Auto := fb_mem.STS.Auto;]]></ST>
       </Implementation>
     </Method>
@@ -276,14 +263,12 @@ END_VAR
         <ST><![CDATA[fb_mem.STS.Holding_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Manueel" Id="{ede4cda6-f1de-40d8-8a49-f05d845e9d0c}" FolderPath="Methods\">
+    <Method Name="Manueel" Id="{f1d2073f-e0d5-4da8-b097-e00b27deb035}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Manueel : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Manueel := TRUE;
-fb_mem.CS.Auto := FALSE;
-
 Manueel := fb_mem.STS.Manueel;]]></ST>
       </Implementation>
     </Method>
@@ -446,10 +431,19 @@ METHOD ZeroAllVar : BOOL
     </Method>
     <LineIds Name="EM_Transport">
       <LineId Id="15" Count="11" />
-      <LineId Id="515" Count="20" />
+      <LineId Id="515" Count="12" />
+      <LineId Id="624" Count="0" />
+      <LineId Id="528" Count="7" />
       <LineId Id="569" Count="0" />
       <LineId Id="565" Count="2" />
-      <LineId Id="536" Count="26" />
+      <LineId Id="536" Count="0" />
+      <LineId Id="539" Count="12" />
+      <LineId Id="660" Count="1" />
+      <LineId Id="675" Count="0" />
+      <LineId Id="678" Count="0" />
+      <LineId Id="676" Count="1" />
+      <LineId Id="552" Count="0" />
+      <LineId Id="606" Count="7" />
       <LineId Id="66" Count="0" />
       <LineId Id="95" Count="2" />
       <LineId Id="115" Count="2" />
@@ -461,18 +455,9 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="401" Count="0" />
       <LineId Id="595" Count="0" />
       <LineId Id="156" Count="0" />
-      <LineId Id="622" Count="0" />
-      <LineId Id="626" Count="1" />
-      <LineId Id="625" Count="0" />
-      <LineId Id="628" Count="1" />
-      <LineId Id="631" Count="0" />
-      <LineId Id="630" Count="0" />
-      <LineId Id="632" Count="0" />
-      <LineId Id="621" Count="0" />
-      <LineId Id="623" Count="1" />
+      <LineId Id="625" Count="2" />
       <LineId Id="173" Count="0" />
-      <LineId Id="570" Count="1" />
-      <LineId Id="174" Count="0" />
+      <LineId Id="629" Count="0" />
       <LineId Id="177" Count="0" />
       <LineId Id="572" Count="0" />
       <LineId Id="409" Count="0" />
@@ -503,19 +488,17 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="476" Count="1" />
       <LineId Id="474" Count="0" />
       <LineId Id="575" Count="0" />
-      <LineId Id="590" Count="0" />
-      <LineId Id="577" Count="0" />
-      <LineId Id="266" Count="0" />
       <LineId Id="436" Count="0" />
-      <LineId Id="442" Count="1" />
+      <LineId Id="442" Count="0" />
+      <LineId Id="630" Count="0" />
+      <LineId Id="443" Count="0" />
       <LineId Id="445" Count="0" />
       <LineId Id="299" Count="0" />
       <LineId Id="446" Count="1" />
       <LineId Id="449" Count="0" />
       <LineId Id="315" Count="0" />
       <LineId Id="340" Count="0" />
-      <LineId Id="397" Count="0" />
-      <LineId Id="592" Count="1" />
+      <LineId Id="593" Count="0" />
       <LineId Id="378" Count="0" />
       <LineId Id="113" Count="0" />
       <LineId Id="500" Count="14" />
@@ -528,8 +511,7 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Transport.Auto">
-      <LineId Id="5" Count="1" />
-      <LineId Id="10" Count="0" />
+      <LineId Id="5" Count="0" />
       <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="EM_Transport.Clear">
@@ -554,8 +536,7 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="EM_Transport.Manueel">
-      <LineId Id="4" Count="1" />
-      <LineId Id="9" Count="0" />
+      <LineId Id="4" Count="0" />
       <LineId Id="8" Count="0" />
     </LineIds>
     <LineIds Name="EM_Transport.Reset">

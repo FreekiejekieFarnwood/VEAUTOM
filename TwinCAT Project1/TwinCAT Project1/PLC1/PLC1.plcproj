@@ -238,9 +238,6 @@
     <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\Enums\E_State_Filling.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\ITF_Filling.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\2. Equipment Modules\2. EM_Filling\Structs\1. CS\EM_Filling_CS.TcDUT">
       <SubType>Code</SubType>
     </Compile>

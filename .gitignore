@@ -11,6 +11,14 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+*.compileinfo
+*.tpzip
+*.tszip
+*.app
+*.cid
+*.crc
+*.occ
+*.tizip
 
 # Build results
 [Dd]ebug/

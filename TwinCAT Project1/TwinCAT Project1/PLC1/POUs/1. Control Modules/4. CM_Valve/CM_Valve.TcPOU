@@ -32,6 +32,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Hold            := fb_mem.CS.Hold,
 										Starting_SC     := fb_mem.STS.Starting_SC,
 										Execute_SC      := fb_mem.STS.Execute_SC,
+										Completing_SC	:= fb_mem.STS.Completing_SC,
 										Resetting_SC    := fb_mem.STS.Resetting_SC,
 										Holding_SC      := fb_mem.STS.Holding_SC,
 										Unholding_SC    := fb_mem.STS.Unholding_SC,
@@ -42,16 +43,14 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Stopping_SC     := fb_mem.STS.Stopping_SC);
 
 //********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
+IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
 	fb_mem.STS.Auto := TRUE;
-	ELSE
-		fb_mem.STS.Auto := FALSE;
+	fb_mem.STS.Manueel := FALSE;
 END_IF
 
-IF fb_mem.CS.Manueel THEN
+IF fb_mem.CS.Manueel OR fb_mem.HMI.Manueel THEN
+	fb_mem.STS.Auto := FALSE;
 	fb_mem.STS.Manueel := TRUE;
-	ELSE
-		fb_mem.STS.Manueel := FALSE;
 END_IF
 
 //********************************Exeptionhandling***********************************
@@ -64,6 +63,8 @@ CASE fb_mem.STS.State OF
 		fb_mem.STS.Starting_SC 		:= TRUE;
 	E_State_PackML.EXECUTE 			: 
 		//Do nothing
+	E_State_PackML.COMPLETING		:
+		fb_mem.STS.Completing_SC := TRUE;
 	E_State_PackML.COMPLETE 		:
 		IF fb_mem.CS.Clear AND fb_mem.STS.Auto OR fb_mem.HMI.Clear AND fb_mem.STS.Manueel THEN
 			fb_mem.STS.Completing_SC := TRUE;
@@ -163,6 +164,8 @@ METHOD Close : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Close := TRUE;
+fb_mem.STS.Close:=TRUE;
+fb_mem.STS.Open:=FALSE;
 Close := fb_mem.STS.Close;]]></ST>
       </Implementation>
     </Method>
@@ -215,6 +218,8 @@ METHOD Open : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Open := TRUE;
+fb_mem.STS.Open:=TRUE;
+fb_mem.STS.Close:=FALSE;
 Open := fb_mem.STS.Open;]]></ST>
       </Implementation>
     </Method>
@@ -277,12 +282,18 @@ END_VAR
       <LineId Id="112" Count="0" />
       <LineId Id="130" Count="0" />
       <LineId Id="138" Count="0" />
-      <LineId Id="113" Count="16" />
+      <LineId Id="113" Count="9" />
+      <LineId Id="155" Count="0" />
+      <LineId Id="123" Count="6" />
       <LineId Id="9" Count="0" />
       <LineId Id="27" Count="0" />
-      <LineId Id="61" Count="17" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="143" Count="7" />
+      <LineId Id="72" Count="6" />
       <LineId Id="131" Count="0" />
-      <LineId Id="79" Count="23" />
+      <LineId Id="79" Count="3" />
+      <LineId Id="156" Count="1" />
+      <LineId Id="83" Count="19" />
       <LineId Id="133" Count="0" />
       <LineId Id="104" Count="6" />
       <LineId Id="132" Count="0" />
@@ -314,7 +325,9 @@ END_VAR
       <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="CM_Valve.Close">
-      <LineId Id="5" Count="1" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="9" Count="1" />
+      <LineId Id="6" Count="0" />
     </LineIds>
     <LineIds Name="CM_Valve.Error_State.Get">
       <LineId Id="2" Count="0" />
@@ -330,6 +343,7 @@ END_VAR
     </LineIds>
     <LineIds Name="CM_Valve.Open">
       <LineId Id="7" Count="0" />
+      <LineId Id="10" Count="1" />
       <LineId Id="6" Count="0" />
     </LineIds>
     <LineIds Name="CM_Valve.Reset">

@@ -38,6 +38,7 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Hold            := fb_mem.CS.Hold,
 										Starting_SC     := fb_mem.STS.Starting_SC,
 										Execute_SC      := fb_mem.STS.Execute_SC,
+										Completing_SC	:= fb_mem.STS.Completing_SC,
 										Resetting_SC    := fb_mem.STS.Resetting_SC,
 										Holding_SC      := fb_mem.STS.Holding_SC,
 										Unholding_SC    := fb_mem.STS.Unholding_SC,
@@ -48,8 +49,6 @@ fb_mem.STS.State := PackML_StateMachine(State			:= fb_mem.STS.State,
 										Stopping_SC     := fb_mem.STS.Stopping_SC);
 										
 //********************************ZEROING***********************************								
-fb_mem.STS.Auto 			:= FALSE;
-fb_mem.STS.Manueel 			:= FALSE;
 fb_mem.STS.Starting_SC 		:= FALSE;
 fb_mem.STS.Execute_SC 		:= FALSE;
 fb_mem.STS.Resetting_SC 	:= FALSE;
@@ -63,16 +62,14 @@ fb_mem.STS.Stopping_SC 		:= FALSE;
 fb_mem.STS.Completing_SC 	:= FALSE;
 
 //********************************Auto manual logic***********************************
-IF fb_mem.CS.Auto THEN
+IF fb_mem.CS.Auto OR fb_mem.HMI.Auto THEN
 	fb_mem.STS.Auto := TRUE;
-ELSE
-	fb_mem.STS.Auto := FALSE;
+	fb_mem.STS.Manueel := FALSE;
 END_IF
 
-IF fb_mem.CS.Manueel THEN
+IF fb_mem.CS.Manueel OR fb_mem.HMI.Manueel THEN
+	fb_mem.STS.Auto := FALSE;
 	fb_mem.STS.Manueel := TRUE;
-ELSE
-	fb_mem.STS.Manueel := FALSE;
 END_IF
 
 //********************************Action case***********************************
@@ -117,14 +114,12 @@ END_VAR
         <ST><![CDATA[fb_mem.STS.Aborting_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Auto" Id="{9386eb6e-2231-4d12-b2dc-854bccf09c0f}" FolderPath="Methods\">
+    <Method Name="Auto" Id="{5f124478-c8ce-4452-a23b-4bbae3ba6710}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Auto : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Auto := TRUE;
-fb_mem.CS.Manueel := FALSE;
-
 Auto := fb_mem.STS.Auto;]]></ST>
       </Implementation>
     </Method>
@@ -192,14 +187,12 @@ END_VAR
         <ST><![CDATA[fb_mem.STS.Holding_SC := TRUE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Manueel" Id="{dffb3d53-df87-4cfc-8e43-c76af9c52cad}" FolderPath="Methods\">
+    <Method Name="Manueel" Id="{239b93df-25e0-43af-a662-6a0df2b8c7cd}" FolderPath="Methods\">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Manueel : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[fb_mem.CS.Manueel := TRUE;
-fb_mem.CS.Auto := FALSE;
-
 Manueel := fb_mem.STS.Manueel;]]></ST>
       </Implementation>
     </Method>
@@ -331,16 +324,17 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="59" Count="0" />
       <LineId Id="23" Count="0" />
       <LineId Id="123" Count="0" />
-      <LineId Id="24" Count="16" />
+      <LineId Id="24" Count="9" />
+      <LineId Id="163" Count="0" />
+      <LineId Id="34" Count="6" />
       <LineId Id="9" Count="0" />
       <LineId Id="73" Count="0" />
       <LineId Id="72" Count="0" />
-      <LineId Id="60" Count="11" />
+      <LineId Id="62" Count="9" />
       <LineId Id="55" Count="0" />
       <LineId Id="133" Count="0" />
-      <LineId Id="74" Count="8" />
-      <LineId Id="124" Count="0" />
-      <LineId Id="84" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="146" Count="7" />
       <LineId Id="58" Count="0" />
       <LineId Id="86" Count="1" />
       <LineId Id="134" Count="2" />
@@ -362,8 +356,7 @@ METHOD ZeroAllVar : BOOL
     </LineIds>
     <LineIds Name="EM_Machine.Auto">
       <LineId Id="5" Count="0" />
-      <LineId Id="9" Count="1" />
-      <LineId Id="6" Count="0" />
+      <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="EM_Machine.Clear">
       <LineId Id="4" Count="0" />
@@ -389,8 +382,7 @@ METHOD ZeroAllVar : BOOL
     </LineIds>
     <LineIds Name="EM_Machine.Manueel">
       <LineId Id="4" Count="0" />
-      <LineId Id="8" Count="1" />
-      <LineId Id="5" Count="0" />
+      <LineId Id="8" Count="0" />
     </LineIds>
     <LineIds Name="EM_Machine.Reset">
       <LineId Id="4" Count="0" />
