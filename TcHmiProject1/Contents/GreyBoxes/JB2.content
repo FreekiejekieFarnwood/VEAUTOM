@@ -1066,36 +1066,6 @@
 ]
 </script>
 </div>
-<div id="TcHmiStateImage_125" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="988" data-tchmi-left-unit="px" data-tchmi-top="716" data-tchmi-top-unit="px" data-tchmi-width="40" data-tchmi-width-unit="px" data-tchmi-zindex="34" data-tchmi-state="%s%PLC1.HMI_Connection.AlarmTest%/s%" data-tchmi-fallback-image="Images/INDAUT/Alarms/alarm prio 1.svg">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": 0,
-    "stateIcon": "Images/Empty SVG.svg"
-  },
-  {
-    "state": 1.0,
-    "stateIcon": "Images/INDAUT/Alarms/alarm prio 1.svg"
-  },
-  {
-    "state": 2.0,
-    "stateIcon": "Images/INDAUT/Alarms/alarm prio 2.svg"
-  },
-  {
-    "state": 3.0,
-    "stateIcon": "Images/INDAUT/Alarms/alarm prio 3.svg"
-  },
-  {
-    "state": 4.0,
-    "stateIcon": "Images/INDAUT/Alarms/alarm prio 4.svg"
-  }
-]
-</script>
-
-
-
-
-</div>
 <div id="TcHmiRectangle_55" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="220" data-tchmi-height-unit="px" data-tchmi-left="759" data-tchmi-left-unit="px" data-tchmi-top="711" data-tchmi-top-unit="px" data-tchmi-width="273" data-tchmi-width-unit="px" data-tchmi-zindex="18">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
@@ -1604,36 +1574,6 @@
   }
 ]
 </script>
-</div>
-<div id="TcHmiStateImage_130" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="1267" data-tchmi-left-unit="px" data-tchmi-top="716" data-tchmi-top-unit="px" data-tchmi-width="40" data-tchmi-width-unit="px" data-tchmi-zindex="34" data-tchmi-state="%s%PLC1.HMI_Connection.AlarmTest%/s%" data-tchmi-fallback-image="Images/INDAUT/Alarms/alarm prio 1.svg">
-<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
-[
-  {
-    "state": 0,
-    "stateIcon": "Images/Empty SVG.svg"
-  },
-  {
-    "state": 1.0,
-    "stateIcon": "Images/INDAUT/Alarms/alarm prio 1.svg"
-  },
-  {
-    "state": 2.0,
-    "stateIcon": "Images/INDAUT/Alarms/alarm prio 2.svg"
-  },
-  {
-    "state": 3.0,
-    "stateIcon": "Images/INDAUT/Alarms/alarm prio 3.svg"
-  },
-  {
-    "state": 4.0,
-    "stateIcon": "Images/INDAUT/Alarms/alarm prio 4.svg"
-  }
-]
-</script>
-
-
-
-
 </div>
 <div id="TcHmiRectangle_56" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="220" data-tchmi-height-unit="px" data-tchmi-left="1038" data-tchmi-left-unit="px" data-tchmi-top="711" data-tchmi-top-unit="px" data-tchmi-width="273" data-tchmi-width-unit="px" data-tchmi-zindex="18">
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">

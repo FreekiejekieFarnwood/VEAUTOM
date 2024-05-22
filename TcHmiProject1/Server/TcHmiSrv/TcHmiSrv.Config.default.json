@@ -3556,6 +3556,23 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.StringState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Transport_BottomSeal_Labeller::fb_mem::STS::StringState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 3
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.Tag": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -4954,6 +4971,7 @@
                 "PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.Motor.fb_mem.HMI.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.Motor.fb_mem.STS.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.Sensor.fb_mem.STS.Output": 3,
+                "PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.Tag": 3,
                 "PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Motor.fb_mem.CS.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Transport_Checkweigher_BottomSeal.Motor.fb_mem.HMI.Toerental": 3,

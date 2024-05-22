@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcBootProject CreateTime="2024-05-15T09:43:33">
+<TcBootProject CreateTime="2024-05-22T11:46:22">
 	<System>
 		<LockedMemSize>33554432</LockedMemSize>
 		<AffinityMask>#x1</AffinityMask>
@@ -127,7 +127,7 @@
 	<ProjectInfo>
 		<ProjectName>TwinCAT Project1</ProjectName>
 		<ProjectGuid>{EB0CD7F8-10BF-4668-9379-189C79459F25}</ProjectGuid>
-		<ConfigurationFile>C:\Users\freek\Source\Repos\VEAUTOM\TwinCAT Project1\TwinCAT Project1\TwinCAT Project1.tsproj</ConfigurationFile>
+		<ConfigurationFile>C:\Users\Tijn\Source\Repos\VEAUTOM4\TwinCAT Project1\TwinCAT Project1\TwinCAT Project1.tsproj</ConfigurationFile>
 		<DataTypes/>
 		<PlcProjects/>
 		<Tasks/>
