@@ -3369,6 +3369,23 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.STS.Tag": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Infeed_CheckWeigher::Motor::fb_mem::STS::Tag",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.STS.Toerental": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3415,6 +3432,23 @@
                     },
                     {
                         "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.fb_mem.STS.StringState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Infeed_CheckWeigher::fb_mem::STS::StringState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 3
                     }
                 ]
             },
@@ -3760,6 +3794,23 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.StringState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Transport_StampUnit_SealShrink::fb_mem::STS::StringState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 3
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.Motor.fb_mem.CS.Toerental": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3806,6 +3857,23 @@
                     },
                     {
                         "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.StringState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Unit::EM_Transport_TurningDevice_StampUnit::fb_mem::STS::StringState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "propertyOrder": 3
                     }
                 ]
             },
@@ -4960,9 +5028,11 @@
                 "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.CS.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.HMI.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.STS.State": 3,
+                "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.STS.Tag": 3,
                 "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Motor.fb_mem.STS.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.Sensor.fb_mem.STS.Output": 3,
                 "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.fb_mem.STS.State": 3,
+                "PLC1.MAIN.Unit.EM_Infeed_CheckWeigher.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Labeller.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_SealShrink.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_StampUnit.fb_mem.STS.StringState": 3,
@@ -4983,9 +5053,11 @@
                 "PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.Motor.fb_mem.HMI.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.Motor.fb_mem.PAR": 3,
                 "PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.Sensor.fb_mem.STS.Output": 3,
+                "PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.Motor.fb_mem.CS.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.Motor.fb_mem.HMI.Toerental": 3,
                 "PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.Sensor.fb_mem.STS.Output": 3,
+                "PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.StringState": 3,
                 "PLC1.MAIN.Unit.ModeSelect": 3,
                 "PLC1.MAIN.Unit.fb_mem.HMI.Abort": 3,

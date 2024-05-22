@@ -3664,261 +3664,6 @@
 
 
 </div>
-<div id="TcHmiRectangle_58" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="266" data-tchmi-height-unit="px" data-tchmi-left="1792" data-tchmi-left-unit="px" data-tchmi-top="60" data-tchmi-top-unit="px" data-tchmi-width="20" data-tchmi-width-unit="px" data-tchmi-zindex="17">
-<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
-{
-  "left": 1,
-  "right": 1,
-  "top": 1,
-  "bottom": 1,
-  "leftUnit": "px",
-  "rightUnit": "px",
-  "topUnit": "px",
-  "bottomUnit": "px"
-}
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
-{
-  "left": "Solid",
-  "right": "Solid",
-  "top": "Solid",
-  "bottom": "Solid"
-}
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
-  {
-    "event": "%ctrl%TcHmiRectangle_21::FillColor%/ctrl%",
-    "actions": [
-      {
-        "objectType": "Condition",
-        "active": true,
-        "parts": [
-          {
-            "if": [
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 4
-                },
-                "compareOperator": "==",
-                "logic": null
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 8
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 10
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 13
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 11
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 14
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 16
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 17
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 5
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 3
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 7
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              }
-            ],
-            "then": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%TcHmiRectangle_21::FillColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(255, 255, 255, 1)"
-                  }
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "else": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%TcHmiRectangle_21::FillColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(209, 209, 209, 1)"
-                  }
-                },
-                "asyncWait": true
-              }
-            ]
-          }
-        ],
-        "asyncWait": true
-      }
-    ]
-  }
-]
-</script>
-</div>
-<div id="TcHmiRectangle_59" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1517" data-tchmi-left-unit="px" data-tchmi-top="306" data-tchmi-top-unit="px" data-tchmi-width="294" data-tchmi-width-unit="px" data-tchmi-zindex="15">
-<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
-{
-  "left": 1,
-  "right": 1,
-  "top": 1,
-  "bottom": 1,
-  "leftUnit": "px",
-  "rightUnit": "px",
-  "topUnit": "px",
-  "bottomUnit": "px"
-}
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
-{
-  "left": "None",
-  "right": "None",
-  "top": "Solid",
-  "bottom": "Solid"
-}
-</script>
-
-
-</div>
 <div id="TcHmi_Controls_Beckhoff_TcHmiImage_11" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="0" data-tchmi-height-unit="px" data-tchmi-left="1224" data-tchmi-left-unit="px" data-tchmi-src="Images/INDAUT/Grey Boxes zonder tekst/bottom seal aan.svg" data-tchmi-top="60" data-tchmi-top-unit="px" data-tchmi-width="0" data-tchmi-width-unit="px" data-tchmi-zindex="6">
 </div>
 <div id="TcHmiTextblock_306" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1324" data-tchmi-left-unit="px" data-tchmi-top="245" data-tchmi-top-unit="px" data-tchmi-width="183" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Left" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-weight="Bold" data-tchmi-zindex="41" data-tchmi-text="%s%PLC1.MAIN.Unit.EM_Labeller.fb_mem.STS.StringState%/s%">
@@ -4103,696 +3848,6 @@
   "top": "None",
   "bottom": "Solid"
 }
-</script>
-</div>
-<div id="BandLabeler_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="1091" data-tchmi-left-unit="px" data-tchmi-top="306" data-tchmi-top-unit="px" data-tchmi-width="236" data-tchmi-width-unit="px" data-tchmi-zindex="15">
-<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
-{
-  "left": 1,
-  "right": 1,
-  "top": 1,
-  "bottom": 1,
-  "leftUnit": "px",
-  "rightUnit": "px",
-  "topUnit": "px",
-  "bottomUnit": "px"
-}
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
-{
-  "left": "None",
-  "right": "None",
-  "top": "Solid",
-  "bottom": "Solid"
-}
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
-  {
-    "event": "%ctrl%BandLabeler_1::FillColor%/ctrl%",
-    "actions": [
-      {
-        "objectType": "Condition",
-        "active": true,
-        "parts": [
-          {
-            "if": [
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": "4"
-                },
-                "compareOperator": "==",
-                "logic": null
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": "8"
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": "10"
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": "13"
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": "11"
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": "14"
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": "16"
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": "17"
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": "5"
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": "3"
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": "7"
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              }
-            ],
-            "then": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%BandLabeler_1::FillColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(255, 255, 255, 1)"
-                  }
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "else": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%BandLabeler_1::FillColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(209, 209, 209, 1)"
-                  }
-                },
-                "asyncWait": true
-              }
-            ]
-          }
-        ],
-        "asyncWait": true
-      }
-    ]
-  }
-]
-</script>
-</div>
-<div id="BandTurning_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="692" data-tchmi-left-unit="px" data-tchmi-top="306" data-tchmi-top-unit="px" data-tchmi-width="220" data-tchmi-width-unit="px" data-tchmi-zindex="15">
-<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
-{
-  "left": 1,
-  "right": 1,
-  "top": 1,
-  "bottom": 1,
-  "leftUnit": "px",
-  "rightUnit": "px",
-  "topUnit": "px",
-  "bottomUnit": "px"
-}
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
-{
-  "left": "None",
-  "right": "None",
-  "top": "Solid",
-  "bottom": "Solid"
-}
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
-  {
-    "event": "%ctrl%BandTurning::FillColor%/ctrl%",
-    "actions": [
-      {
-        "objectType": "Condition",
-        "active": true,
-        "parts": [
-          {
-            "if": [
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 4
-                },
-                "compareOperator": "==",
-                "logic": null
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 5
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 8
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 10
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 13
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 11
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 15
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 16
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 17
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 7
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 3
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              }
-            ],
-            "then": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%BandTurning::FillColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(255, 255, 255, 1)"
-                  }
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "else": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%BandTurning::FillColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(209, 209, 209, 1)"
-                  }
-                },
-                "asyncWait": true
-              }
-            ]
-          }
-        ],
-        "asyncWait": true
-      }
-    ]
-  }
-]
-</script>
-</div>
-<div id="BandStampUnit_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="20" data-tchmi-height-unit="px" data-tchmi-left="212" data-tchmi-left-unit="px" data-tchmi-top="306" data-tchmi-top-unit="px" data-tchmi-width="320" data-tchmi-width-unit="px" data-tchmi-zindex="15">
-<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
-{
-  "left": 1,
-  "right": 1,
-  "top": 1,
-  "bottom": 1,
-  "leftUnit": "px",
-  "rightUnit": "px",
-  "topUnit": "px",
-  "bottomUnit": "px"
-}
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
-{
-  "left": "None",
-  "right": "None",
-  "top": "Solid",
-  "bottom": "Solid"
-}
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
-  {
-    "event": "%ctrl%BandStampUnit::FillColor%/ctrl%",
-    "actions": [
-      {
-        "objectType": "Condition",
-        "active": true,
-        "parts": [
-          {
-            "if": [
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 4
-                },
-                "compareOperator": "==",
-                "logic": null
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 5
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 8
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 10
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 13
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 11
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 15
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 16
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 17
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 7
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              },
-              {
-                "compare1": {
-                  "objectType": "Symbol",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "symbolExpression": "%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.State%/s%"
-                },
-                "compare2": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:server#/definitions/PLC1.E_State_PackML",
-                  "value": 3
-                },
-                "compareOperator": "==",
-                "logic": "OR"
-              }
-            ],
-            "then": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%BandStampUnit::FillColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(255, 255, 255, 1)"
-                  }
-                },
-                "asyncWait": true
-              }
-            ]
-          },
-          {
-            "else": [
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%BandStampUnit::FillColor%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/Color",
-                  "value": {
-                    "color": "rgba(209, 209, 209, 1)"
-                  }
-                },
-                "asyncWait": true
-              }
-            ]
-          }
-        ],
-        "asyncWait": true
-      }
-    ]
-  }
-]
 </script>
 </div>
 <div id="TcHmiTextblock_315" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="25" data-tchmi-height-unit="px" data-tchmi-left="1215" data-tchmi-left-unit="px" data-tchmi-text="ConveyerT7" data-tchmi-top="245" data-tchmi-top-unit="px" data-tchmi-width="80" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="15" data-tchmi-zindex="36">
@@ -5470,6 +4525,376 @@
     "stateIcon": "Images/INDAUT/Actuatoren/klep uit.svg"
   }
 ]
+</script>
+</div>
+<div id="TcHmiStateImage_193" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="267" data-tchmi-height-unit="px" data-tchmi-left="1792" data-tchmi-left-unit="px" data-tchmi-top="59" data-tchmi-top-unit="px" data-tchmi-width="19" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Belt/grijs.png">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  }
+]
+</script>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "right": 1,
+  "top": 1,
+  "bottom": 1,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+</div>
+<div id="TcHmiStateImage_194" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="21" data-tchmi-height-unit="px" data-tchmi-left="1501" data-tchmi-left-unit="px" data-tchmi-top="305" data-tchmi-top-unit="px" data-tchmi-width="310" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Transport_BottomSeal_Labeller.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Belt/grijs.png">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  }
+]
+</script>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "right": 1,
+  "top": 1,
+  "bottom": 1,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+</div>
+<div id="TcHmiStateImage_196" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="23" data-tchmi-height-unit="px" data-tchmi-left="1060" data-tchmi-left-unit="px" data-tchmi-top="305" data-tchmi-top-unit="px" data-tchmi-width="294" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_TurningDevice.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Belt/grijs.png">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  }
+]
+</script>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "right": 1,
+  "top": 1,
+  "bottom": 1,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+</div>
+<div id="TcHmiStateImage_197" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="21" data-tchmi-height-unit="px" data-tchmi-left="645" data-tchmi-left-unit="px" data-tchmi-top="305" data-tchmi-top-unit="px" data-tchmi-width="294" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Transport_TurningDevice_StampUnit.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Belt/grijs.png">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  }
+]
+</script>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "right": 1,
+  "top": 1,
+  "bottom": 1,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+</div>
+<div id="TcHmiStateImage_198" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiStateImage" data-tchmi-height="23" data-tchmi-height-unit="px" data-tchmi-left="212" data-tchmi-left-unit="px" data-tchmi-top="305" data-tchmi-top-unit="px" data-tchmi-width="294" data-tchmi-width-unit="px" data-tchmi-zindex="5" data-tchmi-state="%s%PLC1.MAIN.Unit.EM_Transport_StampUnit_SealShrink.fb_mem.STS.StringState%/s%" data-tchmi-fallback-image="Images/INDAUT/Belt/grijs.png">
+<script data-tchmi-target-attribute="data-tchmi-state-list" type="application/json">
+[
+  {
+    "state": "EXECUTE",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "COMPLETING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "HOLDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "UNHOLDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "UNSUSPENDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "SUSPENDING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "ABORTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "CLEARING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "STOPPING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "RESETTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  },
+  {
+    "state": "STARTING",
+    "stateIcon": "Images/INDAUT/Belt/wit.png"
+  }
+]
+</script>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 1,
+  "right": 1,
+  "top": 1,
+  "bottom": 1,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
 </script>
 </div>
 </div>
