@@ -445,16 +445,16 @@ IF 	EM_Can_Supply.State 							= E_State_PackML.HOLDING OR
 	fb_mem.CS.Suspend := TRUE;
 	EM_Can_Supply.Suspend();
 	EM_Filling.Suspend();
-	EM_Infeed_CheckWeigher.Stop();
+	EM_Infeed_CheckWeigher.Suspend();
 	EM_CheckWeigher.Suspend();
-	EM_Transport_Checkweigher_BottomSeal.Stop();
+	EM_Transport_Checkweigher_BottomSeal.Suspend();
 	EM_BottomSeal.Suspend();
-	EM_Transport_BottomSeal_Labeller.Stop();
+	EM_Transport_BottomSeal_Labeller.Suspend();
 	EM_Labeller.Suspend();
 	EM_TurningDevice.Suspend();
-	EM_Transport_TurningDevice_StampUnit.Stop();
+	EM_Transport_TurningDevice_StampUnit.Suspend();
 	EM_StampUnit.Suspend();
-	EM_Transport_StampUnit_SealShrink.Stop();
+	EM_Transport_StampUnit_SealShrink.Suspend();
 	EM_SealShrink.Suspend();
 END_IF
 
@@ -564,15 +564,43 @@ CASE fb_mem.STS.State OF
 		END_IF
 	
 	E_State_PackML.HOLDING 			:	// TO BE PROGRAMMED
-		//Not defined
+		IF 	EM_Can_Supply.State 							= E_State_PackML.HELD AND
+				EM_Filling.State 							= E_State_PackML.HELD AND
+				EM_Infeed_CheckWeigher.State				= E_State_PackML.HELD AND
+				EM_CheckWeigher.State 						= E_State_PackML.HELD AND
+				EM_Transport_Checkweigher_BottomSeal.State	= E_State_PackML.HELD AND
+				EM_BottomSeal.State							= E_State_PackML.HELD AND
+				EM_Transport_BottomSeal_Labeller.State		= E_State_PackML.HELD AND
+				EM_Labeller.State 							= E_State_PackML.HELD AND
+				EM_TurningDevice.State						= E_State_PackML.HELD AND
+				EM_Transport_TurningDevice_StampUnit.State	= E_State_PackML.HELD AND
+				EM_StampUnit.State							= E_State_PackML.HELD AND
+				EM_Transport_StampUnit_SealShrink.State		= E_State_PackML.HELD AND
+				EM_SealShrink.State 						= E_State_PackML.HELD THEN
+			fb_mem.STS.Holding_SC := TRUE;
+		END_IF 
 		
 	
 	E_State_PackML.HELD 			:	// TO BE PROGRAMMED
 		//Not defined
 	
 	
-	E_State_PackML.UNHOLDING 		:	// TO BE PROGRAMMED
-		//Not defined
+	E_State_PackML.UNHOLDING 		:	
+		IF 	EM_Can_Supply.State 							= E_State_PackML.EXECUTE AND
+				EM_Filling.State 							= E_State_PackML.EXECUTE AND
+				EM_Infeed_CheckWeigher.State				= E_State_PackML.EXECUTE AND
+				EM_CheckWeigher.State 						= E_State_PackML.EXECUTE AND
+				EM_Transport_Checkweigher_BottomSeal.State	= E_State_PackML.EXECUTE AND
+				EM_BottomSeal.State							= E_State_PackML.EXECUTE AND
+				EM_Transport_BottomSeal_Labeller.State		= E_State_PackML.EXECUTE AND
+				EM_Labeller.State 							= E_State_PackML.EXECUTE AND
+				EM_TurningDevice.State						= E_State_PackML.EXECUTE AND
+				EM_Transport_TurningDevice_StampUnit.State	= E_State_PackML.EXECUTE AND
+				EM_StampUnit.State							= E_State_PackML.EXECUTE AND
+				EM_Transport_StampUnit_SealShrink.State		= E_State_PackML.EXECUTE AND
+				EM_SealShrink.State 						= E_State_PackML.EXECUTE THEN
+			fb_mem.STS.Unholding_SC := TRUE;
+		END_IF 
 	
 	
 	E_State_PackML.SUSPENDING 		:
@@ -1120,6 +1148,7 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="1557" Count="0" />
       <LineId Id="116" Count="0" />
       <LineId Id="1979" Count="0" />
+      <LineId Id="2127" Count="13" />
       <LineId Id="698" Count="0" />
       <LineId Id="695" Count="0" />
       <LineId Id="117" Count="0" />
@@ -1127,8 +1156,8 @@ METHOD ZeroAllVar : BOOL
       <LineId Id="699" Count="0" />
       <LineId Id="696" Count="0" />
       <LineId Id="118" Count="0" />
+      <LineId Id="2157" Count="14" />
       <LineId Id="1977" Count="0" />
-      <LineId Id="700" Count="0" />
       <LineId Id="697" Count="0" />
       <LineId Id="119" Count="0" />
       <LineId Id="1976" Count="0" />
