@@ -27,7 +27,7 @@
     <HmiViewportUserScaleable>Default</HmiViewportUserScaleable>
     <HmiPostProcessing>True</HmiPostProcessing>
     <Name>TcHmiProject1</Name>
-    <HmiCommunicationRouterPort>10115</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10118</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13001</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.760.59</HmiInitial>
     <HmiRecent>1.12.760.59</HmiRecent>
@@ -116,6 +116,7 @@
     <Folder Include="Images" />
     <Folder Include="Images\INDAUT\Actuatoren" />
     <Folder Include="Images\INDAUT\Alarms" />
+    <Folder Include="Images\INDAUT\Belt" />
     <Folder Include="Images\INDAUT\Control" />
     <Folder Include="Images\INDAUT\Grey Boxes zonder tekst" />
     <Folder Include="Images\INDAUT\Banner" />
@@ -218,6 +219,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Images\INDAUT\Banner\logo InpakXpert Solutions.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Belt\grijs.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\INDAUT\Belt\wit.png">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Images\INDAUT\Control\Auto Button.svg">
